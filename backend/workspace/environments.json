@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "name": "Desarrollo",
+    "urlRaiz": "https://desarrollo.sincoerp.com/SincoOk/v3",
+    "urlApi": "https://desarrollo.sincoerp.com/SincoOk/v3/adpro/api",
+    "urlApiCore": "https://desarrollo.sincoerp.com/SincoMasterADPRO/V3/adpro"
+  },
+  {
+    "id": 2,
+    "name": "Local (cumbal-loc)",
+    "urlRaiz": "https://cumbal-loc.sincoerp.com/SincoOk/v3",
+    "urlApi": "https://cumbal-loc.sincoerp.com/SincoOk/v3/adpro/api",
+    "urlApiCore": "https://cumbal-loc.sincoerp.com/SincoMasterADPRO/V3/adpro"
+  },
+  {
+    "id": 3,
+    "name": "QA",
+    "urlRaiz": "https://qa.sincoerp.com/SincoOk/v3",
+    "urlApi": "https://qa.sincoerp.com/SincoOk/v3/adpro/api",
+    "urlApiCore": null
+  }
+]
