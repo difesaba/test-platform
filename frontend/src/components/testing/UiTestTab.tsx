@@ -563,11 +563,18 @@ export default function UiTestTab({ selected, onNotify }: Props) {
             )}
           </Stack>
         </DialogContent>
-        <DialogActions>
-          <Button onClick={handleCloseDialog}>Cancelar</Button>
-          <Button variant="contained" onClick={handleCreate} disabled={saving || !name.trim() || !effectiveUrl}>
-            {saving ? 'Guardando...' : 'Guardar'}
-          </Button>
+        <DialogActions sx={{ flexDirection: 'column', alignItems: 'stretch', gap: 1, px: 3, pb: 2 }}>
+          {!configuredComponents.length && (
+            <Alert severity="warning" variant="outlined" sx={{ mb: 0 }}>
+              Seleccioná un campo en Chromium, asignale una regla (Solo numeros, Sin negativos u Obligatorio) y hacé clic en <strong>Agregar componente</strong>.
+            </Alert>
+          )}
+          <Stack direction="row" spacing={1} justifyContent="flex-end">
+            <Button onClick={handleCloseDialog}>Cancelar</Button>
+            <Button variant="contained" onClick={handleCreate} disabled={saving || !name.trim() || !effectiveUrl || configuredComponents.length === 0}>
+              {saving ? 'Guardando...' : 'Guardar'}
+            </Button>
+          </Stack>
         </DialogActions>
       </Dialog>
 

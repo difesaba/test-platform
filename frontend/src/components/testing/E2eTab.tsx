@@ -9,6 +9,7 @@ import {
   Card,
   CardContent,
   Chip,
+  CircularProgress,
   Dialog,
   DialogActions,
   DialogContent,
@@ -74,6 +75,22 @@ export default function E2eTab({ selected, onNotify }: Props) {
     setDialogOpen(false);
   }, [load, selected.moduleName, selected.pageName, selected.submoduleName]);
 
+  // Poll every 3s while any recording is in 'recording' state (user has Chromium open)
+  useEffect(() => {
+    const hasActive = recordings.some((r) => r.status === 'recording');
+    if (!hasActive) return;
+    const interval = setInterval(() => {
+      api.get(`/e2e?${buildSelectionQuery(selected)}`)
+        .then(({ data }) => {
+          setRecordings(data);
+          const stillActive = data.some((r: E2eRecording) => r.status === 'recording');
+          if (!stillActive) onNotify('Grabacion finalizada. El spec fue guardado.', 'success');
+        })
+        .catch(() => undefined);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, [recordings, selected, onNotify]);
+
   const openDialog = () => {
     setName(selected.pageName ?? 'Flujo principal');
     setUrl(selected.pageUrl ?? '');
@@ -112,6 +129,7 @@ export default function E2eTab({ selected, onNotify }: Props) {
     try {
       await api.post(`/e2e/${id}/stop?${buildSelectionQuery(selected)}`);
       onNotify('Grabacion detenida.', 'success');
+      setExpandedIds((ids) => [...new Set([...ids, id])]);
       load();
     } catch {
       onNotify('No fue posible detener la grabacion.', 'error');
@@ -120,9 +138,14 @@ export default function E2eTab({ selected, onNotify }: Props) {
 
   const handleRun = async (id: string) => {
     setRunningId(id);
+    setExpandedIds((ids) => [...new Set([...ids, id])]);
     try {
-      await api.post(`/e2e/${id}/run?${buildSelectionQuery(selected)}`, effectiveUrl ? { url: effectiveUrl } : {});
-      onNotify('Flujo E2E ejecutado.', 'success');
+      const { data } = await api.post(`/e2e/${id}/run?${buildSelectionQuery(selected)}`, effectiveUrl ? { url: effectiveUrl } : {});
+      if (data?.ok) {
+        onNotify(`Test OK — ${data.passed ?? 0} paso(s) correctos.`, 'success');
+      } else {
+        onNotify(`Test fallido — ${data?.failed ?? 0} fallo(s). Ver salida para detalles.`, 'error');
+      }
       load();
     } catch {
       onNotify('No fue posible ejecutar el flujo E2E.', 'error');
@@ -219,7 +242,7 @@ export default function E2eTab({ selected, onNotify }: Props) {
                     : current.filter((id) => id !== recording.id)
                 ))}
               >
-                <AccordionSummary expandIcon={<ExpandMoreRoundedIcon />}>
+                <AccordionSummary component="div" expandIcon={<ExpandMoreRoundedIcon />}>
                   <Stack direction="row" spacing={1.5} alignItems="center" flex={1} minWidth={0}>
                     <Chip label={statusMeta[recording.status].label} color={statusMeta[recording.status].color} size="small" />
                     <Box flex={1} minWidth={0}>
@@ -249,11 +272,15 @@ export default function E2eTab({ selected, onNotify }: Props) {
                       )}
                       {recording.status === 'ready' && (
                         <>
-                          <IconButton size="small" color="primary" onClick={(event) => {
-                            event.stopPropagation();
-                            handleRun(recording.id);
-                          }}>
-                            <PlayArrowRoundedIcon fontSize="small" />
+                          <IconButton
+                            size="small"
+                            color="primary"
+                            disabled={runningId === recording.id}
+                            onClick={(event) => { event.stopPropagation(); handleRun(recording.id); }}
+                          >
+                            {runningId === recording.id
+                              ? <CircularProgress size={16} color="primary" />
+                              : <PlayArrowRoundedIcon fontSize="small" />}
                           </IconButton>
                           <IconButton size="small" color="secondary" onClick={(event) => {
                             event.stopPropagation();
@@ -276,9 +303,22 @@ export default function E2eTab({ selected, onNotify }: Props) {
                   <Stack spacing={2}>
                     <TextField fullWidth label="URL inicial" value={recording.url} InputProps={{ readOnly: true }} />
                     {recording.lastResult ? (
-                      <Alert severity={recording.lastResult.ok ? 'success' : 'error'} variant="outlined">
-                        {recording.lastResult.passed} paso(s) correctos · {recording.lastResult.failed} fallo(s) · {formatRunTime(recording.lastResult.runAt)}
-                      </Alert>
+                      <Stack spacing={1}>
+                        <Alert severity={recording.lastResult.ok ? 'success' : 'error'} variant="outlined">
+                          {recording.lastResult.passed} paso(s) correctos · {recording.lastResult.failed} fallo(s) · {formatRunTime(recording.lastResult.runAt)}
+                        </Alert>
+                        {recording.lastResult.output && (
+                          <TextField
+                            fullWidth
+                            multiline
+                            maxRows={10}
+                            value={recording.lastResult.output}
+                            InputProps={{ readOnly: true, sx: { fontFamily: 'monospace', fontSize: 12 } }}
+                            label="Salida"
+                            size="small"
+                          />
+                        )}
+                      </Stack>
                     ) : (
                       <Alert severity="info" variant="outlined">
                         Este flujo aun no registra resultados de ejecucion.
@@ -301,13 +341,8 @@ export default function E2eTab({ selected, onNotify }: Props) {
                             {runningId === recording.id ? 'Ejecutando...' : 'Reproducir'}
                           </Button>
                           <Button variant="outlined" onClick={() => handleViewSpec(recording.id)}>
-                            Ver codigo
+                            Ver codigo generado
                           </Button>
-                          {recording.lastResult && (
-                            <Button variant="text" onClick={() => setViewOutput(recording.lastResult?.output ?? null)}>
-                              Ver salida
-                            </Button>
-                          )}
                         </>
                       )}
                     </Stack>

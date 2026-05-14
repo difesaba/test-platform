@@ -3,12 +3,14 @@ import { useNavigate } from 'react-router-dom';
 import {
   AppBar,
   Box,
+  Breadcrumbs,
   Button,
-  Card,
-  CardContent,
   Chip,
   Drawer,
   IconButton,
+  Link,
+  Paper,
+  Skeleton,
   Snackbar,
   Stack,
   Tab,
@@ -17,7 +19,6 @@ import {
   Tooltip,
   Typography,
   Alert,
-  Skeleton,
   useMediaQuery,
 } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
@@ -28,6 +29,7 @@ import ScienceRoundedIcon from '@mui/icons-material/ScienceRounded';
 import ApiRoundedIcon from '@mui/icons-material/ApiRounded';
 import ScreenshotMonitorRoundedIcon from '@mui/icons-material/ScreenshotMonitorRounded';
 import PlayCircleOutlineRoundedIcon from '@mui/icons-material/PlayCircleOutlineRounded';
+import OpenInNewRoundedIcon from '@mui/icons-material/OpenInNewRounded';
 import Sidebar from '../components/layout/Sidebar';
 import ApiTestTab from '../components/testing/ApiTestTab';
 import UiTestTab from '../components/testing/UiTestTab';
@@ -92,20 +94,16 @@ export default function PlatformPage() {
 
   const renderLoadingSkeleton = () => (
     <Stack spacing={2.5}>
-      <Card>
-        <CardContent>
-          <Stack spacing={2}>
-            <Stack direction="row" spacing={1}>
-              <Skeleton variant="rounded" width={96} height={28} />
-              <Skeleton variant="rounded" width={120} height={28} />
-              <Skeleton variant="rounded" width={120} height={28} />
-            </Stack>
-            <Skeleton variant="text" width="32%" height={42} />
-            <Skeleton variant="text" width="52%" />
-          </Stack>
-          <Skeleton variant="rounded" height={360} />
-        </CardContent>
-      </Card>
+      <Stack spacing={2}>
+        <Stack direction="row" spacing={1}>
+          <Skeleton variant="rounded" width={96} height={28} />
+          <Skeleton variant="rounded" width={120} height={28} />
+          <Skeleton variant="rounded" width={120} height={28} />
+        </Stack>
+        <Skeleton variant="text" width="32%" height={42} />
+        <Skeleton variant="text" width="52%" />
+      </Stack>
+      <Skeleton variant="rounded" height={360} />
     </Stack>
   );
 
@@ -121,6 +119,7 @@ export default function PlatformPage() {
 
   return (
     <Box minHeight="100vh">
+      {/* ── AppBar ── */}
       <AppBar position="sticky">
         <Toolbar>
           {!isDesktop && (
@@ -131,28 +130,32 @@ export default function PlatformPage() {
 
           <Stack direction="row" spacing={1.5} alignItems="center" flex={1} minWidth={0}>
             <ScienceRoundedIcon color="inherit" />
-            <Box minWidth={0}>
-              <Typography variant="h6" fontWeight={800} color="inherit" noWrap>
-                TestPlatform
-              </Typography>
-              <Typography variant="body2" color="inherit" noWrap>
-                Dashboard de gestion de pruebas y automatizacion
-              </Typography>
-            </Box>
+            <Typography variant="h6" fontWeight={800} color="inherit" noWrap>
+              TestPlatform
+            </Typography>
           </Stack>
 
           {isSmall && (
-            <Stack spacing={0.25} alignItems="flex-end" minWidth={0}>
+            <Stack spacing={0.25} alignItems="flex-end" minWidth={0} mr={1.5}>
               {empresa?.nombre && (
                 <Typography variant="body2" fontWeight={700} color="inherit" noWrap>
                   {empresa.nombre}
                 </Typography>
               )}
-              <Typography variant="caption" color="inherit" noWrap>
-                Entorno: {environment.label}
-              </Typography>
+              {sucursal?.nombre && (
+                <Typography variant="caption" color="inherit" noWrap>
+                  {sucursal.nombre}
+                </Typography>
+              )}
             </Stack>
           )}
+
+          <Chip
+            label={environment.label}
+            color={environment.color as 'success' | 'warning' | 'error'}
+            size="small"
+            sx={{ mr: 1 }}
+          />
 
           <Tooltip title="Actualizar modulos">
             <IconButton color="inherit" onClick={loadModules}>
@@ -165,7 +168,9 @@ export default function PlatformPage() {
         </Toolbar>
       </AppBar>
 
+      {/* ── Body ── */}
       <Box display="flex" minHeight="calc(100vh - 72px)">
+        {/* Mobile drawer */}
         {!isDesktop && (
           <Drawer
             variant="temporary"
@@ -177,100 +182,137 @@ export default function PlatformPage() {
           </Drawer>
         )}
 
+        {/* Desktop sidebar */}
         {isDesktop && (
           <Box width={drawerWidth} flexShrink={0} borderRight={1} borderColor="divider" bgcolor="background.paper">
             {drawerContent}
           </Box>
         )}
 
+        {/* Main content */}
         <Box component="main" flex={1} minWidth={0} px={isDesktop ? 3 : 2} py={isDesktop ? 3 : 2}>
-          <Stack spacing={3}>
-            <Card>
-              <CardContent>
-                <Stack spacing={3}>
-                  <Stack direction={isDesktop ? 'row' : 'column'} spacing={2} justifyContent="space-between" alignItems={isDesktop ? 'center' : 'flex-start'}>
-                    <Box>
-                      <Typography variant="h4">
-                        {selected?.pageName ?? selected?.submoduleName ?? selected?.moduleName ?? 'Centro de control'}
-                      </Typography>
-                      <Typography variant="body2" color="text.secondary">
-                        {selected
-                          ? 'Gestiona pruebas, automatizaciones y navegacion del contexto activo.'
-                          : 'Selecciona un modulo desde el panel lateral para empezar.'}
-                      </Typography>
-                    </Box>
-                    <Stack direction="row" spacing={1} flexWrap="wrap" useFlexGap>
-                      <Chip label={`${metrics.moduleCount} modulos`} variant="outlined" />
-                      <Chip label={`${metrics.pageCount} paginas`} variant="outlined" />
-                      <Chip label={`${metrics.submoduleCount} submodulos`} variant="outlined" />
-                    </Stack>
-                  </Stack>
+          <Stack spacing={2}>
+            {/* ── Content header ── */}
+            <Box>
+              <Typography variant="h5">
+                {selected?.pageName ?? selected?.submoduleName ?? selected?.moduleName ?? 'Centro de control'}
+              </Typography>
 
-                  <Box>
-                    <Stack direction="row" spacing={1} flexWrap="wrap" useFlexGap>
-                      {selected && <Chip label={`Modulo: ${selected.moduleName}`} variant="outlined" />}
-                      {selected?.submoduleName && <Chip label={`Submodulo: ${selected.submoduleName}`} variant="outlined" />}
-                      {selected?.pageName && <Chip label={`Pagina: ${selected.pageName}`} color="primary" variant="outlined" />}
-                      {!selected && <Chip label="Sin seleccion activa" variant="outlined" />}
-                    </Stack>
-                    {selected?.pageUrl && (
-                      <Typography variant="body2" color="primary.main">
-                        {selected.pageUrl}
-                      </Typography>
-                    )}
+              {selected && (
+                <Breadcrumbs separator="›" sx={{ mt: 0.5 }}>
+                  {selected.moduleName && (
+                    <Typography variant="body2">{selected.moduleName}</Typography>
+                  )}
+                  {selected.submoduleName && (
+                    <Typography variant="body2">{selected.submoduleName}</Typography>
+                  )}
+                  {selected.pageName && (
+                    <Typography variant="body2" color="primary">{selected.pageName}</Typography>
+                  )}
+                </Breadcrumbs>
+              )}
+
+              {selected?.pageUrl && (
+                <Box mt={0.5}>
+                  <Link href={selected.pageUrl} target="_blank" variant="caption" color="primary" underline="hover">
+                    {selected.pageUrl}
+                    <OpenInNewRoundedIcon fontSize="inherit" sx={{ ml: 0.5, verticalAlign: 'middle' }} />
+                  </Link>
+                </Box>
+              )}
+
+              {!loading && (
+                <Typography variant="caption" color="text.secondary" display="block" mt={0.5}>
+                  {metrics.moduleCount} módulos · {metrics.pageCount} páginas · {metrics.submoduleCount} submódulos
+                </Typography>
+              )}
+            </Box>
+
+            {/* ── Loading skeleton ── */}
+            {loading && renderLoadingSkeleton()}
+
+            {/* ── Content body ── */}
+            {!loading && (
+              <>
+                {/* Empty state — no selection */}
+                {!selected && (
+                  <Box textAlign="center" py={6}>
+                    <ScienceRoundedIcon sx={{ fontSize: 56, color: 'text.disabled' }} />
+                    <Typography variant="h6" color="text.secondary" mt={1}>
+                      Selecciona un modulo
+                    </Typography>
+                    <Typography variant="body2" color="text.disabled">
+                      Usa el panel lateral para abrir un modulo o pagina.
+                    </Typography>
                   </Box>
+                )}
 
-                  {loading ? renderLoadingSkeleton() : (
-                    <>
-                      {!selected && (
-                        <Alert severity="info" variant="outlined">
-                          Usa el panel lateral para abrir un modulo o una pagina y trabajar sobre sus pruebas.
-                        </Alert>
-                      )}
+                {/* Module / submodule overview (no page selected) */}
+                {selected && !selected.pageName && (
+                  <ModuleOverview
+                    selected={selected}
+                    modules={modules}
+                    onRefresh={loadModules}
+                    onNotify={(message, severity = 'success') => setFeedback({ message, severity })}
+                  />
+                )}
 
-                      {selected && !selected.pageName && (
-                        <ModuleOverview
+                {/* Page tabs */}
+                {selected?.pageName && (
+                  <Paper variant="outlined" sx={{ borderRadius: 2, overflow: 'hidden' }}>
+                    <Box borderBottom={1} borderColor="divider">
+                      <Tabs
+                        value={activeTab}
+                        onChange={(_event, nextValue: TabValue) => setActiveTab(nextValue)}
+                        variant="scrollable"
+                        allowScrollButtonsMobile
+                      >
+                        {tabs.map((tab) => (
+                          <Tab key={tab.value} value={tab.value} label={tab.label} icon={tab.icon} iconPosition="start" />
+                        ))}
+                      </Tabs>
+                    </Box>
+
+                    <Box p={3}>
+                      {activeTab === 'API' && (
+                        <ApiTestTab
                           selected={selected}
-                          modules={modules}
-                          onRefresh={loadModules}
                           onNotify={(message, severity = 'success') => setFeedback({ message, severity })}
                         />
                       )}
-
-                      {selected?.pageName && (
-                        <Stack spacing={2}>
-                          <Tabs
-                            value={activeTab}
-                            onChange={(_event, nextValue: TabValue) => setActiveTab(nextValue)}
-                            variant="scrollable"
-                            allowScrollButtonsMobile
-                          >
-                            {tabs.map((tab) => (
-                              <Tab key={tab.value} value={tab.value} label={tab.label} icon={tab.icon} iconPosition="start" />
-                            ))}
-                          </Tabs>
-
-                          {activeTab === 'API' && <ApiTestTab selected={selected} onNotify={(message, severity = 'success') => setFeedback({ message, severity })} />}
-                          {activeTab === 'UI' && <UiTestTab selected={selected} onNotify={(message, severity = 'success') => setFeedback({ message, severity })} />}
-                          {activeTab === 'E2E' && <E2eTab selected={selected} onNotify={(message, severity = 'success') => setFeedback({ message, severity })} />}
-                        </Stack>
+                      {activeTab === 'UI' && (
+                        <UiTestTab
+                          selected={selected}
+                          onNotify={(message, severity = 'success') => setFeedback({ message, severity })}
+                        />
                       )}
-                    </>
-                  )}
-                </Stack>
-              </CardContent>
-            </Card>
+                      {activeTab === 'E2E' && (
+                        <E2eTab
+                          selected={selected}
+                          onNotify={(message, severity = 'success') => setFeedback({ message, severity })}
+                        />
+                      )}
+                    </Box>
+                  </Paper>
+                )}
+              </>
+            )}
           </Stack>
         </Box>
       </Box>
 
+      {/* ── Snackbar feedback ── */}
       <Snackbar
         open={Boolean(feedback.message)}
         autoHideDuration={3200}
         onClose={() => setFeedback((current) => ({ ...current, message: '' }))}
         anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
       >
-        <Alert onClose={() => setFeedback((current) => ({ ...current, message: '' }))} severity={feedback.severity} variant="filled">
+        <Alert
+          onClose={() => setFeedback((current) => ({ ...current, message: '' }))}
+          severity={feedback.severity}
+          variant="filled"
+        >
           {feedback.message}
         </Alert>
       </Snackbar>

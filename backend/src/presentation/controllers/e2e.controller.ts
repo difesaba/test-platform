@@ -4,6 +4,20 @@ import { resolveAutomationEntryUrl, resolveRuntimeUrl } from '../../utils/runtim
 
 const svc = new E2eService();
 
+function getSessionContext(req: Request) {
+    const sess = req.session as any;
+    return {
+        urlRaiz: sess?.urlRaiz,
+        clienteId: sess?.clienteId,
+        empresaId: sess?.empresa?.id,
+        sucursalId: sess?.sucursal?.id,
+        empresaNombre: sess?.empresa?.nombre ?? sess?.empresaNombre,
+        sucursalNombre: sess?.sucursal?.nombre,
+        entornoName: sess?.sucursal?.entorno ?? sess?.entorno?.name,
+        empNombre: sess?.empNombre,
+    };
+}
+
 export class E2eController {
 
     list = (req: Request, res: Response) => {
@@ -22,31 +36,40 @@ export class E2eController {
         }, submodule, page));
     };
 
-    remove = (req: Request, res: Response) => {
-        const { module: mod, submodule, page } = req.query as Record<string, string>;
-        if (!mod) return res.status(400).json({ error: 'Falta module' });
-        svc.delete(mod, req.params.id, submodule, page);
-        res.json({ ok: true });
-    };
-
-    startRecording = (req: Request, res: Response) => {
+    remove = async (req: Request, res: Response) => {
         const { module: mod, submodule, page } = req.query as Record<string, string>;
         if (!mod) return res.status(400).json({ error: 'Falta module' });
         try {
-            const sessionUrlRaiz = String((req.session as any)?.urlRaiz ?? '');
-            const overrideUrl = resolveAutomationEntryUrl(String(req.body?.url ?? ''), sessionUrlRaiz) || undefined;
-            svc.startRecording(mod, req.params.id, submodule, page, overrideUrl);
+            await svc.delete(mod, req.params.id, submodule, page);
             res.json({ ok: true });
         } catch (e: any) {
             res.status(500).json({ error: e.message });
         }
     };
 
-    stopRecording = (req: Request, res: Response) => {
+    startRecording = async (req: Request, res: Response) => {
         const { module: mod, submodule, page } = req.query as Record<string, string>;
         if (!mod) return res.status(400).json({ error: 'Falta module' });
-        svc.stopRecording(mod, req.params.id, submodule, page);
-        res.json({ ok: true });
+        try {
+            const sessionUrlRaiz = String((req.session as any)?.urlRaiz ?? '');
+            const overrideUrl = resolveAutomationEntryUrl(String(req.body?.url ?? ''), sessionUrlRaiz) || undefined;
+            const adproToken = (req.session as any)?.adproToken;
+            await svc.startRecording(mod, req.params.id, submodule, page, overrideUrl, adproToken, getSessionContext(req));
+            res.json({ ok: true });
+        } catch (e: any) {
+            res.status(500).json({ error: e.message });
+        }
+    };
+
+    stopRecording = async (req: Request, res: Response) => {
+        const { module: mod, submodule, page } = req.query as Record<string, string>;
+        if (!mod) return res.status(400).json({ error: 'Falta module' });
+        try {
+            await svc.stopRecording(mod, req.params.id, submodule, page);
+            res.json({ ok: true });
+        } catch (e: any) {
+            res.status(500).json({ error: e.message });
+        }
     };
 
     run = async (req: Request, res: Response) => {

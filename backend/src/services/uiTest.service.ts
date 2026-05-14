@@ -467,16 +467,54 @@ async function openTargetPage(page: Page, targetUrl: string, sessionContext?: Ad
         return;
     }
 
-    const marcoUrl = buildMarcoUrl(sessionUrlRaiz);
-    console.log('[UI Playwright] Opening Marco entrypoint', {
-        marcoUrl,
-        targetUrl,
-        hasReactRoute: isReactAppRoute(targetUrl),
-    });
-    await page.goto(marcoUrl, { waitUntil: 'domcontentloaded', timeout: 30000 });
+    // Ir directo a Seleccion_iv.aspx — accesible sin login previo (no redirige a Login_iv.aspx)
+    // Igual que playwrightLogin en playwright-auth.service.ts. Evita rellenar credenciales.
+    const seleccionUrl = buildSeleccionUrl(sessionUrlRaiz);
+    console.log('[UI Playwright] Navegando directo a Seleccion_iv.aspx', { seleccionUrl, targetUrl });
+    await page.goto(seleccionUrl, { waitUntil: 'domcontentloaded', timeout: 30000 });
     await page.waitForLoadState('networkidle').catch(() => undefined);
-    await applyMarcoSelection(page, sessionContext);
-    await ensureMarcoSession(page, sessionContext);
+
+    // Fallback: si por alguna razón redirigió a Login, intentar login web
+    if (/Login_iv\.aspx/i.test(page.url())) {
+        console.log('[UI Playwright] Redirigido a Login inesperadamente, fallback tryWebLogin');
+        await tryWebLogin(page);
+        await page.waitForLoadState('networkidle').catch(() => undefined);
+    }
+
+    // createContext ya inyectó empresaId/sucursalId en localStorage.
+    // Seleccion_iv.aspx puede leerlos y pre-seleccionar los dropdowns.
+    // Intentar click directo en Ingresar — si ya está todo seleccionado, redirige de inmediato.
+    const ingresarBtn = page.locator([
+        'button:has-text("Ingresar")',
+        'button:has-text("Continuar")',
+        'input[value="Ingresar"]',
+        'input[value="Continuar"]',
+        'input[type="submit"]',
+    ].join(', ')).first();
+
+    let sessionEstablished = false;
+
+    if (await ingresarBtn.count()) {
+        await ingresarBtn.click().catch(() => undefined);
+        await page.waitForURL(
+            (url) => !/Seleccion_iv\.aspx/i.test(url.toString()),
+            { timeout: 6000 }
+        ).then(() => { sessionEstablished = true; }).catch(() => undefined);
+        console.log('[UI Playwright] Click directo en Ingresar', { sessionEstablished });
+    }
+
+    // Fallback: si el click directo no funcionó, usar applyMarcoSelection completo
+    if (!sessionEstablished) {
+        console.log('[UI Playwright] Seleccion no redirigió, usando applyMarcoSelection completo');
+        await applyMarcoSelection(page, sessionContext);
+        await page.waitForURL(
+            (url) => !/Seleccion_iv\.aspx/i.test(url.toString()),
+            { timeout: 15000 }
+        ).catch(() => undefined);
+    }
+
+    await page.waitForLoadState('networkidle').catch(() => undefined);
+    console.log('[UI Playwright] Sesion establecida', { currentUrl: page.url() });
 
     if (!isReactAppRoute(targetUrl)) {
         console.log('[UI Playwright] Navigating to target URL after Marco auth', { targetUrl });
@@ -485,87 +523,100 @@ async function openTargetPage(page: Page, targetUrl: string, sessionContext?: Ad
         return;
     }
 
-    let iframeSnapshot = await page.evaluate(() => (
-        Array.from(document.querySelectorAll('iframe')).map((item, index) => ({
-            index,
-            id: item.id || '',
-            name: item.getAttribute('name') || '',
-            src: item.getAttribute('src') || '',
-            width: item.clientWidth,
-            height: item.clientHeight,
-        }))
-    ));
-    console.log('[UI Playwright] Iframes detected in Marco', iframeSnapshot);
+    // REACT ROUTE: Marco controla pagina1 — simular click en menú para que Marco navegue
+    // el iframe (frame.goto() directo es ignorado/reseteado por el JS de Marco)
 
-    if (iframeSnapshot.length === 0) {
-        console.log('[UI Playwright] No iframe found immediately, esperando carga dinamica...', { targetUrl });
-        await page.waitForSelector('iframe', { timeout: 20000 }).catch(() => undefined);
-        await page.waitForLoadState('networkidle').catch(() => undefined);
-        iframeSnapshot = await page.evaluate(() => (
-            Array.from(document.querySelectorAll('iframe')).map((item, index) => ({
-                index,
-                id: item.id || '',
-                name: item.getAttribute('name') || '',
-                src: item.getAttribute('src') || '',
-                width: item.clientWidth,
-                height: item.clientHeight,
-            }))
-        ));
-        console.log('[UI Playwright] Iframes tras espera dinamica', iframeSnapshot);
-    }
-
-    if (iframeSnapshot.length === 0) {
-        console.log('[UI Playwright] Sin iframe tras espera, manteniendo pagina actual', { targetUrl });
+    // 1. Esperar que Marco renderice al menos un iframe
+    const iframeExists = await page.waitForSelector('iframe', { timeout: 20000 }).catch(() => null);
+    if (!iframeExists) {
+        console.log('[UI Playwright] No iframe en Marco, no se puede navegar ruta React', { targetUrl });
         return;
     }
 
-    const preferredFrame = page.frames().find((frame) => (
-        frame !== page.mainFrame() && /\/ADPRO\/Views\/reactapp/i.test(frame.url())
-    ));
+    // 2. Loguear TODOS los elementos clicables en Marco para diagnóstico
+    const hashRoute = targetUrl.includes('#') ? (targetUrl.split('#')[1] ?? '') : '';
+    const routeSegments = hashRoute.split('/').filter(Boolean);
 
-    if (preferredFrame) {
-        console.log('[UI Playwright] Using existing reactapp iframe without overriding route', { currentFrameUrl: preferredFrame.url(), targetUrl });
-        await preferredFrame.waitForLoadState('networkidle').catch(() => undefined);
-        return;
+    const marcoElements = await page.evaluate((segs: string[]) => {
+        const all = Array.from(document.querySelectorAll('a, button, li, span, div'));
+        const results: Array<{ tag: string; text: string; href: string; id: string; classes: string }> = [];
+        for (const el of all) {
+            const text = (el.textContent ?? '').trim().replace(/\s+/g, ' ').slice(0, 80);
+            const href = el.getAttribute('href') ?? el.getAttribute('data-href') ?? el.getAttribute('data-url') ?? '';
+            const id = el.id ?? '';
+            const classes = (el.className ?? '').toString().slice(0, 60);
+            // Solo incluir si tiene texto o href que menciona algún segmento
+            const relevant = segs.some((s) =>
+                text.toLowerCase().includes(s.toLowerCase()) ||
+                href.toLowerCase().includes(s.toLowerCase())
+            );
+            if (relevant) {
+                results.push({ tag: el.tagName, text, href, id, classes });
+            }
+        }
+        return results;
+    }, routeSegments);
+    console.log('[UI Playwright] Marco elements matching route', { routeSegments, count: marcoElements.length, elements: marcoElements.slice(0, 20) });
+
+    // 3. Encontrar el locator del elemento de menú (una sola vez)
+    let navLocator: import('playwright').Locator | null = null;
+
+    for (const candidate of [`#${hashRoute}`, hashRoute, ...routeSegments]) {
+        const loc = page.locator(`a[href="${candidate}"], a[href*="${candidate}"]`);
+        if (await loc.count()) { navLocator = loc.first(); break; }
+    }
+    if (!navLocator) {
+        for (const seg of routeSegments.slice().reverse()) {
+            const loc = page.locator(`[data-route*="${seg}"], [data-url*="${seg}"], [data-path*="${seg}"]`);
+            if (await loc.count()) { navLocator = loc.first(); break; }
+        }
     }
 
-    const largestIframeIndex = iframeSnapshot
-        .slice()
-        .sort((left, right) => (right.width * right.height) - (left.width * left.height))[0]?.index;
+    console.log('[UI Playwright] Nav locator found', { found: Boolean(navLocator), hashRoute, routeSegments });
 
-    const iframeId = iframeSnapshot[
-        iframeSnapshot.slice().sort((a, b) => (b.width * b.height) - (a.width * a.height))[0]?.index ?? 0
-    ]?.id || '';
-
-    const targetFrame = page.frames().find((f) => f !== page.mainFrame())
-        ?? undefined;
-
-    const frameUrl = targetFrame?.url() ?? '';
-    console.log('[UI Playwright] Target iframe', { iframeId, frameUrl, targetUrl });
-
-    if (!frameUrl || frameUrl === 'about:blank') {
-        console.log('[UI Playwright] Iframe vacio — seteando src desde DOM del padre', { iframeId, targetUrl });
-        // Setear src desde el frame padre es más confiable que frame.goto() para iframes cross-origin
-        await page.evaluate(({ id, url }: { id: string; url: string }) => {
-            const el = (id ? document.getElementById(id) : document.querySelector('iframe')) as HTMLIFrameElement | null;
-            if (el) el.src = url;
-        }, { id: iframeId, url: targetUrl });
-
-        // Esperar a que el frame empiece a cargar
-        await page.waitForFunction(
-            ({ id }: { id: string }) => {
-                const el = (id ? document.getElementById(id) : document.querySelector('iframe')) as HTMLIFrameElement | null;
-                return el ? (el.src !== '' && !el.src.includes('about:blank')) : false;
-            },
-            { id: iframeId },
-            { timeout: 5000 },
-        ).catch(() => undefined);
-    }
-
-    if (targetFrame) {
-        await targetFrame.waitForLoadState('networkidle').catch(() => undefined);
+    if (navLocator) {
+        // RETRY LOOP: Marco necesita que React hidrate antes de responder a clicks.
+        // Hacer click repetidamente hasta que iframe.src cambie (señal de éxito).
+        let iframeNavigated = false;
+        for (let attempt = 0; attempt < 10 && !iframeNavigated; attempt++) {
+            await navLocator.click({ force: true }).catch(() => undefined);
+            await page.waitForFunction(() => {
+                const iframe = document.querySelector('#pagina1, iframe') as HTMLIFrameElement | null;
+                return Boolean(iframe?.src && !iframe.src.includes('about:blank') && iframe.src !== '');
+            }, { timeout: 1500 }).then(() => { iframeNavigated = true; }).catch(() => undefined);
+            if (!iframeNavigated) {
+                console.log('[UI Playwright] Marco no respondió aún, reintentando', { attempt });
+                await page.waitForTimeout(1000);
+            }
+        }
+        if (iframeNavigated) {
+            console.log('[UI Playwright] Marco navegó el iframe tras click');
+        } else {
+            console.log('[UI Playwright] Marco no respondió después de 10 intentos');
+        }
     } else {
-        await page.waitForLoadState('networkidle').catch(() => undefined);
+        console.log('[UI Playwright] No se encontró nav locator, fallback frame.goto()');
+        const iframeHandle = await page.locator('#pagina1, iframe').first().elementHandle({ timeout: 5000 }).catch(() => null);
+        const iframeFrame = await iframeHandle?.contentFrame();
+        if (iframeFrame) {
+            await iframeFrame.goto(targetUrl, { waitUntil: 'domcontentloaded', timeout: 30000 }).catch((e: any) => {
+                console.log('[UI Playwright] frame.goto() fallback error', { error: e?.message });
+            });
+        }
+    }
+
+    // 4. Esperar que Marco setee el src del iframe (señal de que la navegación tuvo efecto)
+    await page.waitForFunction(() => {
+        const iframe = document.querySelector('#pagina1, iframe') as HTMLIFrameElement | null;
+        return Boolean(iframe?.src && !iframe.src.includes('about:blank') && iframe.src !== '');
+    }, { timeout: 20000 }).catch(() => undefined);
+
+    // 5. Esperar networkidle del iframe
+    const iframeHandle = await page.locator('#pagina1, iframe').first().elementHandle({ timeout: 5000 }).catch(() => null);
+    const iframeFrame = await iframeHandle?.contentFrame();
+    if (iframeFrame) {
+        await iframeFrame.waitForLoadState('networkidle', { timeout: 30000 }).catch(() => undefined);
+        console.log('[UI Playwright] React route cargada en Marco iframe', { frameUrl: iframeFrame.url() });
     }
 }
 
