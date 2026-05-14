@@ -79,7 +79,7 @@ export class E2eController {
             const sessionUrlRaiz = String((req.session as any)?.urlRaiz ?? '');
             const overrideUrl = resolveAutomationEntryUrl(String(req.body?.url ?? ''), sessionUrlRaiz) || undefined;
             const ctx = getSessionContext(req);
-            const result = await svc.run(mod, req.params.id, submodule, page, overrideUrl, ctx.empresaNombre, ctx.sucursalNombre);
+            const result = await svc.run(mod, req.params.id, submodule, page, overrideUrl, ctx.empresaNombre, ctx.sucursalNombre, ctx);
             res.json(result);
         } catch (e: any) {
             res.status(500).json({ error: e.message });

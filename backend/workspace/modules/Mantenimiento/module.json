@@ -1,0 +1,14 @@
+{
+  "name": "Mantenimiento",
+  "folderPath": "C:\\testPlatform\\backend\\workspace\\modules\\Mantenimiento",
+  "createdAt": "2026-05-14T21:09:36.917Z",
+  "submodules": [],
+  "pages": [
+    {
+      "name": "Encuestas de configuracion",
+      "url": "https://desarrollo.sincoerp.com/SincoOk/V3/ADPRO/Views/reactapp/#/mantenimiento/encuestasconfiguracion",
+      "folderPath": "C:\\testPlatform\\backend\\workspace\\modules\\Mantenimiento\\pages\\Encuestas de configuracion",
+      "createdAt": "2026-05-14T21:22:58.453Z"
+    }
+  ]
+}

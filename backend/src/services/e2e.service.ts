@@ -83,8 +83,8 @@ function buildSeleccionUrl(urlRaiz?: string): string {
     return new URL('Marco/Seleccion_iv.aspx', normalizedBase).toString();
 }
 
-// Fills login credentials when redirected to Login_iv.aspx.
-// Searches all frames (main + iframes) because SINCO Login page may use frames.
+// Fills login credentials and clicks "Ingresar" — no Enter key, so the recorder
+// captures: fill usuario → fill contraseña → click Ingresar (clean, replayable spec).
 async function tryWebLogin(page: Page): Promise<void> {
     if (!/Login_iv\.aspx/i.test(page.url())) return;
     console.log('[E2E Playwright] Login page detected, filling credentials');
@@ -94,7 +94,7 @@ async function tryWebLogin(page: Page): Promise<void> {
     for (const [idx, root] of roots.entries()) {
         const usernameField = root.locator('input[type="text"], input[type="email"]').first();
         const passwordField = root.locator('input[type="password"]').first();
-        const loginButton = root.locator([
+        const loginButton   = root.locator([
             'button:has-text("Iniciar sesión")',
             'button:has-text("Ingresar")',
             'input[value="Iniciar sesión"]',
@@ -102,37 +102,23 @@ async function tryWebLogin(page: Page): Promise<void> {
             'input[type="submit"]',
         ].join(', ')).first();
 
-        if (!await usernameField.count() || !await passwordField.count() || !await loginButton.count()) {
-            continue;
-        }
+        if (!await usernameField.count() || !await passwordField.count() || !await loginButton.count()) continue;
 
         try {
             await usernameField.waitFor({ state: 'visible', timeout: 8000 });
             console.log('[E2E Playwright] Login form found in frame', { idx, frameUrl: root.url() });
 
-            await usernameField.click();
             await usernameField.fill(envs.NOM_USUARIO);
-            await passwordField.click();
             await passwordField.fill(envs.CLAVE_USUARIO);
 
-            // Press Enter on password field — most reliable way to submit any login form
-            await passwordField.press('Enter');
+            // Wait 1 second then click the button — no Enter, produces a clean recorded spec.
+            await page.waitForTimeout(1000);
+            await loginButton.click();
 
-            // Wait for redirect away from login; if Enter didn't work, fall back to button click
-            const navigated = await page.waitForURL(
+            await page.waitForURL(
                 (url) => !/Login_iv\.aspx/i.test(url.toString()),
-                { timeout: 5000 }
-            ).then(() => true).catch(() => false);
-
-            if (!navigated) {
-                console.log('[E2E Playwright] Enter did not submit form, trying button click');
-                await loginButton.click({ force: true }).catch(() => undefined);
-                await page.waitForURL(
-                    (url) => !/Login_iv\.aspx/i.test(url.toString()),
-                    { timeout: 15000 }
-                );
-            }
-
+                { timeout: 20000 }
+            );
             await page.waitForLoadState('networkidle').catch(() => undefined);
             console.log('[E2E Playwright] Login succeeded', { currentUrl: page.url() });
             return;
@@ -144,70 +130,275 @@ async function tryWebLogin(page: Page): Promise<void> {
     console.log('[E2E Playwright] Could not complete login — no suitable form found in any frame');
 }
 
-// Establishes an ADPRO ASP.NET session by going through Seleccion_iv.aspx.
-// Must be called BEFORE _enableRecorder so the login navigation is not recorded.
-async function establishAdproSession(page: Page, sessionContext: AdproSessionContext): Promise<void> {
-    const seleccionUrl = buildSeleccionUrl(sessionContext.urlRaiz);
-    if (!seleccionUrl) return;
+// Tries to select empresa/sucursal in a single frame. Returns true if navigation away
+// from Seleccion_iv.aspx succeeded.
+async function trySelectInFrame(frame: Frame, page: Page, sessionContext: AdproSessionContext): Promise<boolean> {
+    // Find empresa select: first by ID pattern, then by scanning option texts
+    const empresaInfo = await frame.evaluate(({ nombre, id }: { nombre: string; id: number }) => {
+        const selects = Array.from(document.querySelectorAll('select'));
+        if (!selects.length) return null;
+        // Prefer a select whose id/name contains "empresa" (case-insensitive)
+        const byId = selects.find((s) =>
+            /empresa/i.test(s.id) || /empresa/i.test(s.name)
+        );
+        // Otherwise find one that has an option matching the empresa name or id
+        const byText = selects.find((s) =>
+            Array.from(s.options).some(
+                (o) => o.text.trim().toLowerCase().includes(nombre.toLowerCase()) ||
+                       o.value === String(id)
+            )
+        );
+        const sel = byId ?? byText ?? null;
+        if (!sel) return null;
+        // Resolve which value to use: prefer matching by id number, then by name
+        const optById   = Array.from(sel.options).find((o) => o.value === String(id));
+        const optByName = Array.from(sel.options).find((o) =>
+            o.text.trim().toLowerCase().includes(nombre.toLowerCase())
+        );
+        const chosen = optById ?? optByName ?? null;
+        return { selector: sel.id ? `#${sel.id}` : `select[name="${sel.name}"]`, value: chosen?.value ?? null };
+    }, { nombre: sessionContext.empresaNombre ?? '', id: sessionContext.empresaId ?? -1 });
 
-    console.log('[E2E Playwright] Establishing session via Seleccion_iv.aspx', { seleccionUrl });
-    await page.goto(seleccionUrl, { waitUntil: 'domcontentloaded', timeout: 30000 });
+    if (!empresaInfo?.value) return false;
+
+    console.log('[E2E Playwright] Selecting empresa in frame', { frameUrl: frame.url(), empresaInfo });
+    await frame.locator(empresaInfo.selector).selectOption({ value: empresaInfo.value }).catch(() => undefined);
+    // Wait for any AJAX / ASP.NET postback that repopulates the sucursal dropdown
     await page.waitForLoadState('networkidle').catch(() => undefined);
 
-    // If redirected to Login_iv.aspx, fill credentials first
-    if (/Login_iv\.aspx/i.test(page.url())) {
-        await tryWebLogin(page);
-        await page.waitForLoadState('networkidle').catch(() => undefined);
-        // After login we should be on Seleccion_iv.aspx — fall through to click Ingresar
+    // Find sucursal select with the same strategy
+    const sucursalInfo = await frame.evaluate(({ nombre, id }: { nombre: string; id: number }) => {
+        const selects = Array.from(document.querySelectorAll('select'));
+        if (selects.length < 2) return null;
+        const byId = selects.find((s) =>
+            /sucursal/i.test(s.id) || /sucursal/i.test(s.name)
+        );
+        const byText = selects.find((s) =>
+            Array.from(s.options).some(
+                (o) => o.text.trim().toLowerCase().includes(nombre.toLowerCase()) ||
+                       o.value === String(id)
+            )
+        );
+        const sel = byId ?? byText ?? null;
+        if (!sel) return null;
+        const optById   = Array.from(sel.options).find((o) => o.value === String(id));
+        const optByName = Array.from(sel.options).find((o) =>
+            o.text.trim().toLowerCase().includes(nombre.toLowerCase())
+        );
+        const chosen = optById ?? optByName ?? null;
+        return { selector: sel.id ? `#${sel.id}` : `select[name="${sel.name}"]`, value: chosen?.value ?? null };
+    }, { nombre: sessionContext.sucursalNombre ?? '', id: sessionContext.sucursalId ?? -1 });
+
+    if (sucursalInfo?.value) {
+        console.log('[E2E Playwright] Selecting sucursal in frame', { frameUrl: frame.url(), sucursalInfo });
+        await frame.locator(sucursalInfo.selector).selectOption({ value: sucursalInfo.value }).catch(() => undefined);
     }
 
-    // addInitScript already put empresaId/sucursalId in localStorage.
-    // Seleccion_iv.aspx reads them and pre-selects the dropdowns — just click Ingresar.
-    const ingresarBtn = page.locator([
+    const btn = frame.locator([
         'button:has-text("Ingresar")',
         'button:has-text("Continuar")',
         'input[value="Ingresar"]',
         'input[value="Continuar"]',
         'input[type="submit"]',
     ].join(', ')).first();
+    if (await btn.count()) await btn.click().catch(() => undefined);
 
-    let sessionEstablished = false;
-    if (await ingresarBtn.count()) {
-        await ingresarBtn.click().catch(() => undefined);
-        await page.waitForURL(
-            (url) => !/Seleccion_iv\.aspx/i.test(url.toString()),
-            { timeout: 6000 }
-        ).then(() => { sessionEstablished = true; }).catch(() => undefined);
-        console.log('[E2E Playwright] Direct Ingresar click', { sessionEstablished });
+    return page.waitForURL(
+        (url) => !/Seleccion_iv\.aspx/i.test(url.toString()),
+        { timeout: 10000 }
+    ).then(() => true).catch(() => false);
+}
+
+async function injectBanner(page: Page): Promise<void> {
+    const frames = [page.mainFrame(), ...page.frames().filter((f) => f !== page.mainFrame())];
+    for (const frame of frames) {
+        await frame.evaluate(() => {
+            if (document.getElementById('_tp_notice') || !document.body) return;
+            const d = document.createElement('div');
+            d.id = '_tp_notice';
+            d.style.cssText = [
+                'position:fixed', 'top:0', 'left:0', 'right:0',
+                'background:#c62828', 'color:#fff',
+                'padding:14px 20px', 'z-index:2147483647',
+                'font-size:15px', 'font-weight:700', 'text-align:center',
+                'box-shadow:0 3px 10px rgba(0,0,0,.4)', 'letter-spacing:.3px',
+            ].join(';');
+            d.textContent = '⚠  TestPlatform: seleccione empresa y sucursal, luego haga clic en Ingresar para continuar la grabación';
+            document.body.prepend(d);
+        }).catch(() => undefined);
     }
+}
 
-    // Fallback: select empresa/sucursal manually and retry
-    if (!sessionEstablished) {
-        console.log('[E2E Playwright] Direct click failed, selecting empresa/sucursal manually');
-        try {
-            const empresaSelect = page.locator('select[id*="empresa" i], select[name*="empresa" i]').first();
-            if (await empresaSelect.count() && typeof sessionContext.empresaId === 'number') {
-                await empresaSelect.selectOption({ value: String(sessionContext.empresaId) }).catch(() => undefined);
-                await page.waitForSelector('select[id*="sucursal" i], select[name*="sucursal" i]', { timeout: 5000 }).catch(() => undefined);
-            }
-            const sucursalSelect = page.locator('select[id*="sucursal" i], select[name*="sucursal" i]').first();
-            if (await sucursalSelect.count() && typeof sessionContext.sucursalId === 'number') {
-                await sucursalSelect.selectOption({ value: String(sessionContext.sucursalId) }).catch(() => undefined);
-            }
-            const btn = page.locator('button:has-text("Ingresar"), input[value="Ingresar"], input[type="submit"]').first();
-            if (await btn.count()) await btn.click().catch(() => undefined);
-            await page.waitForURL(
-                (url) => !/Seleccion_iv\.aspx/i.test(url.toString()),
-                { timeout: 10000 }
-            ).catch(() => undefined);
-        } catch { /* ignore */ }
-    }
+// Establishes a SINCO session before recording starts:
+//   1. Navigates to Login_iv.aspx, fills credentials, waits 1 s, clicks "Ingresar"
+//   2. On Seleccion.aspx waits 1 s for data to auto-fill, clicks "Ingresar"
+// Using click (never Enter) keeps the recorded spec clean and replayable.
+async function establishAdproSession(page: Page, sessionContext: AdproSessionContext): Promise<void> {
+    if (!sessionContext.urlRaiz) return;
 
+    const loginUrl = `${sessionContext.urlRaiz}/Marco/Login_iv.aspx`;
+    console.log('[E2E Playwright] Navigating to SINCO login', { loginUrl });
+    await page.goto(loginUrl, { waitUntil: 'domcontentloaded', timeout: 30000 }).catch(() => undefined);
     await page.waitForLoadState('networkidle').catch(() => undefined);
+
+    // ── Step 1: Login ──────────────────────────────────────────────────────────
+    if (/Login_iv\.aspx/i.test(page.url())) {
+        await tryWebLogin(page);
+        await page.waitForLoadState('networkidle').catch(() => undefined);
+    }
+
+    // ── Step 2: Seleccion.aspx (empresa/sucursal auto-fills, then click Ingresar) ─
+    const isSeleccion = (url: string) => /Seleccion(_iv)?\.aspx/i.test(url);
+
+    if (isSeleccion(page.url())) {
+        console.log('[E2E Playwright] Seleccion page — waiting 1 s for data to auto-fill');
+        await page.waitForTimeout(1000);
+
+        // Search all frames for the Ingresar button (ASP.NET frameset)
+        const frames = [page.mainFrame(), ...page.frames().filter((f) => f !== page.mainFrame())];
+        let clicked = false;
+        for (const frame of frames) {
+            if (clicked) break;
+            const btn = frame.locator([
+                'button:has-text("Ingresar")',
+                'button:has-text("Continuar")',
+                'input[value="Ingresar"]',
+                'input[value="Continuar"]',
+                'input[type="submit"]',
+            ].join(', ')).first();
+            if (await btn.count()) {
+                await btn.click();
+                clicked = true;
+            }
+        }
+
+        await page.waitForURL((url) => !isSeleccion(url.toString()), { timeout: 20000 }).catch(() => undefined);
+        await page.waitForLoadState('networkidle').catch(() => undefined);
+    }
+
     console.log('[E2E Playwright] Session established', { currentUrl: page.url() });
 }
 
 export class E2eService {
+    // Removes redundant actions and fixes known recorder quirks:
+    //  - click() on same locator immediately after press('Enter') on it
+    //  - .locator('#recttextomodulo') inside a getByTitle chain clicks an SVG rect
+    //    instead of the module card — strip it so we click the title element itself
+    private cleanupSpec(content: string): string {
+        const actionRe = /^\s*await\s+(.+)\.(click|fill|selectOption|press|check|uncheck|dblclick|goto)\s*\(/;
+        const lines = content.split('\n');
+        const result: string[] = [];
+        let lastPressLocator: string | null = null;
+
+        for (let line of lines) {
+            // Fix: remove the inner #recttextomodulo locator so we click the parent element
+            line = line.replace(/\.locator\(['"]#recttextomodulo['"]\)/g, '');
+
+            const m = line.match(actionRe);
+            if (m) {
+                const [, locator, method] = m;
+                if (method === 'press' && line.includes("'Enter'")) {
+                    lastPressLocator = locator.trim();
+                    result.push(line);
+                    continue;
+                }
+                if (lastPressLocator && method === 'click' && locator.trim() === lastPressLocator) {
+                    lastPressLocator = null;
+                    continue; // drop the redundant click after Enter
+                }
+                lastPressLocator = null;
+            }
+            result.push(line);
+        }
+        return result.join('\n');
+    }
+
+    // Strips auth action lines from the recorded spec (goto Login/Seleccion, fill
+    // credentials, click Ingresar on auth pages) and prepends a clean auth preamble
+    // that uses the same flow as recording: fill → wait 1 s → click Ingresar (no Enter).
+    // Lines before the first "main app" interaction (contentFrame / getByTitle) are
+    // considered auth and are removed.
+    private buildRunSpec(specContent: string, ctx: AdproSessionContext): string {
+        if (!ctx.urlRaiz) return specContent;
+
+        const nomUsuario   = JSON.stringify(envs.NOM_USUARIO);
+        const claveUsuario = JSON.stringify(envs.CLAVE_USUARIO);
+        const loginUrl     = JSON.stringify(`${ctx.urlRaiz}/Marco/Login_iv.aspx`);
+
+        // Helper that searches all frames for a button by any of the given texts.
+        // This mirrors tryWebLogin() — handles iframes and both button label variants.
+        const preamble = [
+            `  // ── Auth preamble (TestPlatform auto-login) ──────────────────────────────`,
+            `  const __allFrames = () => [page.mainFrame(), ...page.frames().filter(f => f !== page.mainFrame())];`,
+            `  const __clickBtn = async (texts) => {`,
+            `    const sel = texts.flatMap(t => [\`button:has-text("\${t}")\`, \`input[value="\${t}"]\`]).join(', ') + ', input[type="submit"]';`,
+            `    for (const fr of __allFrames()) { const b = fr.locator(sel).first(); if (await b.count()) { await b.click(); return; } }`,
+            `  };`,
+            `  await page.goto(${loginUrl}, { waitUntil: 'domcontentloaded', timeout: 30000 });`,
+            `  await page.waitForLoadState('networkidle').catch(() => {});`,
+            `  if (/Login_iv\\.aspx/i.test(page.url())) {`,
+            `    for (const fr of __allFrames()) {`,
+            `      const usr = fr.locator('input[type="text"], input[type="email"]').first();`,
+            `      const pwd = fr.locator('input[type="password"]').first();`,
+            `      if (await usr.count() && await pwd.count()) {`,
+            `        await usr.fill(${nomUsuario});`,
+            `        await pwd.fill(${claveUsuario});`,
+            `        await page.waitForTimeout(1000);`,
+            `        await __clickBtn(['Ingresar', 'Iniciar sesión']);`,
+            `        break;`,
+            `      }`,
+            `    }`,
+            `    await page.waitForURL(url => !/Login_iv\\.aspx/i.test(url.toString()), { timeout: 20000 }).catch(() => {});`,
+            `    await page.waitForLoadState('networkidle').catch(() => {});`,
+            `  }`,
+            `  if (/Seleccion(_iv)?\\.aspx/i.test(page.url())) {`,
+            `    await page.waitForTimeout(1000);`,
+            `    await __clickBtn(['Ingresar', 'Continuar']);`,
+            `    await page.waitForURL(url => !/Seleccion/i.test(url.toString()), { timeout: 20000 }).catch(() => {});`,
+            `    await page.waitForLoadState('networkidle').catch(() => {});`,
+            `  }`,
+        ].join('\n');
+
+        // Detect the first "main app" action line: contentFrame() or getByTitle(
+        const actionRe   = /^\s*await .+\.(click|fill|selectOption|check|uncheck|dblclick|goto|press)\s*\(/;
+        const mainAppRe  = /contentFrame\(\)|getByTitle\s*\(/;
+        const testOpenRe = /test\s*\(.*async.*\{/;
+
+        const lines = specContent.split('\n');
+        const result: string[] = [];
+        let inTestBody    = false;
+        let mainAppFound  = false;
+
+        for (const line of lines) {
+            if (!inTestBody) {
+                result.push(line);
+                if (testOpenRe.test(line)) {
+                    inTestBody = true;
+                    result.push(preamble); // inject preamble right after test opens
+                }
+                continue;
+            }
+
+            // Inside test body — skip auth action lines until the first main-app line
+            if (!mainAppFound) {
+                if (actionRe.test(line) && mainAppRe.test(line)) {
+                    mainAppFound = true;
+                    result.push(line); // keep this and everything after
+                } else if (actionRe.test(line)) {
+                    continue; // drop auth action line
+                } else {
+                    result.push(line); // keep non-action lines (blank, const, etc.)
+                }
+            } else {
+                result.push(line);
+            }
+        }
+
+        // Fallback: if no main-app line was found, return original (don't strip anything)
+        if (!mainAppFound) return specContent;
+        return result.join('\n');
+    }
+
     private buildDocSpec(specContent: string, screenshotsDir: string): string {
         const fwdDir = screenshotsDir.replace(/\\/g, '/');
         // goto included so the first page load is captured too
@@ -221,7 +412,7 @@ export class E2eService {
             if (!helperInjected && actionRe.test(line)) {
                 const indent = line.match(/^(\s*)/)?.[1] ?? '  ';
                 result.push(
-                    `${indent}const __snap = async (p: string) => { try { await page.waitForLoadState('domcontentloaded', { timeout: 1000 }).catch(() => {}); if (await page.locator('#pagina1').count()) { await page.locator('#pagina1').screenshot({ path: p, timeout: 500 }); } else { await page.screenshot({ path: p, timeout: 500 }); } } catch {} };`
+                    `${indent}const __snap = async (p: string) => { try { await page.waitForTimeout(400); await page.waitForLoadState('networkidle', { timeout: 2500 }).catch(() => {}); if (await page.locator('#pagina1').count()) { await page.locator('#pagina1').screenshot({ path: p, timeout: 3000 }); } else { await page.screenshot({ path: p, timeout: 3000 }); } } catch {} };`
                 );
                 helperInjected = true;
             }
@@ -320,7 +511,7 @@ export class E2eService {
         </body></html>`;
     }
 
-    private async generatePDF(mod: string, id: string, sub?: string, page?: string): Promise<void> {
+    private async generatePDF(mod: string, id: string, sub?: string, page?: string, processedSpec?: string): Promise<void> {
         const file = recordingsPath(mod, sub, page);
         const recs = read(file);
         const rec  = recs.find(r => r.id === id);
@@ -330,7 +521,9 @@ export class E2eService {
         const screenshotsDir = path.join(specDir, 'screenshots');
         const pdfPath      = path.join(specDir, `doc-${id}.pdf`);
 
-        const steps = this.parseSpecSteps(fs.readFileSync(rec.specFile, 'utf-8'));
+        // Use processedSpec when available so step numbers match the screenshots
+        // generated by buildDocSpec (which also ran over the processed spec).
+        const steps = this.parseSpecSteps(processedSpec ?? fs.readFileSync(rec.specFile, 'utf-8'));
         const html  = this.buildPdfHtml(rec, steps, screenshotsDir, mod, page);
 
         const browser = await chromium.launch({ headless: true });
@@ -519,17 +712,21 @@ export class E2eService {
         // Create page — recorder attaches immediately since it was enabled on the context first.
         const recPage = await context.newPage();
 
-        if (sessionContext?.urlRaiz && !isLocalhostUrl(targetUrl)) {
-            // Navigate through Seleccion → (Login if redirected, fills credentials) → Default_iv.aspx.
-            // Recorder captures all of these steps so the spec can replay the full auth flow.
-            await establishAdproSession(recPage, sessionContext);
-        } else {
-            await recPage.goto(targetUrl, { waitUntil: 'domcontentloaded', timeout: 30000 }).catch(() => undefined);
-        }
-
+        // Mark as recording BEFORE navigation so the HTTP response is sent immediately.
+        // Navigation (including manual SINCO empresa/sucursal selection) runs in background.
         activeProcs.set(id, browser);
         rec.status = 'recording';
         write(file, recs);
+
+        if (sessionContext?.urlRaiz && !isLocalhostUrl(targetUrl)) {
+            // Fire-and-forget: establishes session (may require user to select empresa/sucursal
+            // manually in the opened browser — the recorder captures those actions too).
+            establishAdproSession(recPage, sessionContext).catch((e) =>
+                console.error('[E2E Playwright] Session establishment error:', e)
+            );
+        } else {
+            recPage.goto(targetUrl, { waitUntil: 'domcontentloaded', timeout: 30000 }).catch(() => undefined);
+        }
 
         browser.on('disconnected', () => {
             console.log('[E2E Playwright] Browser disconnected', { id });
@@ -566,7 +763,7 @@ export class E2eService {
         }
     }
 
-    async run(mod: string, id: string, sub?: string, page?: string, overrideUrl?: string, empresaNombre?: string, sucursalNombre?: string): Promise<E2eResult> {
+    async run(mod: string, id: string, sub?: string, page?: string, overrideUrl?: string, empresaNombre?: string, sucursalNombre?: string, sessionContext?: AdproSessionContext): Promise<E2eResult> {
         const file = recordingsPath(mod, sub, page);
         const recs = read(file);
         const rec  = recs.find(r => r.id === id);
@@ -604,7 +801,11 @@ export class E2eService {
             .forEach(f => { try { fs.unlinkSync(path.join(screenshotsDir, f)); } catch {} });
         try { const p = path.join(specDir, `doc-${id}.pdf`); if (fs.existsSync(p)) fs.unlinkSync(p); } catch {}
 
-        const docContent = this.buildDocSpec(fs.readFileSync(rec.specFile, 'utf-8'), screenshotsDir);
+        let specSrc = this.cleanupSpec(fs.readFileSync(rec.specFile, 'utf-8'));
+        if (sessionContext?.urlRaiz) {
+            specSrc = this.buildRunSpec(specSrc, sessionContext);
+        }
+        const docContent = this.buildDocSpec(specSrc, screenshotsDir);
         const docFile    = path.join(specDir, `${id}-doc.spec.ts`);
         fs.writeFileSync(docFile, docContent, 'utf-8');
 
@@ -643,8 +844,8 @@ export class E2eService {
         rec.lastResult = result;
         write(file, recs);
 
-        // Generate PDF headlessly (invisible, brief — no second headed browser)
-        await this.generatePDF(mod, id, sub, page);
+        // Generate PDF headlessly — pass the processed spec so step numbers match screenshots.
+        await this.generatePDF(mod, id, sub, page, specSrc);
 
         return result;
     }
