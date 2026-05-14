@@ -1,14 +1,14 @@
 {
   "name": "Presupuesto",
   "folderPath": "C:\\testPlatform\\backend\\workspace\\modules\\Presupuesto",
-  "createdAt": "2026-05-08T21:03:52.238Z",
+  "createdAt": "2026-05-14T19:35:04.051Z",
   "submodules": [],
   "pages": [
     {
-      "name": "Maestro de Insumos",
+      "name": "Maestro de insumos",
       "url": "https://desarrollo.sincoerp.com/SincoOk/V3/ADPRO/Views/reactapp/#/presupuestos/maestrodeinsumos",
-      "folderPath": "C:\\testPlatform\\backend\\workspace\\modules\\Presupuesto\\pages\\Maestro de Insumos",
-      "createdAt": "2026-05-08T21:04:19.693Z"
+      "folderPath": "C:\\testPlatform\\backend\\workspace\\modules\\Presupuesto\\pages\\Maestro de insumos",
+      "createdAt": "2026-05-14T19:35:59.898Z"
     }
   ]
 }

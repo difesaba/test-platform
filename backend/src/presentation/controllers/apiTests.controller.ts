@@ -29,8 +29,11 @@ export class ApiTestsController {
         const { module: mod, submodule, page } = req.query as Record<string, string>;
         if (!mod) return res.status(400).json({ error: 'Falta module' });
         try {
-            const adproToken = (req.session as any)?.adproToken;
-            const result = await svc.run(mod, req.params.id, submodule, page, adproToken);
+            const sess = req.session as any;
+            const adproToken = sess?.adproToken;
+            const empresaNombre = sess?.empresa?.nombre ?? sess?.empresaNombre;
+            const sucursalNombre = sess?.sucursal?.nombre;
+            const result = await svc.run(mod, req.params.id, submodule, page, adproToken, empresaNombre, sucursalNombre);
             res.json(result);
         } catch (e: any) {
             res.status(500).json({ error: e.message });

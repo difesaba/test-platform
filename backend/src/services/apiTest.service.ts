@@ -3,6 +3,16 @@ import path from 'path';
 import { envs } from '../config/envs';
 import { randomUUID } from 'crypto';
 
+export interface ApiTestRunLog {
+    status: number;
+    time: number;
+    ok: boolean;
+    runAt: string;
+    body: any;
+    empresaNombre?: string;
+    sucursalNombre?: string;
+}
+
 export interface ApiTest {
     id: string;
     name: string;
@@ -13,6 +23,7 @@ export interface ApiTest {
     expectedStatus: number;
     createdAt: string;
     lastResult?: ApiTestResult;
+    history?: ApiTestRunLog[];
 }
 
 export interface ApiTestResult {
@@ -63,7 +74,7 @@ export class ApiTestService {
         writeTests(file, tests);
     }
 
-    async run(moduleName: string, id: string, submodule?: string, page?: string, adproToken?: any): Promise<ApiTestResult> {
+    async run(moduleName: string, id: string, submodule?: string, page?: string, adproToken?: any, empresaNombre?: string, sucursalNombre?: string): Promise<ApiTestResult> {
         const file = testsPath(moduleName, submodule, page);
         const tests = readTests(file);
         const test = tests.find(t => t.id === id);
@@ -98,6 +109,18 @@ export class ApiTestService {
             runAt: new Date().toISOString(),
         };
 
+        if (test.lastResult) {
+            const entry: ApiTestRunLog = {
+                status:        test.lastResult.status,
+                time:          test.lastResult.time,
+                ok:            test.lastResult.ok,
+                runAt:         test.lastResult.runAt,
+                body:          test.lastResult.body,
+                empresaNombre,
+                sucursalNombre,
+            };
+            test.history = [entry, ...(test.history ?? [])].slice(0, 20);
+        }
         test.lastResult = result;
         writeTests(file, tests);
         return result;

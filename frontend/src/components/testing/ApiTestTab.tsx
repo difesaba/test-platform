@@ -85,6 +85,7 @@ export default function ApiTestTab({ selected, onNotify }: Props) {
   const [swaggerBase, setSwaggerBase] = useState('');
   const [selectedEndpoint, setSelectedEndpoint] = useState<SwaggerEndpoint | null>(null);
   const [deleteId, setDeleteId] = useState<string | null>(null);
+  const [historyTestId, setHistoryTestId] = useState<string | null>(null);
   const [expandedIds, setExpandedIds] = useState<string[]>([]);
 
   const [paramValues, setParamValues] = useState<Record<string, string>>({});
@@ -435,6 +436,13 @@ export default function ApiTestTab({ selected, onNotify }: Props) {
                         Este caso aun no registra respuesta.
                       </Alert>
                     )}
+                    {(test.history?.length ?? 0) > 0 && (
+                      <Box>
+                        <Button variant="outlined" size="small" onClick={() => setHistoryTestId(test.id)}>
+                          Historial ({test.history!.length})
+                        </Button>
+                      </Box>
+                    )}
                   </Stack>
                 </AccordionDetails>
               </Accordion>
@@ -449,6 +457,43 @@ export default function ApiTestTab({ selected, onNotify }: Props) {
         onSelect={handleSelectEndpoint}
         onApiBase={setSwaggerBase}
       />
+
+      <Dialog open={Boolean(historyTestId)} onClose={() => setHistoryTestId(null)} fullWidth maxWidth="md">
+        <DialogTitle>
+          Historial — {tests.find((t) => t.id === historyTestId)?.name}
+        </DialogTitle>
+        <DialogContent>
+          <Stack spacing={2} sx={{ mt: 1 }}>
+            {tests.find((t) => t.id === historyTestId)?.history?.map((entry, idx) => (
+              <Box key={idx} sx={{ border: '1px solid', borderColor: 'divider', borderRadius: 1, overflow: 'hidden' }}>
+                <Alert
+                  severity={entry.ok ? 'success' : 'error'}
+                  variant="outlined"
+                  sx={{ borderRadius: 0, border: 'none', borderBottom: '1px solid', borderColor: 'divider' }}
+                >
+                  HTTP {entry.status} · {entry.time}ms · {formatRunTime(entry.runAt)}
+                  {(entry.empresaNombre || entry.sucursalNombre) && (
+                    <Typography variant="caption" display="block" sx={{ mt: 0.5, opacity: 0.85 }}>
+                      {[entry.empresaNombre, entry.sucursalNombre].filter(Boolean).join(' — ')}
+                    </Typography>
+                  )}
+                </Alert>
+                <TextField
+                  fullWidth
+                  multiline
+                  maxRows={6}
+                  value={typeof entry.body === 'string' ? entry.body : JSON.stringify(entry.body, null, 2)}
+                  InputProps={{ readOnly: true, sx: { fontFamily: 'monospace', fontSize: 11 } }}
+                  size="small"
+                />
+              </Box>
+            ))}
+          </Stack>
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={() => setHistoryTestId(null)}>Cerrar</Button>
+        </DialogActions>
+      </Dialog>
 
       <Dialog open={Boolean(deleteId)} onClose={() => setDeleteId(null)} fullWidth maxWidth="xs">
         <DialogTitle>Eliminar prueba API</DialogTitle>

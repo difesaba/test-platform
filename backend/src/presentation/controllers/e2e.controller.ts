@@ -78,7 +78,8 @@ export class E2eController {
         try {
             const sessionUrlRaiz = String((req.session as any)?.urlRaiz ?? '');
             const overrideUrl = resolveAutomationEntryUrl(String(req.body?.url ?? ''), sessionUrlRaiz) || undefined;
-            const result = await svc.run(mod, req.params.id, submodule, page, overrideUrl);
+            const ctx = getSessionContext(req);
+            const result = await svc.run(mod, req.params.id, submodule, page, overrideUrl, ctx.empresaNombre, ctx.sucursalNombre);
             res.json(result);
         } catch (e: any) {
             res.status(500).json({ error: e.message });
@@ -89,5 +90,45 @@ export class E2eController {
         const { module: mod, submodule, page } = req.query as Record<string, string>;
         if (!mod) return res.status(400).json({ error: 'Falta module' });
         res.json({ spec: svc.getSpec(mod, req.params.id, submodule, page) });
+    };
+
+    genScreenshots = (req: Request, res: Response) => {
+        const { module: mod, submodule, page } = req.query as Record<string, string>;
+        if (!mod) return res.status(400).json({ error: 'Falta module' });
+        svc.startScreenshotGen(mod, req.params.id, submodule, page);
+        res.json({ ok: true, generating: true });
+    };
+
+    listScreenshots = (req: Request, res: Response) => {
+        const { module: mod, submodule, page } = req.query as Record<string, string>;
+        if (!mod) return res.status(400).json({ error: 'Falta module' });
+        const recs = svc.list(mod, submodule, page);
+        const rec = recs.find(r => r.id === req.params.id);
+        if (!rec) return res.status(404).json({ error: 'Grabación no encontrada' });
+        res.json({ screenshots: rec.lastResult?.screenshots ?? [] });
+    };
+
+    servePdf = (req: Request, res: Response) => {
+        const { module: mod, submodule, page } = req.query as Record<string, string>;
+        if (!mod) return res.status(400).json({ error: 'Falta module' });
+        try {
+            const pdfPath = svc.getPdfPath(mod, req.params.id, submodule, page);
+            res.setHeader('Content-Type', 'application/pdf');
+            res.setHeader('Content-Disposition', 'attachment; filename="documentacion.pdf"');
+            res.sendFile(pdfPath);
+        } catch (e: any) {
+            res.status(404).json({ error: e.message });
+        }
+    };
+
+    serveScreenshot = (req: Request, res: Response) => {
+        const { module: mod, submodule, page } = req.query as Record<string, string>;
+        if (!mod) return res.status(400).json({ error: 'Falta module' });
+        try {
+            const filePath = svc.getScreenshotPath(mod, req.params.id, req.params.file, submodule, page);
+            res.sendFile(filePath);
+        } catch (e: any) {
+            res.status(404).json({ error: e.message });
+        }
     };
 }

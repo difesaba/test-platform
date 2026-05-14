@@ -65,6 +65,10 @@ export class AppRoutes {
         router.post('/e2e/:id/stop', requireAuth, e2eController.stopRecording);
         router.post('/e2e/:id/run', requireAuth, e2eController.run);
         router.get('/e2e/:id/spec', requireAuth, e2eController.getSpec);
+        router.post('/e2e/:id/gen-screenshots', requireAuth, e2eController.genScreenshots);
+        router.get('/e2e/:id/screenshots', requireAuth, e2eController.listScreenshots);
+        router.get('/e2e/:id/screenshots/:file', requireAuth, e2eController.serveScreenshot);
+        router.get('/e2e/:id/doc.pdf', requireAuth, e2eController.servePdf);
 
         return router;
     }

@@ -26,6 +26,7 @@ import PlayArrowRoundedIcon from '@mui/icons-material/PlayArrowRounded';
 import StopRoundedIcon from '@mui/icons-material/StopRounded';
 import DescriptionRoundedIcon from '@mui/icons-material/DescriptionRounded';
 import ExpandMoreRoundedIcon from '@mui/icons-material/ExpandMoreRounded';
+import CollectionsRoundedIcon from '@mui/icons-material/CollectionsRounded';
 import api from '../../api/client';
 import type { SelectedModule } from '../../store/useModuleStore';
 import { useSessionStore } from '../../store/useSessionStore';
@@ -57,6 +58,12 @@ export default function E2eTab({ selected, onNotify }: Props) {
   const [name, setName] = useState('');
   const [url, setUrl] = useState('');
   const [saving, setSaving] = useState(false);
+  const [generatingId, setGeneratingId] = useState<string | null>(null);
+  const [historyRecId, setHistoryRecId] = useState<string | null>(null);
+  const [screenshotsRecId, setScreenshotsRecId] = useState<string | null>(null);
+  const [screenshotFiles, setScreenshotFiles] = useState<string[]>([]);
+  const [screenshotsLoading, setScreenshotsLoading] = useState(false);
+  const [lightboxSrc, setLightboxSrc] = useState<string | null>(null);
   const effectiveUrl = resolveAutomationUrl(selected.pageUrl, urlRaiz) || url.trim();
 
   const load = useCallback(() => {
@@ -90,6 +97,34 @@ export default function E2eTab({ selected, onNotify }: Props) {
     }, 3000);
     return () => clearInterval(interval);
   }, [recordings, selected, onNotify]);
+
+  // Poll every 5s while screenshot generation is in progress
+  useEffect(() => {
+    if (!generatingId) return;
+    const interval = setInterval(() => {
+      api.get(`/e2e/${generatingId}/screenshots?${buildSelectionQuery(selected)}`)
+        .then(({ data }) => {
+          if ((data.screenshots?.length ?? 0) > 0) {
+            setGeneratingId(null);
+            load();
+            onNotify('Capturas generadas correctamente.', 'success');
+          }
+        })
+        .catch(() => undefined);
+    }, 5000);
+    return () => clearInterval(interval);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [generatingId, selected.moduleName, selected.pageName, selected.submoduleName]);
+
+  useEffect(() => {
+    if (!screenshotsRecId) { setScreenshotFiles([]); return; }
+    setScreenshotsLoading(true);
+    api.get(`/e2e/${screenshotsRecId}/screenshots?${buildSelectionQuery(selected)}`)
+      .then(({ data }) => setScreenshotFiles(data.screenshots ?? []))
+      .catch(() => onNotify('No se pudieron cargar las capturas.', 'error'))
+      .finally(() => setScreenshotsLoading(false));
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [screenshotsRecId, selected.moduleName, selected.pageName, selected.submoduleName]);
 
   const openDialog = () => {
     setName(selected.pageName ?? 'Flujo principal');
@@ -138,6 +173,7 @@ export default function E2eTab({ selected, onNotify }: Props) {
 
   const handleRun = async (id: string) => {
     setRunningId(id);
+    setRecordings((prev) => prev.map((r) => r.id === id ? { ...r, lastResult: undefined } : r));
     setExpandedIds((ids) => [...new Set([...ids, id])]);
     try {
       const { data } = await api.post(`/e2e/${id}/run?${buildSelectionQuery(selected)}`, effectiveUrl ? { url: effectiveUrl } : {});
@@ -166,6 +202,16 @@ export default function E2eTab({ selected, onNotify }: Props) {
       load();
     } catch {
       onNotify('No fue posible eliminar el flujo E2E.', 'error');
+    }
+  };
+
+  const handleGenScreenshots = async (id: string) => {
+    setGeneratingId(id);
+    try {
+      await api.post(`/e2e/${id}/gen-screenshots?${buildSelectionQuery(selected)}`);
+    } catch {
+      setGeneratingId(null);
+      onNotify('No se pudo iniciar la generación de capturas.', 'error');
     }
   };
 
@@ -254,7 +300,7 @@ export default function E2eTab({ selected, onNotify }: Props) {
                       </Typography>
                     </Box>
                     <Stack direction="row" spacing={0.5}>
-                      {recording.status !== 'recording' && (
+                      {(recording.status === 'idle' || recording.status === 'error') && (
                         <IconButton size="small" color="error" onClick={(event) => {
                           event.stopPropagation();
                           handleStart(recording.id);
@@ -288,6 +334,14 @@ export default function E2eTab({ selected, onNotify }: Props) {
                           }}>
                             <DescriptionRoundedIcon fontSize="small" />
                           </IconButton>
+                          {(recording.lastResult?.screenshots?.length ?? 0) > 0 && (
+                            <IconButton size="small" color="info" onClick={(event) => {
+                              event.stopPropagation();
+                              setScreenshotsRecId(recording.id);
+                            }}>
+                              <CollectionsRoundedIcon fontSize="small" />
+                            </IconButton>
+                          )}
                         </>
                       )}
                       <IconButton size="small" color="error" onClick={(event) => {
@@ -325,7 +379,7 @@ export default function E2eTab({ selected, onNotify }: Props) {
                       </Alert>
                     )}
                     <Stack direction={{ xs: 'column', sm: 'row' }} spacing={1.5}>
-                      {recording.status !== 'recording' && (
+                      {(recording.status === 'idle' || recording.status === 'error') && (
                         <Button color="error" variant="contained" onClick={() => handleStart(recording.id)}>
                           Grabar
                         </Button>
@@ -343,6 +397,40 @@ export default function E2eTab({ selected, onNotify }: Props) {
                           <Button variant="outlined" onClick={() => handleViewSpec(recording.id)}>
                             Ver codigo generado
                           </Button>
+                          {(recording.lastResult?.screenshots?.length ?? 0) > 0 && (
+                            <Button variant="outlined" color="info" startIcon={<CollectionsRoundedIcon />} onClick={() => setScreenshotsRecId(recording.id)}>
+                              Capturas ({recording.lastResult!.screenshots!.length})
+                            </Button>
+                          )}
+                          {recording.lastResult?.hasPdf && (
+                            <Button
+                              variant="contained"
+                              color="success"
+                              onClick={() => {
+                                const url = `/api/e2e/${recording.id}/doc.pdf?${buildSelectionQuery(selected)}`;
+                                const a = document.createElement('a');
+                                a.href = url; a.download = 'documentacion.pdf'; a.click();
+                              }}
+                            >
+                              Descargar PDF
+                            </Button>
+                          )}
+                          {(recording.history?.length ?? 0) > 0 && (
+                            <Button variant="outlined" onClick={() => setHistoryRecId(recording.id)}>
+                              Historial ({recording.history!.length})
+                            </Button>
+                          )}
+                          {recording.lastResult && (recording.lastResult.screenshots?.length ?? 0) === 0 && (
+                            <Button
+                              variant="outlined"
+                              color="secondary"
+                              startIcon={generatingId === recording.id ? <CircularProgress size={14} color="secondary" /> : <CollectionsRoundedIcon />}
+                              disabled={generatingId === recording.id}
+                              onClick={() => handleGenScreenshots(recording.id)}
+                            >
+                              {generatingId === recording.id ? 'Generando...' : 'Generar capturas'}
+                            </Button>
+                          )}
                         </>
                       )}
                     </Stack>
@@ -402,6 +490,95 @@ export default function E2eTab({ selected, onNotify }: Props) {
         <DialogTitle>Salida de ejecucion</DialogTitle>
         <DialogContent>
           <TextField fullWidth multiline minRows={18} maxRows={18} value={viewOutput ?? ''} InputProps={{ readOnly: true }} />
+        </DialogContent>
+      </Dialog>
+
+      <Dialog open={Boolean(screenshotsRecId)} onClose={() => { setScreenshotsRecId(null); setLightboxSrc(null); }} fullWidth maxWidth="lg">
+        <DialogTitle>
+          Capturas — {recordings.find((r) => r.id === screenshotsRecId)?.name}
+        </DialogTitle>
+        <DialogContent>
+          {screenshotsLoading && (
+            <Box sx={{ display: 'flex', justifyContent: 'center', py: 4 }}>
+              <CircularProgress />
+            </Box>
+          )}
+          {!screenshotsLoading && screenshotFiles.length === 0 && (
+            <Alert severity="info" variant="outlined">No se encontraron capturas para esta ejecucion.</Alert>
+          )}
+          {!screenshotsLoading && screenshotFiles.length > 0 && (
+            <Box sx={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))', gap: 1.5, mt: 1 }}>
+              {screenshotFiles.map((file) => {
+                const src = `/api/e2e/${screenshotsRecId}/screenshots/${file}?${buildSelectionQuery(selected)}`;
+                return (
+                  <Box key={file} sx={{ position: 'relative', cursor: 'pointer' }} onClick={() => setLightboxSrc(src)}>
+                    <Box
+                      component="img"
+                      src={src}
+                      alt={file}
+                      sx={{ width: '100%', display: 'block', borderRadius: 1, border: '1px solid', borderColor: 'divider' }}
+                    />
+                    <Typography
+                      variant="caption"
+                      sx={{ position: 'absolute', bottom: 4, left: 4, bgcolor: 'rgba(0,0,0,0.6)', color: '#fff', px: 0.5, borderRadius: 0.5, fontSize: 10 }}
+                    >
+                      {file.replace('.png', '').replace('step_', 'Paso ')}
+                    </Typography>
+                  </Box>
+                );
+              })}
+            </Box>
+          )}
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={() => { setScreenshotsRecId(null); setLightboxSrc(null); }}>Cerrar</Button>
+        </DialogActions>
+      </Dialog>
+
+      <Dialog open={Boolean(historyRecId)} onClose={() => setHistoryRecId(null)} fullWidth maxWidth="md">
+        <DialogTitle>
+          Historial — {recordings.find((r) => r.id === historyRecId)?.name}
+        </DialogTitle>
+        <DialogContent>
+          <Stack spacing={2} sx={{ mt: 1 }}>
+            {recordings.find((r) => r.id === historyRecId)?.history?.map((entry, idx) => (
+              <Box key={idx} sx={{ border: '1px solid', borderColor: 'divider', borderRadius: 1, overflow: 'hidden' }}>
+                <Alert
+                  severity={entry.ok ? 'success' : 'error'}
+                  variant="outlined"
+                  sx={{ borderRadius: 0, border: 'none', borderBottom: '1px solid', borderColor: 'divider' }}
+                >
+                  {entry.passed} paso(s) correctos · {entry.failed} fallo(s) · {formatRunTime(entry.runAt)}
+                  {(entry.empresaNombre || entry.sucursalNombre) && (
+                    <Typography variant="caption" display="block" sx={{ mt: 0.5, opacity: 0.85 }}>
+                      {[entry.empresaNombre, entry.sucursalNombre].filter(Boolean).join(' — ')}
+                    </Typography>
+                  )}
+                </Alert>
+                <TextField
+                  fullWidth
+                  multiline
+                  maxRows={6}
+                  value={entry.output}
+                  InputProps={{ readOnly: true, sx: { fontFamily: 'monospace', fontSize: 11 } }}
+                  size="small"
+                />
+              </Box>
+            ))}
+          </Stack>
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={() => setHistoryRecId(null)}>Cerrar</Button>
+        </DialogActions>
+      </Dialog>
+
+      <Dialog open={Boolean(lightboxSrc)} onClose={() => setLightboxSrc(null)} fullWidth maxWidth="xl">
+        <DialogTitle sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+          Vista ampliada
+          <Button component="a" href={lightboxSrc ?? ''} download>Descargar</Button>
+        </DialogTitle>
+        <DialogContent>
+          <Box component="img" src={lightboxSrc ?? ''} alt="captura ampliada" sx={{ width: '100%', display: 'block' }} />
         </DialogContent>
       </Dialog>
     </Stack>

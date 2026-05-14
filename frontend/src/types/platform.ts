@@ -55,6 +55,15 @@ export interface ApiTest {
     ok: boolean;
     runAt: string;
   };
+  history?: {
+    status: number;
+    time: number;
+    ok: boolean;
+    runAt: string;
+    body: unknown;
+    empresaNombre?: string;
+    sucursalNombre?: string;
+  }[];
 }
 
 export interface UiTest {
@@ -122,5 +131,16 @@ export interface E2eRecording {
     output: string;
     ok: boolean;
     runAt: string;
+    screenshots?: string[];
+    hasPdf?: boolean;
   };
+  history?: {
+    passed: number;
+    failed: number;
+    ok: boolean;
+    runAt: string;
+    output: string;
+    empresaNombre?: string;
+    sucursalNombre?: string;
+  }[];
 }
