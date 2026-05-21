@@ -30,6 +30,7 @@ export interface PageItem {
 
 export interface SubmoduleItem {
   name: string;
+  pages?: PageItem[];
 }
 
 export interface ModuleItem {

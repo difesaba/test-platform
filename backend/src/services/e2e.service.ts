@@ -56,9 +56,10 @@ const activeProcs = new Map<string, Browser>();
 function recordingsPath(mod: string, sub?: string, page?: string): string {
     const base = path.join(process.cwd(), envs.WORKSPACE_PATH, 'modules', mod);
     let dir: string;
-    if (page)      dir = path.join(base, 'pages', page, 'e2e');
-    else if (sub)  dir = path.join(base, 'submodules', sub, 'e2e');
-    else           dir = path.join(base, 'e2e');
+    if (sub && page)    dir = path.join(base, 'submodules', sub, 'pages', page, 'e2e');
+    else if (page)      dir = path.join(base, 'pages', page, 'e2e');
+    else if (sub)       dir = path.join(base, 'submodules', sub, 'e2e');
+    else                dir = path.join(base, 'e2e');
     return path.join(dir, 'recordings.json');
 }
 
@@ -74,6 +75,33 @@ function write(file: string, recs: E2eRecording[]): void {
 
 function isLocalhostUrl(url: string): boolean {
     return /^https?:\/\/(localhost|127\.0\.0\.1)(:\d+)?/i.test(url);
+}
+
+function isReactAppRoute(url: string): boolean {
+    return /\/ADPRO\/Views\/reactapp\/#/i.test(url);
+}
+
+function tryDeriveMarcoUrl(targetUrl: string, sessionUrlRaiz: string): string | null {
+    if (!targetUrl.includes('#/')) return null;
+    if (isReactAppRoute(targetUrl)) return null; // Real Marco needed — fake Marco crashes React 18 useSyncExternalStore
+    try {
+        const pathWithoutHash = targetUrl.split('#')[0];
+        const parsedTarget = new URL(pathWithoutHash);
+        // Same origin: use sessionUrlRaiz — reliable for any path depth (CBRVentas, ADPRO/Views/reactapp, etc.)
+        if (sessionUrlRaiz) {
+            try {
+                if (new URL(sessionUrlRaiz).origin === parsedTarget.origin) {
+                    const base = sessionUrlRaiz.endsWith('/') ? sessionUrlRaiz : `${sessionUrlRaiz}/`;
+                    return new URL('Marco/Default_iv.aspx', base).toString();
+                }
+            } catch { /* ignore */ }
+        }
+        // Fallback: derive 1 level up (works for shallow paths like CBRVentas on a different origin)
+        const parts = parsedTarget.pathname.replace(/\/$/, '').split('/').filter(Boolean);
+        if (parts.length < 1) return null;
+        parts.pop();
+        return `${parsedTarget.origin}/${parts.join('/')}/Marco/Default_iv.aspx`;
+    } catch { return null; }
 }
 
 function buildSeleccionUrl(urlRaiz?: string): string {
@@ -318,8 +346,114 @@ export class E2eService {
     // that uses the same flow as recording: fill → wait 1 s → click Ingresar (no Enter).
     // Lines before the first "main app" interaction (contentFrame / getByTitle) are
     // considered auth and are removed.
-    private buildRunSpec(specContent: string, ctx: AdproSessionContext): string {
+    private buildRunSpec(specContent: string, ctx: AdproSessionContext, targetUrl?: string, adproToken?: any): string {
         if (!ctx.urlRaiz) return specContent;
+
+        // SPA con Marco+iframe (cualquier módulo): inyectar fake Marco + tokens inline en el spec
+        const externalMarcoUrl = targetUrl ? tryDeriveMarcoUrl(targetUrl, ctx.urlRaiz) : null;
+        if (externalMarcoUrl && adproToken?.access_token) {
+            const accessToken = adproToken.access_token as string;
+            const authorizationToken = (adproToken.authorization_token ?? accessToken) as string;
+            const bearerValue = `${adproToken.token_type ?? 'Bearer'} ${accessToken}`;
+            const iframeSrc = targetUrl!.replace(/'/g, "\\'");
+            const marcoHtml = [
+                '<!DOCTYPE html><html><head><meta charset="utf-8">',
+                '<style>*{margin:0;padding:0}body,html{width:100%;height:100%;overflow:hidden}</style>',
+                '</head><body>',
+                `<iframe id="pagina1" name="pagina1" src="${iframeSrc}"`,
+                ' style="width:100%;height:100vh;border:none;display:block;"></iframe>',
+                '</body></html>',
+            ].join('').replace(/`/g, '\\`');
+
+            // Datos de sesión serializados para inyectarlos en localStorage via addInitScript
+            const sessionPayload = JSON.stringify({
+                accessToken,
+                authorizationToken,
+                bearerValue,
+                tokenType: adproToken.token_type ?? 'Bearer',
+                serializedToken: JSON.stringify(adproToken),
+                urlRaiz: ctx.urlRaiz ?? '',
+                empresaId: String(ctx.empresaId ?? ''),
+                sucursalId: String(ctx.sucursalId ?? ''),
+                empresaNombre: ctx.empresaNombre ?? '',
+                sucursalNombre: ctx.sucursalNombre ?? '',
+                entornoName: ctx.entornoName ?? '',
+                empNombre: ctx.empNombre ?? '',
+            });
+
+            // Un solo handler: si es Marco/Default_iv.aspx → fake Marco, si no → auth headers.
+            // Necesario porque Playwright procesa routes LIFO — dos handlers separados causarían
+            // que **/* (registrado después) capture Marco antes que el handler específico.
+            const extPreamble = [
+                `  // ── External Marco SPA preamble (TestPlatform) ──────────────────────────`,
+                `  // Inyectar sesión en localStorage (corre antes de cada página/iframe)`,
+                `  await page.addInitScript((d) => {`,
+                `    const w = (k, v) => { try { localStorage.setItem(k, v); } catch {} try { sessionStorage.setItem(k, v); } catch {} };`,
+                `    w('access_token', d.accessToken);`,
+                `    w('accessToken', d.accessToken);`,
+                `    w('authorization_token', d.authorizationToken);`,
+                `    w('adpro_token', d.serializedToken);`,
+                `    w('adproToken', d.serializedToken);`,
+                `    w('token', JSON.stringify({ state: { finalToken: d.accessToken, authorizationToken: d.authorizationToken }, version: 0 }));`,
+                `    if (d.urlRaiz) w('urlRaiz', d.urlRaiz);`,
+                `    if (d.empresaId) w('empresaId', d.empresaId);`,
+                `    if (d.sucursalId) w('sucursalId', d.sucursalId);`,
+                `    if (d.empresaNombre) w('empresaNombre', d.empresaNombre);`,
+                `    if (d.sucursalNombre) w('sucursalNombre', d.sucursalNombre);`,
+                `    if (d.entornoName) w('entornoName', d.entornoName);`,
+                `    if (d.empNombre) w('empNombre', d.empNombre);`,
+                `    try { window.getToken = () => d.accessToken; } catch {}`,
+                `    try { window.getTokenAuth = () => d.authorizationToken; } catch {}`,
+                `  }, ${sessionPayload});`,
+                `  // Route único: Marco → fake Marco HTML, resto → headers de auth`,
+                `  await page.route('**/*', async (route) => {`,
+                `    const _url = route.request().url();`,
+                `    if (/\\/Marco\\/Default_iv\\.aspx/i.test(_url)) {`,
+                `      await route.fulfill({ status: 200, contentType: 'text/html; charset=utf-8',`,
+                `        body: \`${marcoHtml}\` });`,
+                `      return;`,
+                `    }`,
+                `    const headers = { ...route.request().headers() };`,
+                `    if (!headers['authorization'] || !headers['authorization'].toLowerCase().startsWith('bearer ')) {`,
+                `      headers['authorization'] = ${JSON.stringify(bearerValue)};`,
+                `    }`,
+                `    if (!headers['x-sincoerp-authorization']) {`,
+                `      headers['x-sincoerp-authorization'] = ${JSON.stringify(authorizationToken)};`,
+                `    }`,
+                `    await route.continue({ headers });`,
+                `  });`,
+            ].join('\n');
+
+            // Inyectar preamble + eliminar gotos de auth del spec original.
+            // El spec puede tener goto(Login...), goto(Seleccion...) o goto(Marco...) grabados
+            // con comportamiento anterior — los eliminamos y dejamos solo las acciones reales.
+            // El preamble ya incluye goto(externalMarcoUrl) via fake Marco.
+            const authGotoRe = /^\s*await page\.goto\s*\(\s*['"`][^'"`]*(Login_iv|Seleccion_iv|Default_iv|Marco)\b/i;
+            const testOpenRe = /test\s*\(.*async.*\{/;
+            const lines      = specContent.split('\n');
+            const result: string[] = [];
+            let injected = false;
+
+            for (const line of lines) {
+                if (!injected) {
+                    result.push(line);
+                    if (testOpenRe.test(line)) {
+                        // Preamble incluye el goto al fake Marco al final
+                        result.push(extPreamble);
+                        result.push(`  await page.goto(${JSON.stringify(externalMarcoUrl)}, { waitUntil: 'domcontentloaded', timeout: 30000 });`);
+                        result.push(`  await page.waitForLoadState('networkidle').catch(() => {});`);
+                        injected = true;
+                    }
+                } else if (authGotoRe.test(line)) {
+                    continue; // descartar gotos de auth del spec grabado
+                } else {
+                    result.push(line);
+                }
+            }
+
+            if (!injected) return specContent;
+            return result.join('\n');
+        }
 
         const nomUsuario   = JSON.stringify(envs.NOM_USUARIO);
         const claveUsuario = JSON.stringify(envs.CLAVE_USUARIO);
@@ -683,8 +817,37 @@ export class E2eService {
                         writeValue('adproToken', serialized);
                         writeValue('access_token', token.access_token);
                         writeValue('accessToken', token.access_token);
+                        if ((token as any).authorization_token) {
+                            writeValue('authorization_token', (token as any).authorization_token);
+                        }
+                        try { (window as any).getToken = () => token.access_token; } catch {}
+                        try {
+                            (window as any).getTokenAuth = () => (token as any).authorization_token ?? '';
+                        } catch {}
+                        // Solo mock en top frame — en iframes window.parent.getToken() ya funciona.
+                        // Usar value (estable) no get (crea objeto nuevo cada acceso → rompe comparaciones React).
+                        try {
+                            if (!(window as any).opener && window === (window as any).parent) {
+                                const mockParent = {
+                                    getToken: () => token?.access_token ?? '',
+                                    getTokenAuth: () => (token as any).authorization_token ?? token?.access_token ?? '',
+                                };
+                                Object.defineProperty(window, 'opener', {
+                                    value: { parent: mockParent },
+                                    writable: true,
+                                    configurable: true,
+                                });
+                            }
+                        } catch {}
                     }
                     if (session) {
+                        const persistedFinalToken = {
+                            state: {
+                                finalToken: token?.access_token ?? '',
+                                authorizationToken: (token as any).authorization_token ?? '',
+                            },
+                            version: 0,
+                        };
                         writeValue('adpro_session_context', JSON.stringify(session));
                         if (session.urlRaiz) writeValue('urlRaiz', session.urlRaiz);
                         if (typeof session.clienteId === 'number') writeValue('clienteId', String(session.clienteId));
@@ -694,10 +857,27 @@ export class E2eService {
                         if (session.sucursalNombre) writeValue('sucursalNombre', session.sucursalNombre);
                         if (session.entornoName) writeValue('entornoName', session.entornoName);
                         if (session.empNombre) writeValue('empNombre', session.empNombre);
+                        writeValue('token', JSON.stringify(persistedFinalToken));
                     }
                 },
                 { token: adproToken, session: sessionContext }
             );
+        }
+
+        // Modelo Doble Token: inyectar Authorization y X-SincoERP-Authorization en todos los requests
+        if (adproToken?.access_token) {
+            const bearerValue = `${adproToken.token_type ?? 'Bearer'} ${adproToken.access_token}`;
+            const authorizationToken = adproToken.authorization_token ?? adproToken.access_token;
+            await context.route('**/*', async (route) => {
+                const headers = { ...route.request().headers() };
+                if (!headers['authorization'] || !headers['authorization'].toLowerCase().startsWith('bearer ')) {
+                    headers['authorization'] = bearerValue;
+                }
+                if (!headers['x-sincoerp-authorization'] && authorizationToken) {
+                    headers['x-sincoerp-authorization'] = authorizationToken;
+                }
+                await route.continue({ headers });
+            });
         }
 
         // Enable recorder FIRST so every action (including login) is captured in the spec.
@@ -718,12 +898,54 @@ export class E2eService {
         rec.status = 'recording';
         write(file, recs);
 
-        if (sessionContext?.urlRaiz && !isLocalhostUrl(targetUrl)) {
-            // Fire-and-forget: establishes session (may require user to select empresa/sucursal
-            // manually in the opened browser — the recorder captures those actions too).
-            establishAdproSession(recPage, sessionContext).catch((e) =>
-                console.error('[E2E Playwright] Session establishment error:', e)
-            );
+        const externalMarcoUrl = sessionContext?.urlRaiz
+            ? tryDeriveMarcoUrl(targetUrl, sessionContext.urlRaiz)
+            : null;
+
+        if (externalMarcoUrl) {
+            // SPA con Marco+iframe (cualquier módulo con hash routing): navegar directo al Marco URL.
+            // Tokens ya inyectados — sin pasar por Seleccion_iv.aspx ni login.
+            recPage.route('**/Marco/Default_iv.aspx*', async (route) => {
+                await route.fulfill({
+                    status: 200,
+                    contentType: 'text/html; charset=utf-8',
+                    body: [
+                        '<!DOCTYPE html><html><head><meta charset="utf-8">',
+                        '<style>*{margin:0;padding:0}body,html{width:100%;height:100%;overflow:hidden}</style>',
+                        '</head><body>',
+                        `<iframe id="pagina1" name="pagina1" src="${targetUrl}"`,
+                        ' style="width:100%;height:100vh;border:none;display:block;"></iframe>',
+                        '</body></html>',
+                    ].join(''),
+                });
+            }).catch(() => undefined);
+            recPage.goto(externalMarcoUrl, { waitUntil: 'domcontentloaded', timeout: 30000 }).catch(() => undefined);
+        } else if (sessionContext?.urlRaiz && !isLocalhostUrl(targetUrl)) {
+            if (isReactAppRoute(targetUrl)) {
+                // ADPRO React routes: use real Marco (via Seleccion) + direct iframe injection.
+                // Fake Marco crashes React 18 apps (useSyncExternalStore needs real session globals).
+                const setupReact = async () => {
+                    await establishAdproSession(recPage, sessionContext);
+                    const f = await recPage.waitForSelector(
+                        '#pagina1, iframe[name="pagina1"]', { timeout: 20000 }
+                    ).catch(() => null);
+                    if (f) {
+                        await recPage.evaluate((url) => {
+                            const iframe = (document.getElementById('pagina1') as HTMLIFrameElement)
+                                ?? (document.querySelector('iframe[name="pagina1"]') as HTMLIFrameElement);
+                            if (iframe) iframe.src = url;
+                        }, targetUrl);
+                        console.log('[E2E Playwright] React route: iframe injected', { targetUrl });
+                    }
+                };
+                setupReact().catch((e) => console.error('[E2E Playwright] React route setup error:', e));
+            } else {
+                // Fire-and-forget: establishes ADPRO session (may require user to select empresa/sucursal
+                // manually in the opened browser — the recorder captures those actions too).
+                establishAdproSession(recPage, sessionContext).catch((e) =>
+                    console.error('[E2E Playwright] Session establishment error:', e)
+                );
+            }
         } else {
             recPage.goto(targetUrl, { waitUntil: 'domcontentloaded', timeout: 30000 }).catch(() => undefined);
         }
@@ -763,7 +985,7 @@ export class E2eService {
         }
     }
 
-    async run(mod: string, id: string, sub?: string, page?: string, overrideUrl?: string, empresaNombre?: string, sucursalNombre?: string, sessionContext?: AdproSessionContext): Promise<E2eResult> {
+    async run(mod: string, id: string, sub?: string, page?: string, overrideUrl?: string, empresaNombre?: string, sucursalNombre?: string, sessionContext?: AdproSessionContext, adproToken?: any): Promise<E2eResult> {
         const file = recordingsPath(mod, sub, page);
         const recs = read(file);
         const rec  = recs.find(r => r.id === id);
@@ -803,7 +1025,7 @@ export class E2eService {
 
         let specSrc = this.cleanupSpec(fs.readFileSync(rec.specFile, 'utf-8'));
         if (sessionContext?.urlRaiz) {
-            specSrc = this.buildRunSpec(specSrc, sessionContext);
+            specSrc = this.buildRunSpec(specSrc, sessionContext, targetUrl, adproToken);
         }
         const docContent = this.buildDocSpec(specSrc, screenshotsDir);
         const docFile    = path.join(specDir, `${id}-doc.spec.ts`);

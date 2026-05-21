@@ -1,0 +1,50 @@
+[
+  {
+    "name": "Administración por lista de precios",
+    "url": "https://www4.sincoerp.com/SincoComercial_Nueva/V3/CBRVentas/#/Ventas/AdministracionListaPrecios",
+    "id": "a7cce84e-cafa-4625-81c0-b99862edb2b2",
+    "specFile": "C:\\testPlatform\\backend\\workspace\\modules\\VENTAS\\submodules\\OPCIONES\\pages\\Administración por lista de precios\\e2e\\a7cce84e-cafa-4625-81c0-b99862edb2b2.spec.ts",
+    "status": "ready",
+    "createdAt": "2026-05-20T16:42:32.488Z",
+    "lastResult": {
+      "passed": 1,
+      "failed": 0,
+      "output": "\nRunning 1 test using 1 worker\n\n  ✓  1 a7cce84e-cafa-4625-81c0-b99862edb2b2-doc.spec.ts:3:5 › test (12.1s)\n\n  1 passed (13.7s)\n",
+      "ok": true,
+      "runAt": "2026-05-20T23:30:46.530Z",
+      "screenshots": [
+        "step_02.png"
+      ],
+      "hasPdf": true
+    },
+    "history": [
+      {
+        "passed": 1,
+        "failed": 0,
+        "ok": true,
+        "runAt": "2026-05-20T21:51:18.854Z",
+        "output": "\nRunning 1 test using 1 worker\n\n  ✓  1 a7cce84e-cafa-4625-81c0-b99862edb2b2-doc.spec.ts:3:5 › test (5.2s)\n\n  1 passed (6.4s)\n",
+        "empresaNombre": "SINCO COMERCIAL 2022",
+        "sucursalNombre": "Principal"
+      },
+      {
+        "passed": 1,
+        "failed": 0,
+        "ok": true,
+        "runAt": "2026-05-20T16:59:17.420Z",
+        "output": "\nRunning 1 test using 1 worker\n\n  ✓  1 a7cce84e-cafa-4625-81c0-b99862edb2b2-doc.spec.ts:3:5 › test (2.7s)\n\n  1 passed (3.9s)\n",
+        "empresaNombre": "SINCO COMERCIAL 2022",
+        "sucursalNombre": "Principal"
+      },
+      {
+        "passed": 0,
+        "failed": 1,
+        "ok": false,
+        "runAt": "2026-05-20T16:50:26.820Z",
+        "output": "\nRunning 1 test using 1 worker\n\n  ✘  1 a7cce84e-cafa-4625-81c0-b99862edb2b2-doc.spec.ts:3:5 › test (3.0m)\n\n\n  1) a7cce84e-cafa-4625-81c0-b99862edb2b2-doc.spec.ts:3:5 › test ───────────────────────────────────\n\n    \u001b[31mTest timeout of 180000ms exceeded.\u001b[39m\n\n    Error: locator.click: Test timeout of 180000ms exceeded.\n    Call log:\n    \u001b[2m  - waiting for locator('iframe[name=\"pagina1\"]').contentFrame().getByRole('button', { name: 'Consultar' })\u001b[22m\n\n\n      20 |   await page.goto('https://www4.sincoerp.com/SincoComercial_Nueva/V3/Marco/Default_iv.aspx');\n      21 |   await __snap('C:/testPlatform/backend/workspace/modules/VENTAS/submodules/OPCIONES/pages/Administración por lista de precios/e2e/screenshots/step_01.png');\n    > 22 |   await page.locator('iframe[name=\"pagina1\"]').contentFrame().getByRole('button', { name: 'Consultar' }).click();\n         |                                                                                                          ^\n      23 |   await __snap('C:/testPlatform/backend/workspace/modules/VENTAS/submodules/OPCIONES/pages/Administración por lista de precios/e2e/screenshots/step_02.png');\n      24 | });\n        at C:\\testPlatform\\backend\\workspace\\modules\\VENTAS\\submodules\\OPCIONES\\pages\\Administración por lista de precios\\e2e\\a7cce84e-cafa-4625-81c0-b99862edb2b2-doc.spec.ts:22:106\n\n    Error Context: ..\\..\\..\\..\\..\\..\\..\\..\\test-results\\a7cce84e-cafa-4625-81c0-b99862edb2b2-doc-test\\error-context.md\n\n  1 failed\n    a7cce84e-cafa-4625-81c0-b99862edb2b2-doc.spec.ts:3:5 › test ────────────────────────────────────\nCommand failed: npx playwright test \"a7cce84e-cafa-4625-81c0-b99862edb2b2-doc.spec.ts\" --reporter=list --headed --timeout=180000\n",
+        "empresaNombre": "SINCO COMERCIAL 2022",
+        "sucursalNombre": "Principal"
+      }
+    ]
+  }
+]

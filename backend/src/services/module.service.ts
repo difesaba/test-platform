@@ -6,6 +6,7 @@ export interface Submodule {
     name: string;
     folderPath: string;
     createdAt: string;
+    pages?: Page[];
 }
 
 export interface Page {
@@ -144,6 +145,7 @@ export class ModuleService {
             name: subName,
             folderPath: subPath,
             createdAt: new Date().toISOString(),
+            pages: [],
         };
 
         const mod = this.readModuleJson(moduleName);
@@ -151,5 +153,43 @@ export class ModuleService {
         this.writeModuleJson(moduleName, mod);
 
         return sub;
+    }
+
+    async createSubmodulePage(moduleName: string, subName: string, pageName: string, url: string): Promise<Page> {
+        const modPath = this.modulePath(moduleName);
+        if (!fs.existsSync(modPath)) throw new Error(`El módulo "${moduleName}" no existe`);
+
+        const subPath = path.join(modPath, 'submodules', subName);
+        if (!fs.existsSync(subPath)) throw new Error(`El submódulo "${subName}" no existe`);
+
+        const pagePath = path.join(subPath, 'pages', pageName);
+        if (fs.existsSync(pagePath)) throw new Error(`La página "${pageName}" ya existe en el submódulo`);
+
+        ['api', 'ui', 'e2e'].forEach(dir => fs.mkdirSync(path.join(pagePath, dir), { recursive: true }));
+        fs.writeFileSync(path.join(pagePath, 'api', 'tests.json'), JSON.stringify([], null, 2));
+        fs.writeFileSync(path.join(pagePath, 'ui', 'tests.json'), JSON.stringify([], null, 2));
+        fs.writeFileSync(path.join(pagePath, 'e2e', 'recordings.json'), JSON.stringify([], null, 2));
+
+        const page: Page = { name: pageName, url, folderPath: pagePath, createdAt: new Date().toISOString() };
+
+        const mod = this.readModuleJson(moduleName);
+        const sub = mod.submodules.find(s => s.name === subName);
+        if (!sub) throw new Error(`El submódulo "${subName}" no encontrado en module.json`);
+        if (!sub.pages) sub.pages = [];
+        sub.pages.push(page);
+        this.writeModuleJson(moduleName, mod);
+
+        return page;
+    }
+
+    deleteSubmodulePage(moduleName: string, subName: string, pageName: string): void {
+        const pagePath = path.join(this.modulePath(moduleName), 'submodules', subName, 'pages', pageName);
+        if (!fs.existsSync(pagePath)) throw new Error(`Página "${pageName}" no encontrada en el submódulo`);
+        fs.rmSync(pagePath, { recursive: true, force: true });
+
+        const mod = this.readModuleJson(moduleName);
+        const sub = mod.submodules.find(s => s.name === subName);
+        if (sub?.pages) sub.pages = sub.pages.filter(p => p.name !== pageName);
+        this.writeModuleJson(moduleName, mod);
     }
 }

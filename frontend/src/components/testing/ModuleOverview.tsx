@@ -50,7 +50,15 @@ export default function ModuleOverview({ selected, modules, onRefresh, onNotify 
     [modules, selected.moduleName],
   );
 
-  const pages = moduleData?.pages ?? [];
+  const inSubmodule = Boolean(selected.submoduleName);
+
+  const pages = useMemo(() => {
+    if (inSubmodule) {
+      return moduleData?.submodules?.find((s) => s.name === selected.submoduleName)?.pages ?? [];
+    }
+    return moduleData?.pages ?? [];
+  }, [moduleData, inSubmodule, selected.submoduleName]);
+
   const submodules = moduleData?.submodules ?? [];
 
   const closeDialog = () => {
@@ -60,17 +68,21 @@ export default function ModuleOverview({ selected, modules, onRefresh, onNotify 
   };
 
   const handleCreate = async () => {
-    if (!pageName.trim() || !pageUrl.trim()) {
-      return;
-    }
+    if (!pageName.trim() || !pageUrl.trim()) return;
 
     setSubmitting(true);
-
     try {
-      await api.post(`/modules/${selected.moduleName}/pages`, {
-        name: pageName.trim(),
-        url: pageUrl.trim(),
-      });
+      if (inSubmodule) {
+        await api.post(`/modules/${selected.moduleName}/submodules/${selected.submoduleName}/pages`, {
+          name: pageName.trim(),
+          url: pageUrl.trim(),
+        });
+      } else {
+        await api.post(`/modules/${selected.moduleName}/pages`, {
+          name: pageName.trim(),
+          url: pageUrl.trim(),
+        });
+      }
       onNotify('Pagina agregada correctamente.');
       closeDialog();
       onRefresh();
@@ -85,14 +97,15 @@ export default function ModuleOverview({ selected, modules, onRefresh, onNotify 
   };
 
   const handleDelete = async () => {
-    if (!deleteTarget) {
-      return;
-    }
+    if (!deleteTarget) return;
 
     setSubmitting(true);
-
     try {
-      await api.delete(`/modules/${selected.moduleName}/pages/${deleteTarget.name}`);
+      if (inSubmodule) {
+        await api.delete(`/modules/${selected.moduleName}/submodules/${selected.submoduleName}/pages/${deleteTarget.name}`);
+      } else {
+        await api.delete(`/modules/${selected.moduleName}/pages/${deleteTarget.name}`);
+      }
       onNotify('Pagina eliminada.');
       setDeleteTarget(null);
       onRefresh();
@@ -153,26 +166,46 @@ export default function ModuleOverview({ selected, modules, onRefresh, onNotify 
     },
   ];
 
+  const statsCards = inSubmodule
+    ? [
+        {
+          label: 'Submodulo activo',
+          value: selected.submoduleName!,
+          icon: <FolderRoundedIcon color="primary" />,
+        },
+        {
+          label: 'Modulo padre',
+          value: selected.moduleName,
+          icon: <FolderRoundedIcon color="action" />,
+        },
+        {
+          label: 'Paginas registradas',
+          value: String(pages.length),
+          icon: <DescriptionRoundedIcon color="primary" />,
+        },
+      ]
+    : [
+        {
+          label: 'Modulo activo',
+          value: selected.moduleName,
+          icon: <FolderRoundedIcon color="primary" />,
+        },
+        {
+          label: 'Paginas registradas',
+          value: String(pages.length),
+          icon: <DescriptionRoundedIcon color="primary" />,
+        },
+        {
+          label: 'Submodulos',
+          value: String(submodules.length),
+          icon: <FolderRoundedIcon color="primary" />,
+        },
+      ];
+
   return (
     <Stack spacing={3}>
       <Grid container spacing={2}>
-        {[
-          {
-            label: 'Modulo activo',
-            value: selected.submoduleName ?? selected.moduleName,
-            icon: <FolderRoundedIcon color="primary" />,
-          },
-          {
-            label: 'Paginas registradas',
-            value: String(pages.length),
-            icon: <DescriptionRoundedIcon color="primary" />,
-          },
-          {
-            label: 'Submodulos',
-            value: String(submodules.length),
-            icon: <FolderRoundedIcon color="primary" />,
-          },
-        ].map((item) => (
+        {statsCards.map((item) => (
           <Grid key={item.label} size={{ xs: 12, md: 4 }}>
             <Card>
               <CardContent>
@@ -205,7 +238,9 @@ export default function ModuleOverview({ selected, modules, onRefresh, onNotify 
                 Paginas disponibles
               </Typography>
               <Typography variant="body2" color="text.secondary">
-                Selecciona una pagina para gestionar pruebas API, UI y E2E.
+                {inSubmodule
+                  ? `Paginas del submodulo "${selected.submoduleName}". Selecciona una para gestionar sus pruebas.`
+                  : 'Selecciona una pagina para gestionar pruebas API, UI y E2E.'}
               </Typography>
             </Box>
             <Button variant="contained" startIcon={<AddRoundedIcon />} onClick={() => setDialogOpen(true)}>
@@ -243,9 +278,11 @@ export default function ModuleOverview({ selected, modules, onRefresh, onNotify 
       </Card>
 
       <Dialog open={dialogOpen} onClose={closeDialog} fullWidth maxWidth="sm">
-        <DialogTitle>Agregar pagina</DialogTitle>
+        <DialogTitle>
+          {inSubmodule ? `Agregar pagina en "${selected.submoduleName}"` : 'Agregar pagina'}
+        </DialogTitle>
         <DialogContent>
-          <Stack spacing={2}>
+          <Stack spacing={2} pt={0.5}>
             <TextField
               autoFocus
               label="Nombre de la pagina"

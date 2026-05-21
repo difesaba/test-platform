@@ -1,14 +1,14 @@
 {
-  "name": "Presupuesto",
-  "folderPath": "C:\\testPlatform\\backend\\workspace\\modules\\Presupuesto",
-  "createdAt": "2026-05-14T19:35:04.051Z",
+  "name": "PRESUPUESTO",
+  "folderPath": "C:\\testPlatform\\backend\\workspace\\modules\\PRESUPUESTO",
+  "createdAt": "2026-05-20T17:01:28.145Z",
   "submodules": [],
   "pages": [
     {
-      "name": "Maestro de insumos",
-      "url": "https://desarrollo.sincoerp.com/SincoOk/V3/ADPRO/Views/reactapp/#/presupuestos/maestrodeinsumos",
-      "folderPath": "C:\\testPlatform\\backend\\workspace\\modules\\Presupuesto\\pages\\Maestro de insumos",
-      "createdAt": "2026-05-14T19:35:59.898Z"
+      "name": "MAESTRO DE INSUMOS",
+      "url": "https://www4.sincoerp.com/SincoComercial_Nueva/V3/ADPRO/Views/reactapp/#/presupuestos/maestrodeinsumos",
+      "folderPath": "C:\\testPlatform\\backend\\workspace\\modules\\PRESUPUESTO\\pages\\MAESTRO DE INSUMOS",
+      "createdAt": "2026-05-20T17:02:41.857Z"
     }
   ]
 }

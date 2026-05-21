@@ -41,6 +41,8 @@ export class AppRoutes {
         router.post('/modules/:name/pages', requireAuth, modulesController.createPage);
         router.delete('/modules/:name/pages/:pageName', requireAuth, modulesController.removePage);
         router.delete('/modules/:name/submodules/:subName', requireAuth, modulesController.removeSubmodule);
+        router.post('/modules/:name/submodules/:subName/pages', requireAuth, modulesController.createSubmodulePage);
+        router.delete('/modules/:name/submodules/:subName/pages/:pageName', requireAuth, modulesController.removeSubmodulePage);
 
         router.get('/swagger-proxy', requireAuth, swaggerController.getSpec);
 

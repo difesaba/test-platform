@@ -72,4 +72,26 @@ export class ModulesController {
             res.status(500).json({ error: error.message });
         }
     };
+
+    createSubmodulePage = async (req: Request, res: Response) => {
+        try {
+            const { name: moduleName, subName } = req.params;
+            const { name: pageName, url } = req.body;
+            if (!pageName || !url) return res.status(400).json({ error: 'Faltan name y url' });
+            const page = await moduleService.createSubmodulePage(moduleName, subName, pageName, url);
+            res.status(201).json(page);
+        } catch (error: any) {
+            res.status(500).json({ error: error.message });
+        }
+    };
+
+    removeSubmodulePage = (req: Request, res: Response) => {
+        try {
+            const { name: moduleName, subName, pageName } = req.params;
+            moduleService.deleteSubmodulePage(moduleName, subName, pageName);
+            res.json({ ok: true });
+        } catch (error: any) {
+            res.status(500).json({ error: error.message });
+        }
+    };
 }

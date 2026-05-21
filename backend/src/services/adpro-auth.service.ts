@@ -4,6 +4,7 @@ export interface ADPROToken {
     access_token: string;
     token_type: string;
     expires_in: number;
+    authorization_token?: string;
 }
 
 export interface Empresa {
@@ -95,6 +96,7 @@ export class AdproAuthService {
             `${urlRaiz}/API/Auth/Sesion/IniciarMovil/${clienteId}/Empresa/${empresaId}/Sucursal/${sucursalId}`, 'GET',
             undefined, true, _pretoken
         );
+        console.log('[AUTH] token final keys:', Object.keys(_token ?? {}), '| full:', JSON.stringify(_token));
         return _token;
     }
 }

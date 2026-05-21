@@ -37,9 +37,10 @@ export interface ApiTestResult {
 function testsPath(moduleName: string, submodule?: string, page?: string): string {
     const base = path.join(process.cwd(), envs.WORKSPACE_PATH, 'modules', moduleName);
     let dir: string;
-    if (page)      dir = path.join(base, 'pages', page, 'api');
-    else if (submodule) dir = path.join(base, 'submodules', submodule, 'api');
-    else           dir = path.join(base, 'api');
+    if (submodule && page) dir = path.join(base, 'submodules', submodule, 'pages', page, 'api');
+    else if (page)         dir = path.join(base, 'pages', page, 'api');
+    else if (submodule)    dir = path.join(base, 'submodules', submodule, 'api');
+    else                   dir = path.join(base, 'api');
     return path.join(dir, 'tests.json');
 }
 

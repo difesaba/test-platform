@@ -1,0 +1,36 @@
+[
+  {
+    "name": "INFORME DE VENTAS DETALLADAS",
+    "url": "https://www4.sincoerp.com/SincoComercial_Nueva/ERPNET/CBR/Reportes/Ventas/InformeDeVentasDetalladas.aspx",
+    "id": "c130ff09-d977-476f-a908-5bcb38fef2c5",
+    "specFile": "C:\\testPlatform\\backend\\workspace\\modules\\VENTAS\\submodules\\Informes\\pages\\INFORME DE VENTAS DETALLADAS\\e2e\\c130ff09-d977-476f-a908-5bcb38fef2c5.spec.ts",
+    "status": "ready",
+    "createdAt": "2026-05-20T23:26:29.716Z",
+    "lastResult": {
+      "passed": 0,
+      "failed": 1,
+      "output": "\nRunning 1 test using 1 worker\n\nDialog message: No puede seleccionar más de 1 macroproyectos , tener presente que esta configuración es con base a la cantidad de información que tienen y evitando que por error se realicen consultas que afecten el rendimiento de la aplicación.\n  ✘  1 c130ff09-d977-476f-a908-5bcb38fef2c5-doc.spec.ts:3:5 › test (23.9s)\n\n\n  1) c130ff09-d977-476f-a908-5bcb38fef2c5-doc.spec.ts:3:5 › test ───────────────────────────────────\n\n    Error: locator.check: Clicking the checkbox did not change its state\n    Call log:\n    \u001b[2m  - waiting for locator('#pagina1').contentFrame().locator('#fgFiltros_grvArreglo_ctl07_cbRegistro2')\u001b[22m\n    \u001b[2m    - locator resolved to <input type=\"checkbox\" onclick=\"contabilizar(this);\" id=\"fgFiltros_grvArreglo_ctl07_cbRegistro2\" name=\"fgFiltros$grvArreglo$ctl07$cbRegistro2\"/>\u001b[22m\n    \u001b[2m  - attempting click action\u001b[22m\n    \u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n    \u001b[2m    - element is not stable\u001b[22m\n    \u001b[2m  - retrying click action\u001b[22m\n    \u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n    \u001b[2m    - element is visible, enabled and stable\u001b[22m\n    \u001b[2m    - scrolling into view if needed\u001b[22m\n    \u001b[2m    - done scrolling\u001b[22m\n    \u001b[2m    - performing click action\u001b[22m\n    \u001b[2m    - click action done\u001b[22m\n    \u001b[2m    - waiting for scheduled navigations to finish\u001b[22m\n    \u001b[2m    - navigations have finished\u001b[22m\n\n\n      65 |     dialog.dismiss().catch(() => {});\n      66 |   });\n    > 67 |   await page.locator('#pagina1').contentFrame().locator('#fgFiltros_grvArreglo_ctl07_cbRegistro2').check();\n         |                                                                                                    ^\n      68 |   await __snap('C:/testPlatform/backend/workspace/modules/VENTAS/submodules/Informes/pages/INFORME DE VENTAS DETALLADAS/e2e/screenshots/step_17.png');\n      69 |   await page.locator('#pagina1').contentFrame().locator('#fgFiltros_grvArreglo_ctl02_cbRegistro2').uncheck();\n      70 |   await __snap('C:/testPlatform/backend/workspace/modules/VENTAS/submodules/Informes/pages/INFORME DE VENTAS DETALLADAS/e2e/screenshots/step_18.png');\n        at C:\\testPlatform\\backend\\workspace\\modules\\VENTAS\\submodules\\Informes\\pages\\INFORME DE VENTAS DETALLADAS\\e2e\\c130ff09-d977-476f-a908-5bcb38fef2c5-doc.spec.ts:67:100\n\n    Error Context: ..\\..\\..\\..\\..\\..\\..\\..\\test-results\\c130ff09-d977-476f-a908-5bcb38fef2c5-doc-test\\error-context.md\n\n  1 failed\n    c130ff09-d977-476f-a908-5bcb38fef2c5-doc.spec.ts:3:5 › test ────────────────────────────────────\nCommand failed: npx playwright test \"c130ff09-d977-476f-a908-5bcb38fef2c5-doc.spec.ts\" --reporter=list --headed --timeout=180000\n",
+      "ok": false,
+      "runAt": "2026-05-20T23:28:49.912Z",
+      "screenshots": [
+        "step_01.png",
+        "step_02.png",
+        "step_03.png",
+        "step_04.png",
+        "step_05.png",
+        "step_06.png",
+        "step_07.png",
+        "step_08.png",
+        "step_09.png",
+        "step_10.png",
+        "step_11.png",
+        "step_12.png",
+        "step_13.png",
+        "step_14.png",
+        "step_15.png",
+        "step_16.png"
+      ],
+      "hasPdf": true
+    }
+  }
+]

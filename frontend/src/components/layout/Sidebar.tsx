@@ -38,12 +38,12 @@ import { getWebBase } from '../../utils/platform';
 
 type FormTarget =
   | { type: 'module' }
-  | { type: 'page'; parent: string }
+  | { type: 'page'; parent: string; submoduleName?: string }
   | { type: 'submodule'; parent: string };
 
 type DeleteTarget =
   | { type: 'module'; moduleName: string; label: string }
-  | { type: 'page'; moduleName: string; pageName: string; label: string }
+  | { type: 'page'; moduleName: string; pageName: string; label: string; submoduleName?: string }
   | { type: 'submodule'; moduleName: string; submoduleName: string; label: string };
 
 interface Props {
@@ -60,6 +60,7 @@ export default function Sidebar({ modules, loading, onRefresh, onNotify, onNavig
   const webBase = getWebBase(urlRaiz);
 
   const [expanded, setExpanded] = useState<string[]>([]);
+  const [expandedSubmodules, setExpandedSubmodules] = useState<string[]>([]);
   const [query, setQuery] = useState('');
   const [form, setForm] = useState<FormTarget | null>(null);
   const [deleteTarget, setDeleteTarget] = useState<DeleteTarget | null>(null);
@@ -71,6 +72,10 @@ export default function Sidebar({ modules, loading, onRefresh, onNotify, onNavig
     if (selected?.moduleName) {
       setExpanded((current) => (current.includes(selected.moduleName) ? current : [...current, selected.moduleName]));
     }
+    if (selected?.moduleName && selected?.submoduleName) {
+      const key = `${selected.moduleName}::${selected.submoduleName}`;
+      setExpandedSubmodules((current) => (current.includes(key) ? current : [...current, key]));
+    }
   }, [selected]);
 
   const filteredModules = useMemo(() => {
@@ -80,7 +85,10 @@ export default function Sidebar({ modules, loading, onRefresh, onNotify, onNavig
     return modules.filter((module) => {
       const moduleMatch = module.name.toLowerCase().includes(normalizedQuery);
       const pageMatch = (module.pages ?? []).some((page) => page.name.toLowerCase().includes(normalizedQuery));
-      const submoduleMatch = (module.submodules ?? []).some((submodule) => submodule.name.toLowerCase().includes(normalizedQuery));
+      const submoduleMatch = (module.submodules ?? []).some((submodule) =>
+        submodule.name.toLowerCase().includes(normalizedQuery) ||
+        (submodule.pages ?? []).some((p) => p.name.toLowerCase().includes(normalizedQuery))
+      );
       return moduleMatch || pageMatch || submoduleMatch;
     });
   }, [modules, query]);
@@ -105,6 +113,14 @@ export default function Sidebar({ modules, loading, onRefresh, onNotify, onNavig
     ));
   };
 
+  const toggleExpandedSubmodule = (key: string) => {
+    setExpandedSubmodules((current) => (
+      current.includes(key)
+        ? current.filter((item) => item !== key)
+        : [...current, key]
+    ));
+  };
+
   const handleSelection = (selection: SelectedModule | null) => {
     setSelected(selection);
     onNavigate?.();
@@ -119,8 +135,17 @@ export default function Sidebar({ modules, loading, onRefresh, onNotify, onNavig
         await api.post('/modules', { name: newName.trim() });
         onNotify('Modulo creado correctamente.');
       } else if (form.type === 'page') {
-        await api.post(`/modules/${form.parent}/pages`, { name: newName.trim(), url: newUrl.trim() });
-        setExpanded((current) => (current.includes(form.parent) ? current : [...current, form.parent]));
+        if (form.submoduleName) {
+          await api.post(`/modules/${form.parent}/submodules/${form.submoduleName}/pages`, {
+            name: newName.trim(),
+            url: newUrl.trim(),
+          });
+          const key = `${form.parent}::${form.submoduleName}`;
+          setExpandedSubmodules((current) => (current.includes(key) ? current : [...current, key]));
+        } else {
+          await api.post(`/modules/${form.parent}/pages`, { name: newName.trim(), url: newUrl.trim() });
+          setExpanded((current) => (current.includes(form.parent) ? current : [...current, form.parent]));
+        }
         onNotify('Pagina agregada correctamente.');
       } else {
         await api.post(`/modules/${form.parent}/submodules`, { name: newName.trim() });
@@ -150,8 +175,16 @@ export default function Sidebar({ modules, loading, onRefresh, onNotify, onNavig
         if (selected?.moduleName === deleteTarget.moduleName) setSelected(null);
         onNotify('Modulo eliminado.');
       } else if (deleteTarget.type === 'page') {
-        await api.delete(`/modules/${deleteTarget.moduleName}/pages/${deleteTarget.pageName}`);
-        if (selected?.moduleName === deleteTarget.moduleName && selected.pageName === deleteTarget.pageName) setSelected(null);
+        if (deleteTarget.submoduleName) {
+          await api.delete(`/modules/${deleteTarget.moduleName}/submodules/${deleteTarget.submoduleName}/pages/${deleteTarget.pageName}`);
+        } else {
+          await api.delete(`/modules/${deleteTarget.moduleName}/pages/${deleteTarget.pageName}`);
+        }
+        if (
+          selected?.moduleName === deleteTarget.moduleName &&
+          selected.pageName === deleteTarget.pageName &&
+          selected.submoduleName === deleteTarget.submoduleName
+        ) setSelected(null);
         onNotify('Pagina eliminada.');
       } else {
         await api.delete(`/modules/${deleteTarget.moduleName}/submodules/${deleteTarget.submoduleName}`);
@@ -178,7 +211,7 @@ export default function Sidebar({ modules, loading, onRefresh, onNotify, onNavig
   );
 
   return (
-      <>
+    <>
       <Box width={320} height="100%" display="flex" flexDirection="column" bgcolor="background.paper">
         <Stack spacing={2} px={2} py={2.5}>
           <Box>
@@ -226,22 +259,24 @@ export default function Sidebar({ modules, loading, onRefresh, onNotify, onNavig
               const moduleExpanded = expanded.includes(module.name);
 
               return (
-                <Box key={module.name} mb={1}>
+                <Box key={module.name} mb={0.5}>
+                  {/* Módulo raíz */}
                   <ListItemButton
                     selected={isSelected(module.name)}
                     onClick={() => {
                       handleSelection({ moduleName: module.name });
                       toggleExpanded(module.name);
                     }}
+                    sx={{ borderRadius: 1 }}
                   >
-                    <ListItemIcon>
-                      <WidgetsRoundedIcon color={isSelected(module.name) ? 'primary' : 'inherit'} />
+                    <ListItemIcon sx={{ minWidth: 36 }}>
+                      <WidgetsRoundedIcon fontSize="small" color={isSelected(module.name) ? 'primary' : 'inherit'} />
                     </ListItemIcon>
                     <ListItemText
                       primary={module.name}
-                      secondary={`${module.pages?.length ?? 0} paginas · ${module.submodules?.length ?? 0} submodulos`}
-                      primaryTypographyProps={{ fontWeight: 700, noWrap: true }}
-                      secondaryTypographyProps={{ noWrap: true }}
+                      secondary={`${module.pages?.length ?? 0} pag · ${module.submodules?.length ?? 0} sub`}
+                      primaryTypographyProps={{ fontWeight: 700, noWrap: true, variant: 'body2' }}
+                      secondaryTypographyProps={{ noWrap: true, variant: 'caption' }}
                     />
                     <Tooltip title="Eliminar modulo">
                       <IconButton
@@ -255,27 +290,37 @@ export default function Sidebar({ modules, loading, onRefresh, onNotify, onNavig
                         <DeleteOutlineRoundedIcon fontSize="small" />
                       </IconButton>
                     </Tooltip>
-                    <IconButton size="small">
-                      {moduleExpanded ? <ExpandLessRoundedIcon /> : <ExpandMoreRoundedIcon />}
+                    <IconButton size="small" onClick={(e) => { e.stopPropagation(); toggleExpanded(module.name); }}>
+                      {moduleExpanded ? <ExpandLessRoundedIcon fontSize="small" /> : <ExpandMoreRoundedIcon fontSize="small" />}
                     </IconButton>
                   </ListItemButton>
 
                   <Collapse in={moduleExpanded} timeout="auto" unmountOnExit>
-                    <List disablePadding>
+                    {/* Contenedor con línea vertical izquierda */}
+                    <Box
+                      sx={{
+                        ml: 2,
+                        pl: 1,
+                        borderLeft: '2px solid',
+                        borderColor: 'divider',
+                      }}
+                    >
+                      {/* Páginas del módulo */}
                       {(module.pages ?? []).map((page) => (
                         <ListItemButton
                           key={page.name}
                           selected={isSelected(module.name, page.name)}
                           onClick={() => handleSelection({ moduleName: module.name, pageName: page.name, pageUrl: page.url })}
+                          sx={{ borderRadius: 1, py: 0.5 }}
                         >
-                          <ListItemIcon>
-                            <DescriptionRoundedIcon color={isSelected(module.name, page.name) ? 'primary' : 'inherit'} />
+                          <ListItemIcon sx={{ minWidth: 30 }}>
+                            <DescriptionRoundedIcon fontSize="small" color={isSelected(module.name, page.name) ? 'primary' : 'inherit'} />
                           </ListItemIcon>
                           <ListItemText
                             primary={page.name}
                             secondary={page.url}
-                            primaryTypographyProps={{ noWrap: true }}
-                            secondaryTypographyProps={{ noWrap: true }}
+                            primaryTypographyProps={{ noWrap: true, variant: 'body2' }}
+                            secondaryTypographyProps={{ noWrap: true, variant: 'caption' }}
                           />
                           <IconButton
                             edge="end"
@@ -290,40 +335,144 @@ export default function Sidebar({ modules, loading, onRefresh, onNotify, onNavig
                         </ListItemButton>
                       ))}
 
-                      {(module.submodules ?? []).map((submodule) => (
-                        <ListItemButton
-                          key={submodule.name}
-                          selected={isSelected(module.name, undefined, submodule.name)}
-                          onClick={() => handleSelection({ moduleName: module.name, submoduleName: submodule.name })}
-                        >
-                          <ListItemIcon>
-                            {isSelected(module.name, undefined, submodule.name)
-                              ? <FolderOpenRoundedIcon color="primary" />
-                              : <FolderRoundedIcon />}
-                          </ListItemIcon>
-                          <ListItemText primary={submodule.name} primaryTypographyProps={{ noWrap: true }} />
-                          <IconButton
-                            edge="end"
-                            size="small"
-                            onClick={(event) => {
-                              event.stopPropagation();
-                              setDeleteTarget({ type: 'submodule', moduleName: module.name, submoduleName: submodule.name, label: submodule.name });
-                            }}
-                          >
-                            <DeleteOutlineRoundedIcon fontSize="small" />
-                          </IconButton>
-                        </ListItemButton>
-                      ))}
+                      {/* Submodulos */}
+                      {(module.submodules ?? []).map((submodule) => {
+                        const subKey = `${module.name}::${submodule.name}`;
+                        const subExpanded = expandedSubmodules.includes(subKey);
+                        const subPages = submodule.pages ?? [];
 
-                      <Stack direction="row" spacing={1} p={1}>
-                        <Button fullWidth size="small" variant="outlined" startIcon={<DescriptionRoundedIcon />} onClick={() => openForm({ type: 'page', parent: module.name })}>
+                        return (
+                          <Box key={submodule.name} mt={0.25}>
+                            {/* Fila submodulo */}
+                            <ListItemButton
+                              selected={isSelected(module.name, undefined, submodule.name)}
+                              onClick={() => {
+                                handleSelection({ moduleName: module.name, submoduleName: submodule.name });
+                                toggleExpandedSubmodule(subKey);
+                              }}
+                              sx={{ borderRadius: 1, py: 0.5 }}
+                            >
+                              <ListItemIcon sx={{ minWidth: 30 }}>
+                                {isSelected(module.name, undefined, submodule.name)
+                                  ? <FolderOpenRoundedIcon fontSize="small" color="primary" />
+                                  : <FolderRoundedIcon fontSize="small" />}
+                              </ListItemIcon>
+                              <ListItemText
+                                primary={submodule.name}
+                                secondary={`${subPages.length} paginas`}
+                                primaryTypographyProps={{ noWrap: true, variant: 'body2', fontWeight: 600 }}
+                                secondaryTypographyProps={{ noWrap: true, variant: 'caption' }}
+                              />
+                              <Tooltip title="Eliminar submodulo">
+                                <IconButton
+                                  edge="end"
+                                  size="small"
+                                  onClick={(event) => {
+                                    event.stopPropagation();
+                                    setDeleteTarget({ type: 'submodule', moduleName: module.name, submoduleName: submodule.name, label: submodule.name });
+                                  }}
+                                >
+                                  <DeleteOutlineRoundedIcon fontSize="small" />
+                                </IconButton>
+                              </Tooltip>
+                              <IconButton size="small" onClick={(e) => { e.stopPropagation(); toggleExpandedSubmodule(subKey); }}>
+                                {subExpanded ? <ExpandLessRoundedIcon fontSize="small" /> : <ExpandMoreRoundedIcon fontSize="small" />}
+                              </IconButton>
+                            </ListItemButton>
+
+                            {/* Páginas del submodulo */}
+                            <Collapse in={subExpanded} timeout="auto" unmountOnExit>
+                              <Box
+                                sx={{
+                                  ml: 1.5,
+                                  pl: 1,
+                                  borderLeft: '2px solid',
+                                  borderColor: 'divider',
+                                }}
+                              >
+                                {subPages.map((page) => (
+                                  <ListItemButton
+                                    key={page.name}
+                                    selected={isSelected(module.name, page.name, submodule.name)}
+                                    onClick={() => handleSelection({
+                                      moduleName: module.name,
+                                      submoduleName: submodule.name,
+                                      pageName: page.name,
+                                      pageUrl: page.url,
+                                    })}
+                                    sx={{ borderRadius: 1, py: 0.5 }}
+                                  >
+                                    <ListItemIcon sx={{ minWidth: 30 }}>
+                                      <DescriptionRoundedIcon
+                                        fontSize="small"
+                                        color={isSelected(module.name, page.name, submodule.name) ? 'primary' : 'inherit'}
+                                      />
+                                    </ListItemIcon>
+                                    <ListItemText
+                                      primary={page.name}
+                                      secondary={page.url}
+                                      primaryTypographyProps={{ noWrap: true, variant: 'body2' }}
+                                      secondaryTypographyProps={{ noWrap: true, variant: 'caption' }}
+                                    />
+                                    <IconButton
+                                      edge="end"
+                                      size="small"
+                                      onClick={(event) => {
+                                        event.stopPropagation();
+                                        setDeleteTarget({
+                                          type: 'page',
+                                          moduleName: module.name,
+                                          pageName: page.name,
+                                          label: page.name,
+                                          submoduleName: submodule.name,
+                                        });
+                                      }}
+                                    >
+                                      <DeleteOutlineRoundedIcon fontSize="small" />
+                                    </IconButton>
+                                  </ListItemButton>
+                                ))}
+
+                                {/* Botón agregar página en submodulo */}
+                                <Box px={0.5} py={0.75}>
+                                  <Button
+                                    fullWidth
+                                    size="small"
+                                    variant="outlined"
+                                    startIcon={<DescriptionRoundedIcon fontSize="small" />}
+                                    onClick={() => openForm({ type: 'page', parent: module.name, submoduleName: submodule.name })}
+                                  >
+                                    Agregar pagina
+                                  </Button>
+                                </Box>
+                              </Box>
+                            </Collapse>
+                          </Box>
+                        );
+                      })}
+
+                      {/* Acciones del módulo: agregar página o submodulo */}
+                      <Stack direction="row" spacing={1} py={0.75} pr={0.5}>
+                        <Button
+                          fullWidth
+                          size="small"
+                          variant="outlined"
+                          startIcon={<DescriptionRoundedIcon fontSize="small" />}
+                          onClick={() => openForm({ type: 'page', parent: module.name })}
+                        >
                           Pagina
                         </Button>
-                        <Button fullWidth size="small" variant="outlined" startIcon={<FolderRoundedIcon />} onClick={() => openForm({ type: 'submodule', parent: module.name })}>
+                        <Button
+                          fullWidth
+                          size="small"
+                          variant="outlined"
+                          startIcon={<FolderRoundedIcon fontSize="small" />}
+                          onClick={() => openForm({ type: 'submodule', parent: module.name })}
+                        >
                           Submodulo
                         </Button>
                       </Stack>
-                    </List>
+                    </Box>
                   </Collapse>
                 </Box>
               );
@@ -332,19 +481,21 @@ export default function Sidebar({ modules, loading, onRefresh, onNotify, onNavig
         </Box>
       </Box>
 
+      {/* Dialog crear */}
       <Dialog open={Boolean(form)} onClose={closeForm} fullWidth maxWidth="sm">
         <DialogTitle>
           {form?.type === 'module' && 'Crear modulo'}
-          {form?.type === 'page' && 'Agregar pagina'}
+          {form?.type === 'page' && (form.submoduleName ? `Agregar pagina en "${form.submoduleName}"` : 'Agregar pagina')}
           {form?.type === 'submodule' && 'Agregar submodulo'}
         </DialogTitle>
         <DialogContent>
-          <Stack spacing={2}>
+          <Stack spacing={2} pt={0.5}>
             <TextField
               autoFocus
               label={form?.type === 'page' ? 'Nombre de la pagina' : 'Nombre'}
               value={newName}
               onChange={(event) => setNewName(event.target.value)}
+              onKeyDown={(e) => { if (e.key === 'Enter' && newName.trim()) handleCreate(); }}
             />
             {form?.type === 'page' && (
               <TextField
@@ -352,18 +503,24 @@ export default function Sidebar({ modules, loading, onRefresh, onNotify, onNavig
                 helperText="Usa la URL completa de la pagina a probar."
                 value={newUrl}
                 onChange={(event) => setNewUrl(event.target.value)}
+                onKeyDown={(e) => { if (e.key === 'Enter' && newUrl.trim()) handleCreate(); }}
               />
             )}
           </Stack>
         </DialogContent>
         <DialogActions>
           <Button onClick={closeForm}>Cancelar</Button>
-          <Button variant="contained" onClick={handleCreate} disabled={submitting || !newName.trim() || (form?.type === 'page' && !newUrl.trim())}>
+          <Button
+            variant="contained"
+            onClick={handleCreate}
+            disabled={submitting || !newName.trim() || (form?.type === 'page' && !newUrl.trim())}
+          >
             {submitting ? 'Guardando...' : 'Guardar'}
           </Button>
         </DialogActions>
       </Dialog>
 
+      {/* Dialog eliminar */}
       <Dialog open={Boolean(deleteTarget)} onClose={() => setDeleteTarget(null)} fullWidth maxWidth="xs">
         <DialogTitle>Eliminar elemento</DialogTitle>
         <DialogContent>

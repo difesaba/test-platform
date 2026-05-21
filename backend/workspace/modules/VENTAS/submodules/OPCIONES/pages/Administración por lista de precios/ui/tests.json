@@ -1,0 +1,85 @@
+[
+  {
+    "name": "Administración por lista de precios",
+    "url": "https://www4.sincoerp.com/SincoComercial_Nueva/V3/CBRVentas/#/Ventas/AdministracionListaPrecios",
+    "id": "ab4faef5-1cc6-477f-9ea7-34636297c31b",
+    "createdAt": "2026-05-20T16:33:31.155Z",
+    "components": [
+      {
+        "id": "1779294809137-1d8cc4101ca8b",
+        "name": "Proyecto",
+        "selector": "#mat-input-1",
+        "tagName": "input",
+        "inputType": "text",
+        "rules": [
+          "non-negative"
+        ]
+      }
+    ],
+    "lastResult": {
+      "screenshot": "iVBORw0KGgoAAAANSUhEUgAAAWcAAAASCAIAAAAIQogcAAAEnklEQVR4nOzbcUgbVxwH8Lf0LAtLViNL5GTGsbCUGTGOpFtGtUSMozrjNMMM06LMsdmJf7SUMSUWCTXrPxVkzG5uM10EU6ubkaVgwYwIRsxG3MxYpLthICkYkhSv2kjEHtnukmkbt8gyGkH4ff4IyXvf9y7/5Jd37+6wzc1NBAAA/xkLAQBAJqBqAAAy83+qBjGh108Q6AmJhQgiFEMAgEMCS7zGAgs2223PKkWXEa5IqWmuFLMPahUSWRw3h053vyvnIADAIcBUDXLeNOTgNXb0lPFzHm745y2m/vXWLo0YQwdBWNtjRACAQ4OuDKTXsyo4pZXns5nPuSLVm4q5L5eIBnExvdyIrdgtEw7fA3oNInlD11ghZO+ZIE0gumw133TTixfsOYn6rE7OT4YDTqtl2kuH2QWvN7fVitiJ8x0zajU2iZnAJmEfm0zOJlI2NVeJErMR4/pp7tsy0j7tXUcYXt7yXk2yI3bXaf12xnuPPkyepK5Fd4KPAABZRhcGHv48Fl5yB3avwBapDUYtUzLiQfug6Xehruey0XBBRdmHbXeolNHpAn7bwOiq5JzBeNlwTkZah6zENt0adVuGZnPquw1Gw8ca/s8m0zy5d7bPzR6+JhGo5yyYrs0Ed/rCTtfWax0GY29nZdw58kMAJea78cUsVv2RwWikDxOZGrGHEAAg25jdC1FtpzrXM/RJb/+w1flbMBbf6STmHA8Up6uE9B4HlievLmd7ln0po9MEiJ9cmFKjxDHEwvBTmkrM7fUjtLY07zuufquYgyGMU6ypP77q8ZL/mK2hTpwMaHWKjdk54u8vI6huUonojqO49BUBFQgwA5+WaLsvakroVnoBIpXlrwUCUQQAyLLE3gXGV7R0yaNB4pc5x9Rn0zeFlR+0qArZZCSIqLDpkutRvCxlcJoAGQ4iwQvcnSZc1ZXYuLizGsZ4vKM7By5tMZYybyKPz/aSsmh3F1aAF6H58H0kzkvkjzx24OSKB2MfCdpHbs2t3EPcY+zYOsrbeogAAFn2aMcT4+DFFdriCk3EMTjwtV1sUDO/+5e1hrPS/bZF/yVAooMRsl/7xivrvNSGM7szzk+vLiIAQNax0LZnRN9r8++2YPwSKXMOcJ/+A+ejPwL+eNrBaQI8AY78obW9aUGBgIqE059D8Ph4ymzhoB/hgty0eUSureXLpHiyZFHUnwgAcABY6KhEIctxTVqXQzEqjqiNoGvGGc6XSnIRVlKuyHHd+G45Sp8RbEfcY/2WX1Nux0oXEL+qyFmw2X10MxX12Qf1fdN3EcorO/niyu3v3ZHtRNjSp7/uTqkh4opKrmvqFpEYRtgmXc8qK8T73DbyDJcdWnT5yGiUXJkZnwkjAMABYHYSxQ0X23+02b7qG6V/8vQ10VJV+/sKHt3JEqovtLLHJq/0jtKxghPvtJakXnhNFyhSnz9jNZuvOOhqckxUfuZ8TSHdypHr2reslgGDlQmX1bQ3pt7ZxcJVH7YiZrbklde2jip8v+9eWN1eRw5fv+qMYwUn1dWFVtfWFgIAZNlT8MwrACAj8PQaACAzUDUAAJmBqgEAyMxfAAAA//89Muy4AAAABklEQVQDALbE+TzyzGLHAAAAAElFTkSuQmCC",
+      "title": "",
+      "loadTime": 12307,
+      "ok": false,
+      "runAt": "2026-05-20T19:50:28.597Z",
+      "componentResults": [
+        {
+          "componentId": "1779294809137-1d8cc4101ca8b",
+          "name": "Proyecto",
+          "selector": "#mat-input-1",
+          "ok": false,
+          "checks": [
+            {
+              "rule": "non-negative",
+              "ok": false,
+              "message": "El campo sigue aceptando valores negativos.",
+              "actualValue": "-5"
+            }
+          ],
+          "screenshot": "iVBORw0KGgoAAAANSUhEUgAAAWcAAAASCAIAAAAIQogcAAAEnklEQVR4nOzbcUgbVxwH8Lf0LAtLViNL5GTGsbCUGTGOpFtGtUSMozrjNMMM06LMsdmJf7SUMSUWCTXrPxVkzG5uM10EU6ubkaVgwYwIRsxG3MxYpLthICkYkhSv2kjEHtnukmkbt8gyGkH4ff4IyXvf9y7/5Jd37+6wzc1NBAAA/xkLAQBAJqBqAAAy83+qBjGh108Q6AmJhQgiFEMAgEMCS7zGAgs2223PKkWXEa5IqWmuFLMPahUSWRw3h053vyvnIADAIcBUDXLeNOTgNXb0lPFzHm745y2m/vXWLo0YQwdBWNtjRACAQ4OuDKTXsyo4pZXns5nPuSLVm4q5L5eIBnExvdyIrdgtEw7fA3oNInlD11ghZO+ZIE0gumw133TTixfsOYn6rE7OT4YDTqtl2kuH2QWvN7fVitiJ8x0zajU2iZnAJmEfm0zOJlI2NVeJErMR4/pp7tsy0j7tXUcYXt7yXk2yI3bXaf12xnuPPkyepK5Fd4KPAABZRhcGHv48Fl5yB3avwBapDUYtUzLiQfug6Xehruey0XBBRdmHbXeolNHpAn7bwOiq5JzBeNlwTkZah6zENt0adVuGZnPquw1Gw8ca/s8m0zy5d7bPzR6+JhGo5yyYrs0Ed/rCTtfWax0GY29nZdw58kMAJea78cUsVv2RwWikDxOZGrGHEAAg25jdC1FtpzrXM/RJb/+w1flbMBbf6STmHA8Up6uE9B4HlievLmd7ln0po9MEiJ9cmFKjxDHEwvBTmkrM7fUjtLY07zuufquYgyGMU6ypP77q8ZL/mK2hTpwMaHWKjdk54u8vI6huUonojqO49BUBFQgwA5+WaLsvakroVnoBIpXlrwUCUQQAyLLE3gXGV7R0yaNB4pc5x9Rn0zeFlR+0qArZZCSIqLDpkutRvCxlcJoAGQ4iwQvcnSZc1ZXYuLizGsZ4vKM7By5tMZYybyKPz/aSsmh3F1aAF6H58H0kzkvkjzx24OSKB2MfCdpHbs2t3EPcY+zYOsrbeogAAFn2aMcT4+DFFdriCk3EMTjwtV1sUDO/+5e1hrPS/bZF/yVAooMRsl/7xivrvNSGM7szzk+vLiIAQNax0LZnRN9r8++2YPwSKXMOcJ/+A+ejPwL+eNrBaQI8AY78obW9aUGBgIqE059D8Ph4ymzhoB/hgty0eUSureXLpHiyZFHUnwgAcABY6KhEIctxTVqXQzEqjqiNoGvGGc6XSnIRVlKuyHHd+G45Sp8RbEfcY/2WX1Nux0oXEL+qyFmw2X10MxX12Qf1fdN3EcorO/niyu3v3ZHtRNjSp7/uTqkh4opKrmvqFpEYRtgmXc8qK8T73DbyDJcdWnT5yGiUXJkZnwkjAMABYHYSxQ0X23+02b7qG6V/8vQ10VJV+/sKHt3JEqovtLLHJq/0jtKxghPvtJakXnhNFyhSnz9jNZuvOOhqckxUfuZ8TSHdypHr2reslgGDlQmX1bQ3pt7ZxcJVH7YiZrbklde2jip8v+9eWN1eRw5fv+qMYwUn1dWFVtfWFgIAZNlT8MwrACAj8PQaACAzUDUAAJmBqgEAyMxfAAAA//89Muy4AAAABklEQVQDALbE+TzyzGLHAAAAAElFTkSuQmCC"
+        }
+      ]
+    }
+  },
+  {
+    "name": "Administración por lista de precios",
+    "url": "https://www4.sincoerp.com/SincoComercial_Nueva/V3/CBRVentas/#/Ventas/AdministracionListaPrecios",
+    "id": "88dcac0b-41d8-40af-be97-99bdb90aa67b",
+    "createdAt": "2026-05-20T17:18:52.895Z",
+    "components": [
+      {
+        "id": "1779297530315-a52a95b02611e",
+        "name": "Proyecto",
+        "selector": "#mat-input-1",
+        "tagName": "input",
+        "inputType": "text",
+        "rules": [
+          "required"
+        ]
+      }
+    ],
+    "lastResult": {
+      "screenshot": "iVBORw0KGgoAAAANSUhEUgAAAWcAAAASCAIAAAAIQogcAAAEr0lEQVR4nOzbcUwaVxwH8Dd6NiODVdzAnJm4jIxuYsQFurFUG4y4VCdOWWSRNpq5bHbGP9o0yzTYGFJZ/6mJWWY3t0mHidTqJmY0sYksmIiRLbjJVkx3i2RgIgEar1oMxhK2O5i2uGFCM0xMf58/CLz3fe/4hx/v3t1hGxsbKE23/gzZf1uWlxS8lP8MAgA8Zp54hKoBAHicMRAAAKTjUaoGMabVjhHofxIJEEQgggAABwQWf4345iyWm66VKFVG2AK5qrFcyNyvVUhoftQYONn5rpSFAAAHAF01yFnDgI1T39ZVws26v+6dNRl615o7VEIM7Qd+dZceAQAODKoykG7XCu+EWprLpD9nCxRvyma+XCDqhIXUciOyZDWN2Tz3qDWI6A1NfRmfuWuCFIHwotl43UktXrBnRcrTGik3EfbZzaZJNxVm5r3e2FItYMbPd4yoWd8gpAMbhHVkPDGbQN7QWCGIz0aMaifZb0tI66R7DWF4adN7VYmOyLLd/O2U+w51mBxRTZPmGBcBADKMKgwc/DksuOD07VxLKVDq9Gq6ZMT81n7D73xN10W97pwiah203I4mjU4V8Fr6hldEZ3T6i7ozEtI8YCa2qNaw0zQwnVXbqdPrPlZxfzYYZsnds31udHFV8UAta85wZcq/3Re0OzZfa9Ppu9vLY/ahH3woPt+1L6axyo90ej11mNDEkDWAAACZRu9eCKrbldmugU+6ewfN9lv+SGy7k5ix3ZOdrOBTexxYjrSylOla9CSNThEgfnJgcpUcxxADw0+oyjGn24vQ6sKs56jyrUIWhjBWoar26IrLTf5rtroaYSKg1sjWp2eIf74Mr7JBIaA6DuPiV3hRn48e+KRI3XleVUS1UgsQsSR31ecLIwBAhsX3LjCurKlDGvYTv8zYJj6bvM4v/6BJkc8kQ34UDRouOB7ES5IGpwiQQT/iPc/ebsIVHfGNi9srQYzDObx94OImfTH9JvTwbC/KC3Z2YXl4AZoN3kXCnHj+0EMHTqx4MOYhv3XoxszSHcQ+woysoZzN+wgAkGEPdjwxFl5Ypi4sU4Vs/X1fW4U6Jf27f1mtOy3ea1v0PwIk2h8B65Vv3JL2Cy04vTtj//TyPAIAZBwDbbmGtN0W704Lxi0S0+cAd6k/cC76w+eNpRycIsDh4cgbWN2d5uXxoqFg6nMIDhdPmi3o9yKcl50yj8jV1VyJGE+UrGj0LwQA2AcMdFgkk2Q5xs2LgUg0hqLrfseUPZgrFmUjrKhUluW49t1imDoj2Ao5R3pNvybdjpUqIHxVljVnsXqo5mjYY+3X9kwuI5RTcvyFpZvfO0Nb8bCpR3vVmVRDhGXlbMfEDSI+jLCMO56Wlwn3uG3kKTYzMO/wkOEwuTQ1OhVEAIB9QO8kCuvOt/5osXzVM0z95KlrosWK1vdlHKqTwVeea2aOjF/qHqZiecfeaS5KvvCaKlCgPHvKbDReslHV5Iig9NTZqnyqlSXVtG6aTX06Mx0uqWqtT76zi4ErPmxG9GyJK68tbRX4Xt89v7K1hhy8etkew/KOKyvzzY7NTQQAyDB4eg0AkB54eg0AkB6oGgCA9EDVAACk528AAAD//5A1kwEAAAAGSURBVAMAk9cCKeHV/H8AAAAASUVORK5CYII=",
+      "title": "",
+      "loadTime": 2326,
+      "ok": false,
+      "runAt": "2026-05-20T17:19:05.443Z",
+      "componentResults": [
+        {
+          "componentId": "1779297530315-a52a95b02611e",
+          "name": "Proyecto",
+          "selector": "#mat-input-1",
+          "ok": false,
+          "checks": [
+            {
+              "rule": "required",
+              "ok": false,
+              "message": "El componente no marca requerido en el DOM."
+            }
+          ],
+          "screenshot": "iVBORw0KGgoAAAANSUhEUgAAAWcAAAASCAIAAAAIQogcAAAEr0lEQVR4nOzbcUwaVxwH8Dd6NiODVdzAnJm4jIxuYsQFurFUG4y4VCdOWWSRNpq5bHbGP9o0yzTYGFJZ/6mJWWY3t0mHidTqJmY0sYksmIiRLbjJVkx3i2RgIgEar1oMxhK2O5i2uGFCM0xMf58/CLz3fe/4hx/v3t1hGxsbKE23/gzZf1uWlxS8lP8MAgA8Zp54hKoBAHicMRAAAKTjUaoGMabVjhHofxIJEEQgggAABwQWf4345iyWm66VKFVG2AK5qrFcyNyvVUhoftQYONn5rpSFAAAHAF01yFnDgI1T39ZVws26v+6dNRl615o7VEIM7Qd+dZceAQAODKoykG7XCu+EWprLpD9nCxRvyma+XCDqhIXUciOyZDWN2Tz3qDWI6A1NfRmfuWuCFIHwotl43UktXrBnRcrTGik3EfbZzaZJNxVm5r3e2FItYMbPd4yoWd8gpAMbhHVkPDGbQN7QWCGIz0aMaifZb0tI66R7DWF4adN7VYmOyLLd/O2U+w51mBxRTZPmGBcBADKMKgwc/DksuOD07VxLKVDq9Gq6ZMT81n7D73xN10W97pwiah203I4mjU4V8Fr6hldEZ3T6i7ozEtI8YCa2qNaw0zQwnVXbqdPrPlZxfzYYZsnds31udHFV8UAta85wZcq/3Re0OzZfa9Ppu9vLY/ahH3woPt+1L6axyo90ej11mNDEkDWAAACZRu9eCKrbldmugU+6ewfN9lv+SGy7k5ix3ZOdrOBTexxYjrSylOla9CSNThEgfnJgcpUcxxADw0+oyjGn24vQ6sKs56jyrUIWhjBWoar26IrLTf5rtroaYSKg1sjWp2eIf74Mr7JBIaA6DuPiV3hRn48e+KRI3XleVUS1UgsQsSR31ecLIwBAhsX3LjCurKlDGvYTv8zYJj6bvM4v/6BJkc8kQ34UDRouOB7ES5IGpwiQQT/iPc/ebsIVHfGNi9srQYzDObx94OImfTH9JvTwbC/KC3Z2YXl4AZoN3kXCnHj+0EMHTqx4MOYhv3XoxszSHcQ+woysoZzN+wgAkGEPdjwxFl5Ypi4sU4Vs/X1fW4U6Jf27f1mtOy3ea1v0PwIk2h8B65Vv3JL2Cy04vTtj//TyPAIAZBwDbbmGtN0W704Lxi0S0+cAd6k/cC76w+eNpRycIsDh4cgbWN2d5uXxoqFg6nMIDhdPmi3o9yKcl50yj8jV1VyJGE+UrGj0LwQA2AcMdFgkk2Q5xs2LgUg0hqLrfseUPZgrFmUjrKhUluW49t1imDoj2Ao5R3pNvybdjpUqIHxVljVnsXqo5mjYY+3X9kwuI5RTcvyFpZvfO0Nb8bCpR3vVmVRDhGXlbMfEDSI+jLCMO56Wlwn3uG3kKTYzMO/wkOEwuTQ1OhVEAIB9QO8kCuvOt/5osXzVM0z95KlrosWK1vdlHKqTwVeea2aOjF/qHqZiecfeaS5KvvCaKlCgPHvKbDReslHV5Iig9NTZqnyqlSXVtG6aTX06Mx0uqWqtT76zi4ErPmxG9GyJK68tbRX4Xt89v7K1hhy8etkew/KOKyvzzY7NTQQAyDB4eg0AkB54eg0AkB6oGgCA9EDVAACk528AAAD//5A1kwEAAAAGSURBVAMAk9cCKeHV/H8AAAAASUVORK5CYII="
+        }
+      ]
+    }
+  }
+]

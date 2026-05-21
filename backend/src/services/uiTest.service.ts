@@ -84,9 +84,10 @@ const loginAttemptState = new WeakMap<Page, { url: string; attemptedAt: number; 
 function testsPath(mod: string, sub?: string, page?: string): string {
     const base = path.join(process.cwd(), envs.WORKSPACE_PATH, 'modules', mod);
     let dir: string;
-    if (page)      dir = path.join(base, 'pages', page, 'ui');
-    else if (sub)  dir = path.join(base, 'submodules', sub, 'ui');
-    else           dir = path.join(base, 'ui');
+    if (sub && page)    dir = path.join(base, 'submodules', sub, 'pages', page, 'ui');
+    else if (page)      dir = path.join(base, 'pages', page, 'ui');
+    else if (sub)       dir = path.join(base, 'submodules', sub, 'ui');
+    else                dir = path.join(base, 'ui');
     return path.join(dir, 'tests.json');
 }
 
@@ -141,6 +142,45 @@ async function createContext(adproToken?: any, sessionContext?: AdproSessionCont
                 writeValue('adproToken', serialized);
                 writeValue('access_token', token.access_token);
                 writeValue('accessToken', token.access_token);
+                // Doble Token: inyectar authorization_token para que la SPA lo encuentre al inicializar
+                if ((token as any).authorization_token) {
+                    writeValue('authorization_token', (token as any).authorization_token);
+                }
+                // SPAs con Marco llaman window.parent.getToken() / getTokenAuth() para autenticarse.
+                // En el top frame window.parent === window, así que esto las cubre.
+                // getToken() retorna el JWT string; getTokenAuth() retorna el objeto completo
+                // (algunas SPAs actualizadas leen ambos — _sesion = getTokenAuth()).
+                try {
+                    (window as any).getToken = () => {
+                        console.log('[TP] getToken called ->', (token?.access_token ?? '').slice(0, 80) + '...');
+                        return token.access_token;
+                    };
+                } catch {}
+                try {
+                    (window as any).getTokenAuth = () => {
+                        const authToken = (token as any).authorization_token ?? '';
+                        console.log('[TP] getTokenAuth called -> authorization_token:', authToken.slice(0, 60) + '...');
+                        return authToken;
+                    };
+                } catch {}
+                // Solo mock en top frame — en iframes window.parent.getToken() ya funciona.
+                // Usar value (estable) no get (crea objeto nuevo cada acceso → rompe comparaciones React).
+                try {
+                    if (!(window as any).opener && window === (window as any).parent) {
+                        const mockParent = {
+                            getToken: () => token?.access_token ?? '',
+                            getTokenAuth: () => (token as any).authorization_token ?? token?.access_token ?? '',
+                        };
+                        Object.defineProperty(window, 'opener', {
+                            value: { parent: mockParent },
+                            writable: true,
+                            configurable: true,
+                        });
+                        console.log('[TP] window.opener mock OK (top frame)');
+                    }
+                } catch (e: any) {
+                    console.log('[TP] window.opener mock FAILED:', e?.message);
+                }
             }
 
             if (session) {
@@ -172,6 +212,7 @@ async function createContext(adproToken?: any, sessionContext?: AdproSessionCont
                 const persistedFinalToken = {
                     state: {
                         finalToken: token?.access_token ?? '',
+                        authorizationToken: (token as any).authorization_token ?? '',
                     },
                     version: 0,
                 };
@@ -191,6 +232,36 @@ async function createContext(adproToken?: any, sessionContext?: AdproSessionCont
         }, { token: adproToken, session: sessionContext });
     }
 
+    // Modelo Doble Token: inyectar Authorization y X-SincoERP-Authorization en todos los requests.
+    // El interceptor de la SPA puede fallar al llamar getTokenAuth() (problema con window.opener),
+    // lo que causa que ninguno de los dos headers llegue al servidor. Los añadimos aquí si faltan.
+    if (adproToken?.access_token) {
+        const bearerValue = `${adproToken.token_type ?? 'Bearer'} ${adproToken.access_token}`;
+        const authorizationToken = adproToken.authorization_token ?? adproToken.access_token;
+        console.log('[UI Route] tokens listos para inyección:', {
+            hasAccessToken: Boolean(adproToken.access_token),
+            hasAuthorizationToken: Boolean(adproToken.authorization_token),
+            authorizationTokenPreview: adproToken.authorization_token
+                ? adproToken.authorization_token.slice(0, 40) + '...'
+                : '(sin authorization_token — usando access_token como fallback)',
+        });
+        await context.route('**/*', async (route) => {
+            const headers = { ...route.request().headers() };
+            const url = route.request().url();
+            // Asegura que Authorization tenga el prefijo "Bearer " — la SPA puede enviarlo sin él
+            if (!headers['authorization'] || !headers['authorization'].toLowerCase().startsWith('bearer ')) {
+                headers['authorization'] = bearerValue;
+            }
+            if (!headers['x-sincoerp-authorization'] && authorizationToken) {
+                headers['x-sincoerp-authorization'] = authorizationToken;
+                if (/\/API\//i.test(url)) {
+                    console.log('[UI Route] X-SincoERP-Authorization añadido →', url.slice(0, 100));
+                }
+            }
+            await route.continue({ headers });
+        });
+    }
+
     return { browser, context };
 }
 
@@ -200,6 +271,33 @@ function isReactAppRoute(url: string): boolean {
 
 function isLocalhostUrl(url: string): boolean {
     return /^https?:\/\/(localhost|127\.0\.0\.1)(:\d+)?/i.test(url);
+}
+
+// Detecta cualquier SPA con Marco+iframe por su patrón de hash routing (#/).
+// Devuelve la URL del Marco derivada, o null si no aplica.
+// Usa sessionUrlRaiz (mismo origen) para manejar correctamente cualquier profundidad de path.
+// ADPRO React routes excluidas: el fake Marco crashea React 18 (useSyncExternalStore sin globals de sesión).
+// Para esas rutas se usa el flujo real Seleccion_iv.aspx + inyección directa de iframe.
+function tryDeriveMarcoUrl(targetUrl: string, sessionUrlRaiz: string): string | null {
+    if (!targetUrl.includes('#/')) return null;
+    if (isReactAppRoute(targetUrl)) return null;
+    try {
+        const pathWithoutHash = targetUrl.split('#')[0];
+        const parsedTarget = new URL(pathWithoutHash);
+        // Same origin: use sessionUrlRaiz — reliable for any path depth (CBRVentas, ADPRO/Views/reactapp, etc.)
+        if (sessionUrlRaiz) {
+            try {
+                if (new URL(sessionUrlRaiz).origin === parsedTarget.origin) {
+                    return buildMarcoUrl(sessionUrlRaiz) || null;
+                }
+            } catch { /* ignore */ }
+        }
+        // Fallback: derive 1 level up (works for shallow paths like CBRVentas on a different origin)
+        const parts = parsedTarget.pathname.replace(/\/$/, '').split('/').filter(Boolean);
+        if (parts.length < 1) return null;
+        parts.pop();
+        return `${parsedTarget.origin}/${parts.join('/')}/Marco/Default_iv.aspx`;
+    } catch { return null; }
 }
 
 function buildMarcoUrl(sessionUrlRaiz?: string): string {
@@ -467,6 +565,36 @@ async function openTargetPage(page: Page, targetUrl: string, sessionContext?: Ad
         return;
     }
 
+    // SPA externa con Marco+iframe (ej. SincoERP CBRVentas): la URL es del iframe pagina1.
+    // Detectamos el patrón pero NO salteamos el flujo ADPRO — necesitamos establecer las
+    // cookies de sesión ADPRO primero. El flujo continúa y al final navega a la URL de la SPA.
+    // SPA con Marco+iframe (cualquier módulo con hash routing):
+    // Navegamos directamente al URL del Marco, interceptamos la respuesta y
+    // servimos un fake Marco mínimo que carga la SPA en el iframe pagina1.
+    // Así no hay redirect ni login — los tokens están inyectados por createContext.
+    const externalMarcoUrl = tryDeriveMarcoUrl(targetUrl, sessionUrlRaiz);
+    if (externalMarcoUrl) {
+        await page.route('**/Marco/Default_iv.aspx*', async (route) => {
+            await route.fulfill({
+                status: 200,
+                contentType: 'text/html; charset=utf-8',
+                body: [
+                    '<!DOCTYPE html><html><head><meta charset="utf-8">',
+                    '<style>*{margin:0;padding:0}body,html{width:100%;height:100%;overflow:hidden}</style>',
+                    '</head><body>',
+                    `<iframe id="pagina1" name="pagina1" src="${targetUrl}"`,
+                    ' style="width:100%;height:100vh;border:none;display:block;"></iframe>',
+                    '</body></html>',
+                ].join(''),
+            });
+        });
+        console.log('[UI Playwright] Marco SPA: navigating directly to Marco URL', { externalMarcoUrl, targetUrl });
+        await page.goto(externalMarcoUrl, { waitUntil: 'domcontentloaded', timeout: 30000 }).catch(() => undefined);
+        await page.waitForSelector('#pagina1, iframe[name="pagina1"], iframe', { timeout: 20000 }).catch(() => undefined);
+        await page.waitForLoadState('networkidle').catch(() => undefined);
+        return;
+    }
+
     // Ir directo a Seleccion_iv.aspx — accesible sin login previo (no redirige a Login_iv.aspx)
     // Igual que playwrightLogin en playwright-auth.service.ts. Evita rellenar credenciales.
     const seleccionUrl = buildSeleccionUrl(sessionUrlRaiz);
@@ -523,100 +651,28 @@ async function openTargetPage(page: Page, targetUrl: string, sessionContext?: Ad
         return;
     }
 
-    // REACT ROUTE: Marco controla pagina1 — simular click en menú para que Marco navegue
-    // el iframe (frame.goto() directo es ignorado/reseteado por el JS de Marco)
-
-    // 1. Esperar que Marco renderice al menos un iframe
-    const iframeExists = await page.waitForSelector('iframe', { timeout: 20000 }).catch(() => null);
-    if (!iframeExists) {
-        console.log('[UI Playwright] No iframe en Marco, no se puede navegar ruta React', { targetUrl });
-        return;
-    }
-
-    // 2. Loguear TODOS los elementos clicables en Marco para diagnóstico
-    const hashRoute = targetUrl.includes('#') ? (targetUrl.split('#')[1] ?? '') : '';
-    const routeSegments = hashRoute.split('/').filter(Boolean);
-
-    const marcoElements = await page.evaluate((segs: string[]) => {
-        const all = Array.from(document.querySelectorAll('a, button, li, span, div'));
-        const results: Array<{ tag: string; text: string; href: string; id: string; classes: string }> = [];
-        for (const el of all) {
-            const text = (el.textContent ?? '').trim().replace(/\s+/g, ' ').slice(0, 80);
-            const href = el.getAttribute('href') ?? el.getAttribute('data-href') ?? el.getAttribute('data-url') ?? '';
-            const id = el.id ?? '';
-            const classes = (el.className ?? '').toString().slice(0, 60);
-            // Solo incluir si tiene texto o href que menciona algún segmento
-            const relevant = segs.some((s) =>
-                text.toLowerCase().includes(s.toLowerCase()) ||
-                href.toLowerCase().includes(s.toLowerCase())
-            );
-            if (relevant) {
-                results.push({ tag: el.tagName, text, href, id, classes });
-            }
-        }
-        return results;
-    }, routeSegments);
-    console.log('[UI Playwright] Marco elements matching route', { routeSegments, count: marcoElements.length, elements: marcoElements.slice(0, 20) });
-
-    // 3. Encontrar el locator del elemento de menú (una sola vez)
-    let navLocator: import('playwright').Locator | null = null;
-
-    for (const candidate of [`#${hashRoute}`, hashRoute, ...routeSegments]) {
-        const loc = page.locator(`a[href="${candidate}"], a[href*="${candidate}"]`);
-        if (await loc.count()) { navLocator = loc.first(); break; }
-    }
-    if (!navLocator) {
-        for (const seg of routeSegments.slice().reverse()) {
-            const loc = page.locator(`[data-route*="${seg}"], [data-url*="${seg}"], [data-path*="${seg}"]`);
-            if (await loc.count()) { navLocator = loc.first(); break; }
-        }
-    }
-
-    console.log('[UI Playwright] Nav locator found', { found: Boolean(navLocator), hashRoute, routeSegments });
-
-    if (navLocator) {
-        // RETRY LOOP: Marco necesita que React hidrate antes de responder a clicks.
-        // Hacer click repetidamente hasta que iframe.src cambie (señal de éxito).
-        let iframeNavigated = false;
-        for (let attempt = 0; attempt < 10 && !iframeNavigated; attempt++) {
-            await navLocator.click({ force: true }).catch(() => undefined);
-            await page.waitForFunction(() => {
-                const iframe = document.querySelector('#pagina1, iframe') as HTMLIFrameElement | null;
-                return Boolean(iframe?.src && !iframe.src.includes('about:blank') && iframe.src !== '');
-            }, { timeout: 1500 }).then(() => { iframeNavigated = true; }).catch(() => undefined);
-            if (!iframeNavigated) {
-                console.log('[UI Playwright] Marco no respondió aún, reintentando', { attempt });
-                await page.waitForTimeout(1000);
-            }
-        }
-        if (iframeNavigated) {
-            console.log('[UI Playwright] Marco navegó el iframe tras click');
-        } else {
-            console.log('[UI Playwright] Marco no respondió después de 10 intentos');
-        }
-    } else {
-        console.log('[UI Playwright] No se encontró nav locator, fallback frame.goto()');
-        const iframeHandle = await page.locator('#pagina1, iframe').first().elementHandle({ timeout: 5000 }).catch(() => null);
+    // REACT ROUTE: inyectar targetUrl directamente en el iframe pagina1.
+    // El Marco real (cargado arriba via Seleccion) provee los globals de sesión que
+    // React 18 + Zustand necesitan para inicializar correctamente.
+    console.log('[UI Playwright] React route: injecting iframe URL', { targetUrl });
+    const iframeEl = await page.waitForSelector(
+        '#pagina1, iframe[name="pagina1"], iframe',
+        { timeout: 20000 }
+    ).catch(() => null);
+    if (iframeEl) {
+        await page.evaluate((url) => {
+            const f = (document.getElementById('pagina1') as HTMLIFrameElement)
+                ?? (document.querySelector('iframe[name="pagina1"]') as HTMLIFrameElement)
+                ?? (document.querySelector('iframe') as HTMLIFrameElement);
+            if (f) f.src = url;
+        }, targetUrl);
+        const iframeHandle = await page.locator('#pagina1, iframe[name="pagina1"], iframe')
+            .first().elementHandle({ timeout: 5000 }).catch(() => null);
         const iframeFrame = await iframeHandle?.contentFrame();
         if (iframeFrame) {
-            await iframeFrame.goto(targetUrl, { waitUntil: 'domcontentloaded', timeout: 30000 }).catch((e: any) => {
-                console.log('[UI Playwright] frame.goto() fallback error', { error: e?.message });
-            });
+            await iframeFrame.waitForLoadState('networkidle', { timeout: 30000 }).catch(() => undefined);
+            console.log('[UI Playwright] React iframe loaded', { frameUrl: iframeFrame.url() });
         }
-    }
-
-    // 4. Esperar que Marco setee el src del iframe (señal de que la navegación tuvo efecto)
-    await page.waitForFunction(() => {
-        const iframe = document.querySelector('#pagina1, iframe') as HTMLIFrameElement | null;
-        return Boolean(iframe?.src && !iframe.src.includes('about:blank') && iframe.src !== '');
-    }, { timeout: 20000 }).catch(() => undefined);
-
-    // 5. Esperar networkidle del iframe
-    const iframeHandle = await page.locator('#pagina1, iframe').first().elementHandle({ timeout: 5000 }).catch(() => null);
-    const iframeFrame = await iframeHandle?.contentFrame();
-    if (iframeFrame) {
-        await iframeFrame.waitForLoadState('networkidle', { timeout: 30000 }).catch(() => undefined);
-        console.log('[UI Playwright] React route cargada en Marco iframe', { frameUrl: iframeFrame.url() });
     }
 }
 
@@ -1011,6 +1067,16 @@ export class UiTestService {
 
         const session: ComponentPickerSession = { id: sessionId, browser, context, page };
         pickerSessions.set(sessionId, session);
+
+        // Fallback: si la SPA abre una nueva tab (window.open / target="_blank"),
+        // instalar el picker ahí también. Handlers antes del primer await para no perder el load.
+        context.on('page', async (newPage) => {
+            session.page = newPage;
+            newPage.on('load', async () => { try { await installPickerEverywhere(newPage); } catch {} });
+            newPage.on('framenavigated', async () => { try { await installPickerEverywhere(newPage); } catch {} });
+            await newPage.waitForLoadState('domcontentloaded').catch(() => undefined);
+            try { await installPickerEverywhere(newPage); } catch {}
+        });
 
         await context.exposeFunction('__tpSubmitSelection', (raw: Record<string, unknown>) => {
             session.lastSelection = normalizeCandidate(raw);

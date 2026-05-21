@@ -1,0 +1,88 @@
+[
+  {
+    "name": "MAESTRO DE TRANSPORTES",
+    "url": "https://www4.sincoerp.com/SincoComercial_Nueva/V3/CBRConfiguracion/#/configuracion/MediosTransporte",
+    "id": "5d879da5-7337-4f75-85c1-3a912e527658",
+    "specFile": "C:\\testPlatform\\backend\\workspace\\modules\\CONFIGURACION\\submodules\\COMPRADORES\\pages\\MAESTRO DE TRANSPORTES\\e2e\\5d879da5-7337-4f75-85c1-3a912e527658.spec.ts",
+    "status": "ready",
+    "createdAt": "2026-05-20T23:43:18.569Z",
+    "lastResult": {
+      "passed": 0,
+      "failed": 1,
+      "output": "\nRunning 1 test using 1 worker\n\n  ✘  1 5d879da5-7337-4f75-85c1-3a912e527658-doc.spec.ts:3:5 › test (32.3s)\n\n\n  1) 5d879da5-7337-4f75-85c1-3a912e527658-doc.spec.ts:3:5 › test ───────────────────────────────────\n\n    Error: locator.click: Target page, context or browser has been closed\n    Call log:\n    \u001b[2m  - waiting for locator('iframe[name=\"pagina1\"]').contentFrame().locator('[id=\"5\"]')\u001b[22m\n\n\n      61 |   await page.locator('iframe[name=\"pagina1\"]').contentFrame().getByRole('row', { name: 'CARRO' }).getByRole('button').click();\n      62 |   await __snap('C:/testPlatform/backend/workspace/modules/CONFIGURACION/submodules/COMPRADORES/pages/MAESTRO DE TRANSPORTES/e2e/screenshots/step_10.png');\n    > 63 |   await page.locator('iframe[name=\"pagina1\"]').contentFrame().locator('[id=\"5\"]').click();\n         |                                                                                   ^\n      64 |   await __snap('C:/testPlatform/backend/workspace/modules/CONFIGURACION/submodules/COMPRADORES/pages/MAESTRO DE TRANSPORTES/e2e/screenshots/step_11.png');\n      65 |   await page.locator('iframe[name=\"pagina1\"]').contentFrame().locator('[id=\"5\"]').fill('MOTO 2');\n      66 |   await __snap('C:/testPlatform/backend/workspace/modules/CONFIGURACION/submodules/COMPRADORES/pages/MAESTRO DE TRANSPORTES/e2e/screenshots/step_12.png');\n        at C:\\testPlatform\\backend\\workspace\\modules\\CONFIGURACION\\submodules\\COMPRADORES\\pages\\MAESTRO DE TRANSPORTES\\e2e\\5d879da5-7337-4f75-85c1-3a912e527658-doc.spec.ts:63:83\n\n    Error Context: ..\\..\\..\\..\\..\\..\\..\\..\\test-results\\5d879da5-7337-4f75-85c1-3a912e527658-doc-test\\error-context.md\n\n  1 failed\n    5d879da5-7337-4f75-85c1-3a912e527658-doc.spec.ts:3:5 › test ────────────────────────────────────\nCommand failed: npx playwright test \"5d879da5-7337-4f75-85c1-3a912e527658-doc.spec.ts\" --reporter=list --headed --timeout=180000\n",
+      "ok": false,
+      "runAt": "2026-05-21T00:11:30.110Z",
+      "screenshots": [
+        "step_01.png",
+        "step_02.png",
+        "step_03.png",
+        "step_04.png",
+        "step_05.png",
+        "step_06.png",
+        "step_07.png",
+        "step_08.png",
+        "step_09.png",
+        "step_10.png"
+      ],
+      "hasPdf": true
+    },
+    "history": [
+      {
+        "passed": 0,
+        "failed": 1,
+        "ok": false,
+        "runAt": "2026-05-20T23:44:16.357Z",
+        "output": "\nRunning 1 test using 1 worker\n\n  ✘  1 5d879da5-7337-4f75-85c1-3a912e527658-doc.spec.ts:3:5 › test (33.4s)\n\n\n  1) 5d879da5-7337-4f75-85c1-3a912e527658-doc.spec.ts:3:5 › test ───────────────────────────────────\n\n    Error: locator.click: Target page, context or browser has been closed\n    Call log:\n    \u001b[2m  - waiting for locator('iframe[name=\"pagina1\"]').contentFrame().locator('[id=\"5\"]')\u001b[22m\n\n\n      61 |   await page.locator('iframe[name=\"pagina1\"]').contentFrame().getByRole('row', { name: 'CARRO' }).getByRole('button').click();\n      62 |   await __snap('C:/testPlatform/backend/workspace/modules/CONFIGURACION/submodules/COMPRADORES/pages/MAESTRO DE TRANSPORTES/e2e/screenshots/step_10.png');\n    > 63 |   await page.locator('iframe[name=\"pagina1\"]').contentFrame().locator('[id=\"5\"]').click();\n         |                                                                                   ^\n      64 |   await __snap('C:/testPlatform/backend/workspace/modules/CONFIGURACION/submodules/COMPRADORES/pages/MAESTRO DE TRANSPORTES/e2e/screenshots/step_11.png');\n      65 |   await page.locator('iframe[name=\"pagina1\"]').contentFrame().locator('[id=\"5\"]').fill('MOTO 2');\n      66 |   await __snap('C:/testPlatform/backend/workspace/modules/CONFIGURACION/submodules/COMPRADORES/pages/MAESTRO DE TRANSPORTES/e2e/screenshots/step_12.png');\n        at C:\\testPlatform\\backend\\workspace\\modules\\CONFIGURACION\\submodules\\COMPRADORES\\pages\\MAESTRO DE TRANSPORTES\\e2e\\5d879da5-7337-4f75-85c1-3a912e527658-doc.spec.ts:63:83\n\n    Error Context: ..\\..\\..\\..\\..\\..\\..\\..\\test-results\\5d879da5-7337-4f75-85c1-3a912e527658-doc-test\\error-context.md\n\n  1 failed\n    5d879da5-7337-4f75-85c1-3a912e527658-doc.spec.ts:3:5 › test ────────────────────────────────────\nCommand failed: npx playwright test \"5d879da5-7337-4f75-85c1-3a912e527658-doc.spec.ts\" --reporter=list --headed --timeout=180000\n",
+        "empresaNombre": "SINCO COMERCIAL 2022",
+        "sucursalNombre": "Principal"
+      }
+    ]
+  },
+  {
+    "name": "MAESTRO DE TRANSPORTES OK",
+    "url": "https://www4.sincoerp.com/SincoComercial_Nueva/V3/CBRConfiguracion/#/configuracion/MediosTransporte",
+    "id": "4e2dc2c4-9647-417f-8e02-9d9a9ec648da",
+    "specFile": "C:\\testPlatform\\backend\\workspace\\modules\\CONFIGURACION\\submodules\\COMPRADORES\\pages\\MAESTRO DE TRANSPORTES\\e2e\\4e2dc2c4-9647-417f-8e02-9d9a9ec648da.spec.ts",
+    "status": "ready",
+    "createdAt": "2026-05-21T00:14:21.536Z",
+    "lastResult": {
+      "passed": 0,
+      "failed": 1,
+      "output": "\nRunning 1 test using 1 worker\n\n  ✘  1 4e2dc2c4-9647-417f-8e02-9d9a9ec648da-doc.spec.ts:3:5 › test (1.3m)\n\n\n  1) 4e2dc2c4-9647-417f-8e02-9d9a9ec648da-doc.spec.ts:3:5 › test ───────────────────────────────────\n\n    Error: locator.uncheck: Target page, context or browser has been closed\n    Call log:\n    \u001b[2m  - waiting for locator('iframe[name=\"pagina1\"]').contentFrame().getByRole('row', { name: 'MOTO' }).getByLabel('')\u001b[22m\n\n\n      59 |   await page.locator('iframe[name=\"pagina1\"]').contentFrame().getByRole('row', { name: 'CARRO' }).getByRole('button').click();\n      60 |   await __snap('C:/testPlatform/backend/workspace/modules/CONFIGURACION/submodules/COMPRADORES/pages/MAESTRO DE TRANSPORTES/e2e/screenshots/step_09.png');\n    > 61 |   await page.locator('iframe[name=\"pagina1\"]').contentFrame().getByRole('row', { name: 'MOTO' }).getByLabel('').uncheck();\n         |                                                                                                                 ^\n      62 |   await __snap('C:/testPlatform/backend/workspace/modules/CONFIGURACION/submodules/COMPRADORES/pages/MAESTRO DE TRANSPORTES/e2e/screenshots/step_10.png');\n      63 | });\n        at C:\\testPlatform\\backend\\workspace\\modules\\CONFIGURACION\\submodules\\COMPRADORES\\pages\\MAESTRO DE TRANSPORTES\\e2e\\4e2dc2c4-9647-417f-8e02-9d9a9ec648da-doc.spec.ts:61:113\n\n    Error Context: ..\\..\\..\\..\\..\\..\\..\\..\\test-results\\4e2dc2c4-9647-417f-8e02-9d9a9ec648da-doc-test\\error-context.md\n\n  1 failed\n    4e2dc2c4-9647-417f-8e02-9d9a9ec648da-doc.spec.ts:3:5 › test ────────────────────────────────────\nCommand failed: npx playwright test \"4e2dc2c4-9647-417f-8e02-9d9a9ec648da-doc.spec.ts\" --reporter=list --headed --timeout=180000\n",
+      "ok": false,
+      "runAt": "2026-05-21T00:19:41.773Z",
+      "screenshots": [
+        "step_01.png",
+        "step_02.png",
+        "step_03.png",
+        "step_04.png",
+        "step_05.png",
+        "step_06.png",
+        "step_07.png",
+        "step_08.png",
+        "step_09.png"
+      ],
+      "hasPdf": true
+    },
+    "history": [
+      {
+        "passed": 1,
+        "failed": 0,
+        "ok": true,
+        "runAt": "2026-05-21T00:18:18.768Z",
+        "output": "\nRunning 1 test using 1 worker\n\n  ✓  1 4e2dc2c4-9647-417f-8e02-9d9a9ec648da-doc.spec.ts:3:5 › test (8.6s)\n\n  1 passed (9.7s)\n",
+        "empresaNombre": "SINCO COMERCIAL 2022",
+        "sucursalNombre": "Principal"
+      },
+      {
+        "passed": 1,
+        "failed": 0,
+        "ok": true,
+        "runAt": "2026-05-21T00:15:40.869Z",
+        "output": "\nRunning 1 test using 1 worker\n\n  ✓  1 4e2dc2c4-9647-417f-8e02-9d9a9ec648da-doc.spec.ts:3:5 › test (7.9s)\n\n  1 passed (9.1s)\n",
+        "empresaNombre": "SINCO COMERCIAL 2022",
+        "sucursalNombre": "Principal"
+      }
+    ]
+  }
+]

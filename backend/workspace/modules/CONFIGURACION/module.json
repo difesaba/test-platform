@@ -1,0 +1,21 @@
+{
+  "name": "CONFIGURACION",
+  "folderPath": "C:\\testPlatform\\backend\\workspace\\modules\\CONFIGURACION",
+  "createdAt": "2026-05-20T23:39:52.763Z",
+  "submodules": [
+    {
+      "name": "COMPRADORES",
+      "folderPath": "C:\\testPlatform\\backend\\workspace\\modules\\CONFIGURACION\\submodules\\COMPRADORES",
+      "createdAt": "2026-05-20T23:40:45.099Z",
+      "pages": [
+        {
+          "name": "MAESTRO DE TRANSPORTES",
+          "url": "https://www4.sincoerp.com/SincoComercial_Nueva/V3/CBRConfiguracion/#/configuracion/MediosTransporte",
+          "folderPath": "C:\\testPlatform\\backend\\workspace\\modules\\CONFIGURACION\\submodules\\COMPRADORES\\pages\\MAESTRO DE TRANSPORTES",
+          "createdAt": "2026-05-20T23:42:47.991Z"
+        }
+      ]
+    }
+  ],
+  "pages": []
+}
