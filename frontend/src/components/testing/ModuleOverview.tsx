@@ -12,13 +12,14 @@ import {
   IconButton,
   Stack,
   TextField,
+  Tooltip,
   Typography,
 } from '@mui/material';
 import AddRoundedIcon from '@mui/icons-material/AddRounded';
 import DeleteOutlineRoundedIcon from '@mui/icons-material/DeleteOutlineRounded';
 import DescriptionRoundedIcon from '@mui/icons-material/DescriptionRounded';
 import FolderRoundedIcon from '@mui/icons-material/FolderRounded';
-import VisibilityRoundedIcon from '@mui/icons-material/VisibilityRounded';
+import OpenInNewRoundedIcon from '@mui/icons-material/OpenInNewRounded';
 import { DataGrid, type GridColDef } from '@mui/x-data-grid';
 import api from '../../api/client';
 import type { SelectedModule } from '../../store/useModuleStore';
@@ -39,10 +40,11 @@ export default function ModuleOverview({ selected, modules, onRefresh, onNotify 
   const { urlRaiz } = useSessionStore();
   const webBase = getWebBase(urlRaiz);
 
-  const [dialogOpen, setDialogOpen] = useState(false);
+  const [dialogOpen, setDialogOpen] = useState<'page' | 'submodule' | false>(false);
   const [deleteTarget, setDeleteTarget] = useState<PageItem | null>(null);
   const [pageName, setPageName] = useState('');
   const [pageUrl, setPageUrl] = useState(webBase);
+  const [submoduleName, setSubmoduleName] = useState('');
   const [submitting, setSubmitting] = useState(false);
 
   const moduleData = useMemo(
@@ -65,9 +67,10 @@ export default function ModuleOverview({ selected, modules, onRefresh, onNotify 
     setDialogOpen(false);
     setPageName('');
     setPageUrl(webBase);
+    setSubmoduleName('');
   };
 
-  const handleCreate = async () => {
+  const handleCreatePage = async () => {
     if (!pageName.trim() || !pageUrl.trim()) return;
 
     setSubmitting(true);
@@ -96,6 +99,25 @@ export default function ModuleOverview({ selected, modules, onRefresh, onNotify 
     }
   };
 
+  const handleCreateSubmodule = async () => {
+    if (!submoduleName.trim()) return;
+
+    setSubmitting(true);
+    try {
+      await api.post(`/modules/${selected.moduleName}/submodules`, { name: submoduleName.trim() });
+      onNotify('Submodulo agregado correctamente.');
+      closeDialog();
+      onRefresh();
+    } catch (requestError: unknown) {
+      const message = requestError && typeof requestError === 'object' && 'response' in requestError
+        ? (requestError as { response?: { data?: { error?: string } } }).response?.data?.error
+        : undefined;
+      onNotify(message ?? 'No fue posible crear el submodulo.', 'error');
+    } finally {
+      setSubmitting(false);
+    }
+  };
+
   const handleDelete = async () => {
     if (!deleteTarget) return;
 
@@ -119,6 +141,15 @@ export default function ModuleOverview({ selected, modules, onRefresh, onNotify 
     }
   };
 
+  const navigateToPage = (row: PageItem) => {
+    setSelected({
+      moduleName: selected.moduleName,
+      submoduleName: selected.submoduleName,
+      pageName: row.name,
+      pageUrl: row.url,
+    });
+  };
+
   const columns: GridColDef<PageItem>[] = [
     {
       field: 'name',
@@ -140,27 +171,26 @@ export default function ModuleOverview({ selected, modules, onRefresh, onNotify 
       width: 140,
       renderCell: ({ row }) => (
         <Stack direction="row" spacing={0.5}>
-          <IconButton
-            size="small"
-            color="primary"
-            aria-label={`Ver pruebas de ${row.name}`}
-            onClick={() => setSelected({
-              moduleName: selected.moduleName,
-              submoduleName: selected.submoduleName,
-              pageName: row.name,
-              pageUrl: row.url,
-            })}
-          >
-            <VisibilityRoundedIcon fontSize="small" />
-          </IconButton>
-          <IconButton
-            size="small"
-            color="error"
-            aria-label={`Eliminar ${row.name}`}
-            onClick={() => setDeleteTarget(row)}
-          >
-            <DeleteOutlineRoundedIcon fontSize="small" />
-          </IconButton>
+          <Tooltip title="Abrir pruebas">
+            <IconButton
+              size="small"
+              color="primary"
+              aria-label={`Abrir pruebas de ${row.name}`}
+              onClick={(event) => { event.stopPropagation(); navigateToPage(row); }}
+            >
+              <OpenInNewRoundedIcon fontSize="small" />
+            </IconButton>
+          </Tooltip>
+          <Tooltip title="Eliminar página">
+            <IconButton
+              size="small"
+              color="error"
+              aria-label={`Eliminar ${row.name}`}
+              onClick={(event) => { event.stopPropagation(); setDeleteTarget(row); }}
+            >
+              <DeleteOutlineRoundedIcon fontSize="small" />
+            </IconButton>
+          </Tooltip>
         </Stack>
       ),
     },
@@ -239,13 +269,24 @@ export default function ModuleOverview({ selected, modules, onRefresh, onNotify 
               </Typography>
               <Typography variant="body2" color="text.secondary">
                 {inSubmodule
-                  ? `Paginas del submodulo "${selected.submoduleName}". Selecciona una para gestionar sus pruebas.`
-                  : 'Selecciona una pagina para gestionar pruebas API, UI y E2E.'}
+                  ? `Haz clic en una pagina para abrir sus pruebas API, UI y E2E.`
+                  : 'Haz clic en una pagina para abrir sus pruebas API, UI y E2E.'}
               </Typography>
             </Box>
-            <Button variant="contained" startIcon={<AddRoundedIcon />} onClick={() => setDialogOpen(true)}>
-              Nueva pagina
-            </Button>
+            {inSubmodule ? (
+              <Button variant="contained" startIcon={<AddRoundedIcon />} onClick={() => setDialogOpen('page')}>
+                Nueva pagina
+              </Button>
+            ) : (
+              <Stack direction="row" spacing={1}>
+                <Button variant="outlined" startIcon={<AddRoundedIcon />} onClick={() => setDialogOpen('page')}>
+                  Nueva pagina
+                </Button>
+                <Button variant="contained" startIcon={<AddRoundedIcon />} onClick={() => setDialogOpen('submodule')}>
+                  Nuevo submodulo
+                </Button>
+              </Stack>
+            )}
           </Stack>
 
           <Box minHeight={360}>
@@ -260,6 +301,8 @@ export default function ModuleOverview({ selected, modules, onRefresh, onNotify 
                   paginationModel: { pageSize: 5, page: 0 },
                 },
               }}
+              onRowClick={({ row }) => navigateToPage(row)}
+              sx={{ cursor: 'pointer' }}
               slots={{
                 noRowsOverlay: () => (
                   <Box height="100%" display="flex" alignItems="center" justifyContent="center">
@@ -277,7 +320,8 @@ export default function ModuleOverview({ selected, modules, onRefresh, onNotify 
         </CardContent>
       </Card>
 
-      <Dialog open={dialogOpen} onClose={closeDialog} fullWidth maxWidth="sm">
+      {/* Dialog: agregar página */}
+      <Dialog open={dialogOpen === 'page'} onClose={closeDialog} fullWidth maxWidth="sm">
         <DialogTitle>
           {inSubmodule ? `Agregar pagina en "${selected.submoduleName}"` : 'Agregar pagina'}
         </DialogTitle>
@@ -288,23 +332,48 @@ export default function ModuleOverview({ selected, modules, onRefresh, onNotify 
               label="Nombre de la pagina"
               value={pageName}
               onChange={(event) => setPageName(event.target.value)}
+              onKeyDown={(e) => { if (e.key === 'Enter' && pageName.trim() && pageUrl.trim()) handleCreatePage(); }}
             />
             <TextField
               label="URL"
               helperText="Usa la URL completa o la ruta preparada del entorno activo."
               value={pageUrl}
               onChange={(event) => setPageUrl(event.target.value)}
+              onKeyDown={(e) => { if (e.key === 'Enter' && pageName.trim() && pageUrl.trim()) handleCreatePage(); }}
             />
           </Stack>
         </DialogContent>
         <DialogActions>
           <Button onClick={closeDialog}>Cancelar</Button>
-          <Button variant="contained" onClick={handleCreate} disabled={submitting || !pageName.trim() || !pageUrl.trim()}>
+          <Button variant="contained" onClick={handleCreatePage} disabled={submitting || !pageName.trim() || !pageUrl.trim()}>
             {submitting ? 'Guardando...' : 'Guardar'}
           </Button>
         </DialogActions>
       </Dialog>
 
+      {/* Dialog: agregar submodulo */}
+      <Dialog open={dialogOpen === 'submodule'} onClose={closeDialog} fullWidth maxWidth="sm">
+        <DialogTitle>Agregar submodulo en "{selected.moduleName}"</DialogTitle>
+        <DialogContent>
+          <Stack spacing={2} pt={0.5}>
+            <TextField
+              autoFocus
+              label="Nombre del submodulo"
+              value={submoduleName}
+              onChange={(event) => setSubmoduleName(event.target.value)}
+              onKeyDown={(e) => { if (e.key === 'Enter' && submoduleName.trim()) handleCreateSubmodule(); }}
+            />
+          </Stack>
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={closeDialog}>Cancelar</Button>
+          <Button variant="contained" onClick={handleCreateSubmodule} disabled={submitting || !submoduleName.trim()}>
+            {submitting ? 'Guardando...' : 'Guardar'}
+          </Button>
+        </DialogActions>
+      </Dialog>
+
+      {/* Dialog: eliminar página */}
       <Dialog open={Boolean(deleteTarget)} onClose={() => setDeleteTarget(null)} fullWidth maxWidth="xs">
         <DialogTitle>Eliminar pagina</DialogTitle>
         <DialogContent>

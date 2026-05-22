@@ -71,6 +71,8 @@ export class AppRoutes {
         router.get('/e2e/:id/screenshots', requireAuth, e2eController.listScreenshots);
         router.get('/e2e/:id/screenshots/:file', requireAuth, e2eController.serveScreenshot);
         router.get('/e2e/:id/doc.pdf', requireAuth, e2eController.servePdf);
+        router.post('/e2e/:id/enhance-ai', requireAuth, e2eController.enhanceWithAI);
+        router.post('/e2e/:id/save-enhanced', requireAuth, e2eController.saveEnhanced);
 
         return router;
     }

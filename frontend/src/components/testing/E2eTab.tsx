@@ -15,18 +15,24 @@ import {
   DialogContent,
   DialogTitle,
   IconButton,
+  LinearProgress,
   Stack,
   TextField,
+  Tooltip,
   Typography,
 } from '@mui/material';
 import AddRoundedIcon from '@mui/icons-material/AddRounded';
 import DeleteOutlineRoundedIcon from '@mui/icons-material/DeleteOutlineRounded';
-import FiberManualRecordRoundedIcon from '@mui/icons-material/FiberManualRecordRounded';
+import VideocamRoundedIcon from '@mui/icons-material/VideocamRounded';
 import PlayArrowRoundedIcon from '@mui/icons-material/PlayArrowRounded';
 import StopRoundedIcon from '@mui/icons-material/StopRounded';
-import DescriptionRoundedIcon from '@mui/icons-material/DescriptionRounded';
+import CodeRoundedIcon from '@mui/icons-material/CodeRounded';
 import ExpandMoreRoundedIcon from '@mui/icons-material/ExpandMoreRounded';
 import CollectionsRoundedIcon from '@mui/icons-material/CollectionsRounded';
+import AutoFixHighRoundedIcon from '@mui/icons-material/AutoFixHighRounded';
+import SmartToyRoundedIcon from '@mui/icons-material/SmartToyRounded';
+import PictureAsPdfRoundedIcon from '@mui/icons-material/PictureAsPdfRounded';
+import HistoryRoundedIcon from '@mui/icons-material/HistoryRounded';
 import api from '../../api/client';
 import type { SelectedModule } from '../../store/useModuleStore';
 import { useSessionStore } from '../../store/useSessionStore';
@@ -59,6 +65,9 @@ export default function E2eTab({ selected, onNotify }: Props) {
   const [url, setUrl] = useState('');
   const [saving, setSaving] = useState(false);
   const [generatingId, setGeneratingId] = useState<string | null>(null);
+  const [enhancingId, setEnhancingId] = useState<string | null>(null);
+  const [enhancedSpecData, setEnhancedSpecData] = useState<{ id: string; original: string; enhanced: string } | null>(null);
+  const [acceptingEnhancement, setAcceptingEnhancement] = useState(false);
   const [historyRecId, setHistoryRecId] = useState<string | null>(null);
   const [screenshotsRecId, setScreenshotsRecId] = useState<string | null>(null);
   const [screenshotFiles, setScreenshotFiles] = useState<string[]>([]);
@@ -224,6 +233,35 @@ export default function E2eTab({ selected, onNotify }: Props) {
     }
   };
 
+  const handleEnhanceWithAI = async (id: string) => {
+    setEnhancingId(id);
+    try {
+      const { data } = await api.post(`/e2e/${id}/enhance-ai?${buildSelectionQuery(selected)}`);
+      setEnhancedSpecData({ id, original: data.originalSpec, enhanced: data.enhancedSpec });
+    } catch {
+      onNotify('No fue posible mejorar el spec con IA. Verificá que el ANTHROPIC_API_KEY esté configurado.', 'error');
+    } finally {
+      setEnhancingId(null);
+    }
+  };
+
+  const handleAcceptEnhancement = async () => {
+    if (!enhancedSpecData) return;
+    setAcceptingEnhancement(true);
+    try {
+      await api.post(`/e2e/${enhancedSpecData.id}/save-enhanced?${buildSelectionQuery(selected)}`, {
+        enhancedSpec: enhancedSpecData.enhanced,
+      });
+      onNotify('Spec mejorado guardado. Ya podés ejecutarlo.', 'success');
+      setEnhancedSpecData(null);
+      load();
+    } catch {
+      onNotify('No fue posible guardar el spec mejorado.', 'error');
+    } finally {
+      setAcceptingEnhancement(false);
+    }
+  };
+
   return (
     <Stack spacing={3}>
       <Card>
@@ -301,60 +339,100 @@ export default function E2eTab({ selected, onNotify }: Props) {
                     </Box>
                     <Stack direction="row" spacing={0.5}>
                       {(recording.status === 'idle' || recording.status === 'error') && (
-                        <IconButton size="small" color="error" onClick={(event) => {
-                          event.stopPropagation();
-                          handleStart(recording.id);
-                        }}>
-                          <FiberManualRecordRoundedIcon fontSize="small" />
-                        </IconButton>
+                        <Tooltip title="Iniciar grabación">
+                          <IconButton size="small" color="error" onClick={(event) => {
+                            event.stopPropagation();
+                            handleStart(recording.id);
+                          }}>
+                            <VideocamRoundedIcon fontSize="small" />
+                          </IconButton>
+                        </Tooltip>
                       )}
                       {recording.status === 'recording' && (
-                        <IconButton size="small" color="warning" onClick={(event) => {
-                          event.stopPropagation();
-                          handleStop(recording.id);
-                        }}>
-                          <StopRoundedIcon fontSize="small" />
-                        </IconButton>
+                        <Tooltip title="Detener grabación">
+                          <IconButton size="small" color="warning" onClick={(event) => {
+                            event.stopPropagation();
+                            handleStop(recording.id);
+                          }}>
+                            <StopRoundedIcon fontSize="small" />
+                          </IconButton>
+                        </Tooltip>
                       )}
                       {recording.status === 'ready' && (
                         <>
-                          <IconButton
-                            size="small"
-                            color="primary"
-                            disabled={runningId === recording.id}
-                            onClick={(event) => { event.stopPropagation(); handleRun(recording.id); }}
-                          >
-                            {runningId === recording.id
-                              ? <CircularProgress size={16} color="primary" />
-                              : <PlayArrowRoundedIcon fontSize="small" />}
-                          </IconButton>
-                          <IconButton size="small" color="secondary" onClick={(event) => {
-                            event.stopPropagation();
-                            handleViewSpec(recording.id);
-                          }}>
-                            <DescriptionRoundedIcon fontSize="small" />
-                          </IconButton>
-                          {(recording.lastResult?.screenshots?.length ?? 0) > 0 && (
-                            <IconButton size="small" color="info" onClick={(event) => {
+                          <Tooltip title="Ejecutar test">
+                            <span>
+                              <IconButton
+                                size="small"
+                                color="primary"
+                                disabled={runningId === recording.id}
+                                onClick={(event) => { event.stopPropagation(); handleRun(recording.id); }}
+                              >
+                                {runningId === recording.id
+                                  ? <CircularProgress size={16} color="primary" />
+                                  : <PlayArrowRoundedIcon fontSize="small" />}
+                              </IconButton>
+                            </span>
+                          </Tooltip>
+                          <Tooltip title="Ver código generado">
+                            <IconButton size="small" color="secondary" onClick={(event) => {
                               event.stopPropagation();
-                              setScreenshotsRecId(recording.id);
+                              handleViewSpec(recording.id);
                             }}>
-                              <CollectionsRoundedIcon fontSize="small" />
+                              <CodeRoundedIcon fontSize="small" />
                             </IconButton>
+                          </Tooltip>
+                          <Tooltip title={enhancingId === recording.id ? 'IA procesando...' : 'Mejorar con IA'}>
+                            <span>
+                              <IconButton
+                                size="small"
+                                color="success"
+                                disabled={enhancingId === recording.id}
+                                onClick={(event) => { event.stopPropagation(); handleEnhanceWithAI(recording.id); }}
+                              >
+                                {enhancingId === recording.id
+                                  ? <CircularProgress size={16} color="success" />
+                                  : <SmartToyRoundedIcon fontSize="small" />}
+                              </IconButton>
+                            </span>
+                          </Tooltip>
+                          {(recording.lastResult?.screenshots?.length ?? 0) > 0 && (
+                            <Tooltip title={`Ver capturas (${recording.lastResult!.screenshots!.length})`}>
+                              <IconButton size="small" color="info" onClick={(event) => {
+                                event.stopPropagation();
+                                setScreenshotsRecId(recording.id);
+                              }}>
+                                <CollectionsRoundedIcon fontSize="small" />
+                              </IconButton>
+                            </Tooltip>
                           )}
                         </>
                       )}
-                      <IconButton size="small" color="error" onClick={(event) => {
-                        event.stopPropagation();
-                        setDeleteId(recording.id);
-                      }}>
-                        <DeleteOutlineRoundedIcon fontSize="small" />
-                      </IconButton>
+                      <Tooltip title="Eliminar flujo">
+                        <IconButton size="small" color="error" onClick={(event) => {
+                          event.stopPropagation();
+                          setDeleteId(recording.id);
+                        }}>
+                          <DeleteOutlineRoundedIcon fontSize="small" />
+                        </IconButton>
+                      </Tooltip>
                     </Stack>
                   </Stack>
                 </AccordionSummary>
                 <AccordionDetails>
                   <Stack spacing={2}>
+                    {enhancingId === recording.id && (
+                      <Box sx={{ '@keyframes pulse': { '0%,100%': { opacity: 1 }, '50%': { opacity: 0.35 } } }}>
+                        <Alert
+                          severity="info"
+                          icon={<SmartToyRoundedIcon sx={{ animation: 'pulse 1.5s ease-in-out infinite' }} />}
+                          sx={{ borderBottomLeftRadius: 0, borderBottomRightRadius: 0, mb: 0 }}
+                        >
+                          IA analizando el spec... esto puede tomar hasta 20 segundos
+                        </Alert>
+                        <LinearProgress sx={{ borderTopLeftRadius: 0, borderTopRightRadius: 0 }} />
+                      </Box>
+                    )}
                     <TextField fullWidth label="URL inicial" value={recording.url} InputProps={{ readOnly: true }} />
                     {recording.lastResult ? (
                       <Stack spacing={1}>
@@ -391,11 +469,25 @@ export default function E2eTab({ selected, onNotify }: Props) {
                       )}
                       {recording.status === 'ready' && (
                         <>
-                          <Button variant="outlined" onClick={() => handleRun(recording.id)} disabled={runningId === recording.id}>
+                          <Button
+                            variant="outlined"
+                            startIcon={runningId === recording.id ? <CircularProgress size={14} color="primary" /> : <PlayArrowRoundedIcon />}
+                            disabled={runningId === recording.id}
+                            onClick={() => handleRun(recording.id)}
+                          >
                             {runningId === recording.id ? 'Ejecutando...' : 'Reproducir'}
                           </Button>
-                          <Button variant="outlined" onClick={() => handleViewSpec(recording.id)}>
+                          <Button variant="outlined" startIcon={<CodeRoundedIcon />} onClick={() => handleViewSpec(recording.id)}>
                             Ver codigo generado
+                          </Button>
+                          <Button
+                            variant="outlined"
+                            color="success"
+                            startIcon={enhancingId === recording.id ? <CircularProgress size={14} color="success" /> : <SmartToyRoundedIcon />}
+                            disabled={enhancingId === recording.id}
+                            onClick={() => handleEnhanceWithAI(recording.id)}
+                          >
+                            {enhancingId === recording.id ? 'IA analizando...' : 'Mejorar con IA'}
                           </Button>
                           {(recording.lastResult?.screenshots?.length ?? 0) > 0 && (
                             <Button variant="outlined" color="info" startIcon={<CollectionsRoundedIcon />} onClick={() => setScreenshotsRecId(recording.id)}>
@@ -406,6 +498,7 @@ export default function E2eTab({ selected, onNotify }: Props) {
                             <Button
                               variant="contained"
                               color="success"
+                              startIcon={<PictureAsPdfRoundedIcon />}
                               onClick={() => {
                                 const url = `/api/e2e/${recording.id}/doc.pdf?${buildSelectionQuery(selected)}`;
                                 const a = document.createElement('a');
@@ -416,7 +509,7 @@ export default function E2eTab({ selected, onNotify }: Props) {
                             </Button>
                           )}
                           {(recording.history?.length ?? 0) > 0 && (
-                            <Button variant="outlined" onClick={() => setHistoryRecId(recording.id)}>
+                            <Button variant="outlined" startIcon={<HistoryRoundedIcon />} onClick={() => setHistoryRecId(recording.id)}>
                               Historial ({recording.history!.length})
                             </Button>
                           )}
@@ -580,6 +673,58 @@ export default function E2eTab({ selected, onNotify }: Props) {
         <DialogContent>
           <Box component="img" src={lightboxSrc ?? ''} alt="captura ampliada" sx={{ width: '100%', display: 'block' }} />
         </DialogContent>
+      </Dialog>
+
+      <Dialog open={Boolean(enhancedSpecData)} onClose={() => !acceptingEnhancement && setEnhancedSpecData(null)} fullWidth maxWidth="xl">
+        <DialogTitle sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+          <AutoFixHighRoundedIcon color="success" />
+          Spec mejorado por IA — revisá los cambios antes de guardar
+        </DialogTitle>
+        <DialogContent>
+          <Box sx={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 2, mt: 1 }}>
+            <Box>
+              <Typography variant="caption" color="text.secondary" display="block" sx={{ mb: 0.5, fontWeight: 600 }}>
+                ORIGINAL
+              </Typography>
+              <TextField
+                fullWidth
+                multiline
+                minRows={20}
+                maxRows={28}
+                value={enhancedSpecData?.original ?? ''}
+                InputProps={{ readOnly: true, sx: { fontFamily: 'monospace', fontSize: 11 } }}
+              />
+            </Box>
+            <Box>
+              <Typography variant="caption" color="success.main" display="block" sx={{ mb: 0.5, fontWeight: 600 }}>
+                MEJORADO CON IA
+              </Typography>
+              <TextField
+                fullWidth
+                multiline
+                minRows={20}
+                maxRows={28}
+                value={enhancedSpecData?.enhanced ?? ''}
+                onChange={(e) => setEnhancedSpecData((prev) => prev ? { ...prev, enhanced: e.target.value } : null)}
+                InputProps={{ sx: { fontFamily: 'monospace', fontSize: 11 } }}
+              />
+            </Box>
+          </Box>
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={() => setEnhancedSpecData(null)} disabled={acceptingEnhancement}>
+            Descartar
+          </Button>
+          <Button
+            variant="contained"
+            color="success"
+            startIcon={acceptingEnhancement ? <CircularProgress size={14} color="inherit" /> : <AutoFixHighRoundedIcon />}
+            disabled={acceptingEnhancement}
+            onClick={handleAcceptEnhancement}
+          >
+            {acceptingEnhancement ? 'Guardando...' : 'Aceptar y guardar'}
+          </Button>
+        </DialogActions>
       </Dialog>
     </Stack>
   );

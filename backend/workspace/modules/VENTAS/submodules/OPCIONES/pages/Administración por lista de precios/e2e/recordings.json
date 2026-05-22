@@ -9,15 +9,26 @@
     "lastResult": {
       "passed": 1,
       "failed": 0,
-      "output": "\nRunning 1 test using 1 worker\n\n  ✓  1 a7cce84e-cafa-4625-81c0-b99862edb2b2-doc.spec.ts:3:5 › test (12.1s)\n\n  1 passed (13.7s)\n",
+      "output": "\nRunning 1 test using 1 worker\n\n  ✓  1 a7cce84e-cafa-4625-81c0-b99862edb2b2-doc.spec.ts:3:5 › Consultar en módulo de ventas (7.0s)\n\n  1 passed (8.6s)\n",
       "ok": true,
-      "runAt": "2026-05-20T23:30:46.530Z",
+      "runAt": "2026-05-21T21:29:20.629Z",
       "screenshots": [
-        "step_02.png"
+        "step_01.png",
+        "step_02.png",
+        "step_03.png"
       ],
       "hasPdf": true
     },
     "history": [
+      {
+        "passed": 1,
+        "failed": 0,
+        "ok": true,
+        "runAt": "2026-05-20T23:30:46.530Z",
+        "output": "\nRunning 1 test using 1 worker\n\n  ✓  1 a7cce84e-cafa-4625-81c0-b99862edb2b2-doc.spec.ts:3:5 › test (12.1s)\n\n  1 passed (13.7s)\n",
+        "empresaNombre": "SINCO COMERCIAL 2022",
+        "sucursalNombre": "Principal"
+      },
       {
         "passed": 1,
         "failed": 0,
@@ -45,6 +56,7 @@
         "empresaNombre": "SINCO COMERCIAL 2022",
         "sucursalNombre": "Principal"
       }
-    ]
+    ],
+    "originalSpec": "import { test, expect } from 'playwright/test';\n\ntest('test', async ({ page }) => {\n  await page.goto('https://www4.sincoerp.com/SincoComercial_Nueva/V3/Marco/Default_iv.aspx');\n  await page.locator('iframe[name=\"pagina1\"]').contentFrame().getByRole('button', { name: 'Consultar' }).click();\n});"
   }
 ]

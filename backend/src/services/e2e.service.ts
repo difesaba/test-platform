@@ -25,6 +25,7 @@ export interface E2eRecording {
     specFile: string;
     status: 'idle' | 'recording' | 'ready' | 'error';
     createdAt: string;
+    originalSpec?: string;
     lastResult?: E2eResult;
     history?: E2eRunLog[];
 }
@@ -36,6 +37,8 @@ export interface E2eResult {
     ok: boolean;
     runAt: string;
     screenshots?: string[];
+    failureScreenshots?: string[];
+    stepCount?: number;
     hasPdf?: boolean;
 }
 
@@ -428,30 +431,45 @@ export class E2eService {
             // El spec puede tener goto(Login...), goto(Seleccion...) o goto(Marco...) grabados
             // con comportamiento anterior — los eliminamos y dejamos solo las acciones reales.
             // El preamble ya incluye goto(externalMarcoUrl) via fake Marco.
-            const authGotoRe = /^\s*await page\.goto\s*\(\s*['"`][^'"`]*(Login_iv|Seleccion_iv|Default_iv|Marco)\b/i;
+            // Also filter variable-based gotos like page.goto(datos.url) or page.goto(targetUrl)
+            // that the AI-generated spec adds as setup — the preamble already handles navigation.
+            const authGotoRe = /^\s*await page\.goto\s*\(\s*(?:['"`][^'"`]*(Login_iv|Seleccion_iv|Default_iv|Marco)\b|datos\.\w+|[a-z]\w*[Uu]rl\b)/i;
             const testOpenRe = /test\s*\(.*async.*\{/;
             const lines      = specContent.split('\n');
             const result: string[] = [];
             let injected = false;
 
+            // Inject preamble at the start of EVERY test() block so each test has
+            // tokens and route handlers — Playwright gives each test a fresh page.
+            let anyInjected = false;
+            let skipParenDepth = 0; // tracks continuation lines of a filtered multi-line call
             for (const line of lines) {
-                if (!injected) {
-                    result.push(line);
-                    if (testOpenRe.test(line)) {
-                        // Preamble incluye el goto al fake Marco al final
-                        result.push(extPreamble);
-                        result.push(`  await page.goto(${JSON.stringify(externalMarcoUrl)}, { waitUntil: 'domcontentloaded', timeout: 30000 });`);
-                        result.push(`  await page.waitForLoadState('networkidle').catch(() => {});`);
-                        injected = true;
+                // If we're inside a multi-line filtered statement, skip until parens close
+                if (skipParenDepth > 0) {
+                    for (const ch of line) {
+                        if (ch === '(') skipParenDepth++;
+                        else if (ch === ')') skipParenDepth--;
                     }
-                } else if (authGotoRe.test(line)) {
-                    continue; // descartar gotos de auth del spec grabado
+                    if (skipParenDepth < 0) skipParenDepth = 0;
+                    continue;
+                }
+                if (testOpenRe.test(line)) {
+                    result.push(line);
+                    result.push(extPreamble);
+                    result.push(`  await page.goto(${JSON.stringify(externalMarcoUrl)}, { waitUntil: 'domcontentloaded', timeout: 30000 });`);
+                    result.push(`  await page.waitForLoadState('networkidle').catch(() => {});`);
+                    anyInjected = true;
+                } else if (anyInjected && authGotoRe.test(line)) {
+                    // Count unmatched parens to skip multi-line continuations
+                    let depth = 0;
+                    for (const ch of line) { if (ch === '(') depth++; else if (ch === ')') depth--; }
+                    if (depth > 0) skipParenDepth = depth;
                 } else {
                     result.push(line);
                 }
             }
 
-            if (!injected) return specContent;
+            if (!anyInjected) return specContent;
             return result.join('\n');
         }
 
@@ -502,14 +520,29 @@ export class E2eService {
         const result: string[] = [];
         let inTestBody    = false;
         let mainAppFound  = false;
+        let anyTestFound  = false;
+        let skipDepth2    = 0; // tracks continuation lines of a filtered multi-line action
 
         for (const line of lines) {
+            // Skip continuation lines of a filtered multi-line call
+            if (skipDepth2 > 0) {
+                for (const ch of line) { if (ch === '(') skipDepth2++; else if (ch === ')') skipDepth2--; }
+                if (skipDepth2 < 0) skipDepth2 = 0;
+                continue;
+            }
+
+            // Detect each test() block — reset state and inject preamble for every one
+            if (testOpenRe.test(line)) {
+                result.push(line);
+                inTestBody   = true;
+                mainAppFound = false;
+                anyTestFound = true;
+                result.push(preamble);
+                continue;
+            }
+
             if (!inTestBody) {
                 result.push(line);
-                if (testOpenRe.test(line)) {
-                    inTestBody = true;
-                    result.push(preamble); // inject preamble right after test opens
-                }
                 continue;
             }
 
@@ -517,32 +550,49 @@ export class E2eService {
             if (!mainAppFound) {
                 if (actionRe.test(line) && mainAppRe.test(line)) {
                     mainAppFound = true;
-                    result.push(line); // keep this and everything after
+                    result.push(line);
                 } else if (actionRe.test(line)) {
-                    continue; // drop auth action line
+                    // Drop auth action line — also track multi-line continuations
+                    let depth = 0;
+                    for (const ch of line) { if (ch === '(') depth++; else if (ch === ')') depth--; }
+                    if (depth > 0) skipDepth2 = depth;
                 } else {
-                    result.push(line); // keep non-action lines (blank, const, etc.)
+                    result.push(line);
                 }
             } else {
                 result.push(line);
             }
         }
 
-        // Fallback: if no main-app line was found, return original (don't strip anything)
-        if (!mainAppFound) return specContent;
+        // Fallback: if no test block found, return original unchanged
+        if (!anyTestFound) return specContent;
         return result.join('\n');
     }
 
     private buildDocSpec(specContent: string, screenshotsDir: string): string {
         const fwdDir = screenshotsDir.replace(/\\/g, '/');
-        // goto included so the first page load is captured too
         const actionRe = /^\s*await .+\.(click|fill|selectOption|check|uncheck|dblclick|goto)\s*\(/;
+        const testOpenRe = /^\s*test\s*\(/;
         const lines = specContent.split('\n');
         const result: string[] = [];
         let stepN = 0;
         let helperInjected = false;
+        let multiLineDepth = 0; // skip __snap injection inside multi-line action calls
 
         for (const line of lines) {
+            if (testOpenRe.test(line)) {
+                helperInjected = false;
+                multiLineDepth = 0;
+            }
+
+            // Track whether we're inside a multi-line call (don't inject __snap mid-statement)
+            if (multiLineDepth > 0) {
+                result.push(line);
+                for (const ch of line) { if (ch === '(') multiLineDepth++; else if (ch === ')') multiLineDepth--; }
+                if (multiLineDepth < 0) multiLineDepth = 0;
+                continue;
+            }
+
             if (!helperInjected && actionRe.test(line)) {
                 const indent = line.match(/^(\s*)/)?.[1] ?? '  ';
                 result.push(
@@ -556,76 +606,208 @@ export class E2eService {
                 const padded = String(stepN).padStart(2, '0');
                 const indent = line.match(/^(\s*)/)?.[1] ?? '  ';
                 result.push(`${indent}await __snap('${fwdDir}/step_${padded}.png');`);
+                // Detect if this action spans multiple lines — track open parens
+                let depth = 0;
+                for (const ch of line) { if (ch === '(') depth++; else if (ch === ')') depth--; }
+                if (depth > 0) multiLineDepth = depth;
             }
         }
 
         return result.join('\n');
     }
 
-    private parseSpecSteps(specContent: string): { step: number; description: string; isPageAction: boolean }[] {
-        const actionRe = /^\s*await .+\.(click|fill|selectOption|check|uncheck|dblclick|goto)\s*\(/;
-        const steps: { step: number; description: string; isPageAction: boolean }[] = [];
+    private parseSpecSteps(specContent: string): { step: number; description: string; isPageAction: boolean; testName?: string }[] {
+        const actionRe   = /^\s*await .+\.(click|fill|selectOption|check|uncheck|dblclick|goto)\s*\(/;
+        const testNameRe = /^\s*test\s*\(\s*['"`]([^'"`]+)['"`]/;
+        const steps: { step: number; description: string; isPageAction: boolean; testName?: string }[] = [];
         let stepN = 0;
+        let currentTestName = '';
         for (const line of specContent.split('\n')) {
+            const testMatch = line.match(testNameRe);
+            if (testMatch) { currentTestName = testMatch[1]; continue; }
             if (!actionRe.test(line)) continue;
             stepN++;
             const isPageAction = line.includes('contentFrame()');
-            let desc = line.trim().replace(/^await\s+/, '');
             const gotoM = line.match(/\.goto\(['"]([^'"]+)['"]\)/);
-            if (gotoM) { steps.push({ step: stepN, description: `Navegar a: ${gotoM[1]}`, isPageAction }); continue; }
+            if (gotoM) {
+                const url = gotoM[1];
+                const pagePart = url.split('#').pop()?.split('/').filter(Boolean).pop() ?? url;
+                steps.push({ step: stepN, description: `Navegar a: ${pagePart}`, isPageAction, testName: currentTestName }); continue;
+            }
             const fillRoleM = line.match(/getByRole\([^)]+name:\s*['"]([^'"]+)['"]\s*\}\)\.fill\(['"]([^'"]*)['"]\)/);
-            if (fillRoleM) { steps.push({ step: stepN, description: `Ingresar "${fillRoleM[2]}" en campo "${fillRoleM[1]}"`, isPageAction }); continue; }
+            if (fillRoleM) { steps.push({ step: stepN, description: `Ingresar "${fillRoleM[2]}" en el campo "${fillRoleM[1]}"`, isPageAction, testName: currentTestName }); continue; }
+            const fillLocM = line.match(/\.locator\(['"]([^'"]+)['"]\)\.fill\(['"]([^'"]*)['"]\)/);
+            if (fillLocM) { steps.push({ step: stepN, description: `Ingresar "${fillLocM[2]}" en campo ${fillLocM[1]}`, isPageAction, testName: currentTestName }); continue; }
             const fillM = line.match(/\.fill\(['"]([^'"]*)['"]\)/);
-            if (fillM) { steps.push({ step: stepN, description: `Ingresar: ${fillM[1]}`, isPageAction }); continue; }
-            const frameClickM = line.match(/contentFrame\(\).+name:\s*['"]([^'"]+)['"]\s*\}\)\.click/);
-            if (frameClickM) { steps.push({ step: stepN, description: `Clic en: ${frameClickM[1]}`, isPageAction }); continue; }
-            const btnM = line.match(/getByRole\(['"]button['"],\s*\{\s*name:\s*['"]([^'"]+)['"]/);
-            if (btnM) { steps.push({ step: stepN, description: `Clic en botón: ${btnM[1]}`, isPageAction }); continue; }
-            const titleM = line.match(/getByTitle\(['"]([^'"]+)['"]\)/);
-            if (titleM) { steps.push({ step: stepN, description: `Navegar al módulo: ${titleM[1]}`, isPageAction }); continue; }
+            if (fillM) { steps.push({ step: stepN, description: fillM[1] ? `Ingresar valor: "${fillM[1]}"` : 'Limpiar campo', isPageAction, testName: currentTestName }); continue; }
+            const selLocM = line.match(/\.locator\(['"]([^'"]+)['"]\)\.selectOption\(/);
+            if (selLocM) { steps.push({ step: stepN, description: `Seleccionar opción en combo: ${selLocM[1]}`, isPageAction, testName: currentTestName }); continue; }
             const selM = line.match(/\.selectOption\(['"]([^'"]*)['"]\)/);
-            if (selM) { steps.push({ step: stepN, description: `Seleccionar: ${selM[1]}`, isPageAction }); continue; }
-            steps.push({ step: stepN, description: desc.replace(/\s*\{[^}]*\}/g, '').substring(0, 80), isPageAction });
+            if (selM) { steps.push({ step: stepN, description: `Seleccionar: "${selM[1]}"`, isPageAction, testName: currentTestName }); continue; }
+            const frameClickM = line.match(/contentFrame\(\).+name:\s*['"]([^'"]+)['"]\s*\}\)\.click/);
+            if (frameClickM) { steps.push({ step: stepN, description: `Clic en: "${frameClickM[1]}"`, isPageAction, testName: currentTestName }); continue; }
+            const btnM = line.match(/getByRole\(['"]button['"],\s*\{\s*name:\s*['"]([^'"]+)['"]/);
+            if (btnM) { steps.push({ step: stepN, description: `Clic en botón: "${btnM[1]}"`, isPageAction, testName: currentTestName }); continue; }
+            const locBtnM = line.match(/\.locator\(['"]([^'"]*(?:btn|button|Btn|Button|guardar|Guardar|buscar|Buscar|confirmar|Confirmar)[^'"]*)['"]\)\.click/i);
+            if (locBtnM) { steps.push({ step: stepN, description: `Clic en botón: ${locBtnM[1]}`, isPageAction, testName: currentTestName }); continue; }
+            const titleM = line.match(/getByTitle\(['"]([^'"]+)['"]\)/);
+            if (titleM) { steps.push({ step: stepN, description: `Abrir módulo: "${titleM[1]}"`, isPageAction, testName: currentTestName }); continue; }
+            const checkM = line.match(/\.(check|uncheck)\(\)/);
+            if (checkM) { steps.push({ step: stepN, description: checkM[1] === 'check' ? 'Marcar casilla' : 'Desmarcar casilla', isPageAction, testName: currentTestName }); continue; }
+            const dblM = line.match(/\.dblclick\(\)/);
+            if (dblM) { steps.push({ step: stepN, description: 'Doble clic en elemento', isPageAction, testName: currentTestName }); continue; }
+            // Variable-based fill: varName.fill('value') or varName.fill(variable)
+            const varFillLitM = line.match(/\b(\w+)\.fill\(['"]([^'"]*)['"]\)/);
+            if (varFillLitM) { steps.push({ step: stepN, description: varFillLitM[2] ? `Ingresar "${varFillLitM[2]}"` : 'Limpiar campo', isPageAction, testName: currentTestName }); continue; }
+            const varFillRefM = line.match(/\b(\w+)\.fill\((\w+)\)/);
+            if (varFillRefM) { steps.push({ step: stepN, description: 'Ingresar valor en campo', isPageAction, testName: currentTestName }); continue; }
+            // Variable-based click: varName.click()
+            const varClickM = line.match(/\b(\w+)\.click\(\)/);
+            if (varClickM) {
+                const vname = varClickM[1].toLowerCase();
+                let desc = 'Clic en elemento';
+                if (/guardar|save|submit|confirm/i.test(vname))    desc = 'Clic en botón Guardar';
+                else if (/eliminar|delete|remove|borrar/i.test(vname)) desc = 'Clic en botón Eliminar';
+                else if (/buscar|search|find/i.test(vname))        desc = 'Clic en botón Buscar';
+                else if (/cancelar|cancel|cerrar|close/i.test(vname)) desc = 'Clic en botón Cancelar';
+                else if (/input|campo|field|txt|text/i.test(vname)) desc = 'Clic en campo de texto';
+                else if (/btn|boton|button/i.test(vname))          desc = 'Clic en botón';
+                else if (/modal|dialog/i.test(vname))              desc = 'Clic en modal';
+                else if (/negativo|negative/i.test(vname))         desc = 'Clic para validar caso negativo';
+                steps.push({ step: stepN, description: desc, isPageAction, testName: currentTestName }); continue;
+            }
+            const generic = line.trim().replace(/^await\s+/, '').replace(/\s*\{[^}]*\}/g, '').substring(0, 90);
+            steps.push({ step: stepN, description: generic, isPageAction, testName: currentTestName });
         }
         return steps;
     }
 
+    private translatePlaywrightError(raw: string): string {
+        const lines = raw.split('\n').slice(0, 30).join('\n');
+        let msg = 'Ocurrió un error durante la ejecución del test.';
+
+        if (/toBeVisible.*failed/i.test(lines))         msg = 'Un elemento que debería estar visible no apareció en pantalla dentro del tiempo de espera.';
+        else if (/toBeHidden.*failed/i.test(lines))     msg = 'Un elemento que debería estar oculto siguió visible en pantalla.';
+        else if (/toBeDisabled.*failed/i.test(lines))   msg = 'Se esperaba que un botón o campo estuviera deshabilitado, pero estaba activo.';
+        else if (/toBeEnabled.*failed/i.test(lines))    msg = 'Se esperaba que un botón o campo estuviera habilitado, pero estaba deshabilitado.';
+        else if (/toBeEmpty.*failed/i.test(lines))      msg = 'Se esperaba que un campo estuviera vacío, pero tenía contenido.';
+        else if (/toHaveValue.*failed/i.test(lines))    msg = 'El valor de un campo no coincidió con el valor esperado.';
+        else if (/toContainText.*failed/i.test(lines))  msg = 'El texto esperado no se encontró en el elemento.';
+        else if (/not\.toBeVisible.*failed/i.test(lines)) msg = 'Se esperaba que un elemento no estuviera visible, pero sí aparecía en pantalla.';
+        else if (/element.*not found/i.test(lines))     msg = 'El elemento indicado no existe en la página actual.';
+        else if (/Timeout.*exceeded/i.test(lines))      msg = 'Se agotó el tiempo de espera. La página o el elemento tardó demasiado en responder.';
+        else if (/ReferenceError/i.test(lines))         msg = 'Error en el código del test: se usó una variable que no está definida en este bloque.';
+        else if (/locator.*resolved.*multiple/i.test(lines)) msg = 'El selector encontró múltiples elementos. Debe ser más específico.';
+
+        // Extract the locator for context
+        const locatorM = raw.match(/Locator:\s*(.+)/);
+        const locatorHint = locatorM ? `\nSelector involucrado: ${locatorM[1].trim().substring(0, 120)}` : '';
+
+        // Extract the failing line
+        const lineM = raw.match(/^\s*>\s*\d+\s*\|(.+)$/m);
+        const lineHint = lineM ? `\nLínea que falló: ${lineM[1].trim().substring(0, 120)}` : '';
+
+        return msg + locatorHint + lineHint;
+    }
+
     private buildPdfHtml(
         rec: E2eRecording,
-        steps: { step: number; description: string; isPageAction: boolean }[],
+        steps: { step: number; description: string; isPageAction: boolean; testName?: string }[],
         screenshotsDir: string,
         mod: string,
-        pageName?: string
+        pageName?: string,
+        failureScreenshots?: string[]
     ): string {
         const esc = (s: string) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
         const date = new Date(rec.lastResult?.runAt ?? new Date().toISOString())
             .toLocaleString('es-CO', { dateStyle: 'long', timeStyle: 'short' });
-        const resultBadge = rec.lastResult?.ok
-            ? `<span style="color:#16a34a;font-weight:700;">✓ PASÓ (${rec.lastResult.passed} paso(s))</span>`
-            : `<span style="color:#dc2626;font-weight:700;">✗ FALLÓ (${rec.lastResult?.failed ?? 0} fallo(s))</span>`;
+        const totalPassed = rec.lastResult?.passed ?? 0;
+        const totalFailed = rec.lastResult?.failed ?? 0;
+        const stepCount   = rec.lastResult?.stepCount ?? 0;
+        const ok          = rec.lastResult?.ok ?? false;
+        const pct         = ok ? 100 : (totalFailed > 0 ? 0 : 100);
+        const pctColor    = ok ? '#16a34a' : '#dc2626';
+        const pctIcon     = ok ? '✓' : '✗';
+        const pctLabel    = ok
+            ? `${pctIcon} ${stepCount} paso(s) completados correctamente`
+            : stepCount > 0
+                ? `${pctIcon} ${stepCount} paso(s) ejecutados — el test falló`
+                : '✗ El test no completó ningún paso';
 
-        // Only include direct page actions (inside #pagina1 contentFrame); skip login and navigation
-        const pageSteps = steps.filter(s => s.isPageAction);
+        const resultBadge = `
+          <div style="display:flex;align-items:center;gap:12px;margin-top:10px;">
+            <div style="flex:1;background:#e5e7eb;border-radius:999px;height:14px;overflow:hidden;">
+              <div style="width:${pct}%;height:100%;background:${pctColor};border-radius:999px;transition:width .3s;"></div>
+            </div>
+            <span style="font-weight:700;font-size:14px;color:${pctColor};white-space:nowrap;">${pct}%</span>
+          </div>
+          <div style="margin-top:6px;font-size:12px;color:${pctColor};font-weight:600;">${esc(pctLabel)}</div>`;
+
+        // Show every step that has a screenshot on disk — robust regardless of
+        // whether the spec uses contentFrame() inline or via a stored variable.
+        const pageSteps = steps.filter(s => {
+            const imgFile = path.join(screenshotsDir, `step_${String(s.step).padStart(2, '0')}.png`);
+            return fs.existsSync(imgFile);
+        });
+
+        // Group steps by test name for section headers in PDF
+        let lastTestName = '';
         const rows = pageSteps.map((s, idx) => {
             const displayNum = idx + 1;
             const imgFile = path.join(screenshotsDir, `step_${String(s.step).padStart(2, '0')}.png`);
-            const imgTag = fs.existsSync(imgFile)
-                ? `<img src="data:image/png;base64,${fs.readFileSync(imgFile).toString('base64')}" style="max-width:100%;border:1px solid #e5e7eb;border-radius:4px;" />`
-                : `<div style="background:#f3f4f6;padding:16px;color:#9ca3af;text-align:center;border-radius:4px;">Sin captura</div>`;
-            return `
-            <div style="page-break-inside:avoid;margin-bottom:32px;border:1px solid #e5e7eb;border-radius:8px;overflow:hidden;">
-              <div style="background:#1e3a5f;color:#fff;padding:10px 16px;display:flex;align-items:center;gap:12px;">
-                <span style="background:#fff;color:#1e3a5f;font-weight:700;border-radius:50%;width:28px;height:28px;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;">${displayNum}</span>
-                <span style="font-size:14px;">${esc(s.description)}</span>
+            const imgTag = `<img src="data:image/png;base64,${fs.readFileSync(imgFile).toString('base64')}" style="max-width:100%;border:1px solid #e5e7eb;border-radius:4px;" />`;
+
+            let sectionHeader = '';
+            if (s.testName && s.testName !== lastTestName) {
+                lastTestName = s.testName;
+                const isNegative = /negativo|negativa|error|fallo|sin completar/i.test(s.testName);
+                const sectionColor = isNegative ? '#7f1d1d' : '#1e3a5f';
+                sectionHeader = `
+                <div style="margin:32px 0 16px;padding:10px 16px;background:${sectionColor};color:#fff;border-radius:6px;font-size:13px;font-weight:700;">
+                  ${isNegative ? '⚠' : '▶'} ${esc(s.testName)}
+                </div>`;
+            }
+
+            return `${sectionHeader}
+            <div style="page-break-inside:avoid;margin-bottom:24px;border:1px solid #e5e7eb;border-radius:8px;overflow:hidden;">
+              <div style="background:#f8fafc;padding:10px 16px;display:flex;align-items:center;gap:12px;border-bottom:1px solid #e5e7eb;">
+                <span style="background:#1e3a5f;color:#fff;font-weight:700;border-radius:50%;min-width:28px;height:28px;display:inline-flex;align-items:center;justify-content:center;font-size:12px;">${displayNum}</span>
+                <span style="font-size:13px;color:#1f2937;font-weight:500;">${esc(s.description)}</span>
               </div>
-              <div style="padding:16px;">${imgTag}</div>
+              <div style="padding:12px;">${imgTag}</div>
             </div>`;
         }).join('');
+
+        // Build failure section: human-readable error + failure screenshots
+        let errorSection = '';
+        if (!rec.lastResult?.ok && rec.lastResult?.output) {
+            const humanError = this.translatePlaywrightError(rec.lastResult.output);
+            const failImgs = (failureScreenshots ?? []).map((p, i) => {
+                try {
+                    const b64 = fs.readFileSync(p).toString('base64');
+                    return `<div style="margin-bottom:16px;">
+                      <div style="font-size:12px;color:#7f1d1d;font-weight:600;margin-bottom:6px;">Pantalla al momento del error (fallo ${i + 1})</div>
+                      <img src="data:image/png;base64,${b64}" style="max-width:100%;border:2px solid #dc2626;border-radius:4px;" />
+                    </div>`;
+                } catch { return ''; }
+            }).join('');
+
+            errorSection = `
+            <div style="margin-top:32px;padding:20px;background:#fef2f2;border:2px solid #fecaca;border-radius:8px;page-break-inside:avoid;">
+              <div style="font-size:15px;font-weight:700;color:#dc2626;margin-bottom:12px;">✗ ¿Qué salió mal?</div>
+              <div style="font-size:13px;color:#7f1d1d;white-space:pre-line;margin-bottom:${failImgs ? '20px' : '0'}">${esc(humanError)}</div>
+              ${failImgs}
+              <details style="margin-top:12px;">
+                <summary style="font-size:11px;color:#9ca3af;cursor:pointer;">Ver error técnico completo</summary>
+                <pre style="font-size:10px;color:#6b7280;white-space:pre-wrap;word-break:break-all;margin-top:8px;">${esc(rec.lastResult.output.slice(0, 3000))}</pre>
+              </details>
+            </div>`;
+        }
 
         return `<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8">
         <style>
           * { box-sizing: border-box; margin: 0; padding: 0; }
-          body { font-family: Arial, Helvetica, sans-serif; font-size: 13px; color: #111827; background: #fff; padding: 0 20px; }
+          body { font-family: Arial, Helvetica, sans-serif; font-size: 13px; color: #111827; background: #fff; padding: 0 20px 40px; }
           .header { border-bottom: 3px solid #1e3a5f; padding: 24px 0 16px; margin-bottom: 32px; }
           .header h1 { font-size: 22px; color: #1e3a5f; margin-bottom: 8px; }
           .meta { display: flex; flex-wrap: wrap; gap: 16px; font-size: 12px; color: #6b7280; margin-top: 8px; }
@@ -638,14 +820,15 @@ export class E2eService {
             <span><b>Módulo:</b> ${esc(mod)}</span>
             ${pageName ? `<span><b>Página:</b> ${esc(pageName)}</span>` : ''}
             <span><b>Fecha:</b> ${date}</span>
-            <span><b>Resultado:</b> ${resultBadge}</span>
           </div>
+          ${resultBadge}
         </div>
         ${rows}
+        ${errorSection}
         </body></html>`;
     }
 
-    private async generatePDF(mod: string, id: string, sub?: string, page?: string, processedSpec?: string): Promise<void> {
+    private async generatePDF(mod: string, id: string, sub?: string, page?: string, processedSpec?: string, failureScreenshots?: string[]): Promise<void> {
         const file = recordingsPath(mod, sub, page);
         const recs = read(file);
         const rec  = recs.find(r => r.id === id);
@@ -655,10 +838,8 @@ export class E2eService {
         const screenshotsDir = path.join(specDir, 'screenshots');
         const pdfPath      = path.join(specDir, `doc-${id}.pdf`);
 
-        // Use processedSpec when available so step numbers match the screenshots
-        // generated by buildDocSpec (which also ran over the processed spec).
         const steps = this.parseSpecSteps(processedSpec ?? fs.readFileSync(rec.specFile, 'utf-8'));
-        const html  = this.buildPdfHtml(rec, steps, screenshotsDir, mod, page);
+        const html  = this.buildPdfHtml(rec, steps, screenshotsDir, mod, page, failureScreenshots);
 
         const browser = await chromium.launch({ headless: true });
         try {
@@ -1048,7 +1229,12 @@ export class E2eService {
         const failed      = Number(output.match(/(\d+) failed/)?.[1] ?? 0);
         const screenshots = fs.readdirSync(screenshotsDir).filter(f => f.endsWith('.png')).sort();
 
-        const result: E2eResult = { passed, failed, output, ok: ok && failed === 0, runAt, screenshots };
+        // Last captured screenshot is the closest state to the failure point
+        const failureScreenshots = !ok || failed > 0
+            ? screenshots.slice(-1).map(f => path.join(screenshotsDir, f))
+            : [];
+
+        const result: E2eResult = { passed, failed, output, ok: ok && failed === 0, runAt, screenshots, failureScreenshots, stepCount: screenshots.length };
 
         // Preserve previous result in history before overwriting
         if (rec.lastResult) {
@@ -1067,7 +1253,7 @@ export class E2eService {
         write(file, recs);
 
         // Generate PDF headlessly — pass the processed spec so step numbers match screenshots.
-        await this.generatePDF(mod, id, sub, page, specSrc);
+        await this.generatePDF(mod, id, sub, page, specSrc, failureScreenshots);
 
         return result;
     }
@@ -1096,5 +1282,22 @@ export class E2eService {
         const pdfPath = path.join(path.dirname(rec.specFile), `doc-${id}.pdf`);
         if (!fs.existsSync(pdfPath)) throw new Error('PDF no generado aún');
         return pdfPath;
+    }
+
+    saveEnhancedSpec(mod: string, id: string, enhancedSpec: string, sub?: string, page?: string): void {
+        const file = recordingsPath(mod, sub, page);
+        const recs = read(file);
+        const rec  = recs.find(r => r.id === id);
+        if (!rec) throw new Error('Grabación no encontrada');
+        if (!rec.specFile) throw new Error('La grabación no tiene spec file');
+
+        // Preserve original before first enhancement
+        if (!rec.originalSpec && fs.existsSync(rec.specFile)) {
+            rec.originalSpec = fs.readFileSync(rec.specFile, 'utf-8');
+        }
+
+        fs.mkdirSync(path.dirname(rec.specFile), { recursive: true });
+        fs.writeFileSync(rec.specFile, enhancedSpec, 'utf-8');
+        write(file, recs);
     }
 }

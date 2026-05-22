@@ -126,6 +126,7 @@ export interface E2eRecording {
   url: string;
   status: 'idle' | 'recording' | 'ready' | 'error';
   createdAt: string;
+  originalSpec?: string;
   lastResult?: {
     passed: number;
     failed: number;

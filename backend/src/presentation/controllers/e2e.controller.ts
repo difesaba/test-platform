@@ -1,8 +1,10 @@
 import { Request, Response } from 'express';
 import { E2eService } from '../../services/e2e.service';
+import { E2eAiService } from '../../services/e2e-ai.service';
 import { resolveAutomationEntryUrl, resolveRuntimeUrl } from '../../utils/runtime-url';
 
 const svc = new E2eService();
+const aiSvc = new E2eAiService();
 
 function getSessionContext(req: Request) {
     const sess = req.session as any;
@@ -130,6 +132,34 @@ export class E2eController {
             res.sendFile(filePath);
         } catch (e: any) {
             res.status(404).json({ error: e.message });
+        }
+    };
+
+    enhanceWithAI = async (req: Request, res: Response) => {
+        const { module: mod, submodule, page } = req.query as Record<string, string>;
+        if (!mod) return res.status(400).json({ error: 'Falta module' });
+        try {
+            const specContent = svc.getSpec(mod, req.params.id, submodule, page);
+            if (!specContent) return res.status(400).json({ error: 'El flujo no tiene spec grabado aún' });
+            const enhancedSpec = await aiSvc.enhanceSpec(specContent, mod);
+            res.json({ enhancedSpec, originalSpec: specContent });
+        } catch (e: any) {
+            res.status(500).json({ error: e.message });
+        }
+    };
+
+    saveEnhanced = (req: Request, res: Response) => {
+        const { module: mod, submodule, page } = req.query as Record<string, string>;
+        if (!mod) return res.status(400).json({ error: 'Falta module' });
+        const { enhancedSpec } = req.body ?? {};
+        if (!enhancedSpec || typeof enhancedSpec !== 'string') {
+            return res.status(400).json({ error: 'Falta enhancedSpec en el body' });
+        }
+        try {
+            svc.saveEnhancedSpec(mod, req.params.id, enhancedSpec, submodule, page);
+            res.json({ ok: true });
+        } catch (e: any) {
+            res.status(500).json({ error: e.message });
         }
     };
 }
