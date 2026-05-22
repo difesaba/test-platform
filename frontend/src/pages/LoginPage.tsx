@@ -39,7 +39,7 @@ export default function LoginPage() {
       return;
     }
 
-    api.get('/clients')
+    api.get('/clients/sinco')
       .then(({ data }) => setAllClients(data))
       .catch(() => setError('No se pudo cargar la lista de entornos disponibles.'))
       .finally(() => setLoadingClients(false));
@@ -61,12 +61,17 @@ export default function LoginPage() {
       return [];
     }
 
-    return allClients
+    const clients = allClients
       .filter((client) => client.empId === selectedGroup.empId)
       .sort((left, right) => (
         ENVIRONMENT_ORDER.indexOf(left.entorno) - ENVIRONMENT_ORDER.indexOf(right.entorno)
         || left.empresaNombre.localeCompare(right.empresaNombre, 'es')
       ));
+
+    console.log('[Grupo]', selectedGroup.empNombre, '| empId:', selectedGroup.empId);
+    console.table(clients.map(c => ({ id: c.id, empId: c.empId, entorno: c.entorno, empresaNombre: c.empresaNombre, appName: c.appName })));
+
+    return clients;
   }, [allClients, selectedGroup]);
 
   const resetAuth = () => {
@@ -157,6 +162,8 @@ export default function LoginPage() {
 
       setAuthenticated(true, {
         urlRaiz: selectedClient.urlRaiz,
+        empNombre: selectedGroup?.empNombre ?? '',
+        entornoNombre: (selectedClient as any)?.appName ?? '',
         empresa: { id: selectedEmpresa?.Id ?? selectedEmpresa?.IdEmpresa ?? 0, nombre: selectedEmpresa?.Nombre ?? '' },
         sucursal: { id: selectedSucursal?.Id ?? 0, nombre: selectedSucursal?.Nombre ?? '', entorno: selectedSucursal?.entorno ?? 'produccion' },
       });
@@ -177,6 +184,7 @@ export default function LoginPage() {
     resetAuth();
     handleGetEmpresas(client);
   };
+
 
   const handleEmpresaChange = (id: string) => {
     setEmpresaId(id);

@@ -2,6 +2,7 @@ import { Router } from 'express';
 import { AuthController } from './controllers/auth.controller';
 import { EnvironmentsController } from './controllers/environments.controller';
 import { ClientsController } from './controllers/clients.controller';
+import { SincoController } from './controllers/sinco.controller';
 import { requireAuth } from './middleware/session.middleware';
 import { ModulesController } from './controllers/modules.controller';
 import { ApiTestsController } from './controllers/apiTests.controller';
@@ -17,6 +18,7 @@ export class AppRoutes {
         const authController = new AuthController();
         const environmentsController = new EnvironmentsController();
         const clientsController = new ClientsController();
+        const sincoController = new SincoController();
         const modulesController = new ModulesController();
         const apiTestsController  = new ApiTestsController();
         const swaggerController   = new SwaggerController();
@@ -32,6 +34,7 @@ export class AppRoutes {
 
         router.get('/environments', environmentsController.list);
         router.get('/clients', clientsController.list);
+        router.get('/clients/sinco', sincoController.list);
 
         // Protegidos
         router.get('/modules', requireAuth, modulesController.list);

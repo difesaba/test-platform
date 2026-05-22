@@ -26,6 +26,7 @@ import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
 import LogoutRoundedIcon from '@mui/icons-material/LogoutRounded';
 import RefreshRoundedIcon from '@mui/icons-material/RefreshRounded';
 import ScienceRoundedIcon from '@mui/icons-material/ScienceRounded';
+import SwapHorizRoundedIcon from '@mui/icons-material/SwapHorizRounded';
 import ApiRoundedIcon from '@mui/icons-material/ApiRounded';
 import ScreenshotMonitorRoundedIcon from '@mui/icons-material/ScreenshotMonitorRounded';
 import PlayCircleOutlineRoundedIcon from '@mui/icons-material/PlayCircleOutlineRounded';
@@ -52,7 +53,7 @@ type TabValue = typeof tabs[number]['value'];
 
 export default function PlatformPage() {
   const navigate = useNavigate();
-  const { empresa, sucursal, clear } = useSessionStore();
+  const { empresa, sucursal, empNombre, entornoNombre, clear } = useSessionStore();
   const { selected } = useModuleStore();
   const theme = useTheme();
   const isDesktop = useMediaQuery(theme.breakpoints.up('md'));
@@ -136,18 +137,28 @@ export default function PlatformPage() {
           </Stack>
 
           {isSmall && (
-            <Stack spacing={0.25} alignItems="flex-end" minWidth={0} mr={1.5}>
-              {empresa?.nombre && (
-                <Typography variant="body2" fontWeight={700} color="inherit" noWrap>
-                  {empresa.nombre}
-                </Typography>
-              )}
-              {sucursal?.nombre && (
-                <Typography variant="caption" color="inherit" noWrap>
-                  {sucursal.nombre}
-                </Typography>
-              )}
-            </Stack>
+            <Tooltip
+              title={
+                <Stack spacing={0.5} sx={{ p: 0.5 }}>
+                  {empNombre && <Box><b>Grupo:</b> {empNombre}</Box>}
+                  {entornoNombre && <Box><b>Entorno:</b> {entornoNombre}</Box>}
+                  {empresa?.nombre && <Box><b>Empresa:</b> {empresa.nombre}</Box>}
+                  {sucursal?.nombre && <Box><b>Sucursal:</b> {sucursal.nombre}</Box>}
+                </Stack>
+              }
+              placement="bottom-end"
+            >
+              <Typography
+                variant="caption"
+                color="inherit"
+                noWrap
+                sx={{ maxWidth: 340, mr: 1.5, opacity: 0.92, cursor: 'default' }}
+              >
+                {[empNombre, entornoNombre, empresa?.nombre, sucursal?.nombre]
+                  .filter(Boolean)
+                  .join(' › ')}
+              </Typography>
+            </Tooltip>
           )}
 
           <Chip
@@ -162,11 +173,35 @@ export default function PlatformPage() {
               <RefreshRoundedIcon />
             </IconButton>
           </Tooltip>
-          <Button color="inherit" startIcon={<LogoutRoundedIcon />} onClick={handleLogout}>
-            Salir
-          </Button>
+
+          <Tooltip title="Volver al selector de empresa sin cerrar sesión">
+            <Button color="inherit" startIcon={<SwapHorizRoundedIcon />} onClick={() => navigate('/')}>
+              Cambiar
+            </Button>
+          </Tooltip>
+
+          <Tooltip title="Cerrar sesión completamente">
+            <IconButton color="inherit" onClick={handleLogout}>
+              <LogoutRoundedIcon />
+            </IconButton>
+          </Tooltip>
         </Toolbar>
       </AppBar>
+
+      {/* ── Banda de entorno ── */}
+      <Box sx={{
+        height: 4,
+        bgcolor: sucursal?.entorno === 'produccion' ? 'warning.main'
+               : sucursal?.entorno === 'prueba'     ? 'info.main'
+               : 'grey.400',
+      }} />
+
+      {/* ── Alerta producción ── */}
+      {sucursal?.entorno === 'produccion' && (
+        <Alert severity="warning" variant="filled" sx={{ borderRadius: 0, py: 0.5 }}>
+          Estás ejecutando pruebas en <strong>Producción</strong>. Verifica antes de correr pruebas destructivas.
+        </Alert>
+      )}
 
       {/* ── Body ── */}
       <Box display="flex" minHeight="calc(100vh - 72px)">

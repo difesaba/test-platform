@@ -3,7 +3,6 @@ import LoginRoundedIcon from '@mui/icons-material/LoginRounded';
 import ApartmentRoundedIcon from '@mui/icons-material/ApartmentRounded';
 import StoreRoundedIcon from '@mui/icons-material/StoreRounded';
 import type { EmpresaOption, SucursalOption } from '../../types/platform';
-import { getEnvironmentMeta } from '../../utils/platform';
 
 interface AccessFormProps {
   step: 1 | 2 | 3;
@@ -101,10 +100,7 @@ export function AccessForm({
                 onSucursalChange(value ? String(value.Id) : '');
               }}
               isOptionEqualToValue={(option, value) => option.Id === value.Id}
-              getOptionLabel={(option) => {
-                const environment = getEnvironmentMeta(option.entorno);
-                return `[${environment.label}] ${option.Nombre}`;
-              }}
+              getOptionLabel={(option) => option.Nombre}
               noOptionsText="No hay sucursales disponibles"
               renderInput={(params) => (
                 <TextField
