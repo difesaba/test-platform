@@ -6,8 +6,18 @@ body,
 
 body {
   margin: 0;
+  background: #0F172A;
+  color: #F1F5F9;
+  font-feature-settings: "tnum", "cnum";
 }
 
 * {
   box-sizing: border-box;
+}
+
+/* Fix centrado de modales: SincoTheme fija un width en .MuiDialog-root que, con
+   position:fixed + left:0, ancla el modal a la izquierda en pantallas anchas.
+   Restauramos width:auto solo para Dialogs (no toca Menu/Popover/Drawer). */
+.MuiModal-root.MuiDialog-root {
+  width: auto;
 }

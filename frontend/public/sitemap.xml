@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  PLACEHOLDER sitemap. Replace "https://testverse.com" with the real public
+  domain before go-live. TestVerse is login-gated, so only the public landing
+  page is listed. If more public routes appear, a build-time generator should
+  replace this file with the full set of URLs.
+-->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://testverse.com/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+</urlset>

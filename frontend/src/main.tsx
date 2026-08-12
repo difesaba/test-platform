@@ -5,17 +5,17 @@ import '@fontsource/roboto/300.css';
 import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
-import '@fontsource/nunito/400.css';
-import '@fontsource/nunito/600.css';
-import '@fontsource/nunito/700.css';
-import { SincoTheme } from '@sinco/react';
+import '@fontsource-variable/inter';
+import '@fontsource/jetbrains-mono/400.css';
+import '@fontsource/jetbrains-mono/500.css';
+import { appTheme } from '@/shared/theme/appTheme';
 import './index.css';
-import App from './App.tsx';
+import App from '@/App';
 
 createRoot(document.getElementById('root')!).render(
-  <ThemeProvider theme={SincoTheme}>
+  <ThemeProvider theme={appTheme}>
     <CssBaseline />
-    <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
+    <BrowserRouter>
       <App />
     </BrowserRouter>
   </ThemeProvider>,

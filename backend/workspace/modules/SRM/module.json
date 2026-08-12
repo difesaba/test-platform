@@ -1,0 +1,444 @@
+{
+  "name": "SRM",
+  "description": "Importado del menú SINCO (URLs reales por IdMenu)",
+  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/SRM",
+  "createdAt": "2026-08-05T15:22:01.731Z",
+  "submodules": [
+    {
+      "name": "Proveedores",
+      "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/SRM/submodules/Proveedores",
+      "createdAt": "2026-08-05T15:21:55.329Z",
+      "pages": [
+        {
+          "name": "Invitar nuevos proveedores",
+          "url": "v3/SRM/Views/GestionProveedor/NuevoProveedor/NuevoProveedor.html",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/SRM/submodules/Proveedores/pages/Invitar nuevos proveedores",
+          "createdAt": "2026-08-05T15:21:45.934Z"
+        },
+        {
+          "name": "Edición de solicitudes",
+          "url": "v3/SRM/Views/GestionProveedor/Solicitutes/EdicionSolicitudes.html",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/SRM/submodules/Proveedores/pages/Edición de solicitudes",
+          "createdAt": "2026-08-05T15:21:46.165Z"
+        },
+        {
+          "name": "Aprobación nuevas solicitudes",
+          "url": "v3/SRM/Views/GestionProveedor/Solicitutes/AprobarSolicitudesNuevoProveedor.html",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/SRM/submodules/Proveedores/pages/Aprobación nuevas solicitudes",
+          "createdAt": "2026-08-05T15:21:46.369Z"
+        },
+        {
+          "name": "Estado de solicitudes",
+          "url": "v3/SRM/Views/GestionProveedor/estado/estadoProveedores.html",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/SRM/submodules/Proveedores/pages/Estado de solicitudes",
+          "createdAt": "2026-08-05T15:21:46.579Z"
+        },
+        {
+          "name": "Reintegrar proveedor",
+          "url": "v3/SRM/Views/GestionProveedor/estado/soliciudesAnuladas.html",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/SRM/submodules/Proveedores/pages/Reintegrar proveedor",
+          "createdAt": "2026-08-05T15:21:46.830Z"
+        },
+        {
+          "name": "Invitar proveedores existentes",
+          "url": "v3/SRM/Views/GestionProveedor/Solicitutes/SolicitudTerceros.html",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/SRM/submodules/Proveedores/pages/Invitar proveedores existentes",
+          "createdAt": "2026-08-05T15:21:47.097Z"
+        },
+        {
+          "name": "Habilitar proveedores A&F",
+          "url": "v3/SRM/Views/GestionProveedor/Solicitutes/AprobarSolicitudes.html",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/SRM/submodules/Proveedores/pages/Habilitar proveedores A&F",
+          "createdAt": "2026-08-05T15:21:47.305Z"
+        },
+        {
+          "name": "Invitar proveedores existentes - masivo",
+          "url": "v3/SRM/Views/GestionProveedor/Solicitutes/SolicitudTercerosMasivo.html",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/SRM/submodules/Proveedores/pages/Invitar proveedores existentes - masivo",
+          "createdAt": "2026-08-05T15:21:47.525Z"
+        },
+        {
+          "name": "Actualización datos de proveedores",
+          "url": "v3/SRM/Views/GestionProveedor/ActualizarProveedores/ActualizarProveedores.html?solicitud=1",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/SRM/submodules/Proveedores/pages/Actualización datos de proveedores",
+          "createdAt": "2026-08-05T15:21:47.854Z"
+        },
+        {
+          "name": "Desvincular proveedores",
+          "url": "v3/SRM/Views/GestionProveedor/empresa/DesvincularTerceros.html",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/SRM/submodules/Proveedores/pages/Desvincular proveedores",
+          "createdAt": "2026-08-05T15:21:48.134Z"
+        },
+        {
+          "name": "Sincronizar contactos Portal-AyF",
+          "url": "v3/SRM/Views/GestionProveedor/ActualizarProveedores/ActualizarProveedores.html",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/SRM/submodules/Proveedores/pages/Sincronizar contactos Portal-AyF",
+          "createdAt": "2026-08-05T15:21:48.398Z"
+        },
+        {
+          "name": "Desaprobación de solicitudes",
+          "url": "v3/srm/views/reactapp/#/Proveedores/DesaprobacionSolicitudes",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/SRM/submodules/Proveedores/pages/Desaprobación de solicitudes",
+          "createdAt": "2026-08-05T15:21:48.665Z"
+        },
+        {
+          "name": "Desvincular proveedores - R",
+          "url": "v3/srm/views/reactapp/#/proveedores/desvinculados",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/SRM/submodules/Proveedores/pages/Desvincular proveedores - R",
+          "createdAt": "2026-08-05T15:21:48.962Z"
+        },
+        {
+          "name": "Productos Proveedor Ciudad",
+          "url": "v3/ADPRO/Views/Almacen/Productos/PPZona.html",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/SRM/submodules/Proveedores/pages/Productos Proveedor Ciudad",
+          "createdAt": "2026-08-05T15:21:49.232Z"
+        },
+        {
+          "name": "Directorio de proveedores",
+          "url": "v3/srm/views/reactapp/#/proveedores/directorio",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/SRM/submodules/Proveedores/pages/Directorio de proveedores",
+          "createdAt": "2026-08-05T15:21:49.571Z"
+        },
+        {
+          "name": "Informe de vencimientos",
+          "url": "v3/srm/views/reactapp/#/proveedores/InformeProximosAVencer",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/SRM/submodules/Proveedores/pages/Informe de vencimientos",
+          "createdAt": "2026-08-05T15:21:49.836Z"
+        },
+        {
+          "name": "Informe estado de solicitudes",
+          "url": "v3/SRM/Views/GestionProveedor/Solicitutes/informes/EstadoSolicitud.html",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/SRM/submodules/Proveedores/pages/Informe estado de solicitudes",
+          "createdAt": "2026-08-05T15:21:50.094Z"
+        },
+        {
+          "name": "Seguimiento de solicitudes",
+          "url": "v3/srm/views/reactapp/#/proveedores/InformeEstadoSolicitud",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/SRM/submodules/Proveedores/pages/Seguimiento de solicitudes",
+          "createdAt": "2026-08-05T15:21:50.341Z"
+        },
+        {
+          "name": "Informe especialidades proveedores",
+          "url": "v3/SRM/Views/GestionProveedor/Especialidades/InformeEspecialidades.html",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/SRM/submodules/Proveedores/pages/Informe especialidades proveedores",
+          "createdAt": "2026-08-05T15:21:50.618Z"
+        },
+        {
+          "name": "Informe registro solicitudes",
+          "url": "v3/SRM/Views/GestionProveedor/Solicitutes/informes/RegistroSolicitud.html",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/SRM/submodules/Proveedores/pages/Informe registro solicitudes",
+          "createdAt": "2026-08-05T15:21:50.902Z"
+        },
+        {
+          "name": "Maestro de configuración",
+          "url": "v3/srm/views/reactapp/#/proveedores",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/SRM/submodules/Proveedores/pages/Maestro de configuración",
+          "createdAt": "2026-08-05T15:21:50.963Z"
+        },
+        {
+          "name": "Documentos requeridos",
+          "url": "v3/SRM/Views/GestionProveedor/especialidades/MaestroEspecialidades.html",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/SRM/submodules/Proveedores/pages/Documentos requeridos",
+          "createdAt": "2026-08-05T15:21:51.223Z"
+        },
+        {
+          "name": "Plantillas de notificaciones",
+          "url": "v3/SRM/Views/GestionProveedor/Configuracion/PlantillaProveedores.html",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/SRM/submodules/Proveedores/pages/Plantillas de notificaciones",
+          "createdAt": "2026-08-05T15:21:51.473Z"
+        },
+        {
+          "name": "Declaración y autorización",
+          "url": "v3/SRM/Views/GestionProveedor/Configuracion/DeclaracionAutorizacion.html",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/SRM/submodules/Proveedores/pages/Declaración y autorización",
+          "createdAt": "2026-08-05T15:21:51.760Z"
+        },
+        {
+          "name": "Informe Sagrilaft SAGRILAFT",
+          "url": "v3/SRM/Views/GestionProveedor/Sagrilaft/informes/InformeSagrilaft.html",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/SRM/submodules/Proveedores/pages/Informe Sagrilaft SAGRILAFT",
+          "createdAt": "2026-08-05T15:21:52.065Z"
+        },
+        {
+          "name": "Cumplimiento",
+          "url": "v3/srm/views/reactapp/#/proveedores/oficialcumplimiento/solicitudes",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/SRM/submodules/Proveedores/pages/Cumplimiento",
+          "createdAt": "2026-08-05T15:21:52.420Z"
+        },
+        {
+          "name": "Informe SAGRILAFT",
+          "url": "v3/srm/views/reactapp/#/proveedores/InformeSagrilaft",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/SRM/submodules/Proveedores/pages/Informe SAGRILAFT",
+          "createdAt": "2026-08-05T15:21:52.702Z"
+        },
+        {
+          "name": "Proveedores verificados en listas vinculantes",
+          "url": "v3/srm/views/reactapp/#/proveedores/oficialCumplimiento/sagrilaft/verificados",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/SRM/submodules/Proveedores/pages/Proveedores verificados en listas vinculantes",
+          "createdAt": "2026-08-05T15:21:52.968Z"
+        },
+        {
+          "name": "Evaluación proveedores",
+          "url": "v3/SRM/Views/GestionProveedor/evaluacion/nuevotercero/registropreguntas.html",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/SRM/submodules/Proveedores/pages/Evaluación proveedores",
+          "createdAt": "2026-08-05T15:21:53.202Z"
+        },
+        {
+          "name": "Migración proveedores sin oficial",
+          "url": "v3/srm/views/reactapp/#/proveedores/oficialCumplimiento/migracion",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/SRM/submodules/Proveedores/pages/Migración proveedores sin oficial",
+          "createdAt": "2026-08-05T15:21:53.444Z"
+        },
+        {
+          "name": "Maestro etiquetas de solicitudes",
+          "url": "v3/SRM/Views/GestionProveedor/maestro/CategoriasProveedor.html",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/SRM/submodules/Proveedores/pages/Maestro etiquetas de solicitudes",
+          "createdAt": "2026-08-05T15:21:53.689Z"
+        },
+        {
+          "name": "Maestro Listas vinculantes",
+          "url": "v3/SRM/Views/GestionProveedor/Sagrilaft/Maestro/ListasVinculantes.html",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/SRM/submodules/Proveedores/pages/Maestro Listas vinculantes",
+          "createdAt": "2026-08-05T15:21:53.938Z"
+        },
+        {
+          "name": "Aprobación nuevas solicitudes (9742)",
+          "url": "v3/SRM/Views/GestionProveedor/Configuracion/MaestroAprobadores.html",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/SRM/submodules/Proveedores/pages/Aprobación nuevas solicitudes (9742)",
+          "createdAt": "2026-08-05T15:21:54.159Z"
+        },
+        {
+          "name": "Aprobación nuevos proveedores",
+          "url": "v3/SRM/Views/GestionProveedor/Aprobacion/PerfilAProbacion.html",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/SRM/submodules/Proveedores/pages/Aprobación nuevos proveedores",
+          "createdAt": "2026-08-05T15:21:54.393Z"
+        },
+        {
+          "name": "Modificación solicitudes Portal",
+          "url": "v3/SRM/Views/GestionProveedor/CambioCorreo/CambioCorreoPortal.html",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/SRM/submodules/Proveedores/pages/Modificación solicitudes Portal",
+          "createdAt": "2026-08-05T15:21:54.626Z"
+        },
+        {
+          "name": "Modificación solicitudes Portal (10267)",
+          "url": "v3/srm/views/reactapp/#/Proveedores/Portal",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/SRM/submodules/Proveedores/pages/Modificación solicitudes Portal (10267)",
+          "createdAt": "2026-08-05T15:21:54.874Z"
+        },
+        {
+          "name": "Registrar nuevo contacto proveedor",
+          "url": "v3/SRM/Views/GestionProveedor/Solicitutes/informes/RegistroSolicitud.html?contacto=1",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/SRM/submodules/Proveedores/pages/Registrar nuevo contacto proveedor",
+          "createdAt": "2026-08-05T15:21:55.099Z"
+        },
+        {
+          "name": "Página inicio Empresa",
+          "url": "v3/SRM/Views/GestionProveedor/Empresa/PerfilConstructora.html",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/SRM/submodules/Proveedores/pages/Página inicio Empresa",
+          "createdAt": "2026-08-05T15:21:55.329Z"
+        }
+      ]
+    },
+    {
+      "name": "Licitaciones",
+      "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/SRM/submodules/Licitaciones",
+      "createdAt": "2026-08-05T15:22:00.638Z",
+      "pages": [
+        {
+          "name": "Dashboard",
+          "url": "V3/srm/views/reactapp/#/licitaciones/Dashboard",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/SRM/submodules/Licitaciones/pages/Dashboard",
+          "createdAt": "2026-08-05T15:21:55.420Z"
+        },
+        {
+          "name": "Dashboard R",
+          "url": "V3/srm/views/reactapp/#/licitaciones/Dashboard",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/SRM/submodules/Licitaciones/pages/Dashboard R",
+          "createdAt": "2026-08-05T15:21:55.671Z"
+        },
+        {
+          "name": "Creación de licitaciones",
+          "url": "V3/srm/views/reactapp/#/licitaciones/FormularioLicitacion?id=-1",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/SRM/submodules/Licitaciones/pages/Creación de licitaciones",
+          "createdAt": "2026-08-05T15:21:55.970Z"
+        },
+        {
+          "name": "Gestión de licitaciones",
+          "url": "V3/srm/views/reactapp/#/licitaciones/ListadoLicitaciones?Estado=0",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/SRM/submodules/Licitaciones/pages/Gestión de licitaciones",
+          "createdAt": "2026-08-05T15:21:56.204Z"
+        },
+        {
+          "name": "Creación de cotizaciones",
+          "url": "V3/srm/views/reactapp/#/licitaciones/Cotizacion?idLicitacion=-1",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/SRM/submodules/Licitaciones/pages/Creación de cotizaciones",
+          "createdAt": "2026-08-05T15:21:56.429Z"
+        },
+        {
+          "name": "Listado de cotizaciones",
+          "url": "V3/srm/views/reactapp/#/licitaciones/ListadoCotizaciones",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/SRM/submodules/Licitaciones/pages/Listado de cotizaciones",
+          "createdAt": "2026-08-05T15:21:56.479Z"
+        },
+        {
+          "name": "Cuadro comparativo",
+          "url": "V3/srm/views/reactapp/#/licitaciones/ListadoLicitaciones?Estado=2",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/SRM/submodules/Licitaciones/pages/Cuadro comparativo",
+          "createdAt": "2026-08-05T15:21:56.703Z"
+        },
+        {
+          "name": "Negociación de licitaciones",
+          "url": "V3/srm/views/reactapp/#/licitaciones/ListadoLicitaciones?Estado=3",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/SRM/submodules/Licitaciones/pages/Negociación de licitaciones",
+          "createdAt": "2026-08-05T15:21:56.942Z"
+        },
+        {
+          "name": "Adjudicación de licitaciones",
+          "url": "V3/srm/views/reactapp/#/licitaciones/ListadoLicitaciones?Estado=4",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/SRM/submodules/Licitaciones/pages/Adjudicación de licitaciones",
+          "createdAt": "2026-08-05T15:21:57.173Z"
+        },
+        {
+          "name": "Asignación presupuestal",
+          "url": "V3/srm/views/reactapp/#/licitaciones/ListadoLicitaciones?Estado=-1",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/SRM/submodules/Licitaciones/pages/Asignación presupuestal",
+          "createdAt": "2026-08-05T15:21:57.393Z"
+        },
+        {
+          "name": "Generación de compras y contratos",
+          "url": "V3/srm/views/reactapp/#/Licitaciones/GeneracionComprasContratos",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/SRM/submodules/Licitaciones/pages/Generación de compras y contratos",
+          "createdAt": "2026-08-05T15:21:57.596Z"
+        },
+        {
+          "name": "Listado de adjudicaciones",
+          "url": "V3/srm/views/reactapp/#/licitaciones/ListadoAdjudicaciones",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/SRM/submodules/Licitaciones/pages/Listado de adjudicaciones",
+          "createdAt": "2026-08-05T15:21:57.641Z"
+        },
+        {
+          "name": "Gestión total de licitaciones",
+          "url": "V3/srm/views/reactapp/#/licitaciones/ListadoLicitaciones?Estado=-100",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/SRM/submodules/Licitaciones/pages/Gestión total de licitaciones",
+          "createdAt": "2026-08-05T15:21:57.884Z"
+        },
+        {
+          "name": "Aprobación de adjudicaciones",
+          "url": "V3/ADPRO/Views/Aprobaciones/Aprobacion.html?tipoApr=56",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/SRM/submodules/Licitaciones/pages/Aprobación de adjudicaciones",
+          "createdAt": "2026-08-05T15:21:58.102Z"
+        },
+        {
+          "name": "Aprobación adjudicaciones",
+          "url": "V3/ADPRO/Views/Front/Aprobaciones/#/aprobaciones?flujo=56",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/SRM/submodules/Licitaciones/pages/Aprobación adjudicaciones",
+          "createdAt": "2026-08-05T15:21:58.155Z"
+        },
+        {
+          "name": "Maestro de configuración licitaciones",
+          "url": "V3/srm/views/reactapp/#/licitaciones/MaestroLicitaciones",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/SRM/submodules/Licitaciones/pages/Maestro de configuración licitaciones",
+          "createdAt": "2026-08-05T15:21:58.362Z"
+        },
+        {
+          "name": "Maestros de configuración - R",
+          "url": "V3/srm/views/reactapp/#/licitaciones/MaestroLicitaciones",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/SRM/submodules/Licitaciones/pages/Maestros de configuración - R",
+          "createdAt": "2026-08-05T15:21:58.590Z"
+        },
+        {
+          "name": "Maestro flujos de licitación",
+          "url": "V3/ADPRO/Views/Licitaciones/Configuracion/MaestroFlujosLic.html",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/SRM/submodules/Licitaciones/pages/Maestro flujos de licitación",
+          "createdAt": "2026-08-05T15:21:58.807Z"
+        },
+        {
+          "name": "Pasos de licitación",
+          "url": "V3/ADPRO/Views/Licitaciones/Configuracion/ProcesosLicitacion.html",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/SRM/submodules/Licitaciones/pages/Pasos de licitación",
+          "createdAt": "2026-08-05T15:21:59.058Z"
+        },
+        {
+          "name": "Perfiles de acceso",
+          "url": "V3/ADPRO/Views/Licitaciones/Configuracion/PerfilesAcceso.html",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/SRM/submodules/Licitaciones/pages/Perfiles de acceso",
+          "createdAt": "2026-08-05T15:21:59.281Z"
+        },
+        {
+          "name": "Plantillas de notificaciones",
+          "url": "V3/ADPRO/Views/Licitaciones/Configuracion/PlantillaNotificacion.html?idTipo=1",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/SRM/submodules/Licitaciones/pages/Plantillas de notificaciones",
+          "createdAt": "2026-08-05T15:21:59.501Z"
+        },
+        {
+          "name": "Anular o suspender licitaciones",
+          "url": "V3/srm/views/reactapp/#/Licitaciones/AnulaSuspendeLicitacion",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/SRM/submodules/Licitaciones/pages/Anular o suspender licitaciones",
+          "createdAt": "2026-08-05T15:21:59.714Z"
+        },
+        {
+          "name": "Centro de informes",
+          "url": "v3/srm/views/reactapp/#/licitaciones/Informes",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/SRM/submodules/Licitaciones/pages/Centro de informes",
+          "createdAt": "2026-08-05T15:21:59.940Z"
+        },
+        {
+          "name": "Auditoria notificaciones",
+          "url": "V3/srm/views/reactapp/#/licitaciones/AuditoriaNotificaciones",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/SRM/submodules/Licitaciones/pages/Auditoria notificaciones",
+          "createdAt": "2026-08-05T15:22:00.152Z"
+        },
+        {
+          "name": "Informe documentos generados",
+          "url": "V3/ADPRO/Views/Licitaciones/Informes/DocumentosGenerados.html",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/SRM/submodules/Licitaciones/pages/Informe documentos generados",
+          "createdAt": "2026-08-05T15:22:00.197Z"
+        },
+        {
+          "name": "Informe tiempos",
+          "url": "V3/srm/views/reactapp/#/licitaciones/InformeTiempos",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/SRM/submodules/Licitaciones/pages/Informe tiempos",
+          "createdAt": "2026-08-05T15:22:00.421Z"
+        },
+        {
+          "name": "Informe licitaciones",
+          "url": "V3/ADPRO/Views/Licitaciones/Informes/InformeAdjudicaciones.html",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/SRM/submodules/Licitaciones/pages/Informe licitaciones",
+          "createdAt": "2026-08-05T15:22:00.638Z"
+        }
+      ]
+    },
+    {
+      "name": "Configuración",
+      "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/SRM/submodules/Configuración",
+      "createdAt": "2026-08-05T15:22:01.731Z",
+      "pages": [
+        {
+          "name": "Cuentas correo",
+          "url": "v3/SRM/Views/GestionProveedor/Configuracion/cuentasCorreo.html",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/SRM/submodules/Configuración/pages/Cuentas correo",
+          "createdAt": "2026-08-05T15:22:01.078Z"
+        },
+        {
+          "name": "Test Docusign",
+          "url": "v3/SRM/Views/GestionProveedor/Configuracion/docusign.html",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/SRM/submodules/Configuración/pages/Test Docusign",
+          "createdAt": "2026-08-05T15:22:01.296Z"
+        },
+        {
+          "name": "Test Infolaft",
+          "url": "V3/ADPRO/views/Test/TestInfoLab.html",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/SRM/submodules/Configuración/pages/Test Infolaft",
+          "createdAt": "2026-08-05T15:22:01.500Z"
+        },
+        {
+          "name": "Addons",
+          "url": "V3/ADPRO/Views/reactapp/#/mantenimiento/addons?modulo=50",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/SRM/submodules/Configuración/pages/Addons",
+          "createdAt": "2026-08-05T15:22:01.731Z"
+        }
+      ]
+    }
+  ],
+  "pages": []
+}

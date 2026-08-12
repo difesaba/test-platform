@@ -1,0 +1,2801 @@
+{
+  "name": "ADPRO",
+  "description": "Importado del menú SINCO (recursivo)",
+  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO",
+  "createdAt": "2026-08-04T22:19:20.714Z",
+  "submodules": [
+    {
+      "name": "Presupuestos",
+      "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Presupuestos",
+      "createdAt": "2026-08-04T22:19:20.714Z",
+      "pages": [
+        {
+          "name": "Maestro de insumos",
+          "url": "V3/ADPRO/Views/reactapp/#/presupuestos/maestrodeinsumos",
+          "folderPath": "C:\\testPlatform\\backend\\workspace\\modules\\ADPRO\\submodules\\Presupuestos\\pages\\Maestro de insumos",
+          "createdAt": "2026-08-04T22:19:20.714Z"
+        },
+        {
+          "name": "Elaboración de presupuesto (EDT)",
+          "url": "v3/adpro/views/presupuestos/edt/HomeEDT.html",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Presupuestos/pages/Elaboración de presupuesto (EDT)",
+          "createdAt": "2026-08-04T22:19:20.714Z"
+        },
+        {
+          "name": "Elaboración de Presupuesto",
+          "url": "ERPNET/ADPro/Procesos/Presupuesto/ElaboracionPresupuestoNew_LRL.aspx",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Presupuestos/pages/Elaboración de Presupuesto",
+          "createdAt": "2026-08-04T22:19:20.714Z"
+        },
+        {
+          "name": "Análisis de precios unitarios (APU)",
+          "url": "ERPNET/ADPro/Configuracion/Presupuesto/EdicionItems.aspx",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Presupuestos/pages/Análisis de precios unitarios (APU)",
+          "createdAt": "2026-08-04T22:19:20.714Z"
+        },
+        {
+          "name": "Insumos presupuesto",
+          "url": "V3/ADPRO/Views/presupuestos/InsumosPresupuesto.html",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Presupuestos/pages/Insumos presupuesto",
+          "createdAt": "2026-08-04T22:19:20.715Z"
+        },
+        {
+          "name": "Insumos presupuesto (EDT)",
+          "url": "V3/ADPRO/Views/presupuestos/InsumosPresupuestoArbol.html",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Presupuestos/pages/Insumos presupuesto (EDT)",
+          "createdAt": "2026-08-04T22:19:20.715Z"
+        }
+      ],
+      "submodules": [
+        {
+          "name": "INFORMES",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Presupuestos/submodules/INFORMES",
+          "createdAt": "2026-08-04T22:19:20.715Z",
+          "pages": [
+            {
+              "name": "Informe insumos y unitarios",
+              "url": "v3/adpro/Views/Informe/PanelInforme.html?TipInforme=811",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Presupuestos/submodules/INFORMES/pages/Informe insumos y unitarios",
+              "createdAt": "2026-08-04T22:19:20.715Z"
+            },
+            {
+              "name": "Informe de presupuesto",
+              "url": "v3/adpro/Views/Informe/PanelInforme.html?TipInforme=810",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Presupuestos/submodules/INFORMES/pages/Informe de presupuesto",
+              "createdAt": "2026-08-04T22:19:20.715Z"
+            }
+          ],
+          "submodules": []
+        },
+        {
+          "name": "UTILIDADES",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Presupuestos/submodules/UTILIDADES",
+          "createdAt": "2026-08-04T22:19:20.715Z",
+          "pages": [
+            {
+              "name": "Especificaciones adicionales al presupuesto",
+              "url": "ERPNET/ADPRO/Procesos/Presupuesto/EspecificacionPresuspuesto_RDO.aspx",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Presupuestos/submodules/UTILIDADES/pages/Especificaciones adicionales al presupuesto",
+              "createdAt": "2026-08-04T22:19:20.715Z"
+            },
+            {
+              "name": "Actualizaciones y recálculos EDT",
+              "url": "v3/adpro/views/presupuestos/edt/ActualizacionesRecalculos.html?edt=1",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Presupuestos/submodules/UTILIDADES/pages/Actualizaciones y recálculos EDT",
+              "createdAt": "2026-08-04T22:19:20.715Z"
+            }
+          ],
+          "submodules": [
+            {
+              "name": "OPCIONES ESPECIALES",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Presupuestos/submodules/UTILIDADES/submodules/OPCIONES ESPECIALES",
+              "createdAt": "2026-08-04T22:19:20.715Z",
+              "pages": [],
+              "submodules": [
+                {
+                  "name": "Importación",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Presupuestos/submodules/UTILIDADES/submodules/OPCIONES ESPECIALES/submodules/Importación",
+                  "createdAt": "2026-08-04T22:19:20.715Z",
+                  "pages": [
+                    {
+                      "name": "Migración de insumos",
+                      "url": "ERPNET/ADPRO/Procesos/Migraciones/MigracionGenericaME_MAA.aspx?Tipo=Ins",
+                      "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Presupuestos/submodules/UTILIDADES/submodules/OPCIONES ESPECIALES/submodules/Importación/pages/Migración de insumos",
+                      "createdAt": "2026-08-04T22:19:20.715Z"
+                    }
+                  ],
+                  "submodules": []
+                },
+                {
+                  "name": "SAP",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Presupuestos/submodules/UTILIDADES/submodules/OPCIONES ESPECIALES/submodules/SAP",
+                  "createdAt": "2026-08-04T22:19:20.715Z",
+                  "pages": [
+                    {
+                      "name": "Asignación de actividades SAP",
+                      "url": "V3/ADPRO/Views/Presupuestos/Utilidades/OpcionesEspeciales/SAP/AsignacionActividadesSAP.html",
+                      "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Presupuestos/submodules/UTILIDADES/submodules/OPCIONES ESPECIALES/submodules/SAP/pages/Asignación de actividades SAP",
+                      "createdAt": "2026-08-04T22:19:20.715Z"
+                    },
+                    {
+                      "name": "Generar Archivo Plano PEP Primavera",
+                      "url": "V3/ADPRO/Views/Presupuestos/Utilidades/OpcionesEspeciales/SAP/GenerarArchivoPlanoPrimavera.html",
+                      "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Presupuestos/submodules/UTILIDADES/submodules/OPCIONES ESPECIALES/submodules/SAP/pages/Generar Archivo Plano PEP Primavera",
+                      "createdAt": "2026-08-04T22:19:20.715Z"
+                    }
+                  ],
+                  "submodules": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Contratos",
+      "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Contratos",
+      "createdAt": "2026-08-04T22:19:20.715Z",
+      "pages": [],
+      "submodules": [
+        {
+          "name": "Contratos",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Contratos/submodules/Contratos",
+          "createdAt": "2026-08-04T22:19:20.715Z",
+          "pages": [
+            {
+              "name": "Contratos Generales (new)",
+              "url": "V3/ADPRO/Views/Contratos/Contratos/ConsultaContratos.html?ConClase=G&ContSuperior=false",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Contratos/submodules/Contratos/pages/Contratos Generales (new)",
+              "createdAt": "2026-08-04T22:19:20.715Z"
+            },
+            {
+              "name": "Contratos generales",
+              "url": "V3/ADPRO/Views/Contratos/Contratos/ConsultaContratos.html?ConClase=G",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Contratos/submodules/Contratos/pages/Contratos generales",
+              "createdAt": "2026-08-04T22:19:20.715Z"
+            },
+            {
+              "name": "Contratos por grupos",
+              "url": "V3/ADPRO/Views/Contratos/Contratos/ConsultaContratos.html?ConClase=R",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Contratos/submodules/Contratos/pages/Contratos por grupos",
+              "createdAt": "2026-08-04T22:19:20.715Z"
+            },
+            {
+              "name": "Contratos por grupos (new)",
+              "url": "V3/ADPRO/Views/Contratos/Contratos/ConsultaContratos.html?ConClase=R&ContSuperior=false",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Contratos/submodules/Contratos/pages/Contratos por grupos (new)",
+              "createdAt": "2026-08-04T22:19:20.715Z"
+            },
+            {
+              "name": "Contratos a todo costo",
+              "url": "V3/ADPRO/Views/Contratos/Contratos/ConsultaContratos.html?ConClase=T",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Contratos/submodules/Contratos/pages/Contratos a todo costo",
+              "createdAt": "2026-08-04T22:19:20.715Z"
+            },
+            {
+              "name": "Contratos a todo costo (new)",
+              "url": "V3/ADPRO/Views/Contratos/Contratos/ConsultaContratos.html?ConClase=T&ContSuperior=false",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Contratos/submodules/Contratos/pages/Contratos a todo costo (new)",
+              "createdAt": "2026-08-04T22:19:20.718Z"
+            },
+            {
+              "name": "Pólizas de contratos",
+              "url": "V3/ADPRO/Views/Contratos/Contratos/polizas/Poliza.html?contrato=1",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Contratos/submodules/Contratos/pages/Pólizas de contratos",
+              "createdAt": "2026-08-04T22:19:20.718Z"
+            },
+            {
+              "name": "Firma electrónica para contratos",
+              "url": "V3/ADPRO/Views/Contratos/ContratosDocusign.html",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Contratos/submodules/Contratos/pages/Firma electrónica para contratos",
+              "createdAt": "2026-08-04T22:19:20.718Z"
+            },
+            {
+              "name": "Sincroniza sobres firma electrónica",
+              "url": "V3/ADPRO/Views/Contratos/Informes/DocumentosFirmaElectronica.html?Informe=0",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Contratos/submodules/Contratos/pages/Sincroniza sobres firma electrónica",
+              "createdAt": "2026-08-04T22:19:20.718Z"
+            }
+          ],
+          "submodules": [
+            {
+              "name": "SOLICITUD CONTRATOS",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Contratos/submodules/Contratos/submodules/SOLICITUD CONTRATOS",
+              "createdAt": "2026-08-04T22:19:20.718Z",
+              "pages": [
+                {
+                  "name": "Solicitud sobre contratos aprobados",
+                  "url": "V3/ADPRO/Views/Contratos/Contratos/SolicitudContratosAprobados.html",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Contratos/submodules/Contratos/submodules/SOLICITUD CONTRATOS/pages/Solicitud sobre contratos aprobados",
+                  "createdAt": "2026-08-04T22:19:20.718Z"
+                }
+              ],
+              "submodules": []
+            },
+            {
+              "name": "Aprobación contratos",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Contratos/submodules/Contratos/submodules/Aprobación contratos",
+              "createdAt": "2026-08-04T22:19:20.718Z",
+              "pages": [
+                {
+                  "name": "Lista de chequeo contratos",
+                  "url": "V3/ADPRO/Views/Contratos/Contratos/AprobacionContratos/ListaCheckContratos.html",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Contratos/submodules/Contratos/submodules/Aprobación contratos/pages/Lista de chequeo contratos",
+                  "createdAt": "2026-08-04T22:19:20.718Z"
+                },
+                {
+                  "name": "Preaprobación contratos",
+                  "url": "ERPNET/ADPro/Aprobaciones/Aprobacion.aspx?tipoApr=1&EstadoFlujoI=0&EstadoFlujoF=1",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Contratos/submodules/Contratos/submodules/Aprobación contratos/pages/Preaprobación contratos",
+                  "createdAt": "2026-08-04T22:19:20.718Z"
+                },
+                {
+                  "name": "Aprobación contratos",
+                  "url": "ERPNET/ADPro/Aprobaciones/Aprobacion.aspx?tipoApr=1&EstadoFlujoI=1&EstadoFlujoF=2",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Contratos/submodules/Contratos/submodules/Aprobación contratos/pages/Aprobación contratos",
+                  "createdAt": "2026-08-04T22:19:20.718Z"
+                }
+              ],
+              "submodules": [
+                {
+                  "name": "INFORMES",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Contratos/submodules/Contratos/submodules/Aprobación contratos/submodules/INFORMES",
+                  "createdAt": "2026-08-04T22:19:20.718Z",
+                  "pages": [
+                    {
+                      "name": "Listado de chequeo de contratos",
+                      "url": "V3/ADPRO/Views/Contratos/Contratos/AprobacionContratos/Informes/ListadoChequeoContratos.html",
+                      "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Contratos/submodules/Contratos/submodules/Aprobación contratos/submodules/INFORMES/pages/Listado de chequeo de contratos",
+                      "createdAt": "2026-08-04T22:19:20.718Z"
+                    }
+                  ],
+                  "submodules": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "CORTES DE PROYECTO",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Contratos/submodules/CORTES DE PROYECTO",
+          "createdAt": "2026-08-04T22:19:20.718Z",
+          "pages": [
+            {
+              "name": "Actas generales",
+              "url": "V3/ADPRO/Views/Actas/Actas.html?clase=G",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Contratos/submodules/CORTES DE PROYECTO/pages/Actas generales",
+              "createdAt": "2026-08-04T22:19:20.718Z"
+            },
+            {
+              "name": "Actas por grupos",
+              "url": "V3/ADPRO/Views/Actas/Actas.html?clase=R",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Contratos/submodules/CORTES DE PROYECTO/pages/Actas por grupos",
+              "createdAt": "2026-08-04T22:19:20.718Z"
+            },
+            {
+              "name": "Actas a todo costo",
+              "url": "V3/ADPRO/Views/Actas/Actas.html?clase=T",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Contratos/submodules/CORTES DE PROYECTO/pages/Actas a todo costo",
+              "createdAt": "2026-08-04T22:19:20.718Z"
+            },
+            {
+              "name": "Programación de actas",
+              "url": "ERPNET/ADPro/Aprobaciones/Aprobacion.aspx?tipoApr=2&EstadoFlujoI=0&EstadoFlujoF=1",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Contratos/submodules/CORTES DE PROYECTO/pages/Programación de actas",
+              "createdAt": "2026-08-04T22:19:20.718Z"
+            },
+            {
+              "name": "Aprobación de actas",
+              "url": "ERPNET/ADPro/Aprobaciones/Aprobacion.aspx?tipoApr=2&EstadoFlujoI=1&EstadoFlujoF=2",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Contratos/submodules/CORTES DE PROYECTO/pages/Aprobación de actas",
+              "createdAt": "2026-08-04T22:19:20.720Z"
+            },
+            {
+              "name": "Programación y aprobación de actas",
+              "url": "ERPNET/ADPro/Aprobaciones/Aprobacion.aspx?tipoApr=2&EstadoFlujoI=0&EstadoFlujoF=2",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Contratos/submodules/CORTES DE PROYECTO/pages/Programación y aprobación de actas",
+              "createdAt": "2026-08-04T22:19:20.721Z"
+            },
+            {
+              "name": "Aprobación Actas Contabilizan",
+              "url": "ERPNET/ADPro/Aprobaciones/Aprobacion.aspx?tipoApr=37&EstadoFlujoI=0&EstadoFlujoF=1",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Contratos/submodules/CORTES DE PROYECTO/pages/Aprobación Actas Contabilizan",
+              "createdAt": "2026-08-04T22:19:20.721Z"
+            },
+            {
+              "name": "Anticipos",
+              "url": "V3/ADPRO/Views/Actas/Actas.html?clase=A",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Contratos/submodules/CORTES DE PROYECTO/pages/Anticipos",
+              "createdAt": "2026-08-04T22:19:20.721Z"
+            },
+            {
+              "name": "Devolución de retenciones",
+              "url": "V3/ADPRO/Views/Actas/Actas.html?clase=D",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Contratos/submodules/CORTES DE PROYECTO/pages/Devolución de retenciones",
+              "createdAt": "2026-08-04T22:19:20.721Z"
+            },
+            {
+              "name": "Devolución de retenciones FIC",
+              "url": "V3/ADPRO/Views/Actas/Actas.html?clase=F",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Contratos/submodules/CORTES DE PROYECTO/pages/Devolución de retenciones FIC",
+              "createdAt": "2026-08-04T22:19:20.721Z"
+            },
+            {
+              "name": "Asignación de facturas - Actas",
+              "url": "V3/ADPRO/views/Actas/AsignacionFacturas.html",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Contratos/submodules/CORTES DE PROYECTO/pages/Asignación de facturas - Actas",
+              "createdAt": "2026-08-04T22:19:20.721Z"
+            },
+            {
+              "name": "Migración de actas generales obra",
+              "url": "V3/ADPRO/views/CargarArchivos/MigrarDocumentos.html?Tipo=AGrObra",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Contratos/submodules/CORTES DE PROYECTO/pages/Migración de actas generales obra",
+              "createdAt": "2026-08-04T22:19:20.721Z"
+            }
+          ],
+          "submodules": [
+            {
+              "name": "UTILIDADES",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Contratos/submodules/CORTES DE PROYECTO/submodules/UTILIDADES",
+              "createdAt": "2026-08-04T22:19:20.721Z",
+              "pages": [
+                {
+                  "name": "Cambio estado de actas",
+                  "url": "V3/ADPRO/Views/actas/utilidades/CambioEstado.html?reversar=0",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Contratos/submodules/CORTES DE PROYECTO/submodules/UTILIDADES/pages/Cambio estado de actas",
+                  "createdAt": "2026-08-04T22:19:20.721Z"
+                },
+                {
+                  "name": "Reversar estado de actas",
+                  "url": "V3/ADPRO/Views/actas/utilidades/CambioEstado.html?reversar=1",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Contratos/submodules/CORTES DE PROYECTO/submodules/UTILIDADES/pages/Reversar estado de actas",
+                  "createdAt": "2026-08-04T22:19:20.721Z"
+                },
+                {
+                  "name": "Imputación contratos por grupos",
+                  "url": "V3/ADPRO/Views/Contratos/Contratos/ConsultaContratos.html?ConClase=R&Imputar=true",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Contratos/submodules/CORTES DE PROYECTO/submodules/UTILIDADES/pages/Imputación contratos por grupos",
+                  "createdAt": "2026-08-04T22:19:20.721Z"
+                },
+                {
+                  "name": "Reasignación de actas generales",
+                  "url": "V3/ADPRO/Views/Actas/Actas.html?clase=G&reasignar=1",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Contratos/submodules/CORTES DE PROYECTO/submodules/UTILIDADES/pages/Reasignación de actas generales",
+                  "createdAt": "2026-08-04T22:19:20.721Z"
+                },
+                {
+                  "name": "Reversar anticipos por contratos duplicados",
+                  "url": "V3/ADPRO/Views/actas/utilidades/ReversarAnticiposDuplicado.html",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Contratos/submodules/CORTES DE PROYECTO/submodules/UTILIDADES/pages/Reversar anticipos por contratos duplicados",
+                  "createdAt": "2026-08-04T22:19:20.721Z"
+                }
+              ],
+              "submodules": []
+            }
+          ]
+        },
+        {
+          "name": "INFORMES",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Contratos/submodules/INFORMES",
+          "createdAt": "2026-08-04T22:19:20.722Z",
+          "pages": [
+            {
+              "name": "Informes contratos",
+              "url": "v3/adpro/Views/Informe/PanelInforme.html?TipInforme=820",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Contratos/submodules/INFORMES/pages/Informes contratos",
+              "createdAt": "2026-08-04T22:19:20.722Z"
+            },
+            {
+              "name": "Informes actas",
+              "url": "v3/adpro/Views/Informe/PanelInforme.html?TipInforme=821",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Contratos/submodules/INFORMES/pages/Informes actas",
+              "createdAt": "2026-08-04T22:19:20.722Z"
+            },
+            {
+              "name": "Relación de pagos",
+              "url": "v3/adpro/Views/Informe/PanelInforme.html?TipInforme=825",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Contratos/submodules/INFORMES/pages/Relación de pagos",
+              "createdAt": "2026-08-04T22:19:20.722Z"
+            },
+            {
+              "name": "Informe saldo de anticipos(v3)",
+              "url": "v3/adpro/Views/Informe/PanelInforme.html?TipInforme=823",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Contratos/submodules/INFORMES/pages/Informe saldo de anticipos(v3)",
+              "createdAt": "2026-08-04T22:19:20.722Z"
+            },
+            {
+              "name": "Estado de contratos (cortes de proyecto)",
+              "url": "ERPNET/ADPRO/Reportes/Panel/NuevoPanel.aspx?TipInforme=41",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Contratos/submodules/INFORMES/pages/Estado de contratos (cortes de proyecto)",
+              "createdAt": "2026-08-04T22:19:20.722Z"
+            },
+            {
+              "name": "Listado de contratos",
+              "url": "ERPNET/ADPro/Reportes/Contratos/ListadoContratos_BB.aspx",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Contratos/submodules/INFORMES/pages/Listado de contratos",
+              "createdAt": "2026-08-04T22:19:20.722Z"
+            },
+            {
+              "name": "Informe liquidación de contratos",
+              "url": "ERPNET/ADPRO/Reportes/Contratos/InfLiquidacióndeObra_NLR.aspx",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Contratos/submodules/INFORMES/pages/Informe liquidación de contratos",
+              "createdAt": "2026-08-04T22:19:20.722Z"
+            },
+            {
+              "name": "Informe seguimiento contratos de suministro",
+              "url": "v3/adpro/Views/Informe/PanelInforme.html?TipInforme=943",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Contratos/submodules/INFORMES/pages/Informe seguimiento contratos de suministro",
+              "createdAt": "2026-08-04T22:19:20.722Z"
+            },
+            {
+              "name": "Impresión preacta",
+              "url": "V3/ADPRO/Views/Contratos/Informes/GestorOpciones.html",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Contratos/submodules/INFORMES/pages/Impresión preacta",
+              "createdAt": "2026-08-04T22:19:20.722Z"
+            },
+            {
+              "name": "Impresión de actas",
+              "url": "V3/ADPRO/Views/Contratos/Informes/GestorImpresionActas.html?Page=IA",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Contratos/submodules/INFORMES/pages/Impresión de actas",
+              "createdAt": "2026-08-04T22:19:20.722Z"
+            },
+            {
+              "name": "Informe envió de actas",
+              "url": "v3/adpro/Views/Informe/PanelInforme.html?TipInforme=826",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Contratos/submodules/INFORMES/pages/Informe envió de actas",
+              "createdAt": "2026-08-04T22:19:20.722Z"
+            },
+            {
+              "name": "Informe Contratado por Tercero",
+              "url": "v3/adpro/Views/Informe/PanelInforme.html?TipInforme=831",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Contratos/submodules/INFORMES/pages/Informe Contratado por Tercero",
+              "createdAt": "2026-08-04T22:19:20.722Z"
+            },
+            {
+              "name": "Informe Detallado de Actas",
+              "url": "ADPRO/Contratos/InfDetalladoActasContrato.asp",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Contratos/submodules/INFORMES/pages/Informe Detallado de Actas",
+              "createdAt": "2026-08-04T22:19:20.722Z"
+            }
+          ],
+          "submodules": []
+        }
+      ]
+    },
+    {
+      "name": "Almacén",
+      "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén",
+      "createdAt": "2026-08-04T22:19:20.722Z",
+      "pages": [],
+      "submodules": [
+        {
+          "name": "PROVEEDORES",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/PROVEEDORES",
+          "createdAt": "2026-08-04T22:19:20.722Z",
+          "pages": [
+            {
+              "name": "Registro de proveedores",
+              "url": "Terceros/terceros_contenedor.asp?tipo=P",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/PROVEEDORES/pages/Registro de proveedores",
+              "createdAt": "2026-08-04T22:19:20.722Z"
+            },
+            {
+              "name": "Calificación Terceros",
+              "url": "V3/ADPRO/Views/Almacen/Proveedores/CalificacionTerceros.html",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/PROVEEDORES/pages/Calificación Terceros",
+              "createdAt": "2026-08-04T22:19:20.722Z"
+            },
+            {
+              "name": "Calificación de Terceros",
+              "url": "V3/ADPRO/Views/Almacen/Proveedores/CalificacionTerceros.html?Tipo=Zona",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/PROVEEDORES/pages/Calificación de Terceros",
+              "createdAt": "2026-08-04T22:19:20.722Z"
+            },
+            {
+              "name": "Descuentos Terceros",
+              "url": "V3/ADPRO/Views/Almacen/Proveedores/DescuentosTerceros.html?Tipo=Zona",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/PROVEEDORES/pages/Descuentos Terceros",
+              "createdAt": "2026-08-04T22:19:20.722Z"
+            }
+          ],
+          "submodules": [
+            {
+              "name": "INFORMES",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/PROVEEDORES/submodules/INFORMES",
+              "createdAt": "2026-08-04T22:19:20.722Z",
+              "pages": [
+                {
+                  "name": "Informe de proveedores",
+                  "url": "V3/ADPRO/Views/Almacen/Proveedores/Informes/InformeDeProveedores.html",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/PROVEEDORES/submodules/INFORMES/pages/Informe de proveedores",
+                  "createdAt": "2026-08-04T22:19:20.722Z"
+                },
+                {
+                  "name": "Informe descuentos proveedores",
+                  "url": "V3/ADPRO/Views/Informe/PanelInforme.html?TipInforme=941",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/PROVEEDORES/submodules/INFORMES/pages/Informe descuentos proveedores",
+                  "createdAt": "2026-08-04T22:19:20.722Z"
+                }
+              ],
+              "submodules": []
+            }
+          ]
+        },
+        {
+          "name": "PRODUCTOS",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/PRODUCTOS",
+          "createdAt": "2026-08-04T22:19:20.722Z",
+          "pages": [
+            {
+              "name": "Productos Proveedor",
+              "url": "ERPNET/ADPRO/Procesos/Almacen/Productos/ProductosProveedor_JAU.aspx",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/PRODUCTOS/pages/Productos Proveedor",
+              "createdAt": "2026-08-04T22:19:20.722Z"
+            },
+            {
+              "name": "Eliminar productos proveedor",
+              "url": "V3/ADPRO/views/Almacen/Productos/ProductosProveedorZonaEliminar.html",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/PRODUCTOS/pages/Eliminar productos proveedor",
+              "createdAt": "2026-08-04T22:19:20.722Z"
+            }
+          ],
+          "submodules": [
+            {
+              "name": "INFORMES",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/PRODUCTOS/submodules/INFORMES",
+              "createdAt": "2026-08-04T22:19:20.722Z",
+              "pages": [
+                {
+                  "name": "Informe de insumos - ADPRO",
+                  "url": "v3/adpro/Views/Informe/PanelInforme.html?TipInforme=829",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/PRODUCTOS/submodules/INFORMES/pages/Informe de insumos - ADPRO",
+                  "createdAt": "2026-08-04T22:19:20.722Z"
+                },
+                {
+                  "name": "Informe insumos producto proveedor",
+                  "url": "V3/ADPRO/Views/Informe/PanelInforme.html?TipInforme=907",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/PRODUCTOS/submodules/INFORMES/pages/Informe insumos producto proveedor",
+                  "createdAt": "2026-08-04T22:19:20.722Z"
+                },
+                {
+                  "name": "Informe actualizaciones producto proveedor",
+                  "url": "V3/ADPRO/Views/Informe/PanelInforme.html?TipInforme=909",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/PRODUCTOS/submodules/INFORMES/pages/Informe actualizaciones producto proveedor",
+                  "createdAt": "2026-08-04T22:19:20.722Z"
+                }
+              ],
+              "submodules": []
+            }
+          ]
+        },
+        {
+          "name": "COTIZACIONES",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/COTIZACIONES",
+          "createdAt": "2026-08-04T22:19:20.722Z",
+          "pages": [
+            {
+              "name": "Solicitud de cotizaciones",
+              "url": "ERPNET/ADPro/Procesos/Almacen/Cotizaciones/ListadoCotizaciones_MAA.aspx",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/COTIZACIONES/pages/Solicitud de cotizaciones",
+              "createdAt": "2026-08-04T22:19:20.722Z"
+            },
+            {
+              "name": "Cuadro comparativo de cotizaciones",
+              "url": "ERPNET/ADPro/Procesos/Almacen/Cotizaciones/ListadoCotizaciones_MAA.aspx?Iscuadro=1",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/COTIZACIONES/pages/Cuadro comparativo de cotizaciones",
+              "createdAt": "2026-08-04T22:19:20.722Z"
+            },
+            {
+              "name": "Informe masivo cuadro comparativo",
+              "url": "ERPNET/ADPro/Procesos/Almacen/Cotizaciones/Infcotizacion_JAU.aspx",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/COTIZACIONES/pages/Informe masivo cuadro comparativo",
+              "createdAt": "2026-08-04T22:19:20.722Z"
+            }
+          ],
+          "submodules": []
+        },
+        {
+          "name": "PEDIDOS",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/PEDIDOS",
+          "createdAt": "2026-08-04T22:19:20.722Z",
+          "pages": [
+            {
+              "name": "Pedidos Proyecto",
+              "url": "ERPNET/ADPro/Procesos/Almacen/Pedidos/ListadoPedidosProyecto_jau.aspx",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/PEDIDOS/pages/Pedidos Proyecto",
+              "createdAt": "2026-08-04T22:19:20.722Z"
+            },
+            {
+              "name": "Migración de pedidos",
+              "url": "V3/ADPRO/Views/Almacen/Pedidos/MigracionPedidos.html",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/PEDIDOS/pages/Migración de pedidos",
+              "createdAt": "2026-08-04T22:19:20.722Z"
+            }
+          ],
+          "submodules": [
+            {
+              "name": "Compra de pedidos",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/PEDIDOS/submodules/Compra de pedidos",
+              "createdAt": "2026-08-04T22:19:20.722Z",
+              "pages": [
+                {
+                  "name": "Compra de pedidos proyecto",
+                  "url": "V3/ADPRO/views/Almacen/Pedidos/ComprarPedidosProveedor.html",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/PEDIDOS/submodules/Compra de pedidos/pages/Compra de pedidos proyecto",
+                  "createdAt": "2026-08-04T22:19:20.722Z"
+                },
+                {
+                  "name": "Comprar pedidos proveedor sugerido zona",
+                  "url": "V3/ADPRO/Views/Almacen/Pedidos/ComprarPedidosProveedorSugerido.html?zona=1",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/PEDIDOS/submodules/Compra de pedidos/pages/Comprar pedidos proveedor sugerido zona",
+                  "createdAt": "2026-08-04T22:19:20.723Z"
+                },
+                {
+                  "name": "Comprar pedidos OC superior",
+                  "url": "V3/adpro/views/almacen/Pedidos/ComprarPedidosOCSuperior.html?vpn=1",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/PEDIDOS/submodules/Compra de pedidos/pages/Comprar pedidos OC superior",
+                  "createdAt": "2026-08-04T22:19:20.723Z"
+                },
+                {
+                  "name": "Comprar pedidos proveedor ciudad",
+                  "url": "V3/adpro/views/almacen/pedidos/comprarpedidosvpn.html",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/PEDIDOS/submodules/Compra de pedidos/pages/Comprar pedidos proveedor ciudad",
+                  "createdAt": "2026-08-04T22:19:20.723Z"
+                },
+                {
+                  "name": "Comprar pedidos proveedor",
+                  "url": "V3/adpro/views/almacen/pedidos/ComprarPedidosVPNzona.html",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/PEDIDOS/submodules/Compra de pedidos/pages/Comprar pedidos proveedor",
+                  "createdAt": "2026-08-04T22:19:20.723Z"
+                },
+                {
+                  "name": "Compra de pedidos automático",
+                  "url": "V3/adpro/Views/Almacen/Compras/Opciones/ComprasAutomaticas.html?zona=1",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/PEDIDOS/submodules/Compra de pedidos/pages/Compra de pedidos automático",
+                  "createdAt": "2026-08-04T22:19:20.723Z"
+                }
+              ],
+              "submodules": []
+            },
+            {
+              "name": "INFORMES",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/PEDIDOS/submodules/INFORMES",
+              "createdAt": "2026-08-04T22:19:20.723Z",
+              "pages": [
+                {
+                  "name": "Consulta pedidos proyecto",
+                  "url": "V3/ADPRO/views/Almacen/Pedidos/ConsultaPedidosProyecto.html",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/PEDIDOS/submodules/INFORMES/pages/Consulta pedidos proyecto",
+                  "createdAt": "2026-08-04T22:19:20.723Z"
+                },
+                {
+                  "name": "Consulta pedidos proyecto resumido",
+                  "url": "V3/ADPRO/views/Almacen/Pedidos/ConsultaPedidosProyectoResumido.html",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/PEDIDOS/submodules/INFORMES/pages/Consulta pedidos proyecto resumido",
+                  "createdAt": "2026-08-04T22:19:20.723Z"
+                },
+                {
+                  "name": "Consulta pedidos presupuesto",
+                  "url": "V3/ADPRO/views/Almacen/Pedidos/ConsultaPedidosProyectoValores.html",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/PEDIDOS/submodules/INFORMES/pages/Consulta pedidos presupuesto",
+                  "createdAt": "2026-08-04T22:19:20.723Z"
+                },
+                {
+                  "name": "Cuadro comparativo proveedor ciudad",
+                  "url": "V3/adpro/Views/Almacen/Pedidos/Informes/HistorialCuadroComparativoVPN.html",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/PEDIDOS/submodules/INFORMES/pages/Cuadro comparativo proveedor ciudad",
+                  "createdAt": "2026-08-04T22:19:20.723Z"
+                },
+                {
+                  "name": "Cuadro comparativo compras proveedor",
+                  "url": "V3/adpro/Views/Almacen/Pedidos/Informes/HistorialCuadroComparativoVPN.html?zona=1",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/PEDIDOS/submodules/INFORMES/pages/Cuadro comparativo compras proveedor",
+                  "createdAt": "2026-08-04T22:19:20.723Z"
+                }
+              ],
+              "submodules": []
+            }
+          ]
+        },
+        {
+          "name": "Anticipos",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/Anticipos",
+          "createdAt": "2026-08-04T22:19:20.723Z",
+          "pages": [
+            {
+              "name": "Adición de anticipos",
+              "url": "V3/adpro/Views/almacen/anticipos/anticipos.html",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/Anticipos/pages/Adición de anticipos",
+              "createdAt": "2026-08-04T22:19:20.723Z"
+            },
+            {
+              "name": "Edición de anticipos",
+              "url": "V3/adpro/Views/almacen/anticipos/LIstaranticipos.html?edita=1&_op=E",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/Anticipos/pages/Edición de anticipos",
+              "createdAt": "2026-08-04T22:19:20.723Z"
+            },
+            {
+              "name": "Anular anticipos",
+              "url": "V3/ADPRO/views/Almacen/Anticipos/anular.html",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/Anticipos/pages/Anular anticipos",
+              "createdAt": "2026-08-04T22:19:20.723Z"
+            },
+            {
+              "name": "Traslado Anticipos",
+              "url": "V3/ADPRO/views/Almacen/Anticipos/anular.html?traslado=1",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/Anticipos/pages/Traslado Anticipos",
+              "createdAt": "2026-08-04T22:19:20.723Z"
+            },
+            {
+              "name": "Amortización de anticipos",
+              "url": "V3/ADPRO/views/Almacen/Anticipos/amortizacion.html",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/Anticipos/pages/Amortización de anticipos",
+              "createdAt": "2026-08-04T22:19:20.723Z"
+            }
+          ],
+          "submodules": [
+            {
+              "name": "APROBACIÓN ANTICIPOS",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/Anticipos/submodules/APROBACIÓN ANTICIPOS",
+              "createdAt": "2026-08-04T22:19:20.723Z",
+              "pages": [
+                {
+                  "name": "Programación anticipos",
+                  "url": "ERPNET/ADPro/Aprobaciones/Aprobacion.aspx?tipoApr=8&EstadoFlujoI=0&EstadoFlujoF=1",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/Anticipos/submodules/APROBACIÓN ANTICIPOS/pages/Programación anticipos",
+                  "createdAt": "2026-08-04T22:19:20.723Z"
+                },
+                {
+                  "name": "APROBACIÓN ANTICIPOS",
+                  "url": "ERPNET/ADPro/Aprobaciones/Aprobacion.aspx?tipoApr=8&EstadoFlujoI=1&EstadoFlujoF=2",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/Anticipos/submodules/APROBACIÓN ANTICIPOS/pages/APROBACIÓN ANTICIPOS",
+                  "createdAt": "2026-08-04T22:19:20.723Z"
+                },
+                {
+                  "name": "Programación y aprobación anticipos",
+                  "url": "ERPNET/ADPro/Aprobaciones/Aprobacion.aspx?tipoApr=8&EstadoFlujoI=0&EstadoFlujoF=2",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/Anticipos/submodules/APROBACIÓN ANTICIPOS/pages/Programación y aprobación anticipos",
+                  "createdAt": "2026-08-04T22:19:20.723Z"
+                }
+              ],
+              "submodules": []
+            },
+            {
+              "name": "Aprobaciones",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/Anticipos/submodules/Aprobaciones",
+              "createdAt": "2026-08-04T22:19:20.723Z",
+              "pages": [
+                {
+                  "name": "Aprobación de anticipos",
+                  "url": "V3/ADPRO/Views/Front/Aprobaciones/#/aprobaciones?flujo=8",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/Anticipos/submodules/Aprobaciones/pages/Aprobación de anticipos",
+                  "createdAt": "2026-08-04T22:19:20.723Z"
+                }
+              ],
+              "submodules": []
+            },
+            {
+              "name": "UTILIDADES",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/Anticipos/submodules/UTILIDADES",
+              "createdAt": "2026-08-04T22:19:20.723Z",
+              "pages": [
+                {
+                  "name": "Cambio de estado de los anticipos",
+                  "url": "V3/adpro/Views/almacen/anticipos/CambioEstado.html?reversar=0",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/Anticipos/submodules/UTILIDADES/pages/Cambio de estado de los anticipos",
+                  "createdAt": "2026-08-04T22:19:20.723Z"
+                },
+                {
+                  "name": "Reversar estados de anticipos",
+                  "url": "V3/adpro/Views/almacen/anticipos/CambioEstado.html?reversar=1",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/Anticipos/submodules/UTILIDADES/pages/Reversar estados de anticipos",
+                  "createdAt": "2026-08-04T22:19:20.723Z"
+                }
+              ],
+              "submodules": []
+            },
+            {
+              "name": "INFORMES",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/Anticipos/submodules/INFORMES",
+              "createdAt": "2026-08-04T22:19:20.723Z",
+              "pages": [
+                {
+                  "name": "Relación de pagos almacén",
+                  "url": "V3/ADPRO/Views/Almacen/Anticipos/Informes/MaestroInformeAnticipos.html",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/Anticipos/submodules/INFORMES/pages/Relación de pagos almacén",
+                  "createdAt": "2026-08-04T22:19:20.723Z"
+                },
+                {
+                  "name": "Informe de anticipos",
+                  "url": "ADPRO/Anticipos/Informes/Inf_Anticipos_TOM.asp",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/Anticipos/submodules/INFORMES/pages/Informe de anticipos",
+                  "createdAt": "2026-08-04T22:19:20.723Z"
+                }
+              ],
+              "submodules": []
+            }
+          ]
+        },
+        {
+          "name": "COMPRAS",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/COMPRAS",
+          "createdAt": "2026-08-04T22:19:20.723Z",
+          "pages": [
+            {
+              "name": "Creación orden de compra",
+              "url": "V3/ADPRO/Views/Almacen/Compras/Compras.html?_op=C",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/COMPRAS/pages/Creación orden de compra",
+              "createdAt": "2026-08-04T22:19:20.724Z"
+            },
+            {
+              "name": "Edición orden de compra",
+              "url": "V3/ADPRO/Views/Almacen/Compras/ListadoEdicion_OC.html?_op=E",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/COMPRAS/pages/Edición orden de compra",
+              "createdAt": "2026-08-04T22:19:20.724Z"
+            },
+            {
+              "name": "Edición orden de compra EA",
+              "url": "V3/ADPRO/Views/Almacen/Compras/ListadoEdicion_OC.html?_op=E&EA=1",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/COMPRAS/pages/Edición orden de compra EA",
+              "createdAt": "2026-08-04T22:19:20.724Z"
+            },
+            {
+              "name": "Asignación órdenes de compra",
+              "url": "V3/ADPRO/Views/Almacen/Compras/Asignacion/ConsultaAsignacion.html",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/COMPRAS/pages/Asignación órdenes de compra",
+              "createdAt": "2026-08-04T22:19:20.724Z"
+            }
+          ],
+          "submodules": [
+            {
+              "name": "ORDEN DE COMPRA SUPERIOR",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/COMPRAS/submodules/ORDEN DE COMPRA SUPERIOR",
+              "createdAt": "2026-08-04T22:19:20.723Z",
+              "pages": [
+                {
+                  "name": "Impresión Ordenes de Compra Superior",
+                  "url": "V3/ADPRO/Views/Almacen/Compras/OrdenCompraSuperior/ListadoImpresion.html",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/COMPRAS/submodules/ORDEN DE COMPRA SUPERIOR/pages/Impresión Ordenes de Compra Superior",
+                  "createdAt": "2026-08-04T22:19:20.723Z"
+                },
+                {
+                  "name": "Preaprobación Orden de Compra Superior",
+                  "url": "ERPNET/ADPro/Aprobaciones/Aprobacion.aspx?tipoApr=17&EstadoFlujoI=0&EstadoFlujoF=1",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/COMPRAS/submodules/ORDEN DE COMPRA SUPERIOR/pages/Preaprobación Orden de Compra Superior",
+                  "createdAt": "2026-08-04T22:19:20.723Z"
+                },
+                {
+                  "name": "Aprobación Orden de Compra Superior",
+                  "url": "ERPNET/ADPro/Aprobaciones/Aprobacion.aspx?tipoApr=17&EstadoFlujoI=1&EstadoFlujoF=2",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/COMPRAS/submodules/ORDEN DE COMPRA SUPERIOR/pages/Aprobación Orden de Compra Superior",
+                  "createdAt": "2026-08-04T22:19:20.724Z"
+                },
+                {
+                  "name": "Cerrar Orden de Compra Superior",
+                  "url": "V3/ADPRO/Views/Almacen/Compras/OrdenCompraSuperior/ListadoCierre_OCS.html?tipo=cierre",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/COMPRAS/submodules/ORDEN DE COMPRA SUPERIOR/pages/Cerrar Orden de Compra Superior",
+                  "createdAt": "2026-08-04T22:19:20.724Z"
+                },
+                {
+                  "name": "Anular Orden de Compra Superior",
+                  "url": "V3/ADPRO/Views/Almacen/Compras/OrdenCompraSuperior/ListadoCierre_OCS.html?tipo=anular",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/COMPRAS/submodules/ORDEN DE COMPRA SUPERIOR/pages/Anular Orden de Compra Superior",
+                  "createdAt": "2026-08-04T22:19:20.724Z"
+                }
+              ],
+              "submodules": []
+            },
+            {
+              "name": "CONTRATOS DE SUMINISTRO",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/COMPRAS/submodules/CONTRATOS DE SUMINISTRO",
+              "createdAt": "2026-08-04T22:19:20.724Z",
+              "pages": [
+                {
+                  "name": "Pólizas de contrato de suministro",
+                  "url": "V3/ADPRO/Views/Contratos/Contratos/polizas/Poliza.html?compra=1",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/COMPRAS/submodules/CONTRATOS DE SUMINISTRO/pages/Pólizas de contrato de suministro",
+                  "createdAt": "2026-08-04T22:19:20.724Z"
+                },
+                {
+                  "name": "Pólizas próximas a vencer",
+                  "url": "v3/adpro/Views/Informe/PanelInforme.html?TipInforme=891",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/COMPRAS/submodules/CONTRATOS DE SUMINISTRO/pages/Pólizas próximas a vencer",
+                  "createdAt": "2026-08-04T22:19:20.724Z"
+                },
+                {
+                  "name": "Impresión contratos de suministro",
+                  "url": "V3/ADPRO/Views/Almacen/Compras/ContratosSuministros/ImpContratosSuministros.html",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/COMPRAS/submodules/CONTRATOS DE SUMINISTRO/pages/Impresión contratos de suministro",
+                  "createdAt": "2026-08-04T22:19:20.724Z"
+                }
+              ],
+              "submodules": []
+            },
+            {
+              "name": "ARGOS",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/COMPRAS/submodules/ARGOS",
+              "createdAt": "2026-08-04T22:19:20.724Z",
+              "pages": [
+                {
+                  "name": "Solicitud Orden de Compra ARGOS",
+                  "url": "V3/ADPRO/views/Almacen/Compras/Argos/ListadoSolicitudOCArgos.html?inf=0",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/COMPRAS/submodules/ARGOS/pages/Solicitud Orden de Compra ARGOS",
+                  "createdAt": "2026-08-04T22:19:20.725Z"
+                },
+                {
+                  "name": "Informe Solicitud Orden de Compra ARGOS",
+                  "url": "V3/ADPRO/views/Almacen/Compras/Argos/ListadoSolicitudOCArgos.html?inf=1",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/COMPRAS/submodules/ARGOS/pages/Informe Solicitud Orden de Compra ARGOS",
+                  "createdAt": "2026-08-04T22:19:20.725Z"
+                }
+              ],
+              "submodules": []
+            },
+            {
+              "name": "OPCIONES",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/COMPRAS/submodules/OPCIONES",
+              "createdAt": "2026-08-04T22:19:20.725Z",
+              "pages": [
+                {
+                  "name": "Cierre orden de compra",
+                  "url": "V3/ADPRO/Views/Almacen/Compras/ListadoCierre_OC.html?pag=1",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/COMPRAS/submodules/OPCIONES/pages/Cierre orden de compra",
+                  "createdAt": "2026-08-04T22:19:20.725Z"
+                },
+                {
+                  "name": "Abrir orden de compra",
+                  "url": "V3/ADPRO/Views/Almacen/Compras/ListadoApertura_OC.html",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/COMPRAS/submodules/OPCIONES/pages/Abrir orden de compra",
+                  "createdAt": "2026-08-04T22:19:20.725Z"
+                },
+                {
+                  "name": "Anular orden de compra",
+                  "url": "V3/ADPRO/Views/Almacen/Compras/ListadoCierre_OC.html?pag=2",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/COMPRAS/submodules/OPCIONES/pages/Anular orden de compra",
+                  "createdAt": "2026-08-04T22:19:20.725Z"
+                },
+                {
+                  "name": "Eliminación orden de compra",
+                  "url": "ADPRO/Compras/EliminacionOC.asp",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/COMPRAS/submodules/OPCIONES/pages/Eliminación orden de compra",
+                  "createdAt": "2026-08-04T22:19:20.725Z"
+                },
+                {
+                  "name": "Cambio proveedor orden de compra",
+                  "url": "V3/ADPRO/Views/Almacen/Compras/CambioProveedor_OC.html",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/COMPRAS/submodules/OPCIONES/pages/Cambio proveedor orden de compra",
+                  "createdAt": "2026-08-04T22:19:20.725Z"
+                }
+              ],
+              "submodules": []
+            },
+            {
+              "name": "INFORMES",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/COMPRAS/submodules/INFORMES",
+              "createdAt": "2026-08-04T22:19:20.725Z",
+              "pages": [
+                {
+                  "name": "Impresión orden de compra",
+                  "url": "V3/ADPRO/Views/Almacen/Compras/ListadoImpresion_OC-Virtual.html",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/COMPRAS/submodules/INFORMES/pages/Impresión orden de compra",
+                  "createdAt": "2026-08-04T22:19:20.725Z"
+                },
+                {
+                  "name": "Informe asignación órdenes de compra",
+                  "url": "V3/ADPRO/Views/Almacen/Compras/Asignacion/InformeAsignacion.html",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/COMPRAS/submodules/INFORMES/pages/Informe asignación órdenes de compra",
+                  "createdAt": "2026-08-04T22:19:20.725Z"
+                },
+                {
+                  "name": "Informe masivo ordenes de compra",
+                  "url": "v3/adpro/Views/Informe/PanelInforme.html?TipInforme=836",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/COMPRAS/submodules/INFORMES/pages/Informe masivo ordenes de compra",
+                  "createdAt": "2026-08-04T22:19:20.725Z"
+                },
+                {
+                  "name": "Control de compras por insumo",
+                  "url": "v3/adpro/Views/Informe/PanelInforme.html?TipInforme=834",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/COMPRAS/submodules/INFORMES/pages/Control de compras por insumo",
+                  "createdAt": "2026-08-04T22:19:20.725Z"
+                },
+                {
+                  "name": "Informe general órden de compra",
+                  "url": "v3/adpro/Views/Informe/PanelInforme.html?TipInforme=838",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/COMPRAS/submodules/INFORMES/pages/Informe general órden de compra",
+                  "createdAt": "2026-08-04T22:19:20.725Z"
+                },
+                {
+                  "name": "Productos adicionales",
+                  "url": "v3/adpro/Views/Informe/PanelInforme.html?TipInforme=835",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/COMPRAS/submodules/INFORMES/pages/Productos adicionales",
+                  "createdAt": "2026-08-04T22:19:20.725Z"
+                },
+                {
+                  "name": "Informe de compras por insumo",
+                  "url": "V3/ADPRO/Views/Almacen/Compras/Informes/InformeComprasInsumos.html",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/COMPRAS/submodules/INFORMES/pages/Informe de compras por insumo",
+                  "createdAt": "2026-08-04T22:19:20.725Z"
+                },
+                {
+                  "name": "Reporte envío órdenes de compra",
+                  "url": "v3/adpro/Views/Informe/PanelInforme.html?TipInforme=833",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/COMPRAS/submodules/INFORMES/pages/Reporte envío órdenes de compra",
+                  "createdAt": "2026-08-04T22:19:20.725Z"
+                },
+                {
+                  "name": "Plazos de pago",
+                  "url": "v3/adpro/Views/Informe/PanelInforme.html?TipInforme=908",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/COMPRAS/submodules/INFORMES/pages/Plazos de pago",
+                  "createdAt": "2026-08-04T22:19:20.725Z"
+                },
+                {
+                  "name": "Informe Consolidado Compras Proveedor",
+                  "url": "V3/adpro/Views/Almacen/Compras/Informes/informeConsolidadoComprasProvXUbicacion.html",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/COMPRAS/submodules/INFORMES/pages/Informe Consolidado Compras Proveedor",
+                  "createdAt": "2026-08-04T22:19:20.725Z"
+                },
+                {
+                  "name": "Informe duración órdenes de compra",
+                  "url": "v3/adpro/Views/Informe/PanelInforme.html?TipInforme=839",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/COMPRAS/submodules/INFORMES/pages/Informe duración órdenes de compra",
+                  "createdAt": "2026-08-04T22:19:20.725Z"
+                },
+                {
+                  "name": "Por sucursal administrativa",
+                  "url": "v3/adpro/Views/Informe/PanelInforme.html?TipInforme=930",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/COMPRAS/submodules/INFORMES/pages/Por sucursal administrativa",
+                  "createdAt": "2026-08-04T22:19:20.725Z"
+                }
+              ],
+              "submodules": []
+            },
+            {
+              "name": "CONFIGURACIÓN",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/COMPRAS/submodules/CONFIGURACIÓN",
+              "createdAt": "2026-08-04T22:19:20.725Z",
+              "pages": [
+                {
+                  "name": "Parametrización compras VPN automáticas",
+                  "url": "V3/ADPRO/Views/Almacen/Compras/Configuracion/ParametrizacionComprasAutomaticas.html?zona=1",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/COMPRAS/submodules/CONFIGURACIÓN/pages/Parametrización compras VPN automáticas",
+                  "createdAt": "2026-08-04T22:19:20.725Z"
+                }
+              ],
+              "submodules": []
+            }
+          ]
+        },
+        {
+          "name": "ENTRADAS",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/ENTRADAS",
+          "createdAt": "2026-08-04T22:19:20.726Z",
+          "pages": [],
+          "submodules": [
+            {
+              "name": "ENTRADAS DE ALMACÉN",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/ENTRADAS/submodules/ENTRADAS DE ALMACÉN",
+              "createdAt": "2026-08-04T22:19:20.726Z",
+              "pages": [
+                {
+                  "name": "ENTRADAS DE ALMACÉN",
+                  "url": "V3/ADPRO/Views/Almacen/Entradas/EA.html?_op=C",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/ENTRADAS/submodules/ENTRADAS DE ALMACÉN/pages/ENTRADAS DE ALMACÉN",
+                  "createdAt": "2026-08-04T22:19:20.726Z"
+                },
+                {
+                  "name": "Edición entradas de almacén",
+                  "url": "V3/ADPRO/Views/Almacen/Entradas/EdicionEntradasAlmacen.html?nueva=1",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/ENTRADAS/submodules/ENTRADAS DE ALMACÉN/pages/Edición entradas de almacén",
+                  "createdAt": "2026-08-04T22:19:20.726Z"
+                },
+                {
+                  "name": "Edición de cantidades",
+                  "url": "V3/ADPRO/Views/Almacen/Entradas/EdicionEntradasAlmacen.html?nueva=1&cantidad=1",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/ENTRADAS/submodules/ENTRADAS DE ALMACÉN/pages/Edición de cantidades",
+                  "createdAt": "2026-08-04T22:19:20.726Z"
+                },
+                {
+                  "name": "Creación Entrada de almacén",
+                  "url": "V3/ADPRO/Views/Almacen/Entradas/EA.html?_op=C",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/ENTRADAS/submodules/ENTRADAS DE ALMACÉN/pages/Creación Entrada de almacén",
+                  "createdAt": "2026-08-04T22:19:20.726Z"
+                },
+                {
+                  "name": "Edición entradas de almacén V3",
+                  "url": "V3/ADPRO/Views/Almacen/Entradas/EdicionEntradasAlmacen.html?nueva=1",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/ENTRADAS/submodules/ENTRADAS DE ALMACÉN/pages/Edición entradas de almacén V3",
+                  "createdAt": "2026-08-04T22:19:20.726Z"
+                },
+                {
+                  "name": "Asignación de facturas",
+                  "url": "V3/adpro/Views/Almacen/Entradas/AsignacionFactura.html",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/ENTRADAS/submodules/ENTRADAS DE ALMACÉN/pages/Asignación de facturas",
+                  "createdAt": "2026-08-04T22:19:20.726Z"
+                }
+              ],
+              "submodules": [
+                {
+                  "name": "APROBACIÓN ENTRADAS DE ALMACÉN",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/ENTRADAS/submodules/ENTRADAS DE ALMACÉN/submodules/APROBACIÓN ENTRADAS DE ALMACÉN",
+                  "createdAt": "2026-08-04T22:19:20.726Z",
+                  "pages": [
+                    {
+                      "name": "Aprobación Entradas de Almacén V3",
+                      "url": "V3/ADPRO/Views/Front/Aprobaciones/#/aprobaciones?flujo=6",
+                      "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/ENTRADAS/submodules/ENTRADAS DE ALMACÉN/submodules/APROBACIÓN ENTRADAS DE ALMACÉN/pages/Aprobación Entradas de Almacén V3",
+                      "createdAt": "2026-08-04T22:19:20.726Z"
+                    },
+                    {
+                      "name": "Aprobación única de entradas de almacén",
+                      "url": "V3/ADPRO/Views/Front/Aprobaciones/#/aprobaciones?flujo=506",
+                      "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/ENTRADAS/submodules/ENTRADAS DE ALMACÉN/submodules/APROBACIÓN ENTRADAS DE ALMACÉN/pages/Aprobación única de entradas de almacén",
+                      "createdAt": "2026-08-04T22:19:20.726Z"
+                    }
+                  ],
+                  "submodules": []
+                },
+                {
+                  "name": "UTILIDADES",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/ENTRADAS/submodules/ENTRADAS DE ALMACÉN/submodules/UTILIDADES",
+                  "createdAt": "2026-08-04T22:19:20.726Z",
+                  "pages": [
+                    {
+                      "name": "Cambio estados entradas",
+                      "url": "V3/ADPRO/Views/almacen/entradas/CambioEstado.html?reversar=0",
+                      "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/ENTRADAS/submodules/ENTRADAS DE ALMACÉN/submodules/UTILIDADES/pages/Cambio estados entradas",
+                      "createdAt": "2026-08-04T22:19:20.726Z"
+                    },
+                    {
+                      "name": "Reversar estados entradas",
+                      "url": "V3/ADPRO/Views/almacen/entradas/CambioEstado.html?reversar=1",
+                      "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/ENTRADAS/submodules/ENTRADAS DE ALMACÉN/submodules/UTILIDADES/pages/Reversar estados entradas",
+                      "createdAt": "2026-08-04T22:19:20.726Z"
+                    }
+                  ],
+                  "submodules": []
+                },
+                {
+                  "name": "INFORMES",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/ENTRADAS/submodules/ENTRADAS DE ALMACÉN/submodules/INFORMES",
+                  "createdAt": "2026-08-04T22:19:20.726Z",
+                  "pages": [
+                    {
+                      "name": "Impresión entradas de almacén",
+                      "url": "V3/adpro/Views/Almacen/Entradas/ListadoEntradas.html",
+                      "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/ENTRADAS/submodules/ENTRADAS DE ALMACÉN/submodules/INFORMES/pages/Impresión entradas de almacén",
+                      "createdAt": "2026-08-04T22:19:20.726Z"
+                    },
+                    {
+                      "name": "Impresión entradas de almacén por orden de compra",
+                      "url": "v3/adpro/Views/Informe/PanelInforme.html?TipInforme=872",
+                      "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/ENTRADAS/submodules/ENTRADAS DE ALMACÉN/submodules/INFORMES/pages/Impresión entradas de almacén por orden de compra",
+                      "createdAt": "2026-08-04T22:19:20.726Z"
+                    },
+                    {
+                      "name": "Informe masivo de entradas de almacén",
+                      "url": "v3/adpro/Views/Informe/PanelInforme.html?TipInforme=832",
+                      "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/ENTRADAS/submodules/ENTRADAS DE ALMACÉN/submodules/INFORMES/pages/Informe masivo de entradas de almacén",
+                      "createdAt": "2026-08-04T22:19:20.726Z"
+                    },
+                    {
+                      "name": "Informe programación y aprobación de entradas y actas",
+                      "url": "v3/adpro/Views/Informe/PanelInforme.html?TipInforme=879",
+                      "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/ENTRADAS/submodules/ENTRADAS DE ALMACÉN/submodules/INFORMES/pages/Informe programación y aprobación de entradas y actas",
+                      "createdAt": "2026-08-04T22:19:20.726Z"
+                    },
+                    {
+                      "name": "Informe entradas por estado",
+                      "url": "v3/adpro/Views/Informe/PanelInforme.html?TipInforme=880",
+                      "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/ENTRADAS/submodules/ENTRADAS DE ALMACÉN/submodules/INFORMES/pages/Informe entradas por estado",
+                      "createdAt": "2026-08-04T22:19:20.726Z"
+                    },
+                    {
+                      "name": "Matriz de pagos (actas y entradas por semana)",
+                      "url": "v3/adpro/Views/Informe/PanelInforme.html?TipInforme=881",
+                      "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/ENTRADAS/submodules/ENTRADAS DE ALMACÉN/submodules/INFORMES/pages/Matriz de pagos (actas y entradas por semana)",
+                      "createdAt": "2026-08-04T22:19:20.726Z"
+                    },
+                    {
+                      "name": "Informe de entradas por sucursal y fecha",
+                      "url": "v3/adpro/Views/Informe/PanelInforme.html?TipInforme=873",
+                      "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/ENTRADAS/submodules/ENTRADAS DE ALMACÉN/submodules/INFORMES/pages/Informe de entradas por sucursal y fecha",
+                      "createdAt": "2026-08-04T22:19:20.726Z"
+                    },
+                    {
+                      "name": "Informe consolidado entradas por factura",
+                      "url": "ADPRO/Entradas/Informes/InfConsolidadoEntFactura.asp",
+                      "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/ENTRADAS/submodules/ENTRADAS DE ALMACÉN/submodules/INFORMES/pages/Informe consolidado entradas por factura",
+                      "createdAt": "2026-08-04T22:19:20.726Z"
+                    },
+                    {
+                      "name": "Informe facturación de entradas y actas",
+                      "url": "v3/adpro/Views/Informe/PanelInforme.html?TipInforme=878",
+                      "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/ENTRADAS/submodules/ENTRADAS DE ALMACÉN/submodules/INFORMES/pages/Informe facturación de entradas y actas",
+                      "createdAt": "2026-08-04T22:19:20.726Z"
+                    },
+                    {
+                      "name": "Valores diferentes entre compras y entradas",
+                      "url": "v3/adpro/Views/Informe/PanelInforme.html?TipInforme=870",
+                      "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/ENTRADAS/submodules/ENTRADAS DE ALMACÉN/submodules/INFORMES/pages/Valores diferentes entre compras y entradas",
+                      "createdAt": "2026-08-04T22:19:20.726Z"
+                    },
+                    {
+                      "name": "Informe consolidado de entradas de almacen",
+                      "url": "V3/ADPRO/Views/Almacen/Informes/EAConsolidado.html",
+                      "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/ENTRADAS/submodules/ENTRADAS DE ALMACÉN/submodules/INFORMES/pages/Informe consolidado de entradas de almacen",
+                      "createdAt": "2026-08-04T22:19:20.726Z"
+                    }
+                  ],
+                  "submodules": []
+                }
+              ]
+            },
+            {
+              "name": "Reintegros a Obra",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/ENTRADAS/submodules/Reintegros a Obra",
+              "createdAt": "2026-08-04T22:19:20.726Z",
+              "pages": [
+                {
+                  "name": "Reintegro a obra por salida",
+                  "url": "V3/ADPRO/views/Almacen/entradas/reintegroobra.html",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/ENTRADAS/submodules/Reintegros a Obra/pages/Reintegro a obra por salida",
+                  "createdAt": "2026-08-04T22:19:20.726Z"
+                },
+                {
+                  "name": "Edición reintegros a obra por salida",
+                  "url": "V3/ADPRO/views/Almacen/entradas/EdicionReintegroObra.html",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/ENTRADAS/submodules/Reintegros a Obra/pages/Edición reintegros a obra por salida",
+                  "createdAt": "2026-08-04T22:19:20.726Z"
+                }
+              ],
+              "submodules": [
+                {
+                  "name": "INFORMES",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/ENTRADAS/submodules/Reintegros a Obra/submodules/INFORMES",
+                  "createdAt": "2026-08-04T22:19:20.726Z",
+                  "pages": [
+                    {
+                      "name": "Impresión reintegros obra por salidas",
+                      "url": "v3/adpro/Views/Informe/PanelInforme.html?TipInforme=871",
+                      "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/ENTRADAS/submodules/Reintegros a Obra/submodules/INFORMES/pages/Impresión reintegros obra por salidas",
+                      "createdAt": "2026-08-04T22:19:20.726Z"
+                    }
+                  ],
+                  "submodules": []
+                }
+              ]
+            },
+            {
+              "name": "ENTRADAS POR TRASLADOS",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/ENTRADAS/submodules/ENTRADAS POR TRASLADOS",
+              "createdAt": "2026-08-04T22:19:20.726Z",
+              "pages": [],
+              "submodules": [
+                {
+                  "name": "APROBACIÓN ENTRADAS POR TRASLADO",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/ENTRADAS/submodules/ENTRADAS POR TRASLADOS/submodules/APROBACIÓN ENTRADAS POR TRASLADO",
+                  "createdAt": "2026-08-04T22:19:20.726Z",
+                  "pages": [
+                    {
+                      "name": "APROBACIÓN ENTRADAS POR TRASLADO",
+                      "url": "ERPNET/ADPRO/aprobaciones/Aprobacion.aspx?tipoApr=26&EstadoFlujoI=0&EstadoFlujoF=2",
+                      "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/ENTRADAS/submodules/ENTRADAS POR TRASLADOS/submodules/APROBACIÓN ENTRADAS POR TRASLADO/pages/APROBACIÓN ENTRADAS POR TRASLADO",
+                      "createdAt": "2026-08-04T22:19:20.726Z"
+                    }
+                  ],
+                  "submodules": []
+                }
+              ]
+            },
+            {
+              "name": "Entradas por traslado",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/ENTRADAS/submodules/Entradas por traslado",
+              "createdAt": "2026-08-04T22:19:20.726Z",
+              "pages": [],
+              "submodules": [
+                {
+                  "name": "INFORMES",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/ENTRADAS/submodules/Entradas por traslado/submodules/INFORMES",
+                  "createdAt": "2026-08-04T22:19:20.726Z",
+                  "pages": [
+                    {
+                      "name": "Informe de traslados",
+                      "url": "Productos/ConsTrasladosProd.asp",
+                      "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/ENTRADAS/submodules/Entradas por traslado/submodules/INFORMES/pages/Informe de traslados",
+                      "createdAt": "2026-08-04T22:19:20.726Z"
+                    },
+                    {
+                      "name": "Informe de entradas por traslado",
+                      "url": "ADPRO/Entradas/Informes/InfEntradasTraslado.asp",
+                      "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/ENTRADAS/submodules/Entradas por traslado/submodules/INFORMES/pages/Informe de entradas por traslado",
+                      "createdAt": "2026-08-04T22:19:20.726Z"
+                    }
+                  ],
+                  "submodules": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "VALES",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/VALES",
+          "createdAt": "2026-08-04T22:19:20.726Z",
+          "pages": [
+            {
+              "name": "Vales de Almacén",
+              "url": "ERPNET/ADPro/Procesos/Almacen/Vales/ValesAlmacen_JIV.aspx?tip=VA",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/VALES/pages/Vales de Almacén",
+              "createdAt": "2026-08-04T22:19:20.726Z"
+            },
+            {
+              "name": "Asignación Presupuestal",
+              "url": "ERPNET/ADPro/Procesos/Almacen/Vales/ValesAlmacen_JIV.aspx?tip=AP",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/VALES/pages/Asignación Presupuestal",
+              "createdAt": "2026-08-04T22:19:20.726Z"
+            },
+            {
+              "name": "Salidas de Almacén por Vales",
+              "url": "ERPNET/ADPro/Procesos/Almacen/Vales/ValesAlmacen_JIV.aspx?tip=SA",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/VALES/pages/Salidas de Almacén por Vales",
+              "createdAt": "2026-08-04T22:19:20.726Z"
+            }
+          ],
+          "submodules": []
+        },
+        {
+          "name": "SALIDAS",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/SALIDAS",
+          "createdAt": "2026-08-04T22:19:20.726Z",
+          "pages": [],
+          "submodules": [
+            {
+              "name": "SOLICITUD DE SALIDAS",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/SALIDAS/submodules/SOLICITUD DE SALIDAS",
+              "createdAt": "2026-08-04T22:19:20.726Z",
+              "pages": [
+                {
+                  "name": "SOLICITUD DE SALIDAS",
+                  "url": "V3/ADPRO/Views/Almacen/Solicitudes/SolicitudesMaterialGeneral.html?Opcion=1",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/SALIDAS/submodules/SOLICITUD DE SALIDAS/pages/SOLICITUD DE SALIDAS",
+                  "createdAt": "2026-08-04T22:19:20.726Z"
+                },
+                {
+                  "name": "Edición solicitudes de salidas",
+                  "url": "V3/ADPRO/Views/Almacen/Solicitudes/SolicitudesMaterialGeneral.html?Opcion=2",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/SALIDAS/submodules/SOLICITUD DE SALIDAS/pages/Edición solicitudes de salidas",
+                  "createdAt": "2026-08-04T22:19:20.726Z"
+                },
+                {
+                  "name": "Salidas almacén por solicitud",
+                  "url": "V3/ADPRO/Views/Almacen/Salidas/InformeSalidasSolicitud.html?Tipo=1",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/SALIDAS/submodules/SOLICITUD DE SALIDAS/pages/Salidas almacén por solicitud",
+                  "createdAt": "2026-08-04T22:19:20.726Z"
+                },
+                {
+                  "name": "Cerrar solicitudes de salidas",
+                  "url": "V3/ADPRO/Views/Almacen/Solicitudes/SolicitudesMaterialGeneral.html?Opcion=3",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/SALIDAS/submodules/SOLICITUD DE SALIDAS/pages/Cerrar solicitudes de salidas",
+                  "createdAt": "2026-08-04T22:19:20.726Z"
+                },
+                {
+                  "name": "Aprobación de solicitudes de salidas",
+                  "url": "ERPNET/ADPRO/aprobaciones/Aprobacion.aspx?tipoApr=40&EstadoFlujoI=0&EstadoFlujoF=1",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/SALIDAS/submodules/SOLICITUD DE SALIDAS/pages/Aprobación de solicitudes de salidas",
+                  "createdAt": "2026-08-04T22:19:20.726Z"
+                },
+                {
+                  "name": "Migración solicitudes de salidas",
+                  "url": "V3/ADPRO/views/CargarArchivos/MigrarDocumentos.html?Tipo=MigraSol",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/SALIDAS/submodules/SOLICITUD DE SALIDAS/pages/Migración solicitudes de salidas",
+                  "createdAt": "2026-08-04T22:19:20.726Z"
+                },
+                {
+                  "name": "Salidas de almacén con llavero digital",
+                  "url": "V3/ADPRO/Views/Almacen/Salidas/SalidasLlaveroDigital.html",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/SALIDAS/submodules/SOLICITUD DE SALIDAS/pages/Salidas de almacén con llavero digital",
+                  "createdAt": "2026-08-04T22:19:20.726Z"
+                }
+              ],
+              "submodules": [
+                {
+                  "name": "INFORMES",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/SALIDAS/submodules/SOLICITUD DE SALIDAS/submodules/INFORMES",
+                  "createdAt": "2026-08-04T22:19:20.726Z",
+                  "pages": [
+                    {
+                      "name": "Informe solicitudes de salidas por estado",
+                      "url": "V3/ADPRO/Views/Almacen/Solicitudes/Informes/ConsultaSolicitudesItem.html?Tipo=1",
+                      "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/SALIDAS/submodules/SOLICITUD DE SALIDAS/submodules/INFORMES/pages/Informe solicitudes de salidas por estado",
+                      "createdAt": "2026-08-04T22:19:20.726Z"
+                    }
+                  ],
+                  "submodules": []
+                }
+              ]
+            },
+            {
+              "name": "Salidas almacén",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/SALIDAS/submodules/Salidas almacén",
+              "createdAt": "2026-08-04T22:19:20.726Z",
+              "pages": [
+                {
+                  "name": "Salidas de almacén",
+                  "url": "V3/ADPRO/views/Almacen/salidas/salidas.html",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/SALIDAS/submodules/Salidas almacén/pages/Salidas de almacén",
+                  "createdAt": "2026-08-04T22:19:20.726Z"
+                },
+                {
+                  "name": "Edición salidas de almacén",
+                  "url": "V3/ADPRO/views/Almacen/salidas/listadosalidaedicion.html",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/SALIDAS/submodules/Salidas almacén/pages/Edición salidas de almacén",
+                  "createdAt": "2026-08-04T22:19:20.726Z"
+                },
+                {
+                  "name": "Asignación presupuestal de salidas de almacén",
+                  "url": "V3/ADPRO/views/Almacen/salidas/listadosalidaedicion.html?asignacion=1",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/SALIDAS/submodules/Salidas almacén/pages/Asignación presupuestal de salidas de almacén",
+                  "createdAt": "2026-08-04T22:19:20.726Z"
+                },
+                {
+                  "name": "Aprobación de salidas de almacén",
+                  "url": "ERPNET/ADPRO/aprobaciones/Aprobacion.aspx?tipoApr=28&EstadoFlujoI=0&EstadoFlujoF=1",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/SALIDAS/submodules/Salidas almacén/pages/Aprobación de salidas de almacén",
+                  "createdAt": "2026-08-04T22:19:20.727Z"
+                }
+              ],
+              "submodules": [
+                {
+                  "name": "INFORMES",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/SALIDAS/submodules/Salidas almacén/submodules/INFORMES",
+                  "createdAt": "2026-08-04T22:19:20.727Z",
+                  "pages": [
+                    {
+                      "name": "Impresión salidas almacén",
+                      "url": "V3/ADPRO/views/Almacen/salidas/listadosalidaedicion.html?informe=1",
+                      "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/SALIDAS/submodules/Salidas almacén/submodules/INFORMES/pages/Impresión salidas almacén",
+                      "createdAt": "2026-08-04T22:19:20.727Z"
+                    },
+                    {
+                      "name": "Informe masivo de salidas de almacén",
+                      "url": "v3/adpro/Views/Informe/PanelInforme.html?TipInforme=840",
+                      "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/SALIDAS/submodules/Salidas almacén/submodules/INFORMES/pages/Informe masivo de salidas de almacén",
+                      "createdAt": "2026-08-04T22:19:20.727Z"
+                    }
+                  ],
+                  "submodules": []
+                }
+              ]
+            },
+            {
+              "name": "Devoluciones a proveedor",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/SALIDAS/submodules/Devoluciones a proveedor",
+              "createdAt": "2026-08-04T22:19:20.727Z",
+              "pages": [
+                {
+                  "name": "Devoluciones a proveedor",
+                  "url": "ADPRO/Salidas/DevProveedor.asp",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/SALIDAS/submodules/Devoluciones a proveedor/pages/Devoluciones a proveedor",
+                  "createdAt": "2026-08-04T22:19:20.727Z"
+                },
+                {
+                  "name": "Edición devoluciones a proveedor",
+                  "url": "V3/ADPRO/views/Almacen/DevolucionesProveedor/ListadoEdicion_DevolucionesProv.html?_op=E",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/SALIDAS/submodules/Devoluciones a proveedor/pages/Edición devoluciones a proveedor",
+                  "createdAt": "2026-08-04T22:19:20.727Z"
+                }
+              ],
+              "submodules": [
+                {
+                  "name": "Aprobación devoluciones a proveedor",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/SALIDAS/submodules/Devoluciones a proveedor/submodules/Aprobación devoluciones a proveedor",
+                  "createdAt": "2026-08-04T22:19:20.727Z",
+                  "pages": [
+                    {
+                      "name": "Programación devoluciones a proveedor",
+                      "url": "ERPNET/ADPRO/aprobaciones/Aprobacion.aspx?tipoApr=24&EstadoFlujoI=0&EstadoFlujoF=1",
+                      "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/SALIDAS/submodules/Devoluciones a proveedor/submodules/Aprobación devoluciones a proveedor/pages/Programación devoluciones a proveedor",
+                      "createdAt": "2026-08-04T22:19:20.727Z"
+                    },
+                    {
+                      "name": "Aprobación devoluciones a proveedor",
+                      "url": "ERPNET/ADPRO/aprobaciones/Aprobacion.aspx?tipoApr=24&EstadoFlujoI=1&EstadoFlujoF=2",
+                      "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/SALIDAS/submodules/Devoluciones a proveedor/submodules/Aprobación devoluciones a proveedor/pages/Aprobación devoluciones a proveedor",
+                      "createdAt": "2026-08-04T22:19:20.727Z"
+                    },
+                    {
+                      "name": "Programación y aprobación devoluciones a proveedor",
+                      "url": "ERPNET/ADPRO/aprobaciones/Aprobacion.aspx?tipoApr=24&EstadoFlujoI=0&EstadoFlujoF=2",
+                      "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/SALIDAS/submodules/Devoluciones a proveedor/submodules/Aprobación devoluciones a proveedor/pages/Programación y aprobación devoluciones a proveedor",
+                      "createdAt": "2026-08-04T22:19:20.727Z"
+                    }
+                  ],
+                  "submodules": []
+                }
+              ]
+            },
+            {
+              "name": "SOLICITUD DE TRASLADO",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/SALIDAS/submodules/SOLICITUD DE TRASLADO",
+              "createdAt": "2026-08-04T22:19:20.727Z",
+              "pages": [
+                {
+                  "name": "SOLICITUD DE TRASLADO",
+                  "url": "V3/ADPRO/Views/Almacen/Salidas/SolicitudPorTraslado.html",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/SALIDAS/submodules/SOLICITUD DE TRASLADO/pages/SOLICITUD DE TRASLADO",
+                  "createdAt": "2026-08-04T22:19:20.727Z"
+                },
+                {
+                  "name": "Asignación presupuestal solicitud de traslado",
+                  "url": "V3/ADPRO/Views/Almacen/Salidas/ListaSalidaTrasSolicitud.html?asignacion=1",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/SALIDAS/submodules/SOLICITUD DE TRASLADO/pages/Asignación presupuestal solicitud de traslado",
+                  "createdAt": "2026-08-04T22:19:20.727Z"
+                },
+                {
+                  "name": "Aprobación solicitud de traslado",
+                  "url": "V3/ADPRO/Views/Front/Aprobaciones/#/aprobaciones?flujo=19",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/SALIDAS/submodules/SOLICITUD DE TRASLADO/pages/Aprobación solicitud de traslado",
+                  "createdAt": "2026-08-04T22:19:20.727Z"
+                },
+                {
+                  "name": "Rechazo solicitud de traslado",
+                  "url": "V3/ADPRO/Views/Almacen/Salidas/ListaSalidaTrasSolicitud.html?rechazo=1",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/SALIDAS/submodules/SOLICITUD DE TRASLADO/pages/Rechazo solicitud de traslado",
+                  "createdAt": "2026-08-04T22:19:20.727Z"
+                },
+                {
+                  "name": "Informe de solicitudes de traslado",
+                  "url": "V3/ADPRO/Views/Almacen/Salidas/ListaSalidaTrasSolicitud.html?informe=1",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/SALIDAS/submodules/SOLICITUD DE TRASLADO/pages/Informe de solicitudes de traslado",
+                  "createdAt": "2026-08-04T22:19:20.727Z"
+                }
+              ],
+              "submodules": []
+            },
+            {
+              "name": "Salidas por traslado",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/SALIDAS/submodules/Salidas por traslado",
+              "createdAt": "2026-08-04T22:19:20.727Z",
+              "pages": [
+                {
+                  "name": "Salidas por traslado",
+                  "url": "V3/ADPRO/Views/Almacen/Salidas/SalidasPorTraslado.html",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/SALIDAS/submodules/Salidas por traslado/pages/Salidas por traslado",
+                  "createdAt": "2026-08-04T22:19:20.727Z"
+                },
+                {
+                  "name": "Asignación presupuestal traslados",
+                  "url": "V3/ADPRO/Views/Almacen/Salidas/ListaAsignacionPtalTraslados.html",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/SALIDAS/submodules/Salidas por traslado/pages/Asignación presupuestal traslados",
+                  "createdAt": "2026-08-04T22:19:20.727Z"
+                },
+                {
+                  "name": "Edición de salidas por traslado",
+                  "url": "V3/ADPRO/Views/Almacen/Salidas/ListaEdicionTraslados.html",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/SALIDAS/submodules/Salidas por traslado/pages/Edición de salidas por traslado",
+                  "createdAt": "2026-08-04T22:19:20.727Z"
+                }
+              ],
+              "submodules": [
+                {
+                  "name": "Aprobación salidas por traslado",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/SALIDAS/submodules/Salidas por traslado/submodules/Aprobación salidas por traslado",
+                  "createdAt": "2026-08-04T22:19:20.727Z",
+                  "pages": [
+                    {
+                      "name": "Aprobación salidas por traslado",
+                      "url": "ERPNET/ADPRO/aprobaciones/Aprobacion.aspx?tipoApr=27&EstadoFlujoI=0&EstadoFlujoF=2",
+                      "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/SALIDAS/submodules/Salidas por traslado/submodules/Aprobación salidas por traslado/pages/Aprobación salidas por traslado",
+                      "createdAt": "2026-08-04T22:19:20.727Z"
+                    }
+                  ],
+                  "submodules": []
+                },
+                {
+                  "name": "INFORMES",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/SALIDAS/submodules/Salidas por traslado/submodules/INFORMES",
+                  "createdAt": "2026-08-04T22:19:20.727Z",
+                  "pages": [
+                    {
+                      "name": "Informe de salidas por traslado",
+                      "url": "v3/adpro/Views/Informe/PanelInforme.html?TipInforme=841",
+                      "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/SALIDAS/submodules/Salidas por traslado/submodules/INFORMES/pages/Informe de salidas por traslado",
+                      "createdAt": "2026-08-04T22:19:20.727Z"
+                    }
+                  ],
+                  "submodules": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "AJUSTES",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/AJUSTES",
+          "createdAt": "2026-08-04T22:19:20.727Z",
+          "pages": [
+            {
+              "name": "Ajustes de inventario",
+              "url": "ERPNET/ADPRO/Reportes/Almacen/AjustesInvEncabezado_FSS.aspx",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/AJUSTES/pages/Ajustes de inventario",
+              "createdAt": "2026-08-04T22:19:20.727Z"
+            }
+          ],
+          "submodules": [
+            {
+              "name": "INFORMES",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/AJUSTES/submodules/INFORMES",
+              "createdAt": "2026-08-04T22:19:20.727Z",
+              "pages": [
+                {
+                  "name": "Informe ajustes de inventario",
+                  "url": "V3/adpro/Views/Almacen/Ajustes/Informes/AjusteInventario.html",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/AJUSTES/submodules/INFORMES/pages/Informe ajustes de inventario",
+                  "createdAt": "2026-08-04T22:19:20.728Z"
+                },
+                {
+                  "name": "Informe de ajustes detallado",
+                  "url": "V3/adpro/Views/Almacen/Ajustes/Informes/AjusteInventarioDetallado.html",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/AJUSTES/submodules/INFORMES/pages/Informe de ajustes detallado",
+                  "createdAt": "2026-08-04T22:19:20.728Z"
+                }
+              ],
+              "submodules": []
+            }
+          ]
+        },
+        {
+          "name": "NOTAS EN VALOR",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/NOTAS EN VALOR",
+          "createdAt": "2026-08-04T22:19:20.728Z",
+          "pages": [
+            {
+              "name": "NOTAS EN VALOR",
+              "url": "ADPRO/NotasValor/NotasValor_JC.asp",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/NOTAS EN VALOR/pages/NOTAS EN VALOR",
+              "createdAt": "2026-08-04T22:19:20.728Z"
+            },
+            {
+              "name": "Editar notas en valor",
+              "url": "V3/ADPRO/Views/Almacen/NotasValor/EditarNotasValor.html?_op=E",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/NOTAS EN VALOR/pages/Editar notas en valor",
+              "createdAt": "2026-08-04T22:19:20.728Z"
+            },
+            {
+              "name": "Informe notas en valor",
+              "url": "V3/ADPRO/views/Almacen/NotasValor/Informes/InformeNotasValor.html",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/NOTAS EN VALOR/pages/Informe notas en valor",
+              "createdAt": "2026-08-04T22:19:20.728Z"
+            }
+          ],
+          "submodules": [
+            {
+              "name": "Aprobación de notas en valor",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/NOTAS EN VALOR/submodules/Aprobación de notas en valor",
+              "createdAt": "2026-08-04T22:19:20.728Z",
+              "pages": [
+                {
+                  "name": "Aprobación notas en valor",
+                  "url": "ERPNET/ADPro/Aprobaciones/Aprobacion.aspx?tipoApr=25&EstadoFlujoI=0&EstadoFlujoF=2",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/NOTAS EN VALOR/submodules/Aprobación de notas en valor/pages/Aprobación notas en valor",
+                  "createdAt": "2026-08-04T22:19:20.728Z"
+                }
+              ],
+              "submodules": []
+            }
+          ]
+        },
+        {
+          "name": "UBICACIONES",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/UBICACIONES",
+          "createdAt": "2026-08-04T22:19:20.728Z",
+          "pages": [
+            {
+              "name": "Maestro de Ubicaciones",
+              "url": "V3/ADPRO/Views/Almacen/Ubicaciones/MaestroUbicaciones.html",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/UBICACIONES/pages/Maestro de Ubicaciones",
+              "createdAt": "2026-08-04T22:19:20.728Z"
+            },
+            {
+              "name": "Migracion Ubicaciones",
+              "url": "V3/ADPRO/Views/Almacen/Ubicaciones/MigrarUbicaciones.html",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/UBICACIONES/pages/Migracion Ubicaciones",
+              "createdAt": "2026-08-04T22:19:20.728Z"
+            },
+            {
+              "name": "Edición de Ubicaciones",
+              "url": "V3/ADPRO/Views/Almacen/Ubicaciones/EdicionUbicaciones.html",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/UBICACIONES/pages/Edición de Ubicaciones",
+              "createdAt": "2026-08-04T22:19:20.728Z"
+            },
+            {
+              "name": "Inventario con ubicaciones",
+              "url": "V3/ADPRO/Views/Almacen/Ubicaciones/InventarioUbicaciones.html",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/UBICACIONES/pages/Inventario con ubicaciones",
+              "createdAt": "2026-08-04T22:19:20.728Z"
+            },
+            {
+              "name": "Informe de Movimientos de Almacén por Ubicación",
+              "url": "V3/ADPRO/Views/Almacen/Ubicaciones/InformeInventarioUbicaciones.html",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/UBICACIONES/pages/Informe de Movimientos de Almacén por Ubicación",
+              "createdAt": "2026-08-04T22:19:20.728Z"
+            }
+          ],
+          "submodules": []
+        },
+        {
+          "name": "INFORMES DE INVENTARIO",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/INFORMES DE INVENTARIO",
+          "createdAt": "2026-08-04T22:19:20.728Z",
+          "pages": [
+            {
+              "name": "Informe de movimientos inventario",
+              "url": "v3/adpro/Views/Informe/PanelInforme.html?TipInforme=830",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/INFORMES DE INVENTARIO/pages/Informe de movimientos inventario",
+              "createdAt": "2026-08-04T22:19:20.728Z"
+            },
+            {
+              "name": "Inventario por sucursal",
+              "url": "ADPRO/Inventarios/Inf_InventarioSucursal_ADP.asp",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/INFORMES DE INVENTARIO/pages/Inventario por sucursal",
+              "createdAt": "2026-08-04T22:19:20.728Z"
+            },
+            {
+              "name": "Planilla de inventario",
+              "url": "ADPRO/Entradas/Informes/PlanillaInventario.asp",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/INFORMES DE INVENTARIO/pages/Planilla de inventario",
+              "createdAt": "2026-08-04T22:19:20.728Z"
+            },
+            {
+              "name": "Rotación de insumos Excel",
+              "url": "v3/adpro/Views/Almacen/Informes/InfRotacionInsumos.html",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/INFORMES DE INVENTARIO/pages/Rotación de insumos Excel",
+              "createdAt": "2026-08-04T22:19:20.728Z"
+            }
+          ],
+          "submodules": []
+        },
+        {
+          "name": "OPCIONES ESPECIALES",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/OPCIONES ESPECIALES",
+          "createdAt": "2026-08-04T22:19:20.728Z",
+          "pages": [],
+          "submodules": [
+            {
+              "name": "CONFIGURACIÓN",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/OPCIONES ESPECIALES/submodules/CONFIGURACIÓN",
+              "createdAt": "2026-08-04T22:19:20.728Z",
+              "pages": [
+                {
+                  "name": "Asignación ciudad productos proveedor",
+                  "url": "V3/adpro/views/almacen/opcionesespeciales/configuracion/AsignacionMulticiudadVPN.html",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/OPCIONES ESPECIALES/submodules/CONFIGURACIÓN/pages/Asignación ciudad productos proveedor",
+                  "createdAt": "2026-08-04T22:19:20.728Z"
+                },
+                {
+                  "name": "Asignación zonas proyecto",
+                  "url": "V3/adpro/views/almacen/opcionesespeciales/configuracion/AsignacionMulticiudadVPN.html?Tipo=Zona",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/OPCIONES ESPECIALES/submodules/CONFIGURACIÓN/pages/Asignación zonas proyecto",
+                  "createdAt": "2026-08-04T22:19:20.728Z"
+                }
+              ],
+              "submodules": []
+            },
+            {
+              "name": "Asociación de Insumos",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/OPCIONES ESPECIALES/submodules/Asociación de Insumos",
+              "createdAt": "2026-08-04T22:19:20.728Z",
+              "pages": [
+                {
+                  "name": "Asosiación de insumos",
+                  "url": "V3/adpro/views/almacen/opcionesespeciales/AsosiacionInsumos/AsosiacionInsumo.html",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/OPCIONES ESPECIALES/submodules/Asociación de Insumos/pages/Asosiación de insumos",
+                  "createdAt": "2026-08-04T22:19:20.728Z"
+                },
+                {
+                  "name": "Asociación de Items - Insumos",
+                  "url": "V3/adpro/views/almacen/opcionesespeciales/AsosiacionInsumos/AsosiacionItemInsumo.html",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/OPCIONES ESPECIALES/submodules/Asociación de Insumos/pages/Asociación de Items - Insumos",
+                  "createdAt": "2026-08-04T22:19:20.728Z"
+                },
+                {
+                  "name": "Informe Insumos Asociados",
+                  "url": "V3/adpro/views/almacen/opcionesespeciales/AsosiacionInsumos/InformeAsociacionItemInsumo.html",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/OPCIONES ESPECIALES/submodules/Asociación de Insumos/pages/Informe Insumos Asociados",
+                  "createdAt": "2026-08-04T22:19:20.728Z"
+                }
+              ],
+              "submodules": []
+            }
+          ]
+        },
+        {
+          "name": "KITS",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/KITS",
+          "createdAt": "2026-08-04T22:19:20.728Z",
+          "pages": [
+            {
+              "name": "Configurar kit",
+              "url": "V3/ADPRO/views/mantenimiento/insumos/insumostransformacion.html?Tipo=K",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/KITS/pages/Configurar kit",
+              "createdAt": "2026-08-04T22:19:20.728Z"
+            },
+            {
+              "name": "Informes de kits",
+              "url": "V3/ADPRO/Views/Informe/PanelInforme.html?TipInforme=940",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/KITS/pages/Informes de kits",
+              "createdAt": "2026-08-04T22:19:20.728Z"
+            }
+          ],
+          "submodules": []
+        },
+        {
+          "name": "VENTAS",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/VENTAS",
+          "createdAt": "2026-08-04T22:19:20.728Z",
+          "pages": [
+            {
+              "name": "Devolucion de ventas",
+              "url": "V3/Maquinaria/WebApp/View/MaquinariaV4.html?P=1&route=ventas/devoluciones",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Almacén/submodules/VENTAS/pages/Devolucion de ventas",
+              "createdAt": "2026-08-04T22:19:20.728Z"
+            }
+          ],
+          "submodules": []
+        }
+      ]
+    },
+    {
+      "name": "Ejecución",
+      "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Ejecución",
+      "createdAt": "2026-08-04T22:19:20.728Z",
+      "pages": [
+        {
+          "name": "Estado de ítems",
+          "url": "V3/ADPRO/Views/Front/Almacen/#/ejecucion/estado-items",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Ejecución/pages/Estado de ítems",
+          "createdAt": "2026-08-04T22:19:20.728Z"
+        }
+      ],
+      "submodules": [
+        {
+          "name": "Actas de avance",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Ejecución/submodules/Actas de avance",
+          "createdAt": "2026-08-04T22:19:20.728Z",
+          "pages": [
+            {
+              "name": "Asignación insumos pivot",
+              "url": "V3/ADPRO/Views/Ejecucion/ActasAvance/AsignacionInsumosPivot.html",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Ejecución/submodules/Actas de avance/pages/Asignación insumos pivot",
+              "createdAt": "2026-08-04T22:19:20.728Z"
+            },
+            {
+              "name": "Generación automática de actas",
+              "url": "V3/ADPRO/Views/Ejecucion/ActasAvance/ActaAvanceAutomatica.html",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Ejecución/submodules/Actas de avance/pages/Generación automática de actas",
+              "createdAt": "2026-08-04T22:19:20.728Z"
+            },
+            {
+              "name": "Actas de avance estándar",
+              "url": "V3/ADPRO/Views/Ejecucion/ListadoActasAvance.html?Tipo=Est",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Ejecución/submodules/Actas de avance/pages/Actas de avance estándar",
+              "createdAt": "2026-08-04T22:19:20.728Z"
+            },
+            {
+              "name": "Anticipos actas de clientes",
+              "url": "ADPRO/Ejecucion/ConsultaAnticiposActCliente_JF.asp",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Ejecución/submodules/Actas de avance/pages/Anticipos actas de clientes",
+              "createdAt": "2026-08-04T22:19:20.728Z"
+            },
+            {
+              "name": "Actas de avance cliente",
+              "url": "V3/ADPRO/Views/Ejecucion/ListadoActasAvance.html?Tipo=Cli",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Ejecución/submodules/Actas de avance/pages/Actas de avance cliente",
+              "createdAt": "2026-08-04T22:19:20.728Z"
+            }
+          ],
+          "submodules": []
+        },
+        {
+          "name": "Aprobaciones",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Ejecución/submodules/Aprobaciones",
+          "createdAt": "2026-08-04T22:19:20.728Z",
+          "pages": [
+            {
+              "name": "Aprobación anticipos cliente",
+              "url": "V3/ADPRO/Views/Front/Aprobaciones/#/aprobaciones?flujo=30",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Ejecución/submodules/Aprobaciones/pages/Aprobación anticipos cliente",
+              "createdAt": "2026-08-04T22:19:20.728Z"
+            },
+            {
+              "name": "Aprobación actas avance cliente",
+              "url": "V3/ADPRO/Views/Front/Aprobaciones/#/aprobaciones?flujo=31",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Ejecución/submodules/Aprobaciones/pages/Aprobación actas avance cliente",
+              "createdAt": "2026-08-04T22:19:20.728Z"
+            },
+            {
+              "name": "Aprobación actas avance estándar",
+              "url": "V3/ADPRO/Views/Front/Aprobaciones/#/aprobaciones?flujo=32",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Ejecución/submodules/Aprobaciones/pages/Aprobación actas avance estándar",
+              "createdAt": "2026-08-04T22:19:20.728Z"
+            }
+          ],
+          "submodules": []
+        },
+        {
+          "name": "INFORMES",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Ejecución/submodules/INFORMES",
+          "createdAt": "2026-08-04T22:19:20.728Z",
+          "pages": [
+            {
+              "name": "Informes ejecución",
+              "url": "v3/adpro/Views/Informe/PanelInforme.html?TipInforme=842",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Ejecución/submodules/INFORMES/pages/Informes ejecución",
+              "createdAt": "2026-08-04T22:19:20.728Z"
+            }
+          ],
+          "submodules": []
+        }
+      ]
+    },
+    {
+      "name": "Control",
+      "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Control",
+      "createdAt": "2026-08-04T22:19:20.728Z",
+      "pages": [
+        {
+          "name": "Control del proyecto",
+          "url": "v3/adpro/Views/Informe/PanelInforme.html?TipInforme=850",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Control/pages/Control del proyecto",
+          "createdAt": "2026-08-04T22:19:20.728Z"
+        },
+        {
+          "name": "Reporteador",
+          "url": "V3/ADPRO/Views/Front/Informe/#/",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Control/pages/Reporteador",
+          "createdAt": "2026-08-04T22:19:20.728Z"
+        },
+        {
+          "name": "Proyección",
+          "url": "v3/adpro/Views/Informe/PanelInforme.html?TipInforme=851",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Control/pages/Proyección",
+          "createdAt": "2026-08-04T22:19:20.728Z"
+        },
+        {
+          "name": "Programación",
+          "url": "v3/adpro/Views/Informe/PanelInforme.html?TipInforme=854",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Control/pages/Programación",
+          "createdAt": "2026-08-04T22:19:20.728Z"
+        },
+        {
+          "name": "Control de inventarios",
+          "url": "v3/adpro/Views/Informe/PanelInforme.html?TipInforme=852",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Control/pages/Control de inventarios",
+          "createdAt": "2026-08-04T22:19:20.728Z"
+        },
+        {
+          "name": "Informe insumo central",
+          "url": "ERPNET/ADPRO/Procesos/Presupuesto/Informes/infInsumoCentral_JAU.aspx",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Control/pages/Informe insumo central",
+          "createdAt": "2026-08-04T22:19:20.728Z"
+        },
+        {
+          "name": "Control de inversión",
+          "url": "v3/adpro/Views/Informe/PanelInforme.html?TipInforme=853",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Control/pages/Control de inversión",
+          "createdAt": "2026-08-04T22:19:20.728Z"
+        },
+        {
+          "name": "Seguimiento macroproyecto (Excel)",
+          "url": "V3/ADPRO/Views/Mantenimiento/Proyecto/Informes/InfMacroProyecto.html",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Control/pages/Seguimiento macroproyecto (Excel)",
+          "createdAt": "2026-08-04T22:19:20.728Z"
+        },
+        {
+          "name": "Informe de inversión por tercero y estado",
+          "url": "V3/ADPRO/Views/Control/Informes/InfConvalidacionAdproContab.html",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Control/pages/Informe de inversión por tercero y estado",
+          "createdAt": "2026-08-04T22:19:20.728Z"
+        },
+        {
+          "name": "Control de anticipos",
+          "url": "V3/ADPRO/Views/Contratos/Informes/InformeValoresAnticiposFinacieros.html",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Control/pages/Control de anticipos",
+          "createdAt": "2026-08-04T22:19:20.728Z"
+        },
+        {
+          "name": "Informe gráfico",
+          "url": "V3/ADPRO/Views/Control/InformeGrafico.html",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Control/pages/Informe gráfico",
+          "createdAt": "2026-08-04T22:19:20.728Z"
+        },
+        {
+          "name": "Informes gerenciales en proceso",
+          "url": "v3/bi/DASH/VisualizarDisenar?id=59&isAdmin=True#/",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Control/pages/Informes gerenciales en proceso",
+          "createdAt": "2026-08-04T22:19:20.728Z"
+        }
+      ],
+      "submodules": [
+        {
+          "name": "NÓMINA",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Control/submodules/NÓMINA",
+          "createdAt": "2026-08-04T22:19:20.728Z",
+          "pages": [],
+          "submodules": [
+            {
+              "name": "INFORMES",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Control/submodules/NÓMINA/submodules/INFORMES",
+              "createdAt": "2026-08-04T22:19:20.728Z",
+              "pages": [
+                {
+                  "name": "Asignación nómina vs ADPRO",
+                  "url": "ERPNET/ContabilidadADP/Procesos/Nomina/InformeAsignacionNominaADPRO.aspx",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Control/submodules/NÓMINA/submodules/INFORMES/pages/Asignación nómina vs ADPRO",
+                  "createdAt": "2026-08-04T22:19:20.728Z"
+                }
+              ],
+              "submodules": []
+            }
+          ]
+        },
+        {
+          "name": "OPCIONES ESPECIALES",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Control/submodules/OPCIONES ESPECIALES",
+          "createdAt": "2026-08-04T22:19:20.728Z",
+          "pages": [
+            {
+              "name": "Informe reformas de proyectos",
+              "url": "v3/ADPro/Views/Control/Informes/InfControlReformasObra.html",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Control/submodules/OPCIONES ESPECIALES/pages/Informe reformas de proyectos",
+              "createdAt": "2026-08-04T22:19:20.728Z"
+            }
+          ],
+          "submodules": []
+        }
+      ]
+    },
+    {
+      "name": "Proyección",
+      "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Proyección",
+      "createdAt": "2026-08-04T22:19:20.728Z",
+      "pages": [],
+      "submodules": [
+        {
+          "name": "PREAJUSTES",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Proyección/submodules/PREAJUSTES",
+          "createdAt": "2026-08-04T22:19:20.728Z",
+          "pages": [
+            {
+              "name": "Aprobación de preajustes por rangos",
+              "url": "ERPNET/ADPro/Aprobaciones/Aprobacion.aspx?tipoApr=33&EstadoFlujoI=1&EstadoFlujoF=2",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Proyección/submodules/PREAJUSTES/pages/Aprobación de preajustes por rangos",
+              "createdAt": "2026-08-04T22:19:20.728Z"
+            },
+            {
+              "name": "Preaprobación de preajustes por rangos",
+              "url": "ERPNET/ADPro/Aprobaciones/Aprobacion.aspx?tipoApr=33&EstadoFlujoI=0&EstadoFlujoF=1",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Proyección/submodules/PREAJUSTES/pages/Preaprobación de preajustes por rangos",
+              "createdAt": "2026-08-04T22:19:20.728Z"
+            },
+            {
+              "name": "Preajuste por ítems",
+              "url": "v3/adpro/views/proyeccion/ajustes/AjustexItem.html?pagina=PreItem",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Proyección/submodules/PREAJUSTES/pages/Preajuste por ítems",
+              "createdAt": "2026-08-04T22:19:20.728Z"
+            },
+            {
+              "name": "Preajuste por insumos",
+              "url": "v3/adpro/views/proyeccion/ajustes/AjustexItem.html?pagina=PreInsumo",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Proyección/submodules/PREAJUSTES/pages/Preajuste por insumos",
+              "createdAt": "2026-08-04T22:19:20.728Z"
+            },
+            {
+              "name": "Preajuste por actividad terminada",
+              "url": "v3/adpro/views/proyeccion/ajustes/AjusteAseguradoConsumido.html?Op=TERM&Pre=-1",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Proyección/submodules/PREAJUSTES/pages/Preajuste por actividad terminada",
+              "createdAt": "2026-08-04T22:19:20.728Z"
+            },
+            {
+              "name": "Preajuste por asegurados",
+              "url": "v3/adpro/views/proyeccion/ajustes/AjusteAseguradoConsumido.html?Op=ASEG&Pre=-1",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Proyección/submodules/PREAJUSTES/pages/Preajuste por asegurados",
+              "createdAt": "2026-08-04T22:19:20.728Z"
+            },
+            {
+              "name": "Preajuste por consumidos",
+              "url": "v3/adpro/views/proyeccion/ajustes/AjusteAseguradoConsumido.html?Op=CONS&Pre=-1",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Proyección/submodules/PREAJUSTES/pages/Preajuste por consumidos",
+              "createdAt": "2026-08-04T22:19:20.728Z"
+            },
+            {
+              "name": "Preajuste por cantidad de actividad",
+              "url": "v3/adpro/views/proyeccion/ajustes/AjusteCantidadActividad.html?Pre=1&obj=0",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Proyección/submodules/PREAJUSTES/pages/Preajuste por cantidad de actividad",
+              "createdAt": "2026-08-04T22:19:20.728Z"
+            },
+            {
+              "name": "Preajuste por especificación de unitarios",
+              "url": "v3/adpro/views/proyeccion/ajustes/AjusteXUnitarios.html?Pre=1",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Proyección/submodules/PREAJUSTES/pages/Preajuste por especificación de unitarios",
+              "createdAt": "2026-08-04T22:19:20.728Z"
+            },
+            {
+              "name": "Preajuste masivo de precio por insumo",
+              "url": "v3/adpro/views/proyeccion/ajustes/AjusteMasivoInsumo.html?Pre=1",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Proyección/submodules/PREAJUSTES/pages/Preajuste masivo de precio por insumo",
+              "createdAt": "2026-08-04T22:19:20.728Z"
+            },
+            {
+              "name": "Migración de preajustes puntuales",
+              "url": "v3/adpro/views/proyeccion/ajustes/MigracionDeAjustesPuntuales.html?Pre=1",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Proyección/submodules/PREAJUSTES/pages/Migración de preajustes puntuales",
+              "createdAt": "2026-08-04T22:19:20.728Z"
+            },
+            {
+              "name": "Aprobación de preajustes",
+              "url": "v3/adpro/views/proyeccion/ajustes/EliminacionAjustesPag.html?Cod=0",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Proyección/submodules/PREAJUSTES/pages/Aprobación de preajustes",
+              "createdAt": "2026-08-04T22:19:20.728Z"
+            },
+            {
+              "name": "Eliminar preajustes",
+              "url": "v3/adpro/views/proyeccion/ajustes/EliminacionAjustesPag.html?Cod=1",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Proyección/submodules/PREAJUSTES/pages/Eliminar preajustes",
+              "createdAt": "2026-08-04T22:19:20.728Z"
+            }
+          ],
+          "submodules": []
+        },
+        {
+          "name": "AJUSTES",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Proyección/submodules/AJUSTES",
+          "createdAt": "2026-08-04T22:19:20.728Z",
+          "pages": [
+            {
+              "name": "Ajuste por ítems",
+              "url": "v3/adpro/views/proyeccion/ajustes/AjustexItem.html",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Proyección/submodules/AJUSTES/pages/Ajuste por ítems",
+              "createdAt": "2026-08-04T22:19:20.728Z"
+            },
+            {
+              "name": "Ajuste por insumo",
+              "url": "v3/adpro/views/proyeccion/ajustes/AjustexItem.html?pagina=Insumo",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Proyección/submodules/AJUSTES/pages/Ajuste por insumo",
+              "createdAt": "2026-08-04T22:19:20.728Z"
+            },
+            {
+              "name": "Ajuste por actividades terminadas",
+              "url": "v3/adpro/views/proyeccion/ajustes/AjusteAseguradoConsumido.html?Op=TERM&Pre=0",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Proyección/submodules/AJUSTES/pages/Ajuste por actividades terminadas",
+              "createdAt": "2026-08-04T22:19:20.728Z"
+            },
+            {
+              "name": "Ajuste por asegurados",
+              "url": "v3/adpro/views/proyeccion/ajustes/AjusteAseguradoConsumido.html?Op=ASEG&Pre=0",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Proyección/submodules/AJUSTES/pages/Ajuste por asegurados",
+              "createdAt": "2026-08-04T22:19:20.728Z"
+            },
+            {
+              "name": "Ajuste por consumidos",
+              "url": "v3/adpro/views/proyeccion/ajustes/AjusteAseguradoConsumido.html?Op=CONS&Pre=0",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Proyección/submodules/AJUSTES/pages/Ajuste por consumidos",
+              "createdAt": "2026-08-04T22:19:20.728Z"
+            },
+            {
+              "name": "Ajuste por cantidad de actividad",
+              "url": "v3/adpro/views/proyeccion/ajustes/AjusteCantidadActividad.html?Pre=0&obj=0",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Proyección/submodules/AJUSTES/pages/Ajuste por cantidad de actividad",
+              "createdAt": "2026-08-04T22:19:20.728Z"
+            },
+            {
+              "name": "Ajuste por especificación de unitarios",
+              "url": "v3/adpro/views/proyeccion/ajustes/AjusteXUnitarios.html?Pre=0",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Proyección/submodules/AJUSTES/pages/Ajuste por especificación de unitarios",
+              "createdAt": "2026-08-04T22:19:20.728Z"
+            },
+            {
+              "name": "Ajuste masivo de presupuesto",
+              "url": "v3/adpro/views/proyeccion/ajustes/AjusteMasivoPpto.html",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Proyección/submodules/AJUSTES/pages/Ajuste masivo de presupuesto",
+              "createdAt": "2026-08-04T22:19:20.729Z"
+            },
+            {
+              "name": "Ajuste masivo de precio por insumo",
+              "url": "v3/adpro/views/proyeccion/ajustes/AjusteMasivoInsumo.html?Pre=0",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Proyección/submodules/AJUSTES/pages/Ajuste masivo de precio por insumo",
+              "createdAt": "2026-08-04T22:19:20.729Z"
+            },
+            {
+              "name": "Ajuste asegurados por documento",
+              "url": "v3/adpro/views/proyeccion/ajustes/AjusteAseguradoXDoc.html?Op=ASEG&Pre=0",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Proyección/submodules/AJUSTES/pages/Ajuste asegurados por documento",
+              "createdAt": "2026-08-04T22:19:20.729Z"
+            },
+            {
+              "name": "Ajuste masivo pendiente por asegurar",
+              "url": "v3/adpro/views/proyeccion/ajustes/MasivoPendienteAsegurar.html",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Proyección/submodules/AJUSTES/pages/Ajuste masivo pendiente por asegurar",
+              "createdAt": "2026-08-04T22:19:20.729Z"
+            },
+            {
+              "name": "Migración de ajustes puntuales",
+              "url": "v3/adpro/views/proyeccion/ajustes/MigracionDeAjustesPuntuales.html?Pre=0",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Proyección/submodules/AJUSTES/pages/Migración de ajustes puntuales",
+              "createdAt": "2026-08-04T22:19:20.729Z"
+            },
+            {
+              "name": "Ajustes por objetos",
+              "url": "v3/adpro/views/proyeccion/ajustes/AjusteCantidadActividad.html?Pre=0&obj=1",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Proyección/submodules/AJUSTES/pages/Ajustes por objetos",
+              "createdAt": "2026-08-04T22:19:20.729Z"
+            },
+            {
+              "name": "Eliminar Ajustes",
+              "url": "v3/adpro/views/proyeccion/ajustes/EliminacionAjustesPag.html?Cod=2",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Proyección/submodules/AJUSTES/pages/Eliminar Ajustes",
+              "createdAt": "2026-08-04T22:19:20.729Z"
+            }
+          ],
+          "submodules": []
+        },
+        {
+          "name": "CONFIGURACIÓN",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Proyección/submodules/CONFIGURACIÓN",
+          "createdAt": "2026-08-04T22:19:20.729Z",
+          "pages": [],
+          "submodules": [
+            {
+              "name": "Causas y tipos de ajustes",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Proyección/submodules/CONFIGURACIÓN/submodules/Causas y tipos de ajustes",
+              "createdAt": "2026-08-04T22:19:20.729Z",
+              "pages": [
+                {
+                  "name": "Tipos de ajustes",
+                  "url": "V3/ADPRO/Views/Proyeccion/Configuracion/AjustesPptoCausasTipos.html",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Proyección/submodules/CONFIGURACIÓN/submodules/Causas y tipos de ajustes/pages/Tipos de ajustes",
+                  "createdAt": "2026-08-04T22:19:20.729Z"
+                },
+                {
+                  "name": "Causas de ajuste de presupuesto",
+                  "url": "V3/ADPRO/Views/Proyeccion/Configuracion/AjustesPptoCausas.html",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Proyección/submodules/CONFIGURACIÓN/submodules/Causas y tipos de ajustes/pages/Causas de ajuste de presupuesto",
+                  "createdAt": "2026-08-04T22:19:20.729Z"
+                }
+              ],
+              "submodules": []
+            }
+          ]
+        },
+        {
+          "name": "INFORMES",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Proyección/submodules/INFORMES",
+          "createdAt": "2026-08-04T22:19:20.729Z",
+          "pages": [
+            {
+              "name": "Informes de proyección",
+              "url": "v3/adpro/Views/Informe/PanelInforme.html?TipInforme=860",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Proyección/submodules/INFORMES/pages/Informes de proyección",
+              "createdAt": "2026-08-04T22:19:20.729Z"
+            },
+            {
+              "name": "Auditoría de preajustes y ajustes",
+              "url": "v3/adpro/views/proyeccion/Informes/InformeAuditoriaPre_Ajuste.html?",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Proyección/submodules/INFORMES/pages/Auditoría de preajustes y ajustes",
+              "createdAt": "2026-08-04T22:19:20.729Z"
+            }
+          ],
+          "submodules": []
+        }
+      ]
+    },
+    {
+      "name": "Programación",
+      "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Programación",
+      "createdAt": "2026-08-04T22:19:20.729Z",
+      "pages": [
+        {
+          "name": "Programación del proyecto",
+          "url": "ADPRO/Programacion/CalendarioProgramacion_CC.asp",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Programación/pages/Programación del proyecto",
+          "createdAt": "2026-08-04T22:19:20.729Z"
+        }
+      ],
+      "submodules": []
+    },
+    {
+      "name": "Cantidades",
+      "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Cantidades",
+      "createdAt": "2026-08-04T22:19:20.729Z",
+      "pages": [],
+      "submodules": [
+        {
+          "name": "INFORMES",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Cantidades/submodules/INFORMES",
+          "createdAt": "2026-08-04T22:19:20.729Z",
+          "pages": [
+            {
+              "name": "Informe Cantidades",
+              "url": "ADPRO/Objetos/cantidades/InformeCantidades_CC.asp",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Cantidades/submodules/INFORMES/pages/Informe Cantidades",
+              "createdAt": "2026-08-04T22:19:20.729Z"
+            }
+          ],
+          "submodules": []
+        }
+      ]
+    },
+    {
+      "name": "Alquiler Equipo Menor",
+      "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Alquiler Equipo Menor",
+      "createdAt": "2026-08-04T22:19:20.729Z",
+      "pages": [],
+      "submodules": [
+        {
+          "name": "Solicitudes",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Alquiler Equipo Menor/submodules/Solicitudes",
+          "createdAt": "2026-08-04T22:19:20.729Z",
+          "pages": [],
+          "submodules": [
+            {
+              "name": "Aprobar solicitud de equipos",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Alquiler Equipo Menor/submodules/Solicitudes/submodules/Aprobar solicitud de equipos",
+              "createdAt": "2026-08-04T22:19:20.729Z",
+              "pages": [
+                {
+                  "name": "Aprobación de solicitudes",
+                  "url": "V3/ALQ/WEBAPP/View/Process/SolicitudEquipos/ConsultarAprobarSolicitudes.html?EstadoI=0&EstadoF=1",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Alquiler Equipo Menor/submodules/Solicitudes/submodules/Aprobar solicitud de equipos/pages/Aprobación de solicitudes",
+                  "createdAt": "2026-08-04T22:19:20.729Z"
+                }
+              ],
+              "submodules": []
+            }
+          ]
+        },
+        {
+          "name": "INFORMES",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Alquiler Equipo Menor/submodules/INFORMES",
+          "createdAt": "2026-08-04T22:19:20.729Z",
+          "pages": [
+            {
+              "name": "Pérdidas",
+              "url": "V3/ALQ/WebApp/View/Process/Reportes/Perdidas.html",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Alquiler Equipo Menor/submodules/INFORMES/pages/Pérdidas",
+              "createdAt": "2026-08-04T22:19:20.729Z"
+            }
+          ],
+          "submodules": []
+        },
+        {
+          "name": "CONFIGURACIÓN",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Alquiler Equipo Menor/submodules/CONFIGURACIÓN",
+          "createdAt": "2026-08-04T22:19:20.729Z",
+          "pages": [
+            {
+              "name": "Obras cliente",
+              "url": "V3/ALQ/WebApp/View/Process/ObrasCliente/ObrasClienteV2.html",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Alquiler Equipo Menor/submodules/CONFIGURACIÓN/pages/Obras cliente",
+              "createdAt": "2026-08-04T22:19:20.729Z"
+            },
+            {
+              "name": "Tipos de cobro",
+              "url": "V3/ALQ/WebApp/View/Process/TiposCobro/TiposCobro.html",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Alquiler Equipo Menor/submodules/CONFIGURACIÓN/pages/Tipos de cobro",
+              "createdAt": "2026-08-04T22:19:20.729Z"
+            }
+          ],
+          "submodules": []
+        },
+        {
+          "name": "Reporte de horas",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Alquiler Equipo Menor/submodules/Reporte de horas",
+          "createdAt": "2026-08-04T22:19:20.729Z",
+          "pages": [
+            {
+              "name": "Reporte de horas interno",
+              "url": "V3/ALQ/WebApp/View/Process/PagoxHoras/PagoxHoras.html?type=INT",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Alquiler Equipo Menor/submodules/Reporte de horas/pages/Reporte de horas interno",
+              "createdAt": "2026-08-04T22:19:20.729Z"
+            }
+          ],
+          "submodules": []
+        },
+        {
+          "name": "Liquidación",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Alquiler Equipo Menor/submodules/Liquidación",
+          "createdAt": "2026-08-04T22:19:20.730Z",
+          "pages": [],
+          "submodules": [
+            {
+              "name": "Aprobar Liquidacion",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Alquiler Equipo Menor/submodules/Liquidación/submodules/Aprobar Liquidacion",
+              "createdAt": "2026-08-04T22:19:20.730Z",
+              "pages": [
+                {
+                  "name": "Pre-Aprobar Liquidacion",
+                  "url": "V3/ALQ/WebApp/View/Process/Liquidacion/AprobacionLiquidacion.html?EstadoI=0&EstadoF=1",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Alquiler Equipo Menor/submodules/Liquidación/submodules/Aprobar Liquidacion/pages/Pre-Aprobar Liquidacion",
+                  "createdAt": "2026-08-04T22:19:20.730Z"
+                },
+                {
+                  "name": "Aprobación Liquidacion",
+                  "url": "V3/ALQ/WebApp/View/Process/Liquidacion/AprobacionLiquidacion.html?EstadoI=1&EstadoF=2",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Alquiler Equipo Menor/submodules/Liquidación/submodules/Aprobar Liquidacion/pages/Aprobación Liquidacion",
+                  "createdAt": "2026-08-04T22:19:20.730Z"
+                }
+              ],
+              "submodules": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Mantenimiento",
+      "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Mantenimiento",
+      "createdAt": "2026-08-04T22:19:20.730Z",
+      "pages": [],
+      "submodules": [
+        {
+          "name": "PROYECTO",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Mantenimiento/submodules/PROYECTO",
+          "createdAt": "2026-08-04T22:19:20.730Z",
+          "pages": [
+            {
+              "name": "Sucursales",
+              "url": "V3/ADPRO/Views/Mantenimiento/Proyecto/Sucursales.html",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Mantenimiento/submodules/PROYECTO/pages/Sucursales",
+              "createdAt": "2026-08-04T22:19:20.730Z"
+            },
+            {
+              "name": "Proyectos",
+              "url": "V3/ADPRO/Views/Mantenimiento/Proyecto/Proyectos/Proyectos.html",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Mantenimiento/submodules/PROYECTO/pages/Proyectos",
+              "createdAt": "2026-08-04T22:19:20.730Z"
+            },
+            {
+              "name": "Fijar presupuestos EDT",
+              "url": "V3/ADPRO/Views/Mantenimiento/Proyecto/FijarPresupuestoEDT.html",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Mantenimiento/submodules/PROYECTO/pages/Fijar presupuestos EDT",
+              "createdAt": "2026-08-04T22:19:20.730Z"
+            },
+            {
+              "name": "Consecutivos iniciales",
+              "url": "V3/ADPRO/Views/Mantenimiento/Proyecto/ConsecutivosIniciales.html",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Mantenimiento/submodules/PROYECTO/pages/Consecutivos iniciales",
+              "createdAt": "2026-08-04T22:19:20.730Z"
+            },
+            {
+              "name": "Acceso de usuarios proyecto",
+              "url": "ERPNET/ADPro/Configuracion/Configuracion/ControlAccesoUsuariosObras_JIV.aspx",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Mantenimiento/submodules/PROYECTO/pages/Acceso de usuarios proyecto",
+              "createdAt": "2026-08-04T22:19:20.730Z"
+            },
+            {
+              "name": "Bodegas sucursales",
+              "url": "V3/ADPRO/Views/Mantenimiento/Proyecto/BodegaSucursal.html",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Mantenimiento/submodules/PROYECTO/pages/Bodegas sucursales",
+              "createdAt": "2026-08-04T22:19:20.730Z"
+            },
+            {
+              "name": "Usuarios bodega sucursal",
+              "url": "V3/ADPRO/Views/Mantenimiento/Proyecto/UsuarioBodegaSucursal.html",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Mantenimiento/submodules/PROYECTO/pages/Usuarios bodega sucursal",
+              "createdAt": "2026-08-04T22:19:20.730Z"
+            },
+            {
+              "name": "Configuración BIM 360",
+              "url": "v3/adpro/Views/Mantenimiento/proyecto/ConfiguracionForge.html",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Mantenimiento/submodules/PROYECTO/pages/Configuración BIM 360",
+              "createdAt": "2026-08-04T22:19:20.730Z"
+            },
+            {
+              "name": "Configuración proyectos BIM 360",
+              "url": "v3/adpro/Views/Mantenimiento/proyecto/ConfiguracionBIM360.html",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Mantenimiento/submodules/PROYECTO/pages/Configuración proyectos BIM 360",
+              "createdAt": "2026-08-04T22:19:20.730Z"
+            },
+            {
+              "name": "Eliminar proyectos",
+              "url": "v3/adpro/Views/Mantenimiento/proyecto/eliminarproyecto.html",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Mantenimiento/submodules/PROYECTO/pages/Eliminar proyectos",
+              "createdAt": "2026-08-04T22:19:20.730Z"
+            }
+          ],
+          "submodules": [
+            {
+              "name": "INFORMES",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Mantenimiento/submodules/PROYECTO/submodules/INFORMES",
+              "createdAt": "2026-08-04T22:19:20.730Z",
+              "pages": [
+                {
+                  "name": "Informe de auditoría de documentos (ADPRO)",
+                  "url": "V3/ADPRO/Views/Mantenimiento/Proyecto/Informes/AuditoriaDocsADPRO.html",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Mantenimiento/submodules/PROYECTO/submodules/INFORMES/pages/Informe de auditoría de documentos (ADPRO)",
+                  "createdAt": "2026-08-04T22:19:20.730Z"
+                },
+                {
+                  "name": "Informe auditoría detallada de documentos",
+                  "url": "V3/ADPRO/Views/Mantenimiento/Proyecto/Informes/auditoriadocumentos.html",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Mantenimiento/submodules/PROYECTO/submodules/INFORMES/pages/Informe auditoría detallada de documentos",
+                  "createdAt": "2026-08-04T22:19:20.730Z"
+                },
+                {
+                  "name": "Informes mantenimiento proyecto",
+                  "url": "v3/adpro/Views/Informe/PanelInforme.html?TipInforme=890",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Mantenimiento/submodules/PROYECTO/submodules/INFORMES/pages/Informes mantenimiento proyecto",
+                  "createdAt": "2026-08-04T22:19:20.730Z"
+                }
+              ],
+              "submodules": []
+            }
+          ]
+        },
+        {
+          "name": "PRESUPUESTO",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Mantenimiento/submodules/PRESUPUESTO",
+          "createdAt": "2026-08-04T22:19:20.730Z",
+          "pages": [
+            {
+              "name": "Maestro de capítulos",
+              "url": "V3/ADPRO/views/Mantenimiento/Presupuesto/Capitulos.html",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Mantenimiento/submodules/PRESUPUESTO/pages/Maestro de capítulos",
+              "createdAt": "2026-08-04T22:19:20.730Z"
+            }
+          ],
+          "submodules": []
+        },
+        {
+          "name": "INSUMOS",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Mantenimiento/submodules/INSUMOS",
+          "createdAt": "2026-08-04T22:19:20.730Z",
+          "pages": [
+            {
+              "name": "Agrupaciones",
+              "url": "V3/ADPRO/Views/Mantenimiento/Insumos/Agrupaciones.html",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Mantenimiento/submodules/INSUMOS/pages/Agrupaciones",
+              "createdAt": "2026-08-04T22:19:20.730Z"
+            },
+            {
+              "name": "Unidad de medida",
+              "url": "V3/ADPRO/Views/Mantenimiento/Insumos/UnidadesMedidas.html",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Mantenimiento/submodules/INSUMOS/pages/Unidad de medida",
+              "createdAt": "2026-08-04T22:19:20.730Z"
+            },
+            {
+              "name": "Tipos de insumos",
+              "url": "V3/ADPRO/Views/Mantenimiento/Insumos/TiposInsumos.html",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Mantenimiento/submodules/INSUMOS/pages/Tipos de insumos",
+              "createdAt": "2026-08-04T22:19:20.730Z"
+            },
+            {
+              "name": "Asignación cuentas contables agrupaciones",
+              "url": "ERPNET/ADPro/Procesos/Productos/Configuracion/Agrupaciones_MAA.aspx",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Mantenimiento/submodules/INSUMOS/pages/Asignación cuentas contables agrupaciones",
+              "createdAt": "2026-08-04T22:19:20.730Z"
+            },
+            {
+              "name": "Insumos centrales",
+              "url": "V3/ADPRO/Views/Mantenimiento/Insumos/InsumosCentrales.html",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Mantenimiento/submodules/INSUMOS/pages/Insumos centrales",
+              "createdAt": "2026-08-04T22:19:20.730Z"
+            },
+            {
+              "name": "Asignación factor de conversión",
+              "url": "V3/ADPRO/Views/Mantenimiento/Insumos/AsignacionFC.html",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Mantenimiento/submodules/INSUMOS/pages/Asignación factor de conversión",
+              "createdAt": "2026-08-04T22:19:20.730Z"
+            },
+            {
+              "name": "Informe asignación factor de conversión",
+              "url": "V3/ADPRO/Views/Mantenimiento/Insumos/InformeAsignacionFC.html",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Mantenimiento/submodules/INSUMOS/pages/Informe asignación factor de conversión",
+              "createdAt": "2026-08-04T22:19:20.730Z"
+            }
+          ],
+          "submodules": []
+        },
+        {
+          "name": "Contratos",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Mantenimiento/submodules/Contratos",
+          "createdAt": "2026-08-04T22:19:20.730Z",
+          "pages": [
+            {
+              "name": "Maestro lista de chequeo",
+              "url": "V3/ADPRO/Views/Mantenimiento/Contratos/MaestroListaChequeo.html",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Mantenimiento/submodules/Contratos/pages/Maestro lista de chequeo",
+              "createdAt": "2026-08-04T22:19:20.730Z"
+            },
+            {
+              "name": "Asignación lista de chequeo por proyecto",
+              "url": "V3/ADPRO/Views/Mantenimiento/Contratos/AsignacionListaChequeo.html",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Mantenimiento/submodules/Contratos/pages/Asignación lista de chequeo por proyecto",
+              "createdAt": "2026-08-04T22:19:20.730Z"
+            },
+            {
+              "name": "Tipos de contrato",
+              "url": "V3/Contabilidad/WebApp/View/Mantenimiento/Contratos/TiposDeContratos_SR.html",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Mantenimiento/submodules/Contratos/pages/Tipos de contrato",
+              "createdAt": "2026-08-04T22:19:20.730Z"
+            },
+            {
+              "name": "Asignacion de Tipos de Contratos por Usuario",
+              "url": "V3/CONT/Views/Mantenimiento/Contratos/UsuTipoContrato_SR.html",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Mantenimiento/submodules/Contratos/pages/Asignacion de Tipos de Contratos por Usuario",
+              "createdAt": "2026-08-04T22:19:20.730Z"
+            },
+            {
+              "name": "Tipos de pólizas",
+              "url": "V3/ADPRO/Views/Mantenimiento/Contratos/TiposPolizas.html",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Mantenimiento/submodules/Contratos/pages/Tipos de pólizas",
+              "createdAt": "2026-08-04T22:19:20.730Z"
+            },
+            {
+              "name": "Tipos descuentos actas",
+              "url": "V3/ADPRO/Views/Mantenimiento/Contratos/TiposDescuentos.html",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Mantenimiento/submodules/Contratos/pages/Tipos descuentos actas",
+              "createdAt": "2026-08-04T22:19:20.730Z"
+            },
+            {
+              "name": "Plantillas de contratos",
+              "url": "V3/ADPRO/Views/Mantenimiento/Contratos/PlantillasContratos.html?DAOrigen=M",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Mantenimiento/submodules/Contratos/pages/Plantillas de contratos",
+              "createdAt": "2026-08-04T22:19:20.730Z"
+            },
+            {
+              "name": "Plantillas contratos de suministros",
+              "url": "V3/ADPRO/Views/Mantenimiento/Contratos/PlantillasContratos.html?DAOrigen  =S",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Mantenimiento/submodules/Contratos/pages/Plantillas contratos de suministros",
+              "createdAt": "2026-08-04T22:19:20.730Z"
+            },
+            {
+              "name": "Campos adicionales contratos",
+              "url": "V3/ADPRO/Views/Mantenimiento/Contratos/CamposAdicionales.html?VarTipo=CON",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Mantenimiento/submodules/Contratos/pages/Campos adicionales contratos",
+              "createdAt": "2026-08-04T22:19:20.730Z"
+            }
+          ],
+          "submodules": []
+        },
+        {
+          "name": "CONTABILIDAD",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Mantenimiento/submodules/CONTABILIDAD",
+          "createdAt": "2026-08-04T22:19:20.730Z",
+          "pages": [],
+          "submodules": [
+            {
+              "name": "CUENTAS CONTROL",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Mantenimiento/submodules/CONTABILIDAD/submodules/CUENTAS CONTROL",
+              "createdAt": "2026-08-04T22:19:20.730Z",
+              "pages": [
+                {
+                  "name": "CUENTAS CONTROL",
+                  "url": "V3/ADPRO/Views/Mantenimiento/Contabilidad/CuentasControl.html",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Mantenimiento/submodules/CONTABILIDAD/submodules/CUENTAS CONTROL/pages/CUENTAS CONTROL",
+                  "createdAt": "2026-08-04T22:19:20.730Z"
+                }
+              ],
+              "submodules": []
+            }
+          ]
+        },
+        {
+          "name": "CONFIGURACIÓN",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Mantenimiento/submodules/CONFIGURACIÓN",
+          "createdAt": "2026-08-04T22:19:20.730Z",
+          "pages": [
+            {
+              "name": "Addons",
+              "url": "V3/ADPRO/Views/reactapp/#/mantenimiento/addons",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Mantenimiento/submodules/CONFIGURACIÓN/pages/Addons",
+              "createdAt": "2026-08-04T22:19:20.730Z"
+            },
+            {
+              "name": "Maestro ADP configuración",
+              "url": "V3/ADPRO/Views/Mantenimiento/Configuracion/ADPConfiguracion.html",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Mantenimiento/submodules/CONFIGURACIÓN/pages/Maestro ADP configuración",
+              "createdAt": "2026-08-04T22:19:20.730Z"
+            },
+            {
+              "name": "Maestra panel informes",
+              "url": "V3/adpro/Views/Mantenimiento/Configuracion/MaestraPanelInformes.html",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Mantenimiento/submodules/CONFIGURACIÓN/pages/Maestra panel informes",
+              "createdAt": "2026-08-04T22:19:20.730Z"
+            },
+            {
+              "name": "Generación de semanas",
+              "url": "V3/ADPRO/Views/Mantenimiento/Configuracion/GeneracionSemanas.html",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Mantenimiento/submodules/CONFIGURACIÓN/pages/Generación de semanas",
+              "createdAt": "2026-08-04T22:19:20.730Z"
+            },
+            {
+              "name": "Maestro tercero grupo",
+              "url": "V3/ADPRO/Views/Mantenimiento/Configuracion/MaestrosTercero.html?Opc=1",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Mantenimiento/submodules/CONFIGURACIÓN/pages/Maestro tercero grupo",
+              "createdAt": "2026-08-04T22:19:20.731Z"
+            },
+            {
+              "name": "Maestro tercero especialidad",
+              "url": "V3/ADPRO/Views/Mantenimiento/Configuracion/MaestrosTercero.html?Opc=3",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Mantenimiento/submodules/CONFIGURACIÓN/pages/Maestro tercero especialidad",
+              "createdAt": "2026-08-04T22:19:20.731Z"
+            },
+            {
+              "name": "Maestro firmantes",
+              "url": "V3/adpro/Views/Mantenimiento/Configuracion/MaestroFirmantes.html",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Mantenimiento/submodules/CONFIGURACIÓN/pages/Maestro firmantes",
+              "createdAt": "2026-08-04T22:19:20.731Z"
+            },
+            {
+              "name": "Maestro firmantes zona",
+              "url": "V3/adpro/Views/Mantenimiento/Configuracion/MaestroFirmantesZona.html",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Mantenimiento/submodules/CONFIGURACIÓN/pages/Maestro firmantes zona",
+              "createdAt": "2026-08-04T22:19:20.731Z"
+            },
+            {
+              "name": "Rango aprobaciones",
+              "url": "ERPNET/ADPRO/Aprobaciones/RangoAprobaciones.aspx?modulo=1",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Mantenimiento/submodules/CONFIGURACIÓN/pages/Rango aprobaciones",
+              "createdAt": "2026-08-04T22:19:20.731Z"
+            },
+            {
+              "name": "Rangos de Aprobaciones",
+              "url": "V3/ADPRO/Views/Aprobaciones/RangosAprobacion.html",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Mantenimiento/submodules/CONFIGURACIÓN/pages/Rangos de Aprobaciones",
+              "createdAt": "2026-08-04T22:19:20.731Z"
+            },
+            {
+              "name": "Parametización de aprobaciones",
+              "url": "V3/ADPRO/Views/Front/Aprobaciones/#/configuracion",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Mantenimiento/submodules/CONFIGURACIÓN/pages/Parametización de aprobaciones",
+              "createdAt": "2026-08-04T22:19:20.731Z"
+            },
+            {
+              "name": "Cuenta correo de envío",
+              "url": "V3/adpro/views/Mantenimiento/Proyecto/ConfCorreoProyecto.html",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Mantenimiento/submodules/CONFIGURACIÓN/pages/Cuenta correo de envío",
+              "createdAt": "2026-08-04T22:19:20.731Z"
+            },
+            {
+              "name": "Editor de comentarios",
+              "url": "V3/adpro/Views/Mantenimiento/Proyecto/ObservacionesOCEditorOnline.html",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Mantenimiento/submodules/CONFIGURACIÓN/pages/Editor de comentarios",
+              "createdAt": "2026-08-04T22:19:20.731Z"
+            },
+            {
+              "name": "Encuestas de configuración",
+              "url": "V3/ADPRO/Views/reactapp/#/mantenimiento/encuestasconfiguracion",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Mantenimiento/submodules/CONFIGURACIÓN/pages/Encuestas de configuración",
+              "createdAt": "2026-08-04T22:19:20.731Z"
+            },
+            {
+              "name": "Parametrización edición de documentos",
+              "url": "V3/ADPRO/Views/Mantenimiento/Configuracion/ParametrizacionDocumentos.html",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Mantenimiento/submodules/CONFIGURACIÓN/pages/Parametrización edición de documentos",
+              "createdAt": "2026-08-04T22:19:20.731Z"
+            }
+          ],
+          "submodules": []
+        },
+        {
+          "name": "CONTROL INTERNO ADPRO",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Mantenimiento/submodules/CONTROL INTERNO ADPRO",
+          "createdAt": "2026-08-04T22:19:20.731Z",
+          "pages": [
+            {
+              "name": "Control Actividades ADPRO",
+              "url": "V3/ADPRO/Views/Mantenimiento/ControlInternoADPRO/ControlActividadesADPRO.html",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/ADPRO/submodules/Mantenimiento/submodules/CONTROL INTERNO ADPRO/pages/Control Actividades ADPRO",
+              "createdAt": "2026-08-04T22:19:20.731Z"
+            }
+          ],
+          "submodules": []
+        }
+      ]
+    }
+  ],
+  "pages": [],
+  "swaggerUrl": "/V3/ADPRO/api/swagger/ui/index"
+}

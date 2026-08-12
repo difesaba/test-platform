@@ -1,0 +1,2809 @@
+{
+  "name": "CBR",
+  "description": "Importado del menú SINCO (recursivo)",
+  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR",
+  "createdAt": "2026-08-04T22:02:54.393Z",
+  "submodules": [
+    {
+      "name": "Ventas",
+      "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Ventas",
+      "createdAt": "2026-08-04T22:02:54.393Z",
+      "pages": [
+        {
+          "name": "Seleccionar proyecto",
+          "url": "ERPNET/CBR/Configuracion/Proyecto/SeleccionObra_CF.html?modulo=CBR",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Ventas/pages/Seleccionar proyecto",
+          "createdAt": "2026-08-04T22:02:54.394Z"
+        },
+        {
+          "name": "Compradores",
+          "url": "ERPNet/CBR/Configuracion/Ventas/ConsultaCompradores.aspx",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Ventas/pages/Compradores",
+          "createdAt": "2026-08-04T22:02:54.394Z"
+        },
+        {
+          "name": "GESTIÓN DE CLIENTES",
+          "url": "ADPRO/Inmobiliaria/Seguimiento/Informes/ADI_infSeguimiento_CONT.asp",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Ventas/pages/GESTIÓN DE CLIENTES",
+          "createdAt": "2026-08-04T22:02:54.394Z"
+        },
+        {
+          "name": "GESTIÖN DE CLIENTES V2",
+          "url": "V3/CBR/#/EdicionVisitantes/ContenedorEdicionVisitantes?modulo=CBR",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Ventas/pages/GESTIÖN DE CLIENTES V2",
+          "createdAt": "2026-08-04T22:02:54.394Z"
+        },
+        {
+          "name": "ASISTENTE VIS",
+          "url": "ADPRO/Inmobiliaria/Ventas/AsistenteVIS/Asistente_CONT.asp",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Ventas/pages/ASISTENTE VIS",
+          "createdAt": "2026-08-04T22:02:54.394Z"
+        }
+      ],
+      "submodules": [
+        {
+          "name": "SALA DE VENTAS",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Ventas/submodules/SALA DE VENTAS",
+          "createdAt": "2026-08-04T22:02:54.394Z",
+          "pages": [
+            {
+              "name": "Registro de visitas",
+              "url": "ADPRO/Inmobiliaria/Informes/ADIPreventa.asp",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Ventas/submodules/SALA DE VENTAS/pages/Registro de visitas",
+              "createdAt": "2026-08-04T22:02:54.394Z"
+            }
+          ],
+          "submodules": [
+            {
+              "name": "PROCEDENCIAS",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Ventas/submodules/SALA DE VENTAS/submodules/PROCEDENCIAS",
+              "createdAt": "2026-08-04T22:02:54.394Z",
+              "pages": [
+                {
+                  "name": "Edición de Procedencias",
+                  "url": "ADPRO/Inmobiliaria/Procedencias/Procedencias_CC.asp",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Ventas/submodules/SALA DE VENTAS/submodules/PROCEDENCIAS/pages/Edición de Procedencias",
+                  "createdAt": "2026-08-04T22:02:54.394Z"
+                }
+              ],
+              "submodules": []
+            },
+            {
+              "name": "SEGUIMIENTO",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Ventas/submodules/SALA DE VENTAS/submodules/SEGUIMIENTO",
+              "createdAt": "2026-08-04T22:02:54.394Z",
+              "pages": [
+                {
+                  "name": "Seguimiento Preventa",
+                  "url": "ADPRO/Inmobiliaria/Seguimiento/ConfigSeguimientoPreventa.asp",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Ventas/submodules/SALA DE VENTAS/submodules/SEGUIMIENTO/pages/Seguimiento Preventa",
+                  "createdAt": "2026-08-04T22:02:54.395Z"
+                }
+              ],
+              "submodules": []
+            },
+            {
+              "name": "INFORMES",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Ventas/submodules/SALA DE VENTAS/submodules/INFORMES",
+              "createdAt": "2026-08-04T22:02:54.395Z",
+              "pages": [
+                {
+                  "name": "Informe de visitas",
+                  "url": "ERPNET/CBR/Reportes/SalaVentas/InformeVisitas.aspx",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Ventas/submodules/SALA DE VENTAS/submodules/INFORMES/pages/Informe de visitas",
+                  "createdAt": "2026-08-04T22:02:54.395Z"
+                },
+                {
+                  "name": "Informe de procedencias",
+                  "url": "ERPNET/CBR/Reportes/SalaVentas/InformeProcedencias.aspx",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Ventas/submodules/SALA DE VENTAS/submodules/INFORMES/pages/Informe de procedencias",
+                  "createdAt": "2026-08-04T22:02:54.395Z"
+                },
+                {
+                  "name": "Informe de seguimiento",
+                  "url": "ADPRO/Inmobiliaria/Seguimiento/Informes/SeguimientoPreventa_Inf_CC.asp",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Ventas/submodules/SALA DE VENTAS/submodules/INFORMES/pages/Informe de seguimiento",
+                  "createdAt": "2026-08-04T22:02:54.395Z"
+                }
+              ],
+              "submodules": []
+            }
+          ]
+        },
+        {
+          "name": "UNIDADES",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Ventas/submodules/UNIDADES",
+          "createdAt": "2026-08-04T22:02:54.395Z",
+          "pages": [
+            {
+              "name": "Unidades proyectos reales",
+              "url": "ERPNET/CBR/Procesos/Ventas/Unidades/ADIUnidadesProyecto.aspx",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Ventas/submodules/UNIDADES/pages/Unidades proyectos reales",
+              "createdAt": "2026-08-04T22:02:54.395Z"
+            },
+            {
+              "name": "Unidades Proyecto Virtuales",
+              "url": "ADPRO/Inmobiliaria/Maestros/ADIUnidadesVirtuales.asp",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Ventas/submodules/UNIDADES/pages/Unidades Proyecto Virtuales",
+              "createdAt": "2026-08-04T22:02:54.395Z"
+            },
+            {
+              "name": "Traslado de Unidades entre Proyectos",
+              "url": "ADPRO/Inmobiliaria/Ventas/TrasladoUnd_MacroProy.asp",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Ventas/submodules/UNIDADES/pages/Traslado de Unidades entre Proyectos",
+              "createdAt": "2026-08-04T22:02:54.395Z"
+            },
+            {
+              "name": "Duplicación masiva de unidades",
+              "url": "ADPRO/Inmobiliaria/Maestros/ADIUnidadesProyectoDuplicadas.asp",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Ventas/submodules/UNIDADES/pages/Duplicación masiva de unidades",
+              "createdAt": "2026-08-04T22:02:54.395Z"
+            },
+            {
+              "name": "Creación Masiva De Unidades",
+              "url": "ADPRO/Inmobiliaria/ventas/CreacionMasivaUnidades.asp",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Ventas/submodules/UNIDADES/pages/Creación Masiva De Unidades",
+              "createdAt": "2026-08-04T22:02:54.395Z"
+            },
+            {
+              "name": "Creación Masiva de Unidades por Piso",
+              "url": "ADPRO/Inmobiliaria/Ventas/CreacionMasivaUnidadesPorPiso.asp",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Ventas/submodules/UNIDADES/pages/Creación Masiva de Unidades por Piso",
+              "createdAt": "2026-08-04T22:02:54.395Z"
+            },
+            {
+              "name": "Importar Linderos vOU",
+              "url": "ADPRO/Inmobiliaria/Ventas/ImportaDocumentosExcel.asp",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Ventas/submodules/UNIDADES/pages/Importar Linderos vOU",
+              "createdAt": "2026-08-04T22:02:54.395Z"
+            },
+            {
+              "name": "Bloqueo fecha de entrega",
+              "url": "ADPRO/Inmobiliaria/Maestros/FR_BloqueoFechaEntrega.asp",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Ventas/submodules/UNIDADES/pages/Bloqueo fecha de entrega",
+              "createdAt": "2026-08-04T22:02:54.395Z"
+            }
+          ],
+          "submodules": []
+        },
+        {
+          "name": "Administración de agrupaciones",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Ventas/submodules/Administración de agrupaciones",
+          "createdAt": "2026-08-04T22:02:54.395Z",
+          "pages": [
+            {
+              "name": "Creacion Agrupaciones",
+              "url": "ERPNET/CBR/Procesos/Ventas/AdministracionAgrupaciones/CreacionAgrupaciones.aspx",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Ventas/submodules/Administración de agrupaciones/pages/Creacion Agrupaciones",
+              "createdAt": "2026-08-04T22:02:54.395Z"
+            },
+            {
+              "name": "Modificación de agrupaciones",
+              "url": "ADPRO/Inmobiliaria/Ventas/AddUnidades_Agrupacion.asp",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Ventas/submodules/Administración de agrupaciones/pages/Modificación de agrupaciones",
+              "createdAt": "2026-08-04T22:02:54.396Z"
+            }
+          ],
+          "submodules": []
+        },
+        {
+          "name": "CONFIRMACIÓN DE VENTA",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Ventas/submodules/CONFIRMACIÓN DE VENTA",
+          "createdAt": "2026-08-04T22:02:54.396Z",
+          "pages": [
+            {
+              "name": "CONFIRMACIÓN DE VENTA",
+              "url": "ERPNET/CBR/Procesos/Ventas/ConfirmacionVentas.aspx",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Ventas/submodules/CONFIRMACIÓN DE VENTA/pages/CONFIRMACIÓN DE VENTA",
+              "createdAt": "2026-08-04T22:02:54.396Z"
+            },
+            {
+              "name": "Confirmación de venta Galias",
+              "url": "ERPNET/CBR/Procesos/Ventas/ConfirmacionVentasGalias.aspx",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Ventas/submodules/CONFIRMACIÓN DE VENTA/pages/Confirmación de venta Galias",
+              "createdAt": "2026-08-04T22:02:54.396Z"
+            }
+          ],
+          "submodules": []
+        },
+        {
+          "name": "Configuración del plan de pagos",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Ventas/submodules/Configuración del plan de pagos",
+          "createdAt": "2026-08-04T22:02:54.396Z",
+          "pages": [
+            {
+              "name": "Configuración del plan de pagos",
+              "url": "ERPNet/CBR/Procesos/Ventas/PlanPagoConfigGeneral.aspx",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Ventas/submodules/Configuración del plan de pagos/pages/Configuración del plan de pagos",
+              "createdAt": "2026-08-04T22:02:54.396Z"
+            }
+          ],
+          "submodules": []
+        },
+        {
+          "name": "APROBACIONES Y BLOQUEOS",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Ventas/submodules/APROBACIONES Y BLOQUEOS",
+          "createdAt": "2026-08-04T22:02:54.396Z",
+          "pages": [
+            {
+              "name": "Pre-Aprobacion Ventas",
+              "url": "ADPRO/Inmobiliaria/Ventas/PreAprobacionVentas.asp",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Ventas/submodules/APROBACIONES Y BLOQUEOS/pages/Pre-Aprobacion Ventas",
+              "createdAt": "2026-08-04T22:02:54.396Z"
+            },
+            {
+              "name": "Aprobación plan de pagos",
+              "url": "ADPRO/Inmobiliaria/Ventas/AprobacionPlanPlagos.asp",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Ventas/submodules/APROBACIONES Y BLOQUEOS/pages/Aprobación plan de pagos",
+              "createdAt": "2026-08-04T22:02:54.396Z"
+            },
+            {
+              "name": "Bloqueo de ventas",
+              "url": "ERPNET/CBR/Procesos/Ventas/BloqueoVentas.aspx",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Ventas/submodules/APROBACIONES Y BLOQUEOS/pages/Bloqueo de ventas",
+              "createdAt": "2026-08-04T22:02:54.396Z"
+            }
+          ],
+          "submodules": []
+        },
+        {
+          "name": "OPCIONES",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Ventas/submodules/OPCIONES",
+          "createdAt": "2026-08-04T22:02:54.396Z",
+          "pages": [],
+          "submodules": [
+            {
+              "name": "MODIFICACION INMUEBLES",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Ventas/submodules/OPCIONES/submodules/MODIFICACION INMUEBLES",
+              "createdAt": "2026-08-04T22:02:54.396Z",
+              "pages": [
+                {
+                  "name": "Modificación Tipo de Venta",
+                  "url": "ERPNet/CBR/Procesos/Ventas/ModificacionTipoVenta.aspx",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Ventas/submodules/OPCIONES/submodules/MODIFICACION INMUEBLES/pages/Modificación Tipo de Venta",
+                  "createdAt": "2026-08-04T22:02:54.396Z"
+                },
+                {
+                  "name": "Cambio de Precio",
+                  "url": "ERPNet/CBR/Procesos/Ventas/Opciones/CambioPrecios.aspx",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Ventas/submodules/OPCIONES/submodules/MODIFICACION INMUEBLES/pages/Cambio de Precio",
+                  "createdAt": "2026-08-04T22:02:54.396Z"
+                },
+                {
+                  "name": "Escrituración de Agrupaciones",
+                  "url": "ERPNET/CBR/Procesos/Ventas/Opciones/EscrituracionAgrupaciones.aspx",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Ventas/submodules/OPCIONES/submodules/MODIFICACION INMUEBLES/pages/Escrituración de Agrupaciones",
+                  "createdAt": "2026-08-04T22:02:54.396Z"
+                }
+              ],
+              "submodules": []
+            },
+            {
+              "name": "Modificación de inmuebles",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Ventas/submodules/OPCIONES/submodules/Modificación de inmuebles",
+              "createdAt": "2026-08-04T22:02:54.396Z",
+              "pages": [
+                {
+                  "name": "Cambio de compradores",
+                  "url": "ERPNET/CBR/Procesos/Ventas/Opciones/CambioCompradores.aspx",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Ventas/submodules/OPCIONES/submodules/Modificación de inmuebles/pages/Cambio de compradores",
+                  "createdAt": "2026-08-04T22:02:54.396Z"
+                }
+              ],
+              "submodules": []
+            },
+            {
+              "name": "CONFIGURACION AGRUPACION",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Ventas/submodules/OPCIONES/submodules/CONFIGURACION AGRUPACION",
+              "createdAt": "2026-08-04T22:02:54.396Z",
+              "pages": [
+                {
+                  "name": "Configuración General de Agrupación",
+                  "url": "ADPRO/Inmobiliaria/Ventas/NumFechEscritura.asp",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Ventas/submodules/OPCIONES/submodules/CONFIGURACION AGRUPACION/pages/Configuración General de Agrupación",
+                  "createdAt": "2026-08-04T22:02:54.396Z"
+                },
+                {
+                  "name": "Cambio Conceptos Hoja Análisis",
+                  "url": "ADPRO/Inmobiliaria/Maestros/ConfigConceptoHojaAnalisis.asp",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Ventas/submodules/OPCIONES/submodules/CONFIGURACION AGRUPACION/pages/Cambio Conceptos Hoja Análisis",
+                  "createdAt": "2026-08-04T22:02:54.397Z"
+                }
+              ],
+              "submodules": []
+            },
+            {
+              "name": "Configuración de agrupación",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Ventas/submodules/OPCIONES/submodules/Configuración de agrupación",
+              "createdAt": "2026-08-04T22:02:54.396Z",
+              "pages": [
+                {
+                  "name": "Orden de agrupaciones",
+                  "url": "ERPNet/CBR/Procesos/Ventas/Opciones/ConfiguracionAgrupacion/OrdenAgrupaciones.aspx",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Ventas/submodules/OPCIONES/submodules/Configuración de agrupación/pages/Orden de agrupaciones",
+                  "createdAt": "2026-08-04T22:02:54.396Z"
+                },
+                {
+                  "name": "Configuración de variables",
+                  "url": "ADPRO/Inmobiliaria/Maestros/FechasVenta.asp",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Ventas/submodules/OPCIONES/submodules/Configuración de agrupación/pages/Configuración de variables",
+                  "createdAt": "2026-08-04T22:02:54.397Z"
+                }
+              ],
+              "submodules": []
+            },
+            {
+              "name": "Resolución de ventas",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Ventas/submodules/OPCIONES/submodules/Resolución de ventas",
+              "createdAt": "2026-08-04T22:02:54.397Z",
+              "pages": [
+                {
+                  "name": "Resolución de negocio",
+                  "url": "ERPNet/CBR/Procesos/Ventas/Opciones/ResolucionVentas/DesistimientoVenta.aspx",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Ventas/submodules/OPCIONES/submodules/Resolución de ventas/pages/Resolución de negocio",
+                  "createdAt": "2026-08-04T22:02:54.397Z"
+                }
+              ],
+              "submodules": []
+            },
+            {
+              "name": "MANEJO INSCRIPCIONES",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Ventas/submodules/OPCIONES/submodules/MANEJO INSCRIPCIONES",
+              "createdAt": "2026-08-04T22:02:54.397Z",
+              "pages": [
+                {
+                  "name": "Configuración de Inscripciones",
+                  "url": "ADPRO/Inmobiliaria/Ventas/Opciones/ADI_AsigInscripciones.asp",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Ventas/submodules/OPCIONES/submodules/MANEJO INSCRIPCIONES/pages/Configuración de Inscripciones",
+                  "createdAt": "2026-08-04T22:02:54.397Z"
+                },
+                {
+                  "name": "Asignación de Inscripciones",
+                  "url": "ADPRO/Inmobiliaria/Ventas/Opciones/ADI_AsigInscripcionesV2.asp",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Ventas/submodules/OPCIONES/submodules/MANEJO INSCRIPCIONES/pages/Asignación de Inscripciones",
+                  "createdAt": "2026-08-04T22:02:54.397Z"
+                },
+                {
+                  "name": "Desasignación de Inscripciones",
+                  "url": "ADPRO/Inmobiliaria/Ventas/Opciones/ADI_DesAsigInscripciones.asp",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Ventas/submodules/OPCIONES/submodules/MANEJO INSCRIPCIONES/pages/Desasignación de Inscripciones",
+                  "createdAt": "2026-08-04T22:02:54.397Z"
+                },
+                {
+                  "name": "Desagrupación de Inscripciones",
+                  "url": "ADPRO/Inmobiliaria/Ventas/Opciones/ADI_DesAgrupaInscripciones.asp",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Ventas/submodules/OPCIONES/submodules/MANEJO INSCRIPCIONES/pages/Desagrupación de Inscripciones",
+                  "createdAt": "2026-08-04T22:02:54.397Z"
+                },
+                {
+                  "name": "Traslado de Inscripciones",
+                  "url": "ADPRO/Inmobiliaria/Ventas/Opciones/TrasladoInscripciones.asp",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Ventas/submodules/OPCIONES/submodules/MANEJO INSCRIPCIONES/pages/Traslado de Inscripciones",
+                  "createdAt": "2026-08-04T22:02:54.397Z"
+                },
+                {
+                  "name": "Eliminación de Inscripciones",
+                  "url": "ADPRO/Inmobiliaria/Ventas/Opciones/EliminaIncripciones.asp",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Ventas/submodules/OPCIONES/submodules/MANEJO INSCRIPCIONES/pages/Eliminación de Inscripciones",
+                  "createdAt": "2026-08-04T22:02:54.397Z"
+                }
+              ],
+              "submodules": []
+            },
+            {
+              "name": "Traslados",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Ventas/submodules/OPCIONES/submodules/Traslados",
+              "createdAt": "2026-08-04T22:02:54.397Z",
+              "pages": [
+                {
+                  "name": "Traslado de Agrupaciones",
+                  "url": "ADPRO/Inmobiliaria/Ventas/Opciones/TrasladoAgrupaciones.asp",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Ventas/submodules/OPCIONES/submodules/Traslados/pages/Traslado de Agrupaciones",
+                  "createdAt": "2026-08-04T22:02:54.397Z"
+                },
+                {
+                  "name": "Traslados internos",
+                  "url": "ADPRO/Inmobiliaria/Ventas/Opciones/ADI_MigraAgrup.asp",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Ventas/submodules/OPCIONES/submodules/Traslados/pages/Traslados internos",
+                  "createdAt": "2026-08-04T22:02:54.397Z"
+                }
+              ],
+              "submodules": []
+            },
+            {
+              "name": "PROCESOS ESPECIALES",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Ventas/submodules/OPCIONES/submodules/PROCESOS ESPECIALES",
+              "createdAt": "2026-08-04T22:02:54.398Z",
+              "pages": [
+                {
+                  "name": "Administración de Precios",
+                  "url": "ADPRO/Inmobiliaria/Ventas/Opciones/ADI_VtaOpcAdmPrec.asp",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Ventas/submodules/OPCIONES/submodules/PROCESOS ESPECIALES/pages/Administración de Precios",
+                  "createdAt": "2026-08-04T22:02:54.398Z"
+                }
+              ],
+              "submodules": []
+            }
+          ]
+        },
+        {
+          "name": "INFORMES",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Ventas/submodules/INFORMES",
+          "createdAt": "2026-08-04T22:02:54.398Z",
+          "pages": [],
+          "submodules": [
+            {
+              "name": "UNIDADES",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Ventas/submodules/INFORMES/submodules/UNIDADES",
+              "createdAt": "2026-08-04T22:02:54.398Z",
+              "pages": [
+                {
+                  "name": "Informe escrito de unidades",
+                  "url": "ADPRO/Inmobiliaria/Ventas/Informes/ADIUnidades_OU.asp",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Ventas/submodules/INFORMES/submodules/UNIDADES/pages/Informe escrito de unidades",
+                  "createdAt": "2026-08-04T22:02:54.398Z"
+                },
+                {
+                  "name": "Informe Gráfico de Unidades",
+                  "url": "ADPRO/Inmobiliaria/Ventas/Informes/Inf_Grafico_UndDisponibles.asp",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Ventas/submodules/INFORMES/submodules/UNIDADES/pages/Informe Gráfico de Unidades",
+                  "createdAt": "2026-08-04T22:02:54.398Z"
+                },
+                {
+                  "name": "Unidades Disponibles por Macroproyecto",
+                  "url": "ADPRO/Inmobiliaria/Informes/ADIUnidades.asp",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Ventas/submodules/INFORMES/submodules/UNIDADES/pages/Unidades Disponibles por Macroproyecto",
+                  "createdAt": "2026-08-04T22:02:54.398Z"
+                },
+                {
+                  "name": "Unidades Vendidas por Macroproyecto",
+                  "url": "ADPRO/Inmobiliaria/Informes/ADISeparaVenta.asp",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Ventas/submodules/INFORMES/submodules/UNIDADES/pages/Unidades Vendidas por Macroproyecto",
+                  "createdAt": "2026-08-04T22:02:54.398Z"
+                },
+                {
+                  "name": "Informe Historial de opcionados",
+                  "url": "ERPNET/CBR/Reportes/Unidades/InformeUnidadesDisponiblesOpcionadas.aspx",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Ventas/submodules/INFORMES/submodules/UNIDADES/pages/Informe Historial de opcionados",
+                  "createdAt": "2026-08-04T22:02:54.398Z"
+                }
+              ],
+              "submodules": []
+            },
+            {
+              "name": "Ventas",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Ventas/submodules/INFORMES/submodules/Ventas",
+              "createdAt": "2026-08-04T22:02:54.398Z",
+              "pages": [
+                {
+                  "name": "Informe de Ventas",
+                  "url": "ADPRO/Inmobiliaria/Ventas/Informes/Inf_VentasPorComprador.asp",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Ventas/submodules/INFORMES/submodules/Ventas/pages/Informe de Ventas",
+                  "createdAt": "2026-08-04T22:02:54.398Z"
+                },
+                {
+                  "name": "Informe de ventas (detalladas)",
+                  "url": "ERPNET/CBR/Reportes/Ventas/InformesVentasFiltros.aspx?SP=[CBR].[OU_InformeVentasDetalladas]&T=INFORME%20DE%20VENTAS%20DETALLADAS&LOG=0",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Ventas/submodules/INFORMES/submodules/Ventas/pages/Informe de ventas (detalladas)",
+                  "createdAt": "2026-08-04T22:02:54.398Z"
+                },
+                {
+                  "name": "Informe de control de ventas y desistimientos",
+                  "url": "ADPRO/Inmobiliaria/Ventas/Informes/Inf_VentasYDesistimientos.asp",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Ventas/submodules/INFORMES/submodules/Ventas/pages/Informe de control de ventas y desistimientos",
+                  "createdAt": "2026-08-04T22:02:54.398Z"
+                },
+                {
+                  "name": "Ficha de Agrupaciones",
+                  "url": "ADPRO/Inmobiliaria/Ventas/Informes/InformeFinalVenta.asp",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Ventas/submodules/INFORMES/submodules/Ventas/pages/Ficha de Agrupaciones",
+                  "createdAt": "2026-08-04T22:02:54.398Z"
+                },
+                {
+                  "name": "Informe mixto de ventas",
+                  "url": "ADPRO/Inmobiliaria/ventas/Informes/Informe_Mixto_Ventas.asp",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Ventas/submodules/INFORMES/submodules/Ventas/pages/Informe mixto de ventas",
+                  "createdAt": "2026-08-04T22:02:54.398Z"
+                },
+                {
+                  "name": "Informe Historial de Ventas",
+                  "url": "ADPRO/Inmobiliaria/Informes/ADIHistorialVenta.asp",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Ventas/submodules/INFORMES/submodules/Ventas/pages/Informe Historial de Ventas",
+                  "createdAt": "2026-08-04T22:02:54.398Z"
+                },
+                {
+                  "name": "Informe de Asignaciones",
+                  "url": "ADPRO/Inmobiliaria/ventas/Informes/InfAsig.asp",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Ventas/submodules/INFORMES/submodules/Ventas/pages/Informe de Asignaciones",
+                  "createdAt": "2026-08-04T22:02:54.398Z"
+                },
+                {
+                  "name": "Informe Resumen de Agrupaciones",
+                  "url": "ERPNET/CBR/Reportes/Ventas/InformesVentasFiltros.aspx?SP=[CBR].[OU_InformeResumenAgrupaciones]&T=INFORME%20RESUMEN%20DE%20AGRUPACIONES&LOG=0",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Ventas/submodules/INFORMES/submodules/Ventas/pages/Informe Resumen de Agrupaciones",
+                  "createdAt": "2026-08-04T22:02:54.398Z"
+                },
+                {
+                  "name": "Informe Gráfico de Ventas",
+                  "url": "ADPRO/Inmobiliaria/Informes/GraficoVentas_Contenedor_CC.asp",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Ventas/submodules/INFORMES/submodules/Ventas/pages/Informe Gráfico de Ventas",
+                  "createdAt": "2026-08-04T22:02:54.398Z"
+                },
+                {
+                  "name": "Vencimiento de Subsidios",
+                  "url": "ADPRO/Inmobiliaria/ventas/Informes/ADI_InfVencSub.asp",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Ventas/submodules/INFORMES/submodules/Ventas/pages/Vencimiento de Subsidios",
+                  "createdAt": "2026-08-04T22:02:54.398Z"
+                },
+                {
+                  "name": "Informe Resumen de Ventas",
+                  "url": "ADPRO/Inmobiliaria/ventas/Informes/InfResumenVentas.asp",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Ventas/submodules/INFORMES/submodules/Ventas/pages/Informe Resumen de Ventas",
+                  "createdAt": "2026-08-04T22:02:54.398Z"
+                },
+                {
+                  "name": "Informe Resumen de Ventas por Tipo de Inmueble",
+                  "url": "ADPRO/Inmobiliaria/ventas/Informes/InfResumenVentasTipo.asp",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Ventas/submodules/INFORMES/submodules/Ventas/pages/Informe Resumen de Ventas por Tipo de Inmueble",
+                  "createdAt": "2026-08-04T22:02:54.398Z"
+                },
+                {
+                  "name": "Log de ventas",
+                  "url": "ERPNET/CBR/Reportes/Ventas/InformesVentasFiltros.aspx?SP=[CBR].[OU_InformeHistorialLogVentas]&T=INFORME%20AUDITORIA%20Y%20LOG%20DE%20VENTAS&LOG=1",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Ventas/submodules/INFORMES/submodules/Ventas/pages/Log de ventas",
+                  "createdAt": "2026-08-04T22:02:54.398Z"
+                },
+                {
+                  "name": "Control de Inscripciones",
+                  "url": "ADPRO/Inmobiliaria/ventas/Informes/InfControlinscripciones.asp",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Ventas/submodules/INFORMES/submodules/Ventas/pages/Control de Inscripciones",
+                  "createdAt": "2026-08-04T22:02:54.398Z"
+                },
+                {
+                  "name": "Informe de Variables de Agrupación",
+                  "url": "ADPRO/Inmobiliaria/ventas/Informes/InfVariablesAgrup.asp",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Ventas/submodules/INFORMES/submodules/Ventas/pages/Informe de Variables de Agrupación",
+                  "createdAt": "2026-08-04T22:02:54.398Z"
+                },
+                {
+                  "name": "Informe de Variables de Texto de Agrupación",
+                  "url": "ERPNET/CBR/Reportes/Ventas/InformeVariablesTextoAgrup.aspx",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Ventas/submodules/INFORMES/submodules/Ventas/pages/Informe de Variables de Texto de Agrupación",
+                  "createdAt": "2026-08-04T22:02:54.398Z"
+                },
+                {
+                  "name": "Lista de Precios",
+                  "url": "ADPRO/Inmobiliaria/Ventas/Informes/ListaPrecios.asp",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Ventas/submodules/INFORMES/submodules/Ventas/pages/Lista de Precios",
+                  "createdAt": "2026-08-04T22:02:54.398Z"
+                },
+                {
+                  "name": "Informe Dinámico de Ventas",
+                  "url": "ADPRO/Inmobiliaria/Ventas/Informes/inf_Dynamico_Ventas.asp",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Ventas/submodules/INFORMES/submodules/Ventas/pages/Informe Dinámico de Ventas",
+                  "createdAt": "2026-08-04T22:02:54.398Z"
+                },
+                {
+                  "name": "Vencimiento Cuota Inicial",
+                  "url": "ADPRO/Inmobiliaria/Ventas/Informe_VencimientoCuotaInicial.asp",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Ventas/submodules/INFORMES/submodules/Ventas/pages/Vencimiento Cuota Inicial",
+                  "createdAt": "2026-08-04T22:02:54.398Z"
+                },
+                {
+                  "name": "Informe de traslados",
+                  "url": "ADPRO/Inmobiliaria/Ventas/Informes/InformeTraslados.asp",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Ventas/submodules/INFORMES/submodules/Ventas/pages/Informe de traslados",
+                  "createdAt": "2026-08-04T22:02:54.398Z"
+                },
+                {
+                  "name": "Informe Gráfico de Indicadores",
+                  "url": "ADPRO/Inmobiliaria/Ventas/Informes/InfGraficoIndicadores.asp",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Ventas/submodules/INFORMES/submodules/Ventas/pages/Informe Gráfico de Indicadores",
+                  "createdAt": "2026-08-04T22:02:54.399Z"
+                },
+                {
+                  "name": "Informe de Auditoría descuentos",
+                  "url": "V3/CBRVentas/#/Ventas/InformeAuditoriaDescuentos",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Ventas/submodules/INFORMES/submodules/Ventas/pages/Informe de Auditoría descuentos",
+                  "createdAt": "2026-08-04T22:02:54.399Z"
+                }
+              ],
+              "submodules": []
+            },
+            {
+              "name": "COMERCIAL",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Ventas/submodules/INFORMES/submodules/COMERCIAL",
+              "createdAt": "2026-08-04T22:02:54.399Z",
+              "pages": [
+                {
+                  "name": "Agenda general",
+                  "url": "ADPRO/Inmobiliaria/Seguimiento/Agenda_PorResp.asp",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Ventas/submodules/INFORMES/submodules/COMERCIAL/pages/Agenda general",
+                  "createdAt": "2026-08-04T22:02:54.399Z"
+                },
+                {
+                  "name": "Informe Valor Desistimiento por MacroProyecto",
+                  "url": "ADPRO/Inmobiliaria/Ventas/Informes/InformeValoresMacroDesis.asp",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Ventas/submodules/INFORMES/submodules/COMERCIAL/pages/Informe Valor Desistimiento por MacroProyecto",
+                  "createdAt": "2026-08-04T22:02:54.399Z"
+                },
+                {
+                  "name": "Trámites Cumplidos y Por Cumplir",
+                  "url": "ADPRO/Inmobiliaria/Ventas/Informes/TramitesCumXCump.asp",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Ventas/submodules/INFORMES/submodules/COMERCIAL/pages/Trámites Cumplidos y Por Cumplir",
+                  "createdAt": "2026-08-04T22:02:54.399Z"
+                },
+                {
+                  "name": "Informe Comercial de Ventas y Tramites",
+                  "url": "ADPRO/Inmobiliaria/Ventas/Informes/InformeTramitesPend.asp",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Ventas/submodules/INFORMES/submodules/COMERCIAL/pages/Informe Comercial de Ventas y Tramites",
+                  "createdAt": "2026-08-04T22:02:54.399Z"
+                },
+                {
+                  "name": "Actividades Pendientes",
+                  "url": "ADPRO/Inmobiliaria/Tramites/Informes/ADIActividadesPendientes.asp",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Ventas/submodules/INFORMES/submodules/COMERCIAL/pages/Actividades Pendientes",
+                  "createdAt": "2026-08-04T22:02:54.399Z"
+                },
+                {
+                  "name": "Gestion de Cobro",
+                  "url": "ADPRO/Inmobiliaria/Ventas/Informes/ReporteCartera_CC.asp",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Ventas/submodules/INFORMES/submodules/COMERCIAL/pages/Gestion de Cobro",
+                  "createdAt": "2026-08-04T22:02:54.399Z"
+                },
+                {
+                  "name": "Informe Valor por MacroProyecto",
+                  "url": "ADPRO/Inmobiliaria/Ventas/Informes/InformeValorPro.asp",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Ventas/submodules/INFORMES/submodules/COMERCIAL/pages/Informe Valor por MacroProyecto",
+                  "createdAt": "2026-08-04T22:02:54.399Z"
+                },
+                {
+                  "name": "Informe de Escrituración",
+                  "url": "ADPRO/Inmobiliaria/Informes/inf_Escrituraciones_CC.asp",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Ventas/submodules/INFORMES/submodules/COMERCIAL/pages/Informe de Escrituración",
+                  "createdAt": "2026-08-04T22:02:54.399Z"
+                },
+                {
+                  "name": "Informe de Escrituración v2",
+                  "url": "ADPRO/Inmobiliaria/Informes/inf_Escrituraciones_Bolivar.asp",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Ventas/submodules/INFORMES/submodules/COMERCIAL/pages/Informe de Escrituración v2",
+                  "createdAt": "2026-08-04T22:02:54.399Z"
+                },
+                {
+                  "name": "Informe de Compradores",
+                  "url": "ERPNet/CBR/Reportes/Ventas/InformeCompradores.aspx",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Ventas/submodules/INFORMES/submodules/COMERCIAL/pages/Informe de Compradores",
+                  "createdAt": "2026-08-04T22:02:54.399Z"
+                },
+                {
+                  "name": "Informe Concepto Plan Pago",
+                  "url": "ADPRO/Inmobiliaria/Informes/InfConceptoPlanPago.asp",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Ventas/submodules/INFORMES/submodules/COMERCIAL/pages/Informe Concepto Plan Pago",
+                  "createdAt": "2026-08-04T22:02:54.399Z"
+                },
+                {
+                  "name": "Informe Tipos de Gestión",
+                  "url": "ADPRO/Inmobiliaria/seguimiento/InformeTiposGestion.asp",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Ventas/submodules/INFORMES/submodules/COMERCIAL/pages/Informe Tipos de Gestión",
+                  "createdAt": "2026-08-04T22:02:54.399Z"
+                },
+                {
+                  "name": "Informe firmas de escrituras",
+                  "url": "ADPRO/Inmobiliaria/Ventas/InformeVentasAgrup.asp",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Ventas/submodules/INFORMES/submodules/COMERCIAL/pages/Informe firmas de escrituras",
+                  "createdAt": "2026-08-04T22:02:54.399Z"
+                },
+                {
+                  "name": "Informe Valor por Agrupacion",
+                  "url": "ADPRO/Inmobiliaria/Ventas/Informes/InformeValorAgrup.asp",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Ventas/submodules/INFORMES/submodules/COMERCIAL/pages/Informe Valor por Agrupacion",
+                  "createdAt": "2026-08-04T22:02:54.399Z"
+                },
+                {
+                  "name": "Informe de seguimiento",
+                  "url": "ERPNET/CBR/Reportes/Ventas/InformeSeguimiento.aspx",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Ventas/submodules/INFORMES/submodules/COMERCIAL/pages/Informe de seguimiento",
+                  "createdAt": "2026-08-04T22:02:54.399Z"
+                },
+                {
+                  "name": "Informe de Cobro",
+                  "url": "ADPRO/Inmobiliaria/Ventas/Informes/InformeCobro.asp",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Ventas/submodules/INFORMES/submodules/COMERCIAL/pages/Informe de Cobro",
+                  "createdAt": "2026-08-04T22:02:54.399Z"
+                },
+                {
+                  "name": "Informe Títulos Custodia",
+                  "url": "ADPRO/Inmobiliaria/Ventas/Informes/Inf_TitulosCustodia_Ventas_TOM.asp",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Ventas/submodules/INFORMES/submodules/COMERCIAL/pages/Informe Títulos Custodia",
+                  "createdAt": "2026-08-04T22:02:54.399Z"
+                },
+                {
+                  "name": "Informe Profesiones",
+                  "url": "ADPRO/Inmobiliaria/Ventas/Informes/ADIVerprofesion.asp",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Ventas/submodules/INFORMES/submodules/COMERCIAL/pages/Informe Profesiones",
+                  "createdAt": "2026-08-04T22:02:54.399Z"
+                },
+                {
+                  "name": "Informe Ocupaciones",
+                  "url": "ADPRO/Inmobiliaria/Ventas/Informes/ADIVerOcupacion.asp",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Ventas/submodules/INFORMES/submodules/COMERCIAL/pages/Informe Ocupaciones",
+                  "createdAt": "2026-08-04T22:02:54.399Z"
+                }
+              ],
+              "submodules": []
+            },
+            {
+              "name": "ENCUESTAS",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Ventas/submodules/INFORMES/submodules/ENCUESTAS",
+              "createdAt": "2026-08-04T22:02:54.399Z",
+              "pages": [
+                {
+                  "name": "Reporte de encuestas",
+                  "url": "ADPRO/Inmobiliaria/Encuestas/Informes/RepEncuestas.asp",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Ventas/submodules/INFORMES/submodules/ENCUESTAS/pages/Reporte de encuestas",
+                  "createdAt": "2026-08-04T22:02:54.399Z"
+                },
+                {
+                  "name": "Informe gráfico de encuestas",
+                  "url": "ADPRO/Inmobiliaria/Informes/EncuestasGrafico_Contenedor_CC.asp",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Ventas/submodules/INFORMES/submodules/ENCUESTAS/pages/Informe gráfico de encuestas",
+                  "createdAt": "2026-08-04T22:02:54.399Z"
+                },
+                {
+                  "name": "Impresión de encuestas",
+                  "url": "ADPRO/Inmobiliaria/Encuestas/Informes/VerEncuestas.asp",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Ventas/submodules/INFORMES/submodules/ENCUESTAS/pages/Impresión de encuestas",
+                  "createdAt": "2026-08-04T22:02:54.399Z"
+                }
+              ],
+              "submodules": []
+            }
+          ]
+        },
+        {
+          "name": "PROYECCIÓN",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Ventas/submodules/PROYECCIÓN",
+          "createdAt": "2026-08-04T22:02:54.399Z",
+          "pages": [
+            {
+              "name": "Proyección de ventas",
+              "url": "ADPRO/Inmobiliaria/ventas/DA_ProyeccionVentas.asp",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Ventas/submodules/PROYECCIÓN/pages/Proyección de ventas",
+              "createdAt": "2026-08-04T22:02:54.399Z"
+            },
+            {
+              "name": "Flujo de cuotas",
+              "url": "ADPRO/Inmobiliaria/Informes/DA_InfProyeccionVentas.asp",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Ventas/submodules/PROYECCIÓN/pages/Flujo de cuotas",
+              "createdAt": "2026-08-04T22:02:54.399Z"
+            },
+            {
+              "name": "Configuración Proyección Trámites",
+              "url": "ADPRO/Inmobiliaria/Maestros/ConfigProyeccionTramites.asp",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Ventas/submodules/PROYECCIÓN/pages/Configuración Proyección Trámites",
+              "createdAt": "2026-08-04T22:02:54.399Z"
+            },
+            {
+              "name": "Configuración Metas por Trámites",
+              "url": "ADPRO/Inmobiliaria/Tramites/config_Metas_Tramite.asp",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Ventas/submodules/PROYECCIÓN/pages/Configuración Metas por Trámites",
+              "createdAt": "2026-08-04T22:02:54.399Z"
+            }
+          ],
+          "submodules": [
+            {
+              "name": "INFORMES",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Ventas/submodules/PROYECCIÓN/submodules/INFORMES",
+              "createdAt": "2026-08-04T22:02:54.399Z",
+              "pages": [
+                {
+                  "name": "Proyección Vs Ejecución",
+                  "url": "ADPRO/Inmobiliaria/Ventas/Informes/VtaProyVsVtaEje.asp",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Ventas/submodules/PROYECCIÓN/submodules/INFORMES/pages/Proyección Vs Ejecución",
+                  "createdAt": "2026-08-04T22:02:54.399Z"
+                },
+                {
+                  "name": "Cronograma de Ventas",
+                  "url": "ADPRO/Inmobiliaria/Ventas/Informes/InfPresupVsEjec.asp",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Ventas/submodules/PROYECCIÓN/submodules/INFORMES/pages/Cronograma de Ventas",
+                  "createdAt": "2026-08-04T22:02:54.399Z"
+                }
+              ],
+              "submodules": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Trámites",
+      "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Trámites",
+      "createdAt": "2026-08-04T22:02:54.399Z",
+      "pages": [
+        {
+          "name": "Asignación de trámites",
+          "url": "ERPNET/CBR/Procesos/Tramite/AsignacionTramites.aspx",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Trámites/pages/Asignación de trámites",
+          "createdAt": "2026-08-04T22:02:54.399Z"
+        },
+        {
+          "name": "Asignación de Trámites(Lineal)",
+          "url": "ADPRO/Inmobiliaria/ventas/AsignacionTramite_CC.asp",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Trámites/pages/Asignación de Trámites(Lineal)",
+          "createdAt": "2026-08-04T22:02:54.399Z"
+        },
+        {
+          "name": "Asignación Resumida de Trámites",
+          "url": "ADPRO/Inmobiliaria/ventas/AsignacionTramite_Resumido.asp",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Trámites/pages/Asignación Resumida de Trámites",
+          "createdAt": "2026-08-04T22:02:54.399Z"
+        },
+        {
+          "name": "Asignación de Trámites(Precedencias Multiples)",
+          "url": "ADPRO/Inmobiliaria/Tramites/AsignaTramites2.asp",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Trámites/pages/Asignación de Trámites(Precedencias Multiples)",
+          "createdAt": "2026-08-04T22:02:54.399Z"
+        },
+        {
+          "name": "Asignación de Trámites Por Entidad",
+          "url": "ADPRO/Inmobiliaria/ventas/AsignacionTramiteEntidad.asp",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Trámites/pages/Asignación de Trámites Por Entidad",
+          "createdAt": "2026-08-04T22:02:54.399Z"
+        },
+        {
+          "name": "Cumplimiento de Trámites",
+          "url": "ADPRO/Inmobiliaria/Ventas/CumplimientoTramites.asp",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Trámites/pages/Cumplimiento de Trámites",
+          "createdAt": "2026-08-04T22:02:54.399Z"
+        }
+      ],
+      "submodules": [
+        {
+          "name": "INFORMES",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Trámites/submodules/INFORMES",
+          "createdAt": "2026-08-04T22:02:54.399Z",
+          "pages": [
+            {
+              "name": "Informe Trámites Terceros",
+              "url": "ADPRO/Inmobiliaria/Tramites/Informes/ADITramites.asp",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Trámites/submodules/INFORMES/pages/Informe Trámites Terceros",
+              "createdAt": "2026-08-04T22:02:54.400Z"
+            },
+            {
+              "name": "Trámites predeterminados",
+              "url": "ERPNET/CBR/Reportes/Tramites/InfTramitesPredet.aspx",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Trámites/submodules/INFORMES/pages/Trámites predeterminados",
+              "createdAt": "2026-08-04T22:02:54.400Z"
+            },
+            {
+              "name": "Trámites Vencidos",
+              "url": "ADPRO/Inmobiliaria/Tramites/Informes/ADITramitesVenc.asp",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Trámites/submodules/INFORMES/pages/Trámites Vencidos",
+              "createdAt": "2026-08-04T22:02:54.400Z"
+            },
+            {
+              "name": "Supervisión de Escrituración y Trámites",
+              "url": "ADPRO/Inmobiliaria/Tramites/ADISupervisionEscTra.asp",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Trámites/submodules/INFORMES/pages/Supervisión de Escrituración y Trámites",
+              "createdAt": "2026-08-04T22:02:54.400Z"
+            },
+            {
+              "name": "Supervisión de Escrituración y Trámites Mex",
+              "url": "ADPRO/Inmobiliaria/Tramites/ADISupervisionEscTraMex.asp",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Trámites/submodules/INFORMES/pages/Supervisión de Escrituración y Trámites Mex",
+              "createdAt": "2026-08-04T22:02:54.400Z"
+            },
+            {
+              "name": "Torre de Control",
+              "url": "ADPRO/Inmobiliaria/Tramites/ADITorreControl.asp",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Trámites/submodules/INFORMES/pages/Torre de Control",
+              "createdAt": "2026-08-04T22:02:54.400Z"
+            },
+            {
+              "name": "Conteo de Trámites",
+              "url": "ADPRO/Inmobiliaria/Tramites/Informes/TramitesInformes_CONT.asp",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Trámites/submodules/INFORMES/pages/Conteo de Trámites",
+              "createdAt": "2026-08-04T22:02:54.400Z"
+            },
+            {
+              "name": "Torre de Control Inmobiliaria",
+              "url": "ADPRO/Inmobiliaria/TorreControl/TorreControl.asp",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Trámites/submodules/INFORMES/pages/Torre de Control Inmobiliaria",
+              "createdAt": "2026-08-04T22:02:54.400Z"
+            },
+            {
+              "name": "Conteo de trámites dinámico",
+              "url": "ADPRO/Inmobiliaria/Tramites/Informes/TramitesInformes_CONTConteo.asp",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Trámites/submodules/INFORMES/pages/Conteo de trámites dinámico",
+              "createdAt": "2026-08-04T22:02:54.400Z"
+            },
+            {
+              "name": "Rompimiento Dinámico de Trámites",
+              "url": "ADPRO/Inmobiliaria/Tramites/Informes/TramitesInformes_CONTRompe.asp",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Trámites/submodules/INFORMES/pages/Rompimiento Dinámico de Trámites",
+              "createdAt": "2026-08-04T22:02:54.400Z"
+            },
+            {
+              "name": "Informe Dinámico de Otro Sí",
+              "url": "ADPRO/Inmobiliaria/Tramites/Informes/TramitesInfDinamico_OtroSi.asp",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Trámites/submodules/INFORMES/pages/Informe Dinámico de Otro Sí",
+              "createdAt": "2026-08-04T22:02:54.400Z"
+            },
+            {
+              "name": "Informe de Gestión de Operaciones",
+              "url": "ADPRO/Inmobiliaria/Tramites/Informes/InfGestOperacion.asp",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Trámites/submodules/INFORMES/pages/Informe de Gestión de Operaciones",
+              "createdAt": "2026-08-04T22:02:54.400Z"
+            },
+            {
+              "name": "Informe Numérico Entregas",
+              "url": "ADPRO/Inmobiliaria/Tramites/Informes/InfNumericoEntregas.asp",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Trámites/submodules/INFORMES/pages/Informe Numérico Entregas",
+              "createdAt": "2026-08-04T22:02:54.400Z"
+            },
+            {
+              "name": "Informe de cumplimiento de trámites por usuario",
+              "url": "ADPRO/Inmobiliaria/Tramites/Informes/CumplimientoUsu.asp",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Trámites/submodules/INFORMES/pages/Informe de cumplimiento de trámites por usuario",
+              "createdAt": "2026-08-04T22:02:54.400Z"
+            },
+            {
+              "name": "Informe cruce de trámites",
+              "url": "ERPNET/CBR/Reportes/Tramites/InformeCruceTramites.aspx",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Trámites/submodules/INFORMES/pages/Informe cruce de trámites",
+              "createdAt": "2026-08-04T22:02:54.400Z"
+            },
+            {
+              "name": "Cruce de Tramites de Ventas o Desistimientos",
+              "url": "ERPNET/CBR/Reportes/Tramites/InformeCruceTramitesV2.aspx",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Trámites/submodules/INFORMES/pages/Cruce de Tramites de Ventas o Desistimientos",
+              "createdAt": "2026-08-04T22:02:54.400Z"
+            },
+            {
+              "name": "Informe cruce de trámites (tiempos)",
+              "url": "ADPRO/Inmobiliaria/Tramites/Informes/ADICruceTramites_OU.asp",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Trámites/submodules/INFORMES/pages/Informe cruce de trámites (tiempos)",
+              "createdAt": "2026-08-04T22:02:54.400Z"
+            },
+            {
+              "name": "Informe cruce de trámites ACN",
+              "url": "ERPNET/CBR/Reportes/Tramites/InformeDeTramitesCruceACM.aspx",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Trámites/submodules/INFORMES/pages/Informe cruce de trámites ACN",
+              "createdAt": "2026-08-04T22:02:54.400Z"
+            },
+            {
+              "name": "Informe Estado de Trámites",
+              "url": "ADPRO/Inmobiliaria/Tramites/Informes/EstadoTramites_Arbol.asp",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Trámites/submodules/INFORMES/pages/Informe Estado de Trámites",
+              "createdAt": "2026-08-04T22:02:54.400Z"
+            },
+            {
+              "name": "Informe Estado de Trámites V2",
+              "url": "ADPRO/Inmobiliaria/Tramites/Informes/EstadoTramites_Arbol_Sol.asp",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Trámites/submodules/INFORMES/pages/Informe Estado de Trámites V2",
+              "createdAt": "2026-08-04T22:02:54.400Z"
+            },
+            {
+              "name": "Informe Estado de Trámites V3",
+              "url": "ADPRO/Inmobiliaria/Tramites/Informes/EstadoTramites_Arbol_Ospinas.asp",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Trámites/submodules/INFORMES/pages/Informe Estado de Trámites V3",
+              "createdAt": "2026-08-04T22:02:54.400Z"
+            },
+            {
+              "name": "Cronograma de Trámites",
+              "url": "ADPRO/Inmobiliaria/Tramites/Informes/CronogramaTramites.asp",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Trámites/submodules/INFORMES/pages/Cronograma de Trámites",
+              "createdAt": "2026-08-04T22:02:54.400Z"
+            },
+            {
+              "name": "Informe Dinámico de Trámites",
+              "url": "ADPRO/Inmobiliaria/Tramites/Informes/TramitesInfDinamico_CC.asp",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Trámites/submodules/INFORMES/pages/Informe Dinámico de Trámites",
+              "createdAt": "2026-08-04T22:02:54.400Z"
+            },
+            {
+              "name": "Indicadores de Trámites",
+              "url": "ADPRO/Inmobiliaria/Tramites/Informes/TramitesInformes_CONTIndicadores.asp",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Trámites/submodules/INFORMES/pages/Indicadores de Trámites",
+              "createdAt": "2026-08-04T22:02:54.400Z"
+            },
+            {
+              "name": "Historial Trámites Ventas",
+              "url": "ADPRO/Inmobiliaria/Tramites/Informes/ADIHistorialTramitesVentas.asp",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Trámites/submodules/INFORMES/pages/Historial Trámites Ventas",
+              "createdAt": "2026-08-04T22:02:54.400Z"
+            },
+            {
+              "name": "Lineal VML",
+              "url": "ADPRO/Inmobiliaria/Tramites/Informes/linealVML.asp",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Trámites/submodules/INFORMES/pages/Lineal VML",
+              "createdAt": "2026-08-04T22:02:54.400Z"
+            },
+            {
+              "name": "Seguimiento Promesas",
+              "url": "ADPRO/Inmobiliaria/Tramites/Informes/ADISeguimientoPromesas_CONT.asp",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Trámites/submodules/INFORMES/pages/Seguimiento Promesas",
+              "createdAt": "2026-08-04T22:02:54.400Z"
+            },
+            {
+              "name": "Sábana de Trámites",
+              "url": "ADPRO/Inmobiliaria/Tramites/Informes/ADISabanadeTramitesMC.asp",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Trámites/submodules/INFORMES/pages/Sábana de Trámites",
+              "createdAt": "2026-08-04T22:02:54.400Z"
+            },
+            {
+              "name": "Diferencial de Trámites",
+              "url": "ERPNET/CBR/Reportes/Tramites/DiferencialTramites.aspx",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Trámites/submodules/INFORMES/pages/Diferencial de Trámites",
+              "createdAt": "2026-08-04T22:02:54.400Z"
+            },
+            {
+              "name": "Informe Reprogramación de Trámites",
+              "url": "ADPRO/Inmobiliaria/Tramites/Informes/ADIDiferencialActividades.asp",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Trámites/submodules/INFORMES/pages/Informe Reprogramación de Trámites",
+              "createdAt": "2026-08-04T22:02:54.400Z"
+            },
+            {
+              "name": "Informe Indicadores Tramites",
+              "url": "ERPNET/CBR/Reportes/Tramites/InformeIndicadores.aspx",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Trámites/submodules/INFORMES/pages/Informe Indicadores Tramites",
+              "createdAt": "2026-08-04T22:02:54.400Z"
+            },
+            {
+              "name": "Informe Dinamico Indicadores Trámites",
+              "url": "ERPNET/CBR/Reportes/Tramites/InformeDinamicoIndicadoresSegunInfConf.aspx",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Trámites/submodules/INFORMES/pages/Informe Dinamico Indicadores Trámites",
+              "createdAt": "2026-08-04T22:02:54.400Z"
+            },
+            {
+              "name": "Informe Anexo 4",
+              "url": "ERPNET/CBR/Reportes/Cartera/InformeVentasAcumulado.aspx",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Trámites/submodules/INFORMES/pages/Informe Anexo 4",
+              "createdAt": "2026-08-04T22:02:54.400Z"
+            },
+            {
+              "name": "Informe trámites excel",
+              "url": "ERPNET/CBR/Reportes/Tramites/InformeTramitesExcel.aspx",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Trámites/submodules/INFORMES/pages/Informe trámites excel",
+              "createdAt": "2026-08-04T22:02:54.400Z"
+            },
+            {
+              "name": "Informe cruce tramites V2C",
+              "url": "ERPNET/CBR/Reportes/Tramites/InformeCruceTramitesCapital.aspx",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Trámites/submodules/INFORMES/pages/Informe cruce tramites V2C",
+              "createdAt": "2026-08-04T22:02:54.400Z"
+            },
+            {
+              "name": "Informe cruce de trámites V2.",
+              "url": "ERPNET/CBR/Reportes/Tramites/InformeCruceTramitesCapital.aspx",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Trámites/submodules/INFORMES/pages/Informe cruce de trámites V2.",
+              "createdAt": "2026-08-04T22:02:54.400Z"
+            },
+            {
+              "name": "Informe cruce de tramites v2",
+              "url": "ERPNET/CBR/Reportes/Tramites/InformeCruceTramitesV2_Antigua.aspx",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Trámites/submodules/INFORMES/pages/Informe cruce de tramites v2",
+              "createdAt": "2026-08-04T22:02:54.400Z"
+            }
+          ],
+          "submodules": [
+            {
+              "name": "Escrituración Real",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Trámites/submodules/INFORMES/submodules/Escrituración Real",
+              "createdAt": "2026-08-04T22:02:54.399Z",
+              "pages": [
+                {
+                  "name": "Proyectada",
+                  "url": "ADPRO/Inmobiliaria/Tramites/Informes/ADITramitesMensual_No.asp",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Trámites/submodules/INFORMES/submodules/Escrituración Real/pages/Proyectada",
+                  "createdAt": "2026-08-04T22:02:54.399Z"
+                }
+              ],
+              "submodules": []
+            },
+            {
+              "name": "Configuración",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Trámites/submodules/INFORMES/submodules/Configuración",
+              "createdAt": "2026-08-04T22:02:54.400Z",
+              "pages": [
+                {
+                  "name": "Configuración de trámites para diseño",
+                  "url": "ADPRO/Inmobiliaria/Tramites/Informes/ConfigTramitesParaDiseñoInf.asp",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Trámites/submodules/INFORMES/submodules/Configuración/pages/Configuración de trámites para diseño",
+                  "createdAt": "2026-08-04T22:02:54.400Z"
+                },
+                {
+                  "name": "Configuración de informes",
+                  "url": "ADPRO/Inmobiliaria/Tramites/Informes/ConfigInformesTramite.asp",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Trámites/submodules/INFORMES/submodules/Configuración/pages/Configuración de informes",
+                  "createdAt": "2026-08-04T22:02:54.401Z"
+                },
+                {
+                  "name": "Configuración de informes (columnas)",
+                  "url": "ADPRO/Inmobiliaria/Tramites/Informes/ConfigTramitesInfCol.asp",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Trámites/submodules/INFORMES/submodules/Configuración/pages/Configuración de informes (columnas)",
+                  "createdAt": "2026-08-04T22:02:54.401Z"
+                },
+                {
+                  "name": "Configuración de fórmulas (columnas)",
+                  "url": "ADPRO/Inmobiliaria/Tramites/Informes/ConfigTramitesInfColFormulas.asp",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Trámites/submodules/INFORMES/submodules/Configuración/pages/Configuración de fórmulas (columnas)",
+                  "createdAt": "2026-08-04T22:02:54.401Z"
+                },
+                {
+                  "name": "Maestro de rompimiento",
+                  "url": "ADPRO/Inmobiliaria/Tramites/Informes/ADIMaestroRompimiento.asp",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Trámites/submodules/INFORMES/submodules/Configuración/pages/Maestro de rompimiento",
+                  "createdAt": "2026-08-04T22:02:54.401Z"
+                },
+                {
+                  "name": "Detalles de rompimiento",
+                  "url": "ADPRO/Inmobiliaria/Tramites/Informes/ADIRompimientoDetalles.asp",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Trámites/submodules/INFORMES/submodules/Configuración/pages/Detalles de rompimiento",
+                  "createdAt": "2026-08-04T22:02:54.401Z"
+                },
+                {
+                  "name": "Configuración Usuarios Rompimiento",
+                  "url": "ADPRO/Inmobiliaria/Tramites/Informes/ADIUsuariosRompimiento.asp",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Trámites/submodules/INFORMES/submodules/Configuración/pages/Configuración Usuarios Rompimiento",
+                  "createdAt": "2026-08-04T22:02:54.401Z"
+                }
+              ],
+              "submodules": []
+            }
+          ]
+        },
+        {
+          "name": "OPCIONES",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Trámites/submodules/OPCIONES",
+          "createdAt": "2026-08-04T22:02:54.401Z",
+          "pages": [
+            {
+              "name": "Sincronización trámites venta - proyecto",
+              "url": "ERPNET/CBR/Procesos/Tramite/SincronizacionTramitesVentaProyecto.aspx",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Trámites/submodules/OPCIONES/pages/Sincronización trámites venta - proyecto",
+              "createdAt": "2026-08-04T22:02:54.401Z"
+            },
+            {
+              "name": "Duplicados trámites predeterminados",
+              "url": "ERPNET/CBR/Procesos/Tramite/DuplicacionTramitesPredeterminados.aspx",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Trámites/submodules/OPCIONES/pages/Duplicados trámites predeterminados",
+              "createdAt": "2026-08-04T22:02:54.401Z"
+            },
+            {
+              "name": "Cumplimiento masivo de trámites",
+              "url": "ERPNET/CBR/Procesos/Tramite/CumplimientoMasivoTramites.aspx",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Trámites/submodules/OPCIONES/pages/Cumplimiento masivo de trámites",
+              "createdAt": "2026-08-04T22:02:54.401Z"
+            },
+            {
+              "name": "Bloqueo Masivo de Trámites",
+              "url": "ADPRO/Inmobiliaria/Tramites/AsignaMasivaTramites.asp",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Trámites/submodules/OPCIONES/pages/Bloqueo Masivo de Trámites",
+              "createdAt": "2026-08-04T22:02:54.401Z"
+            },
+            {
+              "name": "Opciones especiales",
+              "url": "ERPNET/CBR/Procesos/Tramite/FrameOpcionesEspeciales.aspx",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Trámites/submodules/OPCIONES/pages/Opciones especiales",
+              "createdAt": "2026-08-04T22:02:54.401Z"
+            }
+          ],
+          "submodules": []
+        },
+        {
+          "name": "Configuración",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Trámites/submodules/Configuración",
+          "createdAt": "2026-08-04T22:02:54.401Z",
+          "pages": [
+            {
+              "name": "Trámites",
+              "url": "ADPRO/Inmobiliaria/Maestros/ADITramites.asp",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Trámites/submodules/Configuración/pages/Trámites",
+              "createdAt": "2026-08-04T22:02:54.401Z"
+            },
+            {
+              "name": "Trámites predeterminados (versión Anterior)",
+              "url": "ADPRO/Inmobiliaria/Maestros/ADITramitesPred.asp",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Trámites/submodules/Configuración/pages/Trámites predeterminados (versión Anterior)",
+              "createdAt": "2026-08-04T22:02:54.401Z"
+            },
+            {
+              "name": "Asignación de tramites a grupos",
+              "url": "ERPNET/CBR/Configuracion/Tramite/AsignacionTramitesAGrupos.aspx",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Trámites/submodules/Configuración/pages/Asignación de tramites a grupos",
+              "createdAt": "2026-08-04T22:02:54.401Z"
+            }
+          ],
+          "submodules": []
+        }
+      ]
+    },
+    {
+      "name": "Cartera",
+      "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Cartera",
+      "createdAt": "2026-08-04T22:02:54.401Z",
+      "pages": [
+        {
+          "name": "Estados de documentos",
+          "url": "ADPRO/Inmobiliaria/Cartera/informes/EstadosCartera_CONT.asp",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Cartera/pages/Estados de documentos",
+          "createdAt": "2026-08-04T22:02:54.401Z"
+        }
+      ],
+      "submodules": [
+        {
+          "name": "RECIBOS DE CAJA",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Cartera/submodules/RECIBOS DE CAJA",
+          "createdAt": "2026-08-04T22:02:54.401Z",
+          "pages": [
+            {
+              "name": "Adición recibo de caja (RC)",
+              "url": "V3/CBRPLUS/Procesos/Cartera/AdicionReciboCaja.aspx?Codigo=RC",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Cartera/submodules/RECIBOS DE CAJA/pages/Adición recibo de caja (RC)",
+              "createdAt": "2026-08-04T22:02:54.401Z"
+            },
+            {
+              "name": "Edición recibo de caja (RC)",
+              "url": "ERPNET/CBR/Procesos/Cartera/ConsultaEdicionReciboCaja.aspx?TipoDocCartera=RC",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Cartera/submodules/RECIBOS DE CAJA/pages/Edición recibo de caja (RC)",
+              "createdAt": "2026-08-04T22:02:54.401Z"
+            },
+            {
+              "name": "Generación Masiva de Recibos de Caja",
+              "url": "ERPNET/CBR/Procesos/Cartera/GeneracionMasivaRecibosCaja.aspx",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Cartera/submodules/RECIBOS DE CAJA/pages/Generación Masiva de Recibos de Caja",
+              "createdAt": "2026-08-04T22:02:54.401Z"
+            }
+          ],
+          "submodules": []
+        },
+        {
+          "name": "NOTAS DE SUBROGACIÓN",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Cartera/submodules/NOTAS DE SUBROGACIÓN",
+          "createdAt": "2026-08-04T22:02:54.401Z",
+          "pages": [
+            {
+              "name": "Reverso de Notas - Obligaciones",
+              "url": "V3/CBRVentas/#/Documentos/ReversoNotasSubrogacion",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Cartera/submodules/NOTAS DE SUBROGACIÓN/pages/Reverso de Notas - Obligaciones",
+              "createdAt": "2026-08-04T22:02:54.401Z"
+            }
+          ],
+          "submodules": [
+            {
+              "name": "Adición Nota de Subrogación",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Cartera/submodules/NOTAS DE SUBROGACIÓN/submodules/Adición Nota de Subrogación",
+              "createdAt": "2026-08-04T22:02:54.401Z",
+              "pages": [
+                {
+                  "name": "Prorrata",
+                  "url": "ERPNET/CBR/Procesos/Cartera/NotaSubrogacionProrrata.aspx",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Cartera/submodules/NOTAS DE SUBROGACIÓN/submodules/Adición Nota de Subrogación/pages/Prorrata",
+                  "createdAt": "2026-08-04T22:02:54.401Z"
+                }
+              ],
+              "submodules": []
+            }
+          ]
+        },
+        {
+          "name": "DEVOLUCIÓN DE CHEQUES",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Cartera/submodules/DEVOLUCIÓN DE CHEQUES",
+          "createdAt": "2026-08-04T22:02:54.401Z",
+          "pages": [
+            {
+              "name": "DEVOLUCIÓN DE CHEQUES",
+              "url": "ERPNET/CBR/Procesos/Cartera/DevolucionCheque.aspx",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Cartera/submodules/DEVOLUCIÓN DE CHEQUES/pages/DEVOLUCIÓN DE CHEQUES",
+              "createdAt": "2026-08-04T22:02:54.401Z"
+            },
+            {
+              "name": "Consulta devolución de cheques",
+              "url": "ADPRO/Inmobiliaria/Cartera/DevolucionCheque_Cons_CC.asp",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Cartera/submodules/DEVOLUCIÓN DE CHEQUES/pages/Consulta devolución de cheques",
+              "createdAt": "2026-08-04T22:02:54.401Z"
+            },
+            {
+              "name": "Anulación devolución de cheques",
+              "url": "ADPRO/Inmobiliaria/Cartera/DevolucionCheque_Anulacion_CC.asp",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Cartera/submodules/DEVOLUCIÓN DE CHEQUES/pages/Anulación devolución de cheques",
+              "createdAt": "2026-08-04T22:02:54.401Z"
+            },
+            {
+              "name": "Consulta Devolución de Cheques Anulados",
+              "url": "ADPRO/Inmobiliaria/Cartera/DevolucionCheque_Anulados_Cons_CC.asp",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Cartera/submodules/DEVOLUCIÓN DE CHEQUES/pages/Consulta Devolución de Cheques Anulados",
+              "createdAt": "2026-08-04T22:02:54.401Z"
+            }
+          ],
+          "submodules": []
+        },
+        {
+          "name": "NOTAS",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Cartera/submodules/NOTAS",
+          "createdAt": "2026-08-04T22:02:54.401Z",
+          "pages": [
+            {
+              "name": "Adición nota de reversión recibo (RR)",
+              "url": "ERPNet/CBR/Procesos/Cartera/AdicionReciboCaja.aspx?Codigo=RR",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Cartera/submodules/NOTAS/pages/Adición nota de reversión recibo (RR)",
+              "createdAt": "2026-08-04T22:02:54.401Z"
+            },
+            {
+              "name": "Edición nota de reversión recibo (RR)",
+              "url": "ERPNET/CBR/Procesos/Cartera/ConsultaEdicionReciboCaja.aspx?TipoDocCartera=RR",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Cartera/submodules/NOTAS/pages/Edición nota de reversión recibo (RR)",
+              "createdAt": "2026-08-04T22:02:54.401Z"
+            }
+          ],
+          "submodules": []
+        },
+        {
+          "name": "GENERACION DE MORA",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Cartera/submodules/GENERACION DE MORA",
+          "createdAt": "2026-08-04T22:02:54.401Z",
+          "pages": [
+            {
+              "name": "Generar intereses de mora",
+              "url": "ERPNET/CBR/Reportes/Cartera/InformeGeneracionMora.aspx",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Cartera/submodules/GENERACION DE MORA/pages/Generar intereses de mora",
+              "createdAt": "2026-08-04T22:02:54.401Z"
+            }
+          ],
+          "submodules": []
+        },
+        {
+          "name": "FIDUCIA",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Cartera/submodules/FIDUCIA",
+          "createdAt": "2026-08-04T22:02:54.401Z",
+          "pages": [
+            {
+              "name": "Desembolsos Masivos",
+              "url": "ADPRO/Inmobiliaria/Cartera/DesembolsoFiduXML.asp",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Cartera/submodules/FIDUCIA/pages/Desembolsos Masivos",
+              "createdAt": "2026-08-04T22:02:54.401Z"
+            },
+            {
+              "name": "Desembolsos Masivos Por Carga de Archivo",
+              "url": "ADPRO/Inmobiliaria/Cartera/DesembolsoFiduCargaArchivoV2.asp",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Cartera/submodules/FIDUCIA/pages/Desembolsos Masivos Por Carga de Archivo",
+              "createdAt": "2026-08-04T22:02:54.401Z"
+            },
+            {
+              "name": "Desembolsos Masivos Genera Excel",
+              "url": "ADPRO/Inmobiliaria/Cartera/DesembolsoFiduGenerar.asp",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Cartera/submodules/FIDUCIA/pages/Desembolsos Masivos Genera Excel",
+              "createdAt": "2026-08-04T22:02:54.401Z"
+            },
+            {
+              "name": "Anulación de Desembolsos",
+              "url": "ADPRO/Inmobiliaria/Cartera/AnulaDesembolso.asp",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Cartera/submodules/FIDUCIA/pages/Anulación de Desembolsos",
+              "createdAt": "2026-08-04T22:02:54.401Z"
+            }
+          ],
+          "submodules": []
+        },
+        {
+          "name": "INFORMES",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Cartera/submodules/INFORMES",
+          "createdAt": "2026-08-04T22:02:54.401Z",
+          "pages": [
+            {
+              "name": "Cartera mixto",
+              "url": "ERPNET/CBR/Reportes/Cartera/InformeCarteraMixta.aspx",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Cartera/submodules/INFORMES/pages/Cartera mixto",
+              "createdAt": "2026-08-04T22:02:54.401Z"
+            },
+            {
+              "name": "Cartera por edades",
+              "url": "ADPRO/Inmobiliaria/Cartera/Informes/CarteraPorEdades_CC.asp",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Cartera/submodules/INFORMES/pages/Cartera por edades",
+              "createdAt": "2026-08-04T22:02:54.401Z"
+            },
+            {
+              "name": "Cartera por Proyecto y Cliente",
+              "url": "ADPRO/Inmobiliaria/Cartera/CarteraProCli.asp",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Cartera/submodules/INFORMES/pages/Cartera por Proyecto y Cliente",
+              "createdAt": "2026-08-04T22:02:54.401Z"
+            },
+            {
+              "name": "Flujo de Cartera por Conceptos",
+              "url": "ADPRO/Inmobiliaria/Cartera/Informes/infFlujo_OU.asp",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Cartera/submodules/INFORMES/pages/Flujo de Cartera por Conceptos",
+              "createdAt": "2026-08-04T22:02:54.401Z"
+            },
+            {
+              "name": "Extracto de Cuenta",
+              "url": "ADPRO/Inmobiliaria/Cartera/Informes/EstadoCuenta_CC.asp",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Cartera/submodules/INFORMES/pages/Extracto de Cuenta",
+              "createdAt": "2026-08-04T22:02:54.401Z"
+            },
+            {
+              "name": "Estado de cuenta",
+              "url": "ADPRO/Inmobiliaria/Cartera/Informes/MixtoCartera_CC.asp",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Cartera/submodules/INFORMES/pages/Estado de cuenta",
+              "createdAt": "2026-08-04T22:02:54.401Z"
+            },
+            {
+              "name": "Estado de cuenta (general)",
+              "url": "ADPRO/Inmobiliaria/Cartera/Informes/EstadoCuenta_Ver2.asp",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Cartera/submodules/INFORMES/pages/Estado de cuenta (general)",
+              "createdAt": "2026-08-04T22:02:54.401Z"
+            },
+            {
+              "name": "Estado de Cuenta Con Fecha Corte",
+              "url": "ERPNET/CBR/Procesos/Cartera/EnvioEstadoCuentaFechaCorte.aspx",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Cartera/submodules/INFORMES/pages/Estado de Cuenta Con Fecha Corte",
+              "createdAt": "2026-08-04T22:02:54.401Z"
+            },
+            {
+              "name": "Estado de Cuenta Con Fecha Corte Masivo",
+              "url": "ADPRO/Inmobiliaria/Cartera/Informes/EstadoCuentaMasivo.asp",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Cartera/submodules/INFORMES/pages/Estado de Cuenta Con Fecha Corte Masivo",
+              "createdAt": "2026-08-04T22:02:54.402Z"
+            },
+            {
+              "name": "Envío Masivo Estado de Cuenta por E-mail",
+              "url": "ADPRO/Inmobiliaria/Cartera/Informes/EnvioMasivoEstadoCuenta_Mail.asp",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Cartera/submodules/INFORMES/pages/Envío Masivo Estado de Cuenta por E-mail",
+              "createdAt": "2026-08-04T22:02:54.402Z"
+            },
+            {
+              "name": "Estado consolidado de venta",
+              "url": "ADPRO/Inmobiliaria/Cartera/Informes/ResumenConsolidadoVta.asp",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Cartera/submodules/INFORMES/pages/Estado consolidado de venta",
+              "createdAt": "2026-08-04T22:02:54.402Z"
+            },
+            {
+              "name": "Sábana de Cartera",
+              "url": "ADPRO/Inmobiliaria/Cartera/Informes/SabanaCartera.asp",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Cartera/submodules/INFORMES/pages/Sábana de Cartera",
+              "createdAt": "2026-08-04T22:02:54.402Z"
+            },
+            {
+              "name": "Proyección de ingresos",
+              "url": "ADPRO/Inmobiliaria/Cartera/Informes/Proyeccion_Programado_CC.asp",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Cartera/submodules/INFORMES/pages/Proyección de ingresos",
+              "createdAt": "2026-08-04T22:02:54.402Z"
+            },
+            {
+              "name": "Informe General de Pagos Arriendos",
+              "url": "ADPRO/Inmobiliaria/Cartera/Informes/InfGeneralCuotas.asp",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Cartera/submodules/INFORMES/pages/Informe General de Pagos Arriendos",
+              "createdAt": "2026-08-04T22:02:54.402Z"
+            },
+            {
+              "name": "Informe a fiducia",
+              "url": "ADPRO/Inmobiliaria/Cartera/Informes/Inf_Fiducia_OG.asp",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Cartera/submodules/INFORMES/pages/Informe a fiducia",
+              "createdAt": "2026-08-04T22:02:54.402Z"
+            },
+            {
+              "name": "Informe de recaudo",
+              "url": "ADPRO/Inmobiliaria/Cartera/Informes/ResumenRecaudo_CC.asp",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Cartera/submodules/INFORMES/pages/Informe de recaudo",
+              "createdAt": "2026-08-04T22:02:54.402Z"
+            },
+            {
+              "name": "Recaudo diario",
+              "url": "ADPRO/Inmobiliaria/Cartera/Informes/ProgramacionIngresoDiario_CC.asp",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Cartera/submodules/INFORMES/pages/Recaudo diario",
+              "createdAt": "2026-08-04T22:02:54.402Z"
+            },
+            {
+              "name": "Recaudo mensual",
+              "url": "ADPRO/Inmobiliaria/Cartera/Informes/ProgramacionIngresoMensual_CC.asp",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Cartera/submodules/INFORMES/pages/Recaudo mensual",
+              "createdAt": "2026-08-04T22:02:54.402Z"
+            },
+            {
+              "name": "Programación mensual de ingresos",
+              "url": "ERPNET/CBR/Reportes/Cartera/InformeProgMensualIngresos.aspx",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Cartera/submodules/INFORMES/pages/Programación mensual de ingresos",
+              "createdAt": "2026-08-04T22:02:54.402Z"
+            },
+            {
+              "name": "Programación diaria de ingresos",
+              "url": "ADPRO/Inmobiliaria/Ventas/Informes/PlanPagosDia.asp",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Cartera/submodules/INFORMES/pages/Programación diaria de ingresos",
+              "createdAt": "2026-08-04T22:02:54.402Z"
+            },
+            {
+              "name": "Impresión masiva de documentos",
+              "url": "ADPRO/Inmobiliaria/Documentos/ImpresionMasivaDoc.asp",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Cartera/submodules/INFORMES/pages/Impresión masiva de documentos",
+              "createdAt": "2026-08-04T22:02:54.402Z"
+            },
+            {
+              "name": "AUDITORIA MIGRACION",
+              "url": "ADPRO/Inmobiliaria/Cartera/Auditoria_Cartera_CC.asp",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Cartera/submodules/INFORMES/pages/AUDITORIA MIGRACION",
+              "createdAt": "2026-08-04T22:02:54.402Z"
+            },
+            {
+              "name": "Consulta Documentos Reversión",
+              "url": "ADPRO/Inmobiliaria/Cartera/DocumentosReversion_TOM.asp",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Cartera/submodules/INFORMES/pages/Consulta Documentos Reversión",
+              "createdAt": "2026-08-04T22:02:54.402Z"
+            },
+            {
+              "name": "Informe Pagos en línea",
+              "url": "ERPNET/CBR/Reportes/Cartera/InformePagosEnLinea.aspx",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Cartera/submodules/INFORMES/pages/Informe Pagos en línea",
+              "createdAt": "2026-08-04T22:02:54.402Z"
+            },
+            {
+              "name": "Informe Cartera Estandarizado",
+              "url": "ERPNET/CBR/Reportes/Cartera/InformeCarteraEstandarizado.aspx",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Cartera/submodules/INFORMES/pages/Informe Cartera Estandarizado",
+              "createdAt": "2026-08-04T22:02:54.402Z"
+            }
+          ],
+          "submodules": [
+            {
+              "name": "AUDITORIA",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Cartera/submodules/INFORMES/submodules/AUDITORIA",
+              "createdAt": "2026-08-04T22:02:54.402Z",
+              "pages": [
+                {
+                  "name": "Auditoría Recibo de Caja",
+                  "url": "ADPRO/Inmobiliaria/Cartera/Auditoria/ReciboCaja_Cons_Audi.asp",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Cartera/submodules/INFORMES/submodules/AUDITORIA/pages/Auditoría Recibo de Caja",
+                  "createdAt": "2026-08-04T22:02:54.402Z"
+                },
+                {
+                  "name": "Auditoría de Devolución de Cheques",
+                  "url": "ADPRO/Inmobiliaria/Cartera/Auditoria/DevolucionCheque_Cons_Audi.asp",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Cartera/submodules/INFORMES/submodules/AUDITORIA/pages/Auditoría de Devolución de Cheques",
+                  "createdAt": "2026-08-04T22:02:54.402Z"
+                },
+                {
+                  "name": "Auditoría Nota Crédito",
+                  "url": "ADPRO/Inmobiliaria/Cartera/Auditoria/NotaCredito_Cons_Audi.asp",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Cartera/submodules/INFORMES/submodules/AUDITORIA/pages/Auditoría Nota Crédito",
+                  "createdAt": "2026-08-04T22:02:54.402Z"
+                },
+                {
+                  "name": "Auditoría Recibo de Caja Anulados",
+                  "url": "ADPRO/Inmobiliaria/Cartera/Auditoria/ReciboCaja_Anulados_Cons_Audi.asp",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Cartera/submodules/INFORMES/submodules/AUDITORIA/pages/Auditoría Recibo de Caja Anulados",
+                  "createdAt": "2026-08-04T22:02:54.402Z"
+                },
+                {
+                  "name": "Auditoría Nota Débito",
+                  "url": "ADPRO/Inmobiliaria/Cartera/Auditoria/NotaDebito_Cons_Audi.asp",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Cartera/submodules/INFORMES/submodules/AUDITORIA/pages/Auditoría Nota Débito",
+                  "createdAt": "2026-08-04T22:02:54.402Z"
+                },
+                {
+                  "name": "Cruce Contable",
+                  "url": "ADPRO/Inmobiliaria/Cartera/Auditoria/InformeCruceContable.asp",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Cartera/submodules/INFORMES/submodules/AUDITORIA/pages/Cruce Contable",
+                  "createdAt": "2026-08-04T22:02:54.402Z"
+                }
+              ],
+              "submodules": []
+            }
+          ]
+        },
+        {
+          "name": "UTILIDADES",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Cartera/submodules/UTILIDADES",
+          "createdAt": "2026-08-04T22:02:54.402Z",
+          "pages": [
+            {
+              "name": "Actualización Fecha Contable",
+              "url": "ADPRO/Inmobiliaria/Cartera/Informes/ADIActualizacionFechaContab.asp",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Cartera/submodules/UTILIDADES/pages/Actualización Fecha Contable",
+              "createdAt": "2026-08-04T22:02:54.402Z"
+            },
+            {
+              "name": "Reprogramación Plan Pagos",
+              "url": "ADPRO/Inmobiliaria/Cartera/Informes/Inf_Reprog_Pagos_TOM.asp",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Cartera/submodules/UTILIDADES/pages/Reprogramación Plan Pagos",
+              "createdAt": "2026-08-04T22:02:54.402Z"
+            }
+          ],
+          "submodules": []
+        }
+      ]
+    },
+    {
+      "name": "Comisiones",
+      "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Comisiones",
+      "createdAt": "2026-08-04T22:02:54.402Z",
+      "pages": [
+        {
+          "name": "Generación de comisiones",
+          "url": "ERPNET/CBR/Procesos/Comisiones/GenerarComisionesModelosEsntandar.aspx",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Comisiones/pages/Generación de comisiones",
+          "createdAt": "2026-08-04T22:02:54.402Z"
+        },
+        {
+          "name": "Autorizar Comisiones",
+          "url": "ERPNET/CBR/Procesos/Comisiones/AutorizarComisiones.aspx",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Comisiones/pages/Autorizar Comisiones",
+          "createdAt": "2026-08-04T22:02:54.402Z"
+        },
+        {
+          "name": "Reversar comisiones",
+          "url": "ERPNET/CBR/Procesos/Comisiones/ReversarComisiones.aspx",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Comisiones/pages/Reversar comisiones",
+          "createdAt": "2026-08-04T22:02:54.402Z"
+        }
+      ],
+      "submodules": [
+        {
+          "name": "COMISIONES POR METAS",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Comisiones/submodules/COMISIONES POR METAS",
+          "createdAt": "2026-08-04T22:02:54.402Z",
+          "pages": [
+            {
+              "name": "Pre Generar Comisiones Por Metas",
+              "url": "ERPNET/CBR/Procesos/Comisiones/PreGeneracionComisionesPorMetas.aspx",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Comisiones/submodules/COMISIONES POR METAS/pages/Pre Generar Comisiones Por Metas",
+              "createdAt": "2026-08-04T22:02:54.402Z"
+            },
+            {
+              "name": "Generar Comisiones Por Metas",
+              "url": "ERPNET/CBR/Procesos/Comisiones/GeneracionComisionesPorMetas.aspx",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Comisiones/submodules/COMISIONES POR METAS/pages/Generar Comisiones Por Metas",
+              "createdAt": "2026-08-04T22:02:54.402Z"
+            },
+            {
+              "name": "Informe de Comisiones Por Tipo Proyecto",
+              "url": "ERPNET/CBR/Reportes/Comisiones/InformeComiTipoProyectoFrame.aspx",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Comisiones/submodules/COMISIONES POR METAS/pages/Informe de Comisiones Por Tipo Proyecto",
+              "createdAt": "2026-08-04T22:02:54.402Z"
+            },
+            {
+              "name": "Generar Novedades en Nomina",
+              "url": "ERPNET/CBR/Procesos/Comisiones/ComisionesAutorizadasCrearNovedadNomina.aspx",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Comisiones/submodules/COMISIONES POR METAS/pages/Generar Novedades en Nomina",
+              "createdAt": "2026-08-04T22:02:54.402Z"
+            },
+            {
+              "name": "Informe de Comisiones Proyecciones",
+              "url": "ERPNET/CBR/Reportes/Comisiones/FrameInfComisionesApiros.aspx",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Comisiones/submodules/COMISIONES POR METAS/pages/Informe de Comisiones Proyecciones",
+              "createdAt": "2026-08-04T22:02:54.402Z"
+            }
+          ],
+          "submodules": []
+        },
+        {
+          "name": "Configuración",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Comisiones/submodules/Configuración",
+          "createdAt": "2026-08-04T22:02:54.402Z",
+          "pages": [
+            {
+              "name": "Comisionistas",
+              "url": "ERPNET/CBR/Procesos/Comisiones/ADICominsionistas.aspx",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Comisiones/submodules/Configuración/pages/Comisionistas",
+              "createdAt": "2026-08-04T22:02:54.402Z"
+            },
+            {
+              "name": "Configuración Grupos",
+              "url": "ERPNET/CBR/Configuracion/Comisiones/ConfiguracionGruposComision.aspx",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Comisiones/submodules/Configuración/pages/Configuración Grupos",
+              "createdAt": "2026-08-04T22:02:54.402Z"
+            },
+            {
+              "name": "Asignación Comisionista a Grupo",
+              "url": "ERPNET/CBR/Configuracion/Comisiones/AsignacionComisionistaGrupo.aspx",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Comisiones/submodules/Configuración/pages/Asignación Comisionista a Grupo",
+              "createdAt": "2026-08-04T22:02:54.402Z"
+            },
+            {
+              "name": "Configuración de comisiones",
+              "url": "ERPNET/CBR/Procesos/Comisiones/ConfiguracionComisionesV2.aspx",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Comisiones/submodules/Configuración/pages/Configuración de comisiones",
+              "createdAt": "2026-08-04T22:02:54.402Z"
+            },
+            {
+              "name": "Asignación Comisionistas(Grupos) Por Venta",
+              "url": "ERPNET/CBR/Configuracion/Comisiones/AsignacionComisionistasGruposVentas.aspx",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Comisiones/submodules/Configuración/pages/Asignación Comisionistas(Grupos) Por Venta",
+              "createdAt": "2026-08-04T22:02:54.402Z"
+            }
+          ],
+          "submodules": []
+        },
+        {
+          "name": "OPCIONES",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Comisiones/submodules/OPCIONES",
+          "createdAt": "2026-08-04T22:02:54.402Z",
+          "pages": [
+            {
+              "name": "Cuenta Cobro Comisionistas",
+              "url": "ADPRO/Inmobiliaria/comisionistas/CuentasCobroComisionista_Cns.asp",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Comisiones/submodules/OPCIONES/pages/Cuenta Cobro Comisionistas",
+              "createdAt": "2026-08-04T22:02:54.402Z"
+            }
+          ],
+          "submodules": []
+        },
+        {
+          "name": "INFORMES",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Comisiones/submodules/INFORMES",
+          "createdAt": "2026-08-04T22:02:54.402Z",
+          "pages": [
+            {
+              "name": "Comisionistas",
+              "url": "ERPNET/CBR/Reportes/Comisiones/InformeComisionistas.aspx",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Comisiones/submodules/INFORMES/pages/Comisionistas",
+              "createdAt": "2026-08-04T22:02:54.402Z"
+            },
+            {
+              "name": "Pagos comisionistas",
+              "url": "ERPNET/CBR/Reportes/Comisiones/ComisionesCargo/InformePagoComisionistasContenedorV2.aspx",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Comisiones/submodules/INFORMES/pages/Pagos comisionistas",
+              "createdAt": "2026-08-04T22:02:54.402Z"
+            }
+          ],
+          "submodules": []
+        }
+      ]
+    },
+    {
+      "name": "Reformas",
+      "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Reformas",
+      "createdAt": "2026-08-04T22:02:54.402Z",
+      "pages": [
+        {
+          "name": "Solicitud de reformas",
+          "url": "ERPNET/CBR/Procesos/Reformas/SolicitudReformas.aspx",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Reformas/pages/Solicitud de reformas",
+          "createdAt": "2026-08-04T22:02:54.402Z"
+        },
+        {
+          "name": "Edición de reformas",
+          "url": "ERPNET/CBR/Procesos/Reformas/InformeEdicionReformas.aspx",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Reformas/pages/Edición de reformas",
+          "createdAt": "2026-08-04T22:02:54.402Z"
+        },
+        {
+          "name": "Aprobación de Reformas",
+          "url": "ADPRO/Inmobiliaria/PostVenta/AprobaReformaAgrup.asp",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Reformas/pages/Aprobación de Reformas",
+          "createdAt": "2026-08-04T22:02:54.402Z"
+        },
+        {
+          "name": "Anulación de reformas",
+          "url": "ERPNET/CBR/Procesos/Reformas/AnulacionReformas.aspx",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Reformas/pages/Anulación de reformas",
+          "createdAt": "2026-08-04T22:02:54.402Z"
+        },
+        {
+          "name": "Desaprobación de reformas",
+          "url": "ERPNET/CBR/Procesos/Reformas/DesaProbacionReforma.aspx",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Reformas/pages/Desaprobación de reformas",
+          "createdAt": "2026-08-04T22:02:54.402Z"
+        }
+      ],
+      "submodules": [
+        {
+          "name": "INFORMES",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Reformas/submodules/INFORMES",
+          "createdAt": "2026-08-04T22:02:54.402Z",
+          "pages": [
+            {
+              "name": "Impresión de reformas",
+              "url": "ERPNET/CBR/Reportes/Reformas/ReformasVer.aspx",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Reformas/submodules/INFORMES/pages/Impresión de reformas",
+              "createdAt": "2026-08-04T22:02:54.402Z"
+            },
+            {
+              "name": "Impresión de Reformas Sin AIU",
+              "url": "ADPRO/Inmobiliaria/ventas/ReformasVerSinAIU.asp",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Reformas/submodules/INFORMES/pages/Impresión de Reformas Sin AIU",
+              "createdAt": "2026-08-04T22:02:54.402Z"
+            },
+            {
+              "name": "Informe por tipo de reforma",
+              "url": "ADPRO/Inmobiliaria/Reformas/InfRefTipoRef.asp",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Reformas/submodules/INFORMES/pages/Informe por tipo de reforma",
+              "createdAt": "2026-08-04T22:02:54.402Z"
+            },
+            {
+              "name": "Informe de obras - reformas",
+              "url": "ERPNET/CBR/Reportes/Reformas/InfRefAut.aspx",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Reformas/submodules/INFORMES/pages/Informe de obras - reformas",
+              "createdAt": "2026-08-04T22:02:54.402Z"
+            }
+          ],
+          "submodules": []
+        }
+      ]
+    },
+    {
+      "name": "Escrituras",
+      "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Escrituras",
+      "createdAt": "2026-08-04T22:02:54.402Z",
+      "pages": [],
+      "submodules": [
+        {
+          "name": "BENEFICENCIA Y REGISTRO",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Escrituras/submodules/BENEFICENCIA Y REGISTRO",
+          "createdAt": "2026-08-04T22:02:54.402Z",
+          "pages": [
+            {
+              "name": "Generación Gastos de Escrituración",
+              "url": "ADPRO/Inmobiliaria/Escrituracion/gastosescritura.asp",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Escrituras/submodules/BENEFICENCIA Y REGISTRO/pages/Generación Gastos de Escrituración",
+              "createdAt": "2026-08-04T22:02:54.402Z"
+            },
+            {
+              "name": "Simulador de Gastos de Escrituración",
+              "url": "ADPRO/Inmobiliaria/Escrituracion/GastosBeneficienciaRegistro.asp",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Escrituras/submodules/BENEFICENCIA Y REGISTRO/pages/Simulador de Gastos de Escrituración",
+              "createdAt": "2026-08-04T22:02:54.402Z"
+            },
+            {
+              "name": "Reversión de gastos",
+              "url": "ADPRO/Inmobiliaria/Escrituracion/GastosBeneficienciaRegistroRev.asp",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Escrituras/submodules/BENEFICENCIA Y REGISTRO/pages/Reversión de gastos",
+              "createdAt": "2026-08-04T22:02:54.403Z"
+            }
+          ],
+          "submodules": []
+        },
+        {
+          "name": "Configuración",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Escrituras/submodules/Configuración",
+          "createdAt": "2026-08-04T22:02:54.403Z",
+          "pages": [
+            {
+              "name": "Entidades de escrituración",
+              "url": "ADPRO/Inmobiliaria/Maestros/GastosEscritura_Cont.asp",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Escrituras/submodules/Configuración/pages/Entidades de escrituración",
+              "createdAt": "2026-08-04T22:02:54.403Z"
+            }
+          ],
+          "submodules": []
+        }
+      ]
+    },
+    {
+      "name": "Posventa",
+      "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Posventa",
+      "createdAt": "2026-08-04T22:02:54.403Z",
+      "pages": [],
+      "submodules": [
+        {
+          "name": "SOLICITUD",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Posventa/submodules/SOLICITUD",
+          "createdAt": "2026-08-04T22:02:54.403Z",
+          "pages": [
+            {
+              "name": "Adición de solicitud",
+              "url": "ADPRO/Inmobiliaria/PostVenta/AddServLocativas.asp",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Posventa/submodules/SOLICITUD/pages/Adición de solicitud",
+              "createdAt": "2026-08-04T22:02:54.403Z"
+            },
+            {
+              "name": "Edición de solicitud",
+              "url": "ADPRO/Inmobiliaria/PostVenta/Ver_ModServLocativas.asp",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Posventa/submodules/SOLICITUD/pages/Edición de solicitud",
+              "createdAt": "2026-08-04T22:02:54.403Z"
+            },
+            {
+              "name": "Revisión de solicitud",
+              "url": "ADPRO/Inmobiliaria/PostVenta/Ver_RevServLocativas.asp",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Posventa/submodules/SOLICITUD/pages/Revisión de solicitud",
+              "createdAt": "2026-08-04T22:02:54.403Z"
+            },
+            {
+              "name": "Asignación de servicios locativos",
+              "url": "ADPRO/Inmobiliaria/PostVenta/AsignaServLocativas.asp",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Posventa/submodules/SOLICITUD/pages/Asignación de servicios locativos",
+              "createdAt": "2026-08-04T22:02:54.403Z"
+            },
+            {
+              "name": "Finalización de servicios locativos",
+              "url": "ADPRO/Inmobiliaria/PostVenta/FinalizaServLocativos.asp",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Posventa/submodules/SOLICITUD/pages/Finalización de servicios locativos",
+              "createdAt": "2026-08-04T22:02:54.403Z"
+            }
+          ],
+          "submodules": []
+        },
+        {
+          "name": "Configuración",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Posventa/submodules/Configuración",
+          "createdAt": "2026-08-04T22:02:54.403Z",
+          "pages": [
+            {
+              "name": "Tipo Locativas",
+              "url": "ADPRO/Inmobiliaria/Maestros/ADITipoLocativas.asp",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Posventa/submodules/Configuración/pages/Tipo Locativas",
+              "createdAt": "2026-08-04T22:02:54.403Z"
+            },
+            {
+              "name": "Árbol de posventa",
+              "url": "ERPNET/CBR/Configuracion/PostVentas/ArbolPostVentas.aspx",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Posventa/submodules/Configuración/pages/Árbol de posventa",
+              "createdAt": "2026-08-04T22:02:54.403Z"
+            },
+            {
+              "name": "Estado Servicios Locativos",
+              "url": "ADPRO/Inmobiliaria/Maestros/ADIEstadoServLoc.asp",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Posventa/submodules/Configuración/pages/Estado Servicios Locativos",
+              "createdAt": "2026-08-04T22:02:54.403Z"
+            },
+            {
+              "name": "Estado Servicios Locativos Detalles",
+              "url": "ADPRO/Inmobiliaria/Maestros/ADIEstadoServLocDet.asp",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Posventa/submodules/Configuración/pages/Estado Servicios Locativos Detalles",
+              "createdAt": "2026-08-04T22:02:54.403Z"
+            }
+          ],
+          "submodules": []
+        },
+        {
+          "name": "INFORMES",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Posventa/submodules/INFORMES",
+          "createdAt": "2026-08-04T22:02:54.403Z",
+          "pages": [
+            {
+              "name": "Locativas",
+              "url": "ADPRO/Inmobiliaria/Informes/ADI_Inf_locativas.asp",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Posventa/submodules/INFORMES/pages/Locativas",
+              "createdAt": "2026-08-04T22:02:54.403Z"
+            },
+            {
+              "name": "Locativas (detalles)",
+              "url": "ADPRO/Inmobiliaria/PostVenta/Informes/ADILocativas.asp",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Posventa/submodules/INFORMES/pages/Locativas (detalles)",
+              "createdAt": "2026-08-04T22:02:54.403Z"
+            },
+            {
+              "name": "Informes de estado de posventas",
+              "url": "ERPNET/CBR/Reportes/PostVentas/InformeEstadoLocativas.aspx",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Posventa/submodules/INFORMES/pages/Informes de estado de posventas",
+              "createdAt": "2026-08-04T22:02:54.403Z"
+            },
+            {
+              "name": "Informe general de posventas",
+              "url": "ERPNET/CBR/Reportes/PostVentas/InformeGeneralLocativas.aspx",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Posventa/submodules/INFORMES/pages/Informe general de posventas",
+              "createdAt": "2026-08-04T22:02:54.403Z"
+            },
+            {
+              "name": "Informe Resumen Servicios De Post-Ventas",
+              "url": "ERPNET/CBR/Reportes/PostVentas/InformeResumenPostventa.aspx",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Posventa/submodules/INFORMES/pages/Informe Resumen Servicios De Post-Ventas",
+              "createdAt": "2026-08-04T22:02:54.403Z"
+            },
+            {
+              "name": "Tareas pendientes por responsables locales",
+              "url": "ERPNET/CBR/Reportes/PostVentas/InformeTareaXResponsableLocal.aspx",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Posventa/submodules/INFORMES/pages/Tareas pendientes por responsables locales",
+              "createdAt": "2026-08-04T22:02:54.403Z"
+            },
+            {
+              "name": "Informe de actividades detalladas",
+              "url": "ERPNET/CBR/Reportes/PostVentas/InformeActDetalladas.aspx",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Posventa/submodules/INFORMES/pages/Informe de actividades detalladas",
+              "createdAt": "2026-08-04T22:02:54.403Z"
+            },
+            {
+              "name": "Tareas pendientes por responsables contratistas",
+              "url": "ERPNET/CBR/Reportes/PostVentas/InformeTareasPendientesContratistas.aspx",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Posventa/submodules/INFORMES/pages/Tareas pendientes por responsables contratistas",
+              "createdAt": "2026-08-04T22:02:54.403Z"
+            },
+            {
+              "name": "Impresión de solicitudes",
+              "url": "ADPRO/Inmobiliaria/PostVenta/Informes/ImpresionFormatoPosVta.asp",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Posventa/submodules/INFORMES/pages/Impresión de solicitudes",
+              "createdAt": "2026-08-04T22:02:54.403Z"
+            },
+            {
+              "name": "Informe de posventas",
+              "url": "ERPNET/CBR/Reportes/PostVentas/InformePostventa.aspx",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Posventa/submodules/INFORMES/pages/Informe de posventas",
+              "createdAt": "2026-08-04T22:02:54.403Z"
+            },
+            {
+              "name": "Informe gráfico de posventa",
+              "url": "ADPRO/Inmobiliaria/PostVenta/Informes/GraficoPost-Venta_Contenedor_CC.asp",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Posventa/submodules/INFORMES/pages/Informe gráfico de posventa",
+              "createdAt": "2026-08-04T22:02:54.403Z"
+            },
+            {
+              "name": "Dashboard posventas",
+              "url": "V3/CBR/#/Postventas/DashboardPosventas",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Posventa/submodules/INFORMES/pages/Dashboard posventas",
+              "createdAt": "2026-08-04T22:02:54.403Z"
+            }
+          ],
+          "submodules": []
+        }
+      ]
+    },
+    {
+      "name": "Documentos",
+      "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Documentos",
+      "createdAt": "2026-08-04T22:02:54.403Z",
+      "pages": [
+        {
+          "name": "Creación de plantillas",
+          "url": "ERPNET/CBR/Documentos/CreacionPlantillas.aspx",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Documentos/pages/Creación de plantillas",
+          "createdAt": "2026-08-04T22:02:54.403Z"
+        },
+        {
+          "name": "Documentos Masivos",
+          "url": "Calidad/ConsDocumentos.asp?hdnTipoDoc=M",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Documentos/pages/Documentos Masivos",
+          "createdAt": "2026-08-04T22:02:54.403Z"
+        },
+        {
+          "name": "Plantillas",
+          "url": "Calidad/ConsDocumentos.asp?hdnTipoDoc=P",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Documentos/pages/Plantillas",
+          "createdAt": "2026-08-04T22:02:54.403Z"
+        },
+        {
+          "name": "Documentos Agrupaciones",
+          "url": "Calidad/ConsDocumentosEsp.asp",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Documentos/pages/Documentos Agrupaciones",
+          "createdAt": "2026-08-04T22:02:54.403Z"
+        }
+      ],
+      "submodules": [
+        {
+          "name": "Documentos en Word",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Documentos/submodules/Documentos en Word",
+          "createdAt": "2026-08-04T22:02:54.403Z",
+          "pages": [
+            {
+              "name": "Documentos Masivos",
+              "url": "ERPNET/CBR/Documentos/GeneracionDocumentosMasivos.aspx",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Documentos/submodules/Documentos en Word/pages/Documentos Masivos",
+              "createdAt": "2026-08-04T22:02:54.403Z"
+            },
+            {
+              "name": "Plantillas",
+              "url": "ERPNET/CBR/Documentos/AsignacionPlantillasWord.aspx",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Documentos/submodules/Documentos en Word/pages/Plantillas",
+              "createdAt": "2026-08-04T22:02:54.403Z"
+            },
+            {
+              "name": "Documentos Agrupaciones",
+              "url": "ERPNET/CBR/Documentos/GeneracionDocumentosEspecificos.aspx",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Documentos/submodules/Documentos en Word/pages/Documentos Agrupaciones",
+              "createdAt": "2026-08-04T22:02:54.403Z"
+            },
+            {
+              "name": "Árbol de variables",
+              "url": "ERPNET/CBR/Documentos/ArbolVariables.aspx",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Documentos/submodules/Documentos en Word/pages/Árbol de variables",
+              "createdAt": "2026-08-04T22:02:54.403Z"
+            },
+            {
+              "name": "Asignacion contraseña de archivos",
+              "url": "ERPNET/CBR/Documentos/asignaContasenaDocumento.aspx",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Documentos/submodules/Documentos en Word/pages/Asignacion contraseña de archivos",
+              "createdAt": "2026-08-04T22:02:54.403Z"
+            }
+          ],
+          "submodules": []
+        },
+        {
+          "name": "Documentos para Firma",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Documentos/submodules/Documentos para Firma",
+          "createdAt": "2026-08-04T22:02:54.403Z",
+          "pages": [
+            {
+              "name": "Sincronización de sobres",
+              "url": "ERPNET/CBR/Procesos/Docusign/sincronizacionSobres.aspx",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Documentos/submodules/Documentos para Firma/pages/Sincronización de sobres",
+              "createdAt": "2026-08-04T22:02:54.403Z"
+            },
+            {
+              "name": "Descarga de sobres",
+              "url": "ERPNET/CBR/Procesos/Docusign/descargaSobres.aspx",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Documentos/submodules/Documentos para Firma/pages/Descarga de sobres",
+              "createdAt": "2026-08-04T22:02:54.403Z"
+            },
+            {
+              "name": "Informa actualización de sobres",
+              "url": "ERPNET/CBR/Procesos/Docusign/InformeActualizacionSobres.aspx",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Documentos/submodules/Documentos para Firma/pages/Informa actualización de sobres",
+              "createdAt": "2026-08-04T22:02:54.403Z"
+            },
+            {
+              "name": "Sincronización de sobres de posventas",
+              "url": "ERPNET/CBR/Procesos/Docusign/SincronizacionSobresPosventa.aspx",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Documentos/submodules/Documentos para Firma/pages/Sincronización de sobres de posventas",
+              "createdAt": "2026-08-04T22:02:54.403Z"
+            }
+          ],
+          "submodules": [
+            {
+              "name": "Configuración Maestros",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Documentos/submodules/Documentos para Firma/submodules/Configuración Maestros",
+              "createdAt": "2026-08-04T22:02:54.403Z",
+              "pages": [
+                {
+                  "name": "Maestro de momentos",
+                  "url": "ERPNET/CBR/Configuracion/Docusign/MaestroDeMomentos.aspx",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Documentos/submodules/Documentos para Firma/submodules/Configuración Maestros/pages/Maestro de momentos",
+                  "createdAt": "2026-08-04T22:02:54.403Z"
+                },
+                {
+                  "name": "Maestro de tipos de Firmantes",
+                  "url": "ERPNET/CBR/Configuracion/Docusign/MaestroDeTiposDeFirmantes.aspx",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Documentos/submodules/Documentos para Firma/submodules/Configuración Maestros/pages/Maestro de tipos de Firmantes",
+                  "createdAt": "2026-08-04T22:02:54.403Z"
+                },
+                {
+                  "name": "Asignación grupos a tipos de Firmantes",
+                  "url": "ERPNET/CBR/Configuracion/Docusign/AsignacionDeGruposATiposDeFirmantes.aspx",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Documentos/submodules/Documentos para Firma/submodules/Configuración Maestros/pages/Asignación grupos a tipos de Firmantes",
+                  "createdAt": "2026-08-04T22:02:54.403Z"
+                },
+                {
+                  "name": "Asignación tipos de firmantes a momentos",
+                  "url": "ERPNET/CBR/Configuracion/Docusign/AsignacionDeTiposDeFirmantesAMomentos.aspx",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Documentos/submodules/Documentos para Firma/submodules/Configuración Maestros/pages/Asignación tipos de firmantes a momentos",
+                  "createdAt": "2026-08-04T22:02:54.403Z"
+                }
+              ],
+              "submodules": []
+            },
+            {
+              "name": "Configuración",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Documentos/submodules/Documentos para Firma/submodules/Configuración",
+              "createdAt": "2026-08-04T22:02:54.403Z",
+              "pages": [
+                {
+                  "name": "Perfiles por momento",
+                  "url": "ERPNET/CBR/Configuracion/Docusign/MaestroDeTramiteMomento.aspx",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Documentos/submodules/Documentos para Firma/submodules/Configuración/pages/Perfiles por momento",
+                  "createdAt": "2026-08-04T22:02:54.403Z"
+                },
+                {
+                  "name": "Maestro de grupo de Firmantes",
+                  "url": "ERPNET/CBR/Configuracion/Docusign/MaestroDeGruposDeFirmantes.aspx",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Documentos/submodules/Documentos para Firma/submodules/Configuración/pages/Maestro de grupo de Firmantes",
+                  "createdAt": "2026-08-04T22:02:54.403Z"
+                },
+                {
+                  "name": "Asignación de usuarios a grupos de firmantes",
+                  "url": "ERPNET/CBR/Configuracion/Docusign/AsignacionDeUsuariosAGruposDeFirmantes.aspx",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Documentos/submodules/Documentos para Firma/submodules/Configuración/pages/Asignación de usuarios a grupos de firmantes",
+                  "createdAt": "2026-08-04T22:02:54.403Z"
+                },
+                {
+                  "name": "Configuración de cuenta",
+                  "url": "ERPNET/CBR/Configuracion/Docusign/CuentasDocusign.aspx",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Documentos/submodules/Documentos para Firma/submodules/Configuración/pages/Configuración de cuenta",
+                  "createdAt": "2026-08-04T22:02:54.403Z"
+                },
+                {
+                  "name": "Usuarios para sincronización de sobres",
+                  "url": "ERPNET/CBR/Configuracion/Docusign/UsuarioSincronizacionDeSobres.aspx",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Documentos/submodules/Documentos para Firma/submodules/Configuración/pages/Usuarios para sincronización de sobres",
+                  "createdAt": "2026-08-04T22:02:54.403Z"
+                }
+              ],
+              "submodules": []
+            },
+            {
+              "name": "Informe Auditoria",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Documentos/submodules/Documentos para Firma/submodules/Informe Auditoria",
+              "createdAt": "2026-08-04T22:02:54.403Z",
+              "pages": [
+                {
+                  "name": "Cambios en Maestros",
+                  "url": "ERPNET/CBR/Procesos/Docusign/auditoriaMaestros.aspx",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Documentos/submodules/Documentos para Firma/submodules/Informe Auditoria/pages/Cambios en Maestros",
+                  "createdAt": "2026-08-04T22:02:54.403Z"
+                },
+                {
+                  "name": "Cambios en Archivos",
+                  "url": "ERPNET/CBR/Procesos/Docusign/auditoriaArchivos.aspx",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Documentos/submodules/Documentos para Firma/submodules/Informe Auditoria/pages/Cambios en Archivos",
+                  "createdAt": "2026-08-04T22:02:54.403Z"
+                }
+              ],
+              "submodules": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Configuración",
+      "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Configuración",
+      "createdAt": "2026-08-04T22:02:54.403Z",
+      "pages": [],
+      "submodules": [
+        {
+          "name": "PROYECTO",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Configuración/submodules/PROYECTO",
+          "createdAt": "2026-08-04T22:02:54.403Z",
+          "pages": [
+            {
+              "name": "Proyectos",
+              "url": "ADPRO/Inmobiliaria/Maestros/Proyecto/ContenedorProyecto.asp",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Configuración/submodules/PROYECTO/pages/Proyectos",
+              "createdAt": "2026-08-04T22:02:54.403Z"
+            },
+            {
+              "name": "Edición de macroproyectos",
+              "url": "ADPRO/Maestros/ADIMacroProyectos_CONT.asp",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Configuración/submodules/PROYECTO/pages/Edición de macroproyectos",
+              "createdAt": "2026-08-04T22:02:54.403Z"
+            },
+            {
+              "name": "Regionales",
+              "url": "ERPNET/CBR/Configuracion/Macroproyecto/Regionales.aspx",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Configuración/submodules/PROYECTO/pages/Regionales",
+              "createdAt": "2026-08-04T22:02:54.403Z"
+            },
+            {
+              "name": "SuperMacros",
+              "url": "ERPNet/CBR/Configuracion/Macroproyecto/SuperMacros.aspx",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Configuración/submodules/PROYECTO/pages/SuperMacros",
+              "createdAt": "2026-08-04T22:02:54.403Z"
+            },
+            {
+              "name": "Asignación tipos unidad de proyectos",
+              "url": "ERPNet/CBR/Configuracion/Proyecto/AdpiProyUnidades.aspx",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Configuración/submodules/PROYECTO/pages/Asignación tipos unidad de proyectos",
+              "createdAt": "2026-08-04T22:02:54.403Z"
+            }
+          ],
+          "submodules": []
+        },
+        {
+          "name": "UNIDADES",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Configuración/submodules/UNIDADES",
+          "createdAt": "2026-08-04T22:02:54.403Z",
+          "pages": [
+            {
+              "name": "Tipo de unidad",
+              "url": "V3/CBRPlus/Configuracion/Unidades/TipoUnidad.aspx",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Configuración/submodules/UNIDADES/pages/Tipo de unidad",
+              "createdAt": "2026-08-04T22:02:54.403Z"
+            },
+            {
+              "name": "Tipo Acabados",
+              "url": "ERPNet/CBR/Configuracion/Unidades/TiposAcabado.aspx",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Configuración/submodules/UNIDADES/pages/Tipo Acabados",
+              "createdAt": "2026-08-04T22:02:54.403Z"
+            },
+            {
+              "name": "Tipo Inmueble",
+              "url": "V3/CBRPLUS/Configuracion/Unidades/TiposInmuebles.aspx",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Configuración/submodules/UNIDADES/pages/Tipo Inmueble",
+              "createdAt": "2026-08-04T22:02:54.403Z"
+            },
+            {
+              "name": "Configuración Unidades",
+              "url": "ADPRO/Inmobiliaria/Maestros/ADIUnidades_CONT.asp",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Configuración/submodules/UNIDADES/pages/Configuración Unidades",
+              "createdAt": "2026-08-04T22:02:54.403Z"
+            }
+          ],
+          "submodules": []
+        },
+        {
+          "name": "SALA DE VENTAS",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Configuración/submodules/SALA DE VENTAS",
+          "createdAt": "2026-08-04T22:02:54.403Z",
+          "pages": [
+            {
+              "name": "Medio Publicitario",
+              "url": "ERPNET/CBR/Configuracion/SalaVentas/MedioPublicitario.aspx",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Configuración/submodules/SALA DE VENTAS/pages/Medio Publicitario",
+              "createdAt": "2026-08-04T22:02:54.403Z"
+            },
+            {
+              "name": "Nivel de interés",
+              "url": "ERPNET/CBR/Configuracion/SalaVentas/Nivelinteres.aspx",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Configuración/submodules/SALA DE VENTAS/pages/Nivel de interés",
+              "createdAt": "2026-08-04T22:02:54.403Z"
+            },
+            {
+              "name": "Seguimiento Conceptos",
+              "url": "ERPNET/CBR/Configuracion/SalaVentas/SeguimientoConceptos.aspx",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Configuración/submodules/SALA DE VENTAS/pages/Seguimiento Conceptos",
+              "createdAt": "2026-08-04T22:02:54.403Z"
+            },
+            {
+              "name": "Configuración Sala de Ventas",
+              "url": "ADPRO/Inmobiliaria/Maestros/ADISalaVentas_CONT.asp",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Configuración/submodules/SALA DE VENTAS/pages/Configuración Sala de Ventas",
+              "createdAt": "2026-08-04T22:02:54.404Z"
+            },
+            {
+              "name": "Zonas Por Ciudad",
+              "url": "ERPNET/CBR/Configuracion/SalaVentas/ZonasCiudad.aspx",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Configuración/submodules/SALA DE VENTAS/pages/Zonas Por Ciudad",
+              "createdAt": "2026-08-04T22:02:54.404Z"
+            },
+            {
+              "name": "Barrios Por Zona",
+              "url": "ERPNET/CBR/Configuracion/SalaVentas/BarriosZona.aspx",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Configuración/submodules/SALA DE VENTAS/pages/Barrios Por Zona",
+              "createdAt": "2026-08-04T22:02:54.404Z"
+            }
+          ],
+          "submodules": []
+        },
+        {
+          "name": "ENCUESTAS",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Configuración/submodules/ENCUESTAS",
+          "createdAt": "2026-08-04T22:02:54.404Z",
+          "pages": [
+            {
+              "name": "Maestro de encuestas",
+              "url": "V3/CBR/#/Encuestas/MaestroEncuestas/CrearEncuestas?modulo=CBR",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Configuración/submodules/ENCUESTAS/pages/Maestro de encuestas",
+              "createdAt": "2026-08-04T22:02:54.404Z"
+            },
+            {
+              "name": "Maestro de Preguntas",
+              "url": "ADPRO/Inmobiliaria/Maestros/ADIPreguntas.asp",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Configuración/submodules/ENCUESTAS/pages/Maestro de Preguntas",
+              "createdAt": "2026-08-04T22:02:54.404Z"
+            },
+            {
+              "name": "Configuración Preguntas",
+              "url": "ADPRO/Inmobiliaria/Maestros/ADIEncuentasConfigPreguntas_CC.asp",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Configuración/submodules/ENCUESTAS/pages/Configuración Preguntas",
+              "createdAt": "2026-08-04T22:02:54.404Z"
+            },
+            {
+              "name": "Configuración de Puntajes",
+              "url": "ADPRO/Inmobiliaria/Maestros/ADITipoPuntaje.asp",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Configuración/submodules/ENCUESTAS/pages/Configuración de Puntajes",
+              "createdAt": "2026-08-04T22:02:54.404Z"
+            }
+          ],
+          "submodules": []
+        },
+        {
+          "name": "Compradores",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Configuración/submodules/Compradores",
+          "createdAt": "2026-08-04T22:02:54.404Z",
+          "pages": [
+            {
+              "name": "Estados civiles",
+              "url": "ERPNET/CBR/Configuracion/Compradores/EstadosCiviles.aspx",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Configuración/submodules/Compradores/pages/Estados civiles",
+              "createdAt": "2026-08-04T22:02:54.404Z"
+            },
+            {
+              "name": "Tipo de ocupación",
+              "url": "ERPNET/CBR/Configuracion/Compradores/TipoOcupacion.aspx",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Configuración/submodules/Compradores/pages/Tipo de ocupación",
+              "createdAt": "2026-08-04T22:02:54.404Z"
+            },
+            {
+              "name": "Nivel académico",
+              "url": "ERPNET/CBR/Configuracion/Compradores/NivelAcademico.aspx",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Configuración/submodules/Compradores/pages/Nivel académico",
+              "createdAt": "2026-08-04T22:02:54.404Z"
+            },
+            {
+              "name": "Tipos de horarios",
+              "url": "ERPNET/CBR/Configuracion/Compradores/TiposHorario.aspx",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Configuración/submodules/Compradores/pages/Tipos de horarios",
+              "createdAt": "2026-08-04T22:02:54.404Z"
+            },
+            {
+              "name": "Tipos de contratos",
+              "url": "ERPNET/CBR/Configuracion/Compradores/TipoContratos.aspx",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Configuración/submodules/Compradores/pages/Tipos de contratos",
+              "createdAt": "2026-08-04T22:02:54.404Z"
+            },
+            {
+              "name": "Tipos de retiros",
+              "url": "ERPNET/CBR/Configuracion/Compradores/TiposRetiros.aspx",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Configuración/submodules/Compradores/pages/Tipos de retiros",
+              "createdAt": "2026-08-04T22:02:54.404Z"
+            },
+            {
+              "name": "Configuración Compradores",
+              "url": "ADPRO/Inmobiliaria/Maestros/ADICompradores_CONT.asp",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Configuración/submodules/Compradores/pages/Configuración Compradores",
+              "createdAt": "2026-08-04T22:02:54.404Z"
+            },
+            {
+              "name": "Configuración de campos requeridos",
+              "url": "ERPNET/CBR/Configuracion/Compradores/ConfigCamposRequeridos.aspx",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Configuración/submodules/Compradores/pages/Configuración de campos requeridos",
+              "createdAt": "2026-08-04T22:02:54.404Z"
+            },
+            {
+              "name": "Tipos de vivienda",
+              "url": "ADPRO/Inmobiliaria/Maestros/ConfigTiposVivienda.asp",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Configuración/submodules/Compradores/pages/Tipos de vivienda",
+              "createdAt": "2026-08-04T22:02:54.404Z"
+            },
+            {
+              "name": "Medios de Transporte",
+              "url": "ERPNET/CBR/Configuracion/Compradores/MediosTransporte.aspx",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Configuración/submodules/Compradores/pages/Medios de Transporte",
+              "createdAt": "2026-08-04T22:02:54.404Z"
+            },
+            {
+              "name": "Maestro de nacionalidades",
+              "url": "V3/CBR/#/Configuracion/Nacionalidades",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Configuración/submodules/Compradores/pages/Maestro de nacionalidades",
+              "createdAt": "2026-08-04T22:02:54.404Z"
+            },
+            {
+              "name": "Maestro rangos de salarios por proyectos",
+              "url": "V3/CBRConfiguracion/#/configuracion/RangosSalariosProyectos",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Configuración/submodules/Compradores/pages/Maestro rangos de salarios por proyectos",
+              "createdAt": "2026-08-04T22:02:54.404Z"
+            }
+          ],
+          "submodules": []
+        },
+        {
+          "name": "Trámites",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Configuración/submodules/Trámites",
+          "createdAt": "2026-08-04T22:02:54.404Z",
+          "pages": [
+            {
+              "name": "Configuración de trámites",
+              "url": "V3/CBRConfiguracion/#/configuracion/ConfiguracionTramites",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Configuración/submodules/Trámites/pages/Configuración de trámites",
+              "createdAt": "2026-08-04T22:02:54.404Z"
+            },
+            {
+              "name": "Configuración de Trámites Alertas",
+              "url": "ERPNET/CBR/Configuracion/Tramite/ConfigTramitesAlertasInf.aspx",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Configuración/submodules/Trámites/pages/Configuración de Trámites Alertas",
+              "createdAt": "2026-08-04T22:02:54.404Z"
+            },
+            {
+              "name": "Trámites de proyecto",
+              "url": "ADPRO/Inmobiliaria/Tramites/TramitesPro_JAP.asp",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Configuración/submodules/Trámites/pages/Trámites de proyecto",
+              "createdAt": "2026-08-04T22:02:54.404Z"
+            },
+            {
+              "name": "Configuración De Trámites Por Entidades",
+              "url": "ADPRO/Inmobiliaria/Tramites/ADIConfigTramitesPredetEntidades.asp",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Configuración/submodules/Trámites/pages/Configuración De Trámites Por Entidades",
+              "createdAt": "2026-08-04T22:02:54.404Z"
+            },
+            {
+              "name": "Configuración Maestro Trámites",
+              "url": "ADPRO/Inmobiliaria/Maestros/ADITramites_CONT.asp",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Configuración/submodules/Trámites/pages/Configuración Maestro Trámites",
+              "createdAt": "2026-08-04T22:02:54.404Z"
+            },
+            {
+              "name": "Configuración de Trámites Pago",
+              "url": "ERPNET/CBR/Configuracion/Tramite/ConfiguracionTramitesPagos.aspx",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Configuración/submodules/Trámites/pages/Configuración de Trámites Pago",
+              "createdAt": "2026-08-04T22:02:54.404Z"
+            }
+          ],
+          "submodules": []
+        },
+        {
+          "name": "Reformas",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Configuración/submodules/Reformas",
+          "createdAt": "2026-08-04T22:02:54.404Z",
+          "pages": [
+            {
+              "name": "Tipos de reformas",
+              "url": "ERPNET/CBR/Configuracion/Reformas/TipoReformas.aspx",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Configuración/submodules/Reformas/pages/Tipos de reformas",
+              "createdAt": "2026-08-04T22:02:54.404Z"
+            }
+          ],
+          "submodules": []
+        },
+        {
+          "name": "SEGUIMIENTO",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Configuración/submodules/SEGUIMIENTO",
+          "createdAt": "2026-08-04T22:02:54.404Z",
+          "pages": [
+            {
+              "name": "Configuración de seguimiento",
+              "url": "ADPRO/Inmobiliaria/Maestros/ADISeguimiento_CONT.asp",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Configuración/submodules/SEGUIMIENTO/pages/Configuración de seguimiento",
+              "createdAt": "2026-08-04T22:02:54.404Z"
+            }
+          ],
+          "submodules": []
+        },
+        {
+          "name": "Posventa",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Configuración/submodules/Posventa",
+          "createdAt": "2026-08-04T22:02:54.404Z",
+          "pages": [
+            {
+              "name": "Tipo de espacios",
+              "url": "ERPNET/CBR/Configuracion/PostVentas/ADITiposEspacio.aspx",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Configuración/submodules/Posventa/pages/Tipo de espacios",
+              "createdAt": "2026-08-04T22:02:54.404Z"
+            }
+          ],
+          "submodules": []
+        },
+        {
+          "name": "Cartera",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Configuración/submodules/Cartera",
+          "createdAt": "2026-08-04T22:02:54.404Z",
+          "pages": [
+            {
+              "name": "Configuración de clases de proyecto",
+              "url": "ERPNET/CBR/Configuracion/Cartera/ConfiguracionClasesProyectos.aspx",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Configuración/submodules/Cartera/pages/Configuración de clases de proyecto",
+              "createdAt": "2026-08-04T22:02:54.404Z"
+            },
+            {
+              "name": "Plan de pagos por clases de proyecto",
+              "url": "V3/CBRPLUS/Configuracion/Cartera/ConceptoPlanPagosXClase.aspx",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Configuración/submodules/Cartera/pages/Plan de pagos por clases de proyecto",
+              "createdAt": "2026-08-04T22:02:54.404Z"
+            },
+            {
+              "name": "Documentos de clases de proyecto",
+              "url": "ERPNET/CBR/Configuracion/Cartera/ConfiguracionClasesProyectoDocumento.aspx",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Configuración/submodules/Cartera/pages/Documentos de clases de proyecto",
+              "createdAt": "2026-08-04T22:02:54.404Z"
+            },
+            {
+              "name": "Administración de documentos de cartera",
+              "url": "ERPNET/CBR/Procesos/Cartera/ConfigDocsCartera.aspx",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Configuración/submodules/Cartera/pages/Administración de documentos de cartera",
+              "createdAt": "2026-08-04T22:02:54.404Z"
+            },
+            {
+              "name": "Acceso a documentos de cartera",
+              "url": "ADPRO/Inmobiliaria/Maestros/ADI_AccesoTipoDocumento.asp",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Configuración/submodules/Cartera/pages/Acceso a documentos de cartera",
+              "createdAt": "2026-08-04T22:02:54.404Z"
+            },
+            {
+              "name": "Conceptos Fiducia",
+              "url": "ERPNET/CBR/Configuracion/Cartera/ConceptosFiducia.aspx",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Configuración/submodules/Cartera/pages/Conceptos Fiducia",
+              "createdAt": "2026-08-04T22:02:54.404Z"
+            },
+            {
+              "name": "Opciones Plan de Pago",
+              "url": "ADPRO/Inmobiliaria/Maestros/ADIOpcionesPlanPagos.asp",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Configuración/submodules/Cartera/pages/Opciones Plan de Pago",
+              "createdAt": "2026-08-04T22:02:54.404Z"
+            },
+            {
+              "name": "Tipo Planes de Pago",
+              "url": "ADPRO/Inmobiliaria/Maestros/ADIConceptosPlanPagos.asp",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Configuración/submodules/Cartera/pages/Tipo Planes de Pago",
+              "createdAt": "2026-08-04T22:02:54.404Z"
+            },
+            {
+              "name": "Entidades financieras",
+              "url": "ERPNET/CBR/Configuracion/Cartera/EntidadesFinancieras.aspx",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Configuración/submodules/Cartera/pages/Entidades financieras",
+              "createdAt": "2026-08-04T22:02:54.404Z"
+            },
+            {
+              "name": "Cuentas de bancos",
+              "url": "ERPNET/CBR/Configuracion/Cartera/CuentasBancos.aspx",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Configuración/submodules/Cartera/pages/Cuentas de bancos",
+              "createdAt": "2026-08-04T22:02:54.404Z"
+            },
+            {
+              "name": "Registro de Trámites y Conceptos",
+              "url": "ADPRO/Maestros/RegTramitesConceptos.asp",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Configuración/submodules/Cartera/pages/Registro de Trámites y Conceptos",
+              "createdAt": "2026-08-04T22:02:54.404Z"
+            },
+            {
+              "name": "Trámites Pago Tipo",
+              "url": "ADPRO/Inmobiliaria/Tramites/ADI_ConfigTramitesPago.asp",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Configuración/submodules/Cartera/pages/Trámites Pago Tipo",
+              "createdAt": "2026-08-04T22:02:54.404Z"
+            },
+            {
+              "name": "Colores Entidades Financieras",
+              "url": "ADPRO/Inmobiliaria/Maestros/ADIConfigColoresEntidadesFinancierasV2.asp",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Configuración/submodules/Cartera/pages/Colores Entidades Financieras",
+              "createdAt": "2026-08-04T22:02:54.404Z"
+            },
+            {
+              "name": "Configuración Conceptos Fiducia",
+              "url": "ADPRO/Inmobiliaria/Cartera/ConfigConceptosFiducia.asp",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Configuración/submodules/Cartera/pages/Configuración Conceptos Fiducia",
+              "createdAt": "2026-08-04T22:02:54.404Z"
+            },
+            {
+              "name": "Configuración de Seguros",
+              "url": "ADPRO/Inmobiliaria/Maestros/ADIConfigSeguros.asp",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Configuración/submodules/Cartera/pages/Configuración de Seguros",
+              "createdAt": "2026-08-04T22:02:54.404Z"
+            },
+            {
+              "name": "Configuración de Tasas Bancos",
+              "url": "ADPRO/Inmobiliaria/Maestros/ADIConfigTasasBancos.asp",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Configuración/submodules/Cartera/pages/Configuración de Tasas Bancos",
+              "createdAt": "2026-08-04T22:02:54.404Z"
+            },
+            {
+              "name": "Configuración Conceptos Análisis",
+              "url": "ADPRO/Inmobiliaria/ventas/ADIConceptosAnalisis.asp",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Configuración/submodules/Cartera/pages/Configuración Conceptos Análisis",
+              "createdAt": "2026-08-04T22:02:54.404Z"
+            },
+            {
+              "name": "Configuración Reprogramación Pagos",
+              "url": "ADPRO/Inmobiliaria/ventas/Reprog_Pagos_TOM.asp",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Configuración/submodules/Cartera/pages/Configuración Reprogramación Pagos",
+              "createdAt": "2026-08-04T22:02:54.404Z"
+            }
+          ],
+          "submodules": []
+        },
+        {
+          "name": "SEGURIDAD",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Configuración/submodules/SEGURIDAD",
+          "createdAt": "2026-08-04T22:02:54.404Z",
+          "pages": [
+            {
+              "name": "Usuarios por proyecto",
+              "url": "ERPNET/CBR/Configuracion/Usuarios/UsuariosProyectos.aspx",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Configuración/submodules/SEGURIDAD/pages/Usuarios por proyecto",
+              "createdAt": "2026-08-04T22:02:54.404Z"
+            }
+          ],
+          "submodules": [
+            {
+              "name": "INFORMES",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Configuración/submodules/SEGURIDAD/submodules/INFORMES",
+              "createdAt": "2026-08-04T22:02:54.404Z",
+              "pages": [
+                {
+                  "name": "Informe de usuarios por proyecto",
+                  "url": "ADPRO/Informes/UsuariosObra_JF.asp?adi=1",
+                  "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Configuración/submodules/SEGURIDAD/submodules/INFORMES/pages/Informe de usuarios por proyecto",
+                  "createdAt": "2026-08-04T22:02:54.404Z"
+                }
+              ],
+              "submodules": []
+            }
+          ]
+        },
+        {
+          "name": "SISTEMA",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Configuración/submodules/SISTEMA",
+          "createdAt": "2026-08-04T22:02:54.404Z",
+          "pages": [
+            {
+              "name": "Tipos log",
+              "url": "ADPRO/Inmobiliaria/Maestros/ADIMaestroTipoLog.asp",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Configuración/submodules/SISTEMA/pages/Tipos log",
+              "createdAt": "2026-08-04T22:02:54.404Z"
+            },
+            {
+              "name": "Maestro ADIConfig",
+              "url": "ADPRO/Inmobiliaria/Maestros/Configuracion_ADIConfig.asp",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Configuración/submodules/SISTEMA/pages/Maestro ADIConfig",
+              "createdAt": "2026-08-04T22:02:54.404Z"
+            }
+          ],
+          "submodules": []
+        },
+        {
+          "name": "UTILIDADES",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Configuración/submodules/UTILIDADES",
+          "createdAt": "2026-08-04T22:02:54.405Z",
+          "pages": [
+            {
+              "name": "Cambio de Nit (Terceros)",
+              "url": "Terceros/CambioNit.asp",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Configuración/submodules/UTILIDADES/pages/Cambio de Nit (Terceros)",
+              "createdAt": "2026-08-04T22:02:54.405Z"
+            },
+            {
+              "name": "Periodos",
+              "url": "ADPRO/Inmobiliaria/Maestros/ConfiguracionPeriodos.asp",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Configuración/submodules/UTILIDADES/pages/Periodos",
+              "createdAt": "2026-08-04T22:02:54.405Z"
+            },
+            {
+              "name": "Configuracion de cuenta de correo",
+              "url": "ERPNET/CBR/Configuracion/Utilidades/ConfiguracionCuentaCorreo.aspx",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Configuración/submodules/UTILIDADES/pages/Configuracion de cuenta de correo",
+              "createdAt": "2026-08-04T22:02:54.405Z"
+            },
+            {
+              "name": "Addons",
+              "url": "V3/ADPRO/Views/reactapp/#/mantenimiento/addons?modulo=9",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Configuración/submodules/UTILIDADES/pages/Addons",
+              "createdAt": "2026-08-04T22:02:54.405Z"
+            }
+          ],
+          "submodules": []
+        },
+        {
+          "name": "CONTENEDORES",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Configuración/submodules/CONTENEDORES",
+          "createdAt": "2026-08-04T22:02:54.405Z",
+          "pages": [
+            {
+              "name": "Configuración tipo menú contenedores",
+              "url": "ERPNET/CBR/Configuracion/Contenedores/TipoMenusContenedores.aspx",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Configuración/submodules/CONTENEDORES/pages/Configuración tipo menú contenedores",
+              "createdAt": "2026-08-04T22:02:54.405Z"
+            },
+            {
+              "name": "Menú de contenedores",
+              "url": "ERPNET/CBR/Configuracion/Contenedores/MenuContenedores.aspx",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Configuración/submodules/CONTENEDORES/pages/Menú de contenedores",
+              "createdAt": "2026-08-04T22:02:54.405Z"
+            },
+            {
+              "name": "Acceso a menú de contenedores",
+              "url": "ERPNET/CBR/Configuracion/Contenedores/AccesoMenuAsistententeContenedor.aspx",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Configuración/submodules/CONTENEDORES/pages/Acceso a menú de contenedores",
+              "createdAt": "2026-08-04T22:02:54.405Z"
+            }
+          ],
+          "submodules": []
+        },
+        {
+          "name": "INDICADORES",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Configuración/submodules/INDICADORES",
+          "createdAt": "2026-08-04T22:02:54.405Z",
+          "pages": [
+            {
+              "name": "Maestro de Indicadores",
+              "url": "ADPRO/Inmobiliaria/Indicadores/IndicadoresContenedores.asp",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Configuración/submodules/INDICADORES/pages/Maestro de Indicadores",
+              "createdAt": "2026-08-04T22:02:54.405Z"
+            }
+          ],
+          "submodules": []
+        },
+        {
+          "name": "Ventas",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Configuración/submodules/Ventas",
+          "createdAt": "2026-08-04T22:02:54.405Z",
+          "pages": [
+            {
+              "name": "Motivos resolución de negocio",
+              "url": "ERPNET/CBR/Configuracion/Ventas/MotivosResolucionNegocio.aspx",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Configuración/submodules/Ventas/pages/Motivos resolución de negocio",
+              "createdAt": "2026-08-04T22:02:54.405Z"
+            }
+          ],
+          "submodules": []
+        },
+        {
+          "name": "EXTRANET",
+          "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Configuración/submodules/EXTRANET",
+          "createdAt": "2026-08-04T22:02:54.405Z",
+          "pages": [
+            {
+              "name": "Asignación ExtraNet Compradores",
+              "url": "ExtraNetADI/DA_InfCompradores.asp",
+              "folderPath": "/sessions/rcw-01hniiekqsn7xbcx6tlyn9cz/mnt/testPlatform/backend/workspace/modules/CBR/submodules/Configuración/submodules/EXTRANET/pages/Asignación ExtraNet Compradores",
+              "createdAt": "2026-08-04T22:02:54.405Z"
+            }
+          ],
+          "submodules": []
+        }
+      ]
+    }
+  ],
+  "pages": [],
+  "swaggerUrl": "https://kilauea-v05.sincoerp.com/cbr/swagger/v1/swagger.json"
+}

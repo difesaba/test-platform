@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# PLACEHOLDER: replace testverse.com with the real public domain before go-live.
+Sitemap: https://testverse.com/sitemap.xml

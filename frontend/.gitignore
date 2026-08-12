@@ -22,3 +22,7 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Codigo movido para borrar manualmente
+_to_delete/
+**/_to_delete/

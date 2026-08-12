@@ -25,3 +25,31 @@ Thumbs.db
 .vscode/*
 !.vscode/extensions.json
 .idea/
+
+# Perfil persistente de Playwright (transitorio, no es dato)
+backend/workspace/.playwright-user-data/
+
+# Codigo movido para borrar manualmente
+_to_delete/
+**/_to_delete/
+
+### TestVerse: artefactos y dumps ###
+# Respaldos y datos de ejecución (regenerables / pesados)
+backend/_backups/
+backend/workspace_backup_*/
+backend/workspace.clean.*/
+backend/test-results/
+
+# Artefactos generados dentro del workspace (evidencia, no definición)
+backend/workspace/**/screenshots/
+backend/workspace/**/test-results/
+backend/workspace/**/trace-*.zip
+backend/workspace/**/doc-*.pdf
+backend/workspace/*.jsonl
+backend/workspace/audit.log.jsonl
+backend/workspace/batch-history.json
+
+# Dumps / capturas de depuracion (PUEDEN TENER SECRETOS)
+backend/captura-torre.txt
+backend/menus-dump.json
+backend/scripts/*.txt
